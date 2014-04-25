@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="/css/account/bht_invoice.css"  type="text/css" rel="Stylesheet" />
+</head>
+<body>
+    <div id="main_template">
+        
+        <table  cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <table width="100%">
+                        <tr>
+                            <td  align="center" style="width:10%; vertical-align:top;"><img src="/images_extra/logo.png" /></td>
+                            <td style="width:25%; vertical-align:top;">
+                                <p class="bht_name"><span class="span">BLUE</span> HOUSE TRAVEL CO.,LTD.</p>
+                                <p class="bht_site">www.hotels2thailand.com</p>
+                                <p class="bht_mail">Email:account@hotels2thailand.com</p>
+                            </td>
+                            <td style="width:65%; vertical-align:top;" align="right" >
+                                <p class="address" style="margin-top:20px">Blue House Travel Co., Ltd. 254/10 Ratchadapisek 42. Ratchadapisek Rd. Ladyaw Chatuchak Bangkok 10900</p>
+                                <p class="address">Phone: + 66 (0) 2 930 0973.  Fax: +66 (0) 2 930 6514</p>
+                                
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+
+            </tr>
+            <tr><td style="height:30px"></td></tr>
+            <tr>
+
+                <td align="center">
+
+                    <table width="90%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="50%" align="left">
+                                <p class="account_inform">เรียน</p>
+                                <p class="slip_no">Invoid No. <!--##@PaymentID##--></p>
+                                <p class="hotel_name"><!--##@HotelName##--></p>
+                                <p class="hotel_address"><!--##@HotelAddress##--></p>
+                                
+                            </td>
+                            <td  width="50%"  align="right" ><p class="head_title">Invoice</p>
+                                <p class="date_submit"><!--##@DatePayment##--></p></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr><td style="height:20px"></td></tr>
+            <tr>
+                <td align="center" >
+                    <table width="90%" cellspacing="1" cellpadding="0" class="tbl_account">
+                       <thead>
+                           <tr>
+                              
+                               <th>Months</th><th>Amount</th>
+                           </tr>
+                       </thead>
+                        
+                        <tbody>
+                            <!--##@PaymentBookingListStart##-->
+                            <tr>
+                                <td align="center"><strong>Booking Amount</strong></td>
+                                <td align="right">15002</td>
+                                
+                               
+                            </tr>
+                            <tr>
+                                <td align="center"></td>
+                                <td align="right"></td>
+                                
+                                
+                            </tr>
+                           
+                            <tr>
+                               <td align="center"><strong>Comission Fee</strong></td>
+                                <td align="right">4,500.00</td>
+                               
+                            </tr>
+                            <tr>
+                               <td align="left">รวมเงิน/ Sub total</td>
+                                <td align="right"></td>
+                                
+                            </tr>
+                            
+                            <tr>
+                               <td align="left">ภาษีมูลค่าเพิ่ม /Vat</td>
+                                <td align="right"></td>
+                               
+                            </tr>
+                            <tr>
+                               <td align="left">ยอดรวมทั้งหมดรวมภาษีมูลค่าเพิ่ม /Grand Total</td>
+                                <td align="right"></td>
+                               
+                            </tr>
+                            <tr>
+                               <td align="left"></td>
+                                <td align="right"></td>
+                              
+                            </tr>
+                          
+                            <!--##@PaymentBookingListEnd##-->
+                        </tbody>
+                        
+                    </table>
+                </td>
+            </tr>
+            <!--##@PaymenttaxStart##-->
+            <tr><td style="height:10px"></td></tr>
+            <tr><td align="center">
+                 <table width="90%" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td>ทั้งนี้ทางโรงแรมจะต้องทำการหักภาษี ณ ที่จ่าย บริษัทฯ โดยออกเอกสารการหักภาษี ณ ที่จ่ายให้บริษัทฯ
+                <br />
+                47.61  บาท</td>
+                        </tr>
+                     </table>
+                
+            </td></tr>
+            <!--##@PaymenttaxEnd##-->
+            <tr><td style="height:10px"></td></tr>
+            <tr><td align="center">
+                
+                <table width="90%" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td><strong>ทางบริษัท บลูเฮ้าส์ ทราเวล จำกัด จะได้รับ</strong></td>
+                    </tr>
+                     <tr>
+                        <td>1.&nbsp;เงินสดหรือเช็ค จำนวนเงิน  = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <strong><!--##@NetTotal##--> บาท</strong>&nbsp;&nbsp;</td>
+                    </tr>
+                     <tr>
+                        <td>2.&nbsp;เเอกสารรับรองการหักภาษี ณ ที่จ่าย </td>
+                    </tr>
+                </table>
+                
+                
+                
+            </td></tr>
+            <tr><td style="height:10px"></td></tr>
+            <tr>
+                <td align="center">
+                   <table width="90%" cellspacing="1" cellpadding="0" >
+                        <tr>
+                            <td width="100%" align="left" colspan="3">
+                                <p class="payment_detail">เงื่อนไขการชำระเงิน</p>
+                                <!--##@PaymentPolicyStart##-->
+                                 <table>
+                                     <tr>
+                                         <td style="font-weight:bold;">1.</td>
+                                         <td>โอนเงินบัญชี บริษัท บูลเฮ้าส์ ทราเวล จำกัด ธนาคารกสิกรไทย สาขา เซ็นทรัลลาดพร้าว เลขที่ 730-2-37133-9</td>
+                                     </tr>
+                                     <tr>
+                                         <td style="font-weight:bold;">2.</td>
+                                         <td>โรงแรมจะต้องออกเอกสารรับรองการหักภาษี ณ ที่จ่าย ส่งมาให้ บริษัท บลูเฮ้าส์ ทราเวล จำกัด</td>
+                                     </tr>
+                                     <tr>
+                                         <td style="font-weight:bold;">3.</td>
+                                         <td>ทางโรงแรมจะต้องเป็นผู้รับผิดชอบสำหรับ <strong>ค่าโอน </strong>ไม่ว่ากรณีใดๆทั้งสิ้น</td>
+                                     </tr>
+                                     
+                                 </table>
+                                <!--##@PaymentPolicyEnd##-->
+                            </td>
+                            
+                        </tr>
+                       <tr><td colspan="3" style="height:40px"></td></tr>
+                       <tr>
+                           <td width="30%" align="center" style="font-size:16px;">
+
+                               <p><span style="font-size:16px"><!--##@StaffName##--></span></p>
+                               <p ><span style="font-weight:bold;font-size:16px;">ผู้วางบิล</span></p>
+                              
+                           </td>
+                           <td width="50%" ></td>
+                           <td width="20%" align="left" style="font-size:16px;">
+                               <p>...............................................</p>
+                               <p style="text-align:center;"><span style="font-weight:bold;font-size:16px"> ผู้รับวางบิล</span> </p>
+                               <p>วันที่.........................................</p>
+                               <p>กำหนดชำระวันที่.........................</p>
+                           </td>
+                       </tr>
+                    </table>
+                </td>
+            </tr>
+             <tr><td style="height:10px"></td></tr>
+             <tr><td  align="center">
+                  <table width="90%" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td>
+                 หากมียอดแก้ไขเปลี่ยนแปลง โปรดส่งยอดแก้ไขกลับมายังบริษัทฯ ภายใน  วัน นับแต่วันที่ได้รับใบวางบิล มิฉะนั้นจะถือว่าเป็นการถูกต้องแล้ว
+                            </td></tr></table>
+
+                        </td></tr>
+        </table>
+    </div>
+</body>
+</html>

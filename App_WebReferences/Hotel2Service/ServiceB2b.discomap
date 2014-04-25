@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://order.hotels2thailand.com/ServiceB2b.asmx?wsdl" filename="ServiceB2b.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://order.hotels2thailand.com/ServiceB2b.asmx?disco" filename="ServiceB2b.disco" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,36 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.fnSmall{font-size:12px;color:#505050;}
+
+.fnLarge{font-size:24px;}
+.fnBig{line-height:25px; font-size:18px;}
+.fnBold{font-weight:bold;}
+.fnMedium{font-size:14px;}
+
+.fnGrayLight{color:#818181;}
+.fnOrange{color:#c16800;}
+.fnBlue{color:#003a79;}
+.fnBlueSky{color:#3a74ba;}
+.fnGold{color:#7d5105;}
+.fnRed{color:#e90505;}
+.fnBlack{color:#000000;}
+#review-overall{ background-color:#f2f2f2;padding:5px 0px 10px 5px;}
+.review_1{background:url(../images/icon_review_rate.png) repeat-x top left;width:12px; height:12px; float:left; margin-right:5px; margin-top:5px;}
+.review_2{background:url(../images/icon_review_rate.png) repeat-x top left;width:24px; height:12px; float:left; margin-right:5px; margin-top:5px;}
+.review_3{background:url(../images/icon_review_rate.png) repeat-x top left;width:36px; height:12px; float:left; margin-right:5px; margin-top:5px;}
+.review_4{background:url(../images/icon_review_rate.png) repeat-x top left;width:48px; height:12px; float:left; margin-right:5px; margin-top:5px;}
+.review_5{background:url(../images/icon_review_rate.png) repeat-x top left;width:60px; height:12px; float:left; margin-right:5px; margin-top:5px;}
+.review_6{background:url(../images/icon_review_rate.png) repeat-x top left;width:72px; height:12px; float:left; margin-right:5px; margin-top:5px;}
+.review_7{background:url(../images/icon_review_rate.png) repeat-x top left;width:84px; height:12px; float:left; margin-right:5px; margin-top:5px;}
+.review_8{background:url(../images/icon_review_rate.png) repeat-x top left;width:96px; height:12px; float:left; margin-right:5px; margin-top:5px;}
+.review_9{background:url(../images/icon_review_rate.png) repeat-x top left;width:108px; height:12px; float:left; margin-right:5px; margin-top:5px;}
+.review_10{background:url(../images/icon_review_rate.png) repeat-x top left;width:120px; height:12px; float:left; margin-right:5px; margin-top:5px;}
+#review-rightPan{width:700px; margin:0px auto;}
+#review-leftPan{width:700px; margin:0px auto;}
+.product-review-item{width:600px; padding:10px;}
+.titleFloatLeft{float:left; margin-right:5px;}
+#review-overall>p{position:relative;margin:0px; padding:5px;}
+#review-overall>p span.titleFloatLeft{position:absolute; left:130px;}
+.clearAll{ clear:both; line-height:1px;}
+

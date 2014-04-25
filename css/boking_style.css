@@ -1,0 +1,49 @@
+#booking_menu_bar_custom
+{
+    margin:0px;
+    padding:0px 0px 0px 0px ; 
+    height:50px;
+    position:absolute;
+    top:160px;
+    right:10px;
+    z-index:999;
+}
+
+#booking_menu_bar_custom a
+{
+    margin:0px;
+    padding:0px 0px 0px 0px ; 
+    display:block;
+     float:left;
+     font-size:14px;
+    
+}
+#booking_menu_bar_custom a:hover
+{
+   
+     font-size:14px;
+     text-decoration:none;
+     color:#60afe5;
+     
+}
+#booking_menu_bar
+{
+    margin:0px;
+    padding:0px 0px 0px 0px ; 
+   
+}
+#booking_menu_bar a
+{
+    margin:0px 5px 0px 5px;
+    padding:0px 0px 0px 0px ; 
+    display:block;
+     float:right;
+     font-size:14px;
+}
+#booking_menu_bar a:hover
+{
+   
+     font-size:14px;
+     text-decoration:none;
+     color:#60afe5;
+}

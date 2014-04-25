@@ -1,0 +1,418 @@
+﻿#member_search {
+    position:absolute;
+    width:400px;
+    top:123px;
+    left:760px;
+}
+#main_member {
+    min-height:500px;
+    position:relative;
+}
+
+#extranet_tab
+{
+    position:absolute;
+    top:150px;
+    left:886px;
+	margin-left:90px;
+	margin-bottom:-1px;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 32px;
+	width: 200px;
+    z-index:999;
+}
+#extranet_tab li
+{
+	float: left;
+	margin-right:1px;
+	padding: 0 10px;
+	height: 31px;
+	line-height:31px;
+	border-left: none;
+	margin-bottom: -1px;
+	background:#f7f7f7;
+	overflow: hidden;
+	position: relative;
+	font-size:12px;
+	cursor:pointer;
+}
+
+#extranet_tab li.active {
+	display: block;
+	background:#328aa4;
+	color:#ffffff;
+}
+
+#head_status {
+
+    margin:0px 0px 0px 0px;
+    padding:10px;
+
+    font-family:Tahoma;
+    font-size:12px;
+    color:#3b5ea4;
+    border-bottom:1px solid #f2ebbd;
+}
+#cus_list { 
+        margin:10px 0px 0px 0px;
+        padding:0px;
+}
+.active_title {
+    font-size:18px;
+    font-weight:bold;
+}
+.status_total {
+    color:#000000;
+}
+.darkman_tbls {
+
+    font-family:Arial;
+    font-size:11px;
+    width:100%;
+
+    background-color:#ffffff;
+   
+    border-collapse:separate separate;
+    border-spacing: 0px 2px;
+    
+}
+.darkman_th th{
+    padding:3px 0 3px 0;
+    text-align:center;
+    border-bottom: 2px solid #e5d9ad;
+    color:#3d3c39;
+    font-weight:bold;
+}
+.darkman_row {
+    background-color:#ffffff;
+}
+.rowstyle {
+  
+     vertical-align:central;
+   
+}
+
+.rowstyle>td{
+    text-align:center;
+    height:25px;
+    border-bottom:1px solid #dfd5ad;
+}
+/*f5f5f3*/
+.darkman_row_event {
+    background-color:#f5f5f3;
+}
+
+
+#page_num {
+    float:right;
+    margin:10px 0 0 0;
+    padding:0px;
+}
+    #page_num table {
+        border-collapse:collapse;
+        border-spacing:0px;
+
+    }
+    .ul_page {
+        margin:0px;
+        padding:0px;
+    }
+    .ul_page li {
+         display:block;
+         float:left;
+       padding:3px;
+       border:1px solid #b8b5a1;
+       margin:0 0 0 3px;
+      
+       background-color:#f5f5f3;
+    }
+    .ul_page li a {
+        font-size:11px;
+         color:#3d3b31;
+    }
+#previous {
+}
+#next {
+}
+
+.a_active {
+     padding:3px;
+     font-size:11px;
+     color:#ffffff;
+     background-color:#8d9252;
+     border:1px solid #6b7128;
+}
+#submenu {
+
+ padding:5px;
+ background-color:#328aa4;
+ color:#ffffff;
+ text-indent:5px;
+}
+    #submenu a {
+        text-decoration:underline;
+        font-size:11px;
+         margin:0px 5px 0px 5px;
+         color:#ffffff;
+    }     
+#action_title {
+}
+/* customer detail */
+
+
+#cus_detail {
+
+  width:100%;
+}
+
+.cus_detail_block {
+     -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding:15px;
+    margin:0 auto;
+    border:1px solid #efe9ad;
+     background-color:#fafaf7;
+    width:90%;
+    margin-top:20px;
+    position:relative;
+}
+.cus_detail_block_blocked {
+     -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding:15px;
+    margin:0 auto;
+    border:1px solid #afaeab;
+     background-color:#cccccc;
+    width:90%;
+    margin-top:20px;
+    position:relative;
+}
+    #cus_detail a {
+        font-size:11px;
+    }
+#cus_detail table {
+    width:100%;
+    border-collapse:separate;
+    border-spacing:3px;
+    font-size:13px;
+    font-weight:bold;
+}
+    #cus_detail table tr td {
+        height:25px;
+        padding:0px;
+    }
+    #btnedit {
+        position:absolute;
+        top:160px;
+        left:650px;
+        display:none;
+       
+    }
+.tb_res {
+    text-align:left;
+    font-weight:normal;
+}
+.tb_title {
+    width:15%;
+    text-align:left;
+    
+}
+#cus_pedding_booking {
+    width:95%;
+     margin:0 auto;
+     margin-top:30px;
+}
+
+#cus_booking_history {
+    width:95%;
+     margin:0 auto;
+}
+
+.head_title {
+
+    font-size:14px;
+    color:#616632;
+    font-weight:bold;
+    border-bottom:5px solid #dfd39b;
+    padding-bottom:5px;
+    margin-top:30px;
+   
+}
+.member_status_active {
+     font-size:14px;
+     font-weight:bold;
+     color:#659d04;
+}
+.member_status_intactive {
+    font-size:14px;
+    font-weight:bold;
+    color:#b3aeac;
+}
+
+/* Member Prie*/
+#member_price_head {
+     width:100%;
+     margin:10px 0 10px 0 ;
+     padding:0px;
+}
+#member_price_head > h1 {
+    font-size:16px;
+    margin:0px;
+    padding:0px;
+    text-indent:15px;
+}
+#member_price_insert_box {
+    margin:5px 0 0 0;
+    padding:0px;
+   
+    background-color:#f2ecbb;
+}
+#member_insert_link {
+    position:absolute;
+    top:5px;
+    left:780px;
+}
+
+#member_insert_link a {
+}
+
+#member_price_box_real {
+    display:none;
+    background-color:#ffffff;
+    padding:10px;
+    border-left:10px solid #f2ecbb;
+    border-right:10px solid #f2ecbb;
+    border-bottom:10px solid #f2ecbb;
+}
+#member_price_box_real_border {
+    width:100%;
+    padding:0px;
+    background-color:#f2ecbb;
+    border-top:10px solid #f2ecbb;
+}
+.condition_select_list
+{
+    padding:0px 0px 0px 10px;
+    margin:0px 0 0 0 ;
+    font-weight:bold;
+}
+.line
+{
+    margin:7px 0px 0px 0px;
+    padding:0px;
+    height:1px;
+     width:100%;
+     background-color:#ccccc1;
+}
+.room_title
+{
+    margin:0px;
+    padding:0px;
+     color:Green;
+     font-size:14px;
+     font-weight:bold;
+}
+#date_insert_box {
+    margin:0px 0 10px 0;
+    padding:0px;
+
+}
+.datetitle {
+    display:block;
+    font-size:11px;
+    font-weight:bold;
+}
+#member_price_insert {
+    margin:10px 0 0 0;
+}
+#member_price_list {
+    margin:20px 0 0 0;
+    padding:0px;
+}
+.condition_pan {
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding:15px;
+    margin:0 auto;
+    border:1px solid #efe9ad;
+     background-color:#fafaf7;
+    width:90%;
+    margin-top:20px;
+    position:relative;
+
+    margin-top:20px;
+    margin-bottom:20px;
+    text-align:left;
+    display:none;
+}
+.link_edit_hide {
+ float:right;
+    display:block;
+    margin-bottom:10px;
+
+}
+
+.btn_price_edit {
+   margin:5px 0 0 0 ;
+}
+
+
+.link_condition_down {
+    display:block;
+    width:15px;
+    height:16px;
+    background-image:url(/images_extra/down.png);
+        
+}
+.link_condition_up {
+    display:block;
+    width:15px;
+    height:16px;
+    background-image:url(/images_extra/up.png);
+}
+.tmp_block {
+    margin:0px;
+    padding:0px;
+    display:none;
+}
+.discount_main_block_list {
+    margin:0px;
+    padding:0px;
+    
+}
+
+
+.bookingList_Page
+{
+     width:100%;
+     margin:0px;
+     padding:0px;
+     
+}
+.bookingList_Page a
+{
+    display:block;
+    float:left;
+     margin:2px 0px 2px 10px;
+     padding:0px 3px 0px 10px;
+     width:15px;
+     height:15px;
+     
+     
+}
+
+.page_list
+{
+    background-color:#F8F3DB;
+   
+}
+
+.page_list_active
+{
+    
+    background-color:#8C9051;
+
+    color:#ffffff;
+}

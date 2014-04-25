@@ -1,0 +1,103 @@
+﻿.b2hPromotionResult {
+     width:95%;
+     margin:0px;
+     padding:10px;
+       font-family:Tahoma;
+       font-size:11px;
+    
+}
+    .show_detail {
+        font-size:11px;
+        margin:2px 0 0 10px;
+    }
+.item_list {
+    width:100%;
+    padding:3px 0px 3px 0px;
+    border-top:1px dashed #cccccc;
+     border-bottom:1px dashed #cccccc;
+    margin:0 0 10px 0;
+  
+}
+    
+
+
+    /*.item_list:nth-child(even) {
+         background:#c1c1c1;
+    }*/
+.Protitle {
+    margin:0px;
+    padding:0px;
+    font-size:18px;
+    font-weight:bold;
+    color:#7baf42;
+  
+
+}
+.bookDate {
+     margin:0px;
+     padding:0px;
+     color:#f04b51;
+     font-weight:bold;
+}
+.stayDate {
+  margin:0px;
+     padding:0px;
+     color:#f04b51;
+      font-weight:bold;
+}
+.item_head {
+    color:#999999;
+}
+.ac_room_type {
+    color:#999999;
+}
+.spc_benefit {
+    color:#999999;
+}
+.ac_block {
+    margin:3px 0px 0px 10px;
+    padding:0px;
+    color:#999999;
+    float:left;
+    width:200px;
+}
+    .ac_block ul {
+          color:#999999;
+          margin:0px 0px 0px 5px;
+          padding:0px;
+    }
+    .ac_block ul li{
+          color:#999999;
+          margin:0px;
+          padding:0px;
+          list-style-position:inside;
+    }
+.item_head {
+    margin:0px;
+    padding:0px;
+    color:#0892cd;
+    font-weight:bold;
+          
+}
+
+.tag{
+     background-color:#0892cd;
+}
+.linkDetail {
+   
+}
+.linkDetail {
+    color:#0892cd;
+    font-family:Tahoma;
+}
+.span_date {
+    color:#808080;
+    
+}
+.tbl_list {
+    width:100%;
+    background-color:#f7f7f7;
+}
+
+/*End Promotion*/
+

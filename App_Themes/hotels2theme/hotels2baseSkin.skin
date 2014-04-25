@@ -1,0 +1,98 @@
+﻿<asp:TextBox runat="server" BorderStyle="solid" BorderWidth="1px" Bordercolor="#97a8c4" Font-Size="12px" CssClass="textBoxStyle" Font-Names="Tahoma"  />
+<asp:TextBox runat="server" BorderStyle="solid" BorderWidth="1px" Bordercolor="#97a8c4"  width="500px" SkinID="Big" CssClass="textBoxStyle" Font-Names="Tahoma"/>
+<asp:TextBox runat="server" BorderStyle="solid" BorderWidth="1px" Bordercolor="#97a8c4"  width="200px" SkinID="Medium" CssClass="textBoxStyle" Font-Names="Tahoma"/>
+<asp:TextBox runat="server" BorderStyle="solid" BorderWidth="1px" Bordercolor="#ffffff"  Font-Size="12px" SkinID="Datehidden" CssClass="textBoxStyle" Font-Names="Tahoma" />
+<asp:DropDownList  BorderStyle="solid" BorderWidth="1px" Bordercolor="#97a8c4" runat="server"  CssClass="DropDownStyle"  Font-Size="11px" Font-Names="Tahoma"/>
+<asp:DropDownList  BorderStyle="solid" BorderWidth="1px" Bordercolor="#97a8c4" runat="server"  CssClass="dropPrioritystyle" SkinID="DropCustomstyle"  Font-Size="11px" Font-Names="Tahoma" />
+         
+<asp:GridView runat="server" Width="100%" CellPadding="4" ForeColor="#333333"  GridLines="Both" BorderColor="#d8dfea"  >
+   <RowStyle BackColor="#eceff5" ForeColor="#333333" BorderColor="#d8dfea" BorderStyle="Solid" BorderWidth="1px"  />
+   <HeaderStyle BackColor="#3f5d9d" ForeColor="#ffffff" HorizontalAlign="Left"/>
+   <PagerStyle BackColor="#3f5d9d" ForeColor="#ffffff" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+   <AlternatingRowStyle BackColor="White" />
+</asp:GridView>
+
+<asp:GridView runat="server" Width="100%" CellPadding="4" ForeColor="#333333"  GridLines="none" SkinID="ProductList"  >
+   <RowStyle BackColor="#eceff5" ForeColor="#333333" BorderColor="#d8dfea" BorderStyle="Solid" BorderWidth="1px"  />
+   <HeaderStyle BackColor="#3f5d9d" ForeColor="#ffffff" HorizontalAlign="Left"/>
+   <PagerStyle BackColor="#3f5d9d" ForeColor="#ffffff" HorizontalAlign="Center"  CssClass="GVPageerStyle" />
+   <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+   <AlternatingRowStyle BackColor="White" />
+   <PagerSettings  Mode="NextPreviousFirstLast"  NextPageText="&nbsp;>&nbsp;"  PreviousPageText="&nbsp;<&nbsp; " FirstPageText="&nbsp; <<&nbsp; " LastPageText="&nbsp; >>&nbsp; " />
+</asp:GridView>
+
+<asp:GridView runat="server" Width="100%" CellPadding="4" ForeColor="#333333" GridLines="None" SkinID="NoSwapBackcolor" >
+   <RowStyle BackColor="#eceff5" ForeColor="#333333" BorderColor="#d8dfea"  CssClass="contactrows" HorizontalAlign="Left" BorderWidth="1px"  />
+   <AlternatingRowStyle BackColor="#f7f7f7"  BorderColor="#d8dfea" CssClass="contactrows" HorizontalAlign="Left" BorderWidth="1px" />
+ </asp:GridView>
+
+<asp:GridView runat="server" Width="100%" CellPadding="4" ForeColor="#333333"  GridLines="None"  SkinID="Nostyle">
+   <RowStyle BackColor="White" ForeColor="#333333" BorderColor="#d8dfea"   />
+   <HeaderStyle BackColor="#3f5d9d" ForeColor="#ffffff" HorizontalAlign="Left"/>
+   <PagerStyle BackColor="#3f5d9d" ForeColor="#ffffff" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+   <AlternatingRowStyle BackColor="White" />
+</asp:GridView>
+
+
+
+<asp:GridView runat="server" Width="100%" CellPadding="4" ForeColor="#333333"  GridLines="None" SkinID="NostyleYello">
+   <RowStyle BackColor="#fff9d7" ForeColor="#333333" BorderColor="#d8dfea" />
+   <HeaderStyle BackColor="#3f5d9d" ForeColor="#ffffff" HorizontalAlign="Left"/>
+   <PagerStyle BackColor="#3f5d9d" ForeColor="#ffffff" HorizontalAlign="Center" />
+   
+   <AlternatingRowStyle BackColor="#fff9d7" />
+</asp:GridView>
+
+<asp:GridView runat="server" Width="100%" CellPadding="4" ForeColor="#333333"  GridLines="None" SkinID="LangSwitch">
+   <RowStyle BackColor="#627aad" ForeColor="#627aad" BorderColor="#627aad" />
+   <HeaderStyle BackColor="#627aad" ForeColor="#627aad" HorizontalAlign="Left"/>
+   <PagerStyle BackColor="#627aad" ForeColor="#627aad" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+   <AlternatingRowStyle BackColor="#627aad" />
+</asp:GridView>
+
+        
+<asp:GridView runat="server" Width="100%" CellPadding="4" ForeColor="#333333" SkinID="GVParentSkin"
+BorderStyle="Solid"   AlternatingRowStyle-BorderWidth="1px" AlternatingRowStyle-BorderStyle="Solid" 
+RowStyle-BorderStyle="solid" RowStyle-BorderWidth="1px" 
+HeaderStyle-BackColor="#eceff5" BorderColor="#e9e9e9" AlternatingRowStyle-BorderColor="#e9e9e9" RowStyle-BorderColor="#e9e9e9">
+<PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+<SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+</asp:GridView>
+    
+<asp:GridView runat="server" Width="100%" CellPadding="4" ForeColor="#333333" GridLines="None" SkinID="GVChildSkin">
+    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+</asp:GridView>
+
+
+<asp:Button SkinID="Blue" runat="server"  CssClass="btStyle" />
+<asp:Button SkinID="Blue_small" runat="server"  CssClass="btStyle_small" />
+<asp:Button SkinID="Green" runat="server"  CssClass="btStyleGreen"/>
+<asp:Button SkinID="Green_small" runat="server"  CssClass="btStyleGreen_small"/>
+<asp:Button SkinID="White" runat="server"  CssClass="btStyleWhite"/>
+<asp:Button SkinID="White_small" runat="server"  CssClass="btStyleWhite_small"/>
+<asp:Button SkinID="Red" runat="server"  CssClass="btStyleRed"/>
+<asp:Button SkinID="Red_small" runat="server"  CssClass="btStyleRed_small"/>
+
+<%--
+
+
+
+
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>

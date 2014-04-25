@@ -1,0 +1,35 @@
+.clear-all{clear:both; line-height:0px }
+
+
+
+.hotels_detail #detail_main{
+	margin:0 auto;
+	padding:0pox;
+	width:100% !important;
+	line-height:16px;
+	font-size:12px;
+	color:#666;
+	font-family:Arial, Helvetica, sans-serif !important;
+}
+
+#detail_main{
+	margin:0 auto;
+	padding:0pox;
+	width:680px;
+	line-height:16px;
+	font-size:12px;
+	color:#666;
+	font-family:Arial, Helvetica, sans-serif !important;
+}
+#detail_main .style{
+	margin:0px 0px 20px 0px;
+	padding:0px;	
+}
+
+#detail_main .style p.header{ margin:0px; padding:5px 0px 0px 12px; font-size:15px; color:#5f85b6; font-weight:bold; }
+
+#detail_main .style ul{ margin:0px; padding:8px 0px 0px 14px; }
+
+#detail_main .style li{ padding-left:15px; background:url(images/icon/ball_green_s.jpg) no-repeat 0 5px; list-style:none;}
+
+#detail_main .style p{ margin:0px; padding:8px 0px 10px 15px;}

@@ -1,0 +1,9 @@
+label.error {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	color: #aa0000;
+	padding-left: 18px;
+	float: none;
+}
+.required {
+}

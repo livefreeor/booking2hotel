@@ -1,0 +1,213 @@
+body{
+	color:#000;
+	font-family:Arial, Helvetica, sans-serif !important;
+	font-size:13px;
+	line-height:16px;
+	margin:0px;
+	background:#f6f9fe;
+}
+input, textarea, select{
+	color:#5f85b7;
+	font-size:1em;
+	font-family:Tahoma, Geneva, sans-serif;		
+}
+form{
+	margin:0px;
+	padding:0px;
+	border:0px;	
+}
+img{
+	border:none;
+}
+h1, h2, h3, h4, h5{
+	line-height:0px;
+	margin:0px;
+}
+div{
+	margin:0px;
+	padding:0px;
+}
+.clear-all{clear:both; line-height:0px }
+
+.main{
+	margin:0 auto;
+	width:950px;
+	/*border:solid 2px #5f85b7; */
+}
+.top{ 
+	margin:0 auto;
+	padding:15px 0 0 0;
+	width:921px; 
+}
+.buttom{ 
+	margin:0 auto;
+	padding:20px 0 10px 0;
+	width:921px; 
+}
+.topbg{
+	width:921px;
+	height:26px;
+	background:#FFF url(../../images/staff/bg_top.jpg) no-repeat 0 top;
+}
+.buttombg{
+	width:921px;
+	height:26px;
+	background:url(../../images/staff/bg_buttom.jpg) no-repeat 0 0;	
+}
+.top_content{
+	position:relative;
+	margin:0 auto;
+	width:919px;
+	background:#FFF;
+	border-left:solid 1px #cddbed;
+	border-right:solid 1px #cddbed;
+}
+.top_logo{ position:absolute; top:-25px; left:10px;}
+.address{
+	margin:0 25px 0 110px;
+	width:535px;
+	float:left;
+	color:#333;
+	font-size:12px;
+	border-right:solid 1px #CCC;
+}
+.hotel_booking{
+	margin-top:5px;
+	font-size:32px;
+	font-weight:bold;
+	float:left;
+	color:#000;
+}
+.hotel_booking span{ color:#8cc63f; }
+.hotel_booking a{ 
+	display:block; 
+	margin-top:10px; 
+	font-size:14px; 
+	text-decoration:none; 
+	color:#0f75bc; 
+	text-align:center; 
+	font-weight:normal;
+}
+table{
+	margin:0 auto;
+	width:883px;
+	background:#d1d2d4;
+}
+table th{ padding:5px 0 5px 20px; background:#e7eef8; font-size:16px; line-height:25px; color:#0f75bc; text-align:left;}
+table td{ padding:5px 10px 5px 10px; background:#FFF; }
+table td.info{ text-align:right; color:#666; }
+
+table.option{
+	margin:20px 0 0 18px;
+	width:883px;
+	background:#d1d2d4;
+}
+table.option th{ 
+	padding:5px;
+	background:#eceded; 
+	font-size:13px; 
+	line-height:16px; 
+	color:#0f75bc; 
+	text-align:center;
+}
+.sub_total{ font-weight:bold; text-align:right; color:#666; font-size:14px;}
+.price{ font-weight:bold; font-size:15px;}
+
+.total_price{
+	margin:15px 0 8px 7px;
+	width:903px;
+	height:62px;
+	color:#61bf44;
+	font-weight:bold;
+	font-size:22px;
+	text-align:center;
+	line-height:55px;
+	background:url(../../images/staff/bg_total.jpg) no-repeat 0 0;
+}
+.total_price span{ color:#000; }
+
+.box{
+	margin:20px 0 0 18px;
+	width:883px;
+	background:#FFF;
+	border: solid 1px #d9dde1;
+}
+.left{ 
+	width:410px; 
+	float:left;
+	padding:5px 10px 10px 20px; 
+	border-right:solid 1px #d9dde1; 
+	line-height:20px;
+}
+.title{
+	padding:0 0 5px 0; 	
+	font-size:16px; 
+	line-height:22px; 
+	color:#0f75bc;
+	text-decoration:underline;
+	font-weight:bold;
+}
+.logo_buttom{
+	margin:0 0 0 20px;
+	width:131px;
+	height:110px;
+	float:left;
+	background:url(../../images/staff/logo_buttom.jpg) no-repeat 0 0;	
+}
+.signature{
+	padding:70px 0 0 0;
+	width:225px;
+	height:40px;
+	text-align:center;
+	float:left;
+	font-size:15px;
+	background: url(../../images/staff/signature.jpg) no-repeat 70px 2px;	
+}
+.signature a{ color:#0f75bc;}
+
+.remark{
+	margin:20px 0 0 18px;
+	padding:10px;
+	width:862px;
+	color:#666;
+	border: solid 1px #999;
+}
+.remark span{ color:#090; font-weight:bold; }
+
+.hotel_name{ font-size:14px; font-weight:bold; line-height:18px; }
+.inputbox{ border:solid 1px #CCC; width:140px;}
+.typeTex{ margin-right:5px; color:#666; display:block; width:45px; float:left; text-align:right;}
+.typeTex2{ margin-right:5px; color:#666; display:block; width:75px; float:left; text-align:right;}
+.typeTex3{ margin-right:5px; color:#666; display:block; width:70px; float:left; text-align:right;}
+.typeTex4{ margin-right:5px; color:#666; display:block; width:105px; float:left; text-align:right;}
+.adult{ margin-right:5px; color:#000; display:block; width:20px; float:left;}
+
+.note{ margin:5px 20px 0 0; text-align:right; color:#777;}
+.note span{ color:#090; font-weight:bold; }
+
+.policy{
+	margin:20px 0 0 30px;
+	width:853px;
+	color:#666;
+}
+.policy b{ color:#963; line-height:40px; }
+.policy b.season{ color:#963; line-height:20px; }
+.policy b.date{ color:#333; line-height:normal; font-weight:normal; }
+.policy b.head{
+	display:block;
+	font-size:15px;
+	float:left;
+	color:#3870b7;
+	line-height:20px;
+}
+.subPolicy{
+	margin:0px;
+	padding:0px;
+	width:838px;
+}
+.subPolicy li{ margin:0 0 0 30px; line-height:18px;}
+.cancellation{ margin:0px; padding:0px;}
+.check{ font-style:italic; color:#000;}
+
+.normal li{ height:45px;}
+.normal li span{ color:#F60;}

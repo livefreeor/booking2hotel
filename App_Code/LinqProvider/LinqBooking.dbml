@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hotels2thailandX(Online)" Class="LinqBookingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=BHTSERVER\SQLEXPRESS;Initial Catalog=hotels2thailandX(Online);User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="hotels2thailandX_ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_booking_child" Member="tbl_booking_childs">
+    <Type Name="tbl_booking_child">
+      <Column Name="child_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="booking_product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="child_name" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="child_age" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_booking_product_tbl_booking_child" Member="tbl_booking_product" ThisKey="booking_product_id" OtherKey="booking_product_id" Type="tbl_booking_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_confirm" Member="tbl_booking_confirms">
+    <Type Name="tbl_booking_confirm">
+      <Column Name="booking_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="confirm_cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_booking_confirm_category_tbl_booking_confirm" Member="tbl_booking_confirm_category" ThisKey="confirm_cat_id" OtherKey="confirm_cat_id" Type="tbl_booking_confirm_category" IsForeignKey="true" />
+      <Association Name="tbl_booking_tbl_booking_confirm" Member="tbl_booking" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_confirm_category" Member="tbl_booking_confirm_categories">
+    <Type Name="tbl_booking_confirm_category">
+      <Column Name="confirm_cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_booking_confirm_category_tbl_booking_confirm" Member="tbl_booking_confirms" ThisKey="confirm_cat_id" OtherKey="confirm_cat_id" Type="tbl_booking_confirm" />
+      <Association Name="tbl_booking_confirm_category_tbl_booking_product_confirm" Member="tbl_booking_product_confirms" ThisKey="confirm_cat_id" OtherKey="confirm_cat_id" Type="tbl_booking_product_confirm" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_phone" Member="tbl_booking_phones">
+    <Type Name="tbl_booking_phone">
+      <Column Name="phone_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="booking_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="code_country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="code_local" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="number_phone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_booking_tbl_booking_phone" Member="tbl_booking" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_source" Member="tbl_booking_sources">
+    <Type Name="tbl_booking_source">
+      <Column Name="source_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="booking_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="keyword_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="website_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="aff_site_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_booking_source_cat_tbl_booking_source" Member="tbl_booking_source_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_booking_source_cat" IsForeignKey="true" />
+      <Association Name="tbl_booking_tbl_booking_source" Member="tbl_booking" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_source_cat" Member="tbl_booking_source_cats">
+    <Type Name="tbl_booking_source_cat">
+      <Column Name="cat_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_booking_source_cat_tbl_booking_source" Member="tbl_booking_sources" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_booking_source" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_prefix_name" Member="tbl_prefix_names">
+    <Type Name="tbl_prefix_name">
+      <Column Name="prefix_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_prefix_name_tbl_customer" Member="tbl_customers" ThisKey="prefix_id" OtherKey="prefix_id" Type="tbl_customer" />
+      <Association Name="tbl_prefix_name_tbl_booking" Member="tbl_bookings" ThisKey="prefix_id" OtherKey="prefix_id" Type="tbl_booking" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_occupation" Member="tbl_occupations">
+    <Type Name="tbl_occupation">
+      <Column Name="occupation_id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_occupation_tbl_occupation_content" Member="tbl_occupation_contents" ThisKey="occupation_id" OtherKey="occupation_id" Type="tbl_occupation_content" />
+      <Association Name="tbl_occupation_tbl_customer" Member="tbl_customers" ThisKey="occupation_id" OtherKey="occupation_id" Type="tbl_customer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_occupation_content" Member="tbl_occupation_contents">
+    <Type Name="tbl_occupation_content">
+      <Column Name="content_id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="occupation_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_occupation_tbl_occupation_content" Member="tbl_occupation" ThisKey="occupation_id" OtherKey="occupation_id" Type="tbl_occupation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_customer" Member="tbl_customers">
+    <Type Name="tbl_customer">
+      <Column Name="cus_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="country_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="occupation_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="prefix_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="zip" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="date_birth" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="tbl_customer_tbl_customer_phone" Member="tbl_customer_phones" ThisKey="cus_id" OtherKey="cus_id" Type="tbl_customer_phone" />
+      <Association Name="tbl_occupation_tbl_customer" Member="tbl_occupation" ThisKey="occupation_id" OtherKey="occupation_id" Type="tbl_occupation" IsForeignKey="true" />
+      <Association Name="tbl_prefix_name_tbl_customer" Member="tbl_prefix_name" ThisKey="prefix_id" OtherKey="prefix_id" Type="tbl_prefix_name" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_customer_phone" Member="tbl_customer_phones">
+    <Type Name="tbl_customer_phone">
+      <Column Name="phone_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="cus_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="code_country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="code_local" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="number_phone" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_customer_tbl_customer_phone" Member="tbl_customer" ThisKey="cus_id" OtherKey="cus_id" Type="tbl_customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_product_confirm" Member="tbl_booking_product_confirms">
+    <Type Name="tbl_booking_product_confirm">
+      <Column Name="booking_product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="confirm_cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_booking_confirm_category_tbl_booking_product_confirm" Member="tbl_booking_confirm_category" ThisKey="confirm_cat_id" OtherKey="confirm_cat_id" Type="tbl_booking_confirm_category" IsForeignKey="true" />
+      <Association Name="tbl_booking_product_tbl_booking_product_confirm" Member="tbl_booking_product" ThisKey="booking_product_id" OtherKey="booking_product_id" Type="tbl_booking_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_activity" Member="tbl_booking_activities">
+    <Type Name="tbl_booking_activity">
+      <Column Name="activity_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="booking_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="booking_product_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="staff_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="tbl_booking_tbl_booking_activity" Member="tbl_booking" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_product" Member="tbl_booking_products">
+    <Type Name="tbl_booking_product">
+      <Column Name="booking_product_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="booking_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="num_adult" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="num_child" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="num_golfer" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="date_time_check_in" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_time_check_out" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_time_check_in_confirm" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="prepaid_date" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="tbl_booking_product_tbl_booking_child" Member="tbl_booking_childs" ThisKey="booking_product_id" OtherKey="booking_product_id" Type="tbl_booking_child" />
+      <Association Name="tbl_booking_product_tbl_booking_product_confirm" Member="tbl_booking_product_confirms" ThisKey="booking_product_id" OtherKey="booking_product_id" Type="tbl_booking_product_confirm" />
+      <Association Name="tbl_booking_product_tbl_booking_item" Member="tbl_booking_items" ThisKey="booking_product_id" OtherKey="booking_product_id" Type="tbl_booking_item" />
+      <Association Name="tbl_booking_tbl_booking_product" Member="tbl_booking" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking" IsForeignKey="true" />
+      <Association Name="tbl_status_tbl_booking_product" Member="tbl_status" ThisKey="status_id" OtherKey="status_id" Type="tbl_status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_payment_category" Member="tbl_booking_payment_categories">
+    <Type Name="tbl_booking_payment_category">
+      <Column Name="booking_payment_cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_booking_payment_category_tbl_booking_payment" Member="tbl_booking_payments" ThisKey="booking_payment_cat_id" OtherKey="booking_payment_cat_id" Type="tbl_booking_payment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_item_require_general" Member="tbl_booking_item_require_generals">
+    <Type Name="tbl_booking_item_require_general">
+      <Column Name="require_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="booking_item_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_item_require_spa" Member="tbl_booking_item_require_spas">
+    <Type Name="tbl_booking_item_require_spa">
+      <Column Name="require_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="booking_item_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="guest_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_item_require_health" Member="tbl_booking_item_require_healths">
+    <Type Name="tbl_booking_item_require_health">
+      <Column Name="require_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="booking_item_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="guest_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_item_require_hotel" Member="tbl_booking_item_require_hotels">
+    <Type Name="tbl_booking_item_require_hotel">
+      <Column Name="require_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="booking_item_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="type_smoking" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="type_bed" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="type_floor" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_currency" Member="tbl_currencies">
+    <Type Name="tbl_currency">
+      <Column Name="currency_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="prefix" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_currency_temp" Member="tbl_currency_temps">
+    <Type Name="tbl_currency_temp">
+      <Column Name="currency_log_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="currency_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="prefix" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_currency_log" Member="tbl_currency_logs">
+    <Type Name="tbl_currency_log">
+      <Column Name="currency_log_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_end" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_item" Member="tbl_booking_items">
+    <Type Name="tbl_booking_item">
+      <Column Name="booking_item_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="booking_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="booking_product_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="condition_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="condition_title" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="condition_detail" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="unit" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="price_supplier" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_display" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="promotion_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="promotion_title" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="promotion_detail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_booking_product_tbl_booking_item" Member="tbl_booking_product" ThisKey="booking_product_id" OtherKey="booking_product_id" Type="tbl_booking_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking" Member="tbl_bookings">
+    <Type Name="tbl_booking">
+      <Column Name="booking_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="country_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="status_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="status_affiliate_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="cus_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="aff_site_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prefix_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="name_full" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="flight_arrival_number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="flight_departure_number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="flight_arrival_time" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="flight_departure_time" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_modify" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="comment_affiliate" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="refer_ip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_booking_tbl_booking_confirm" Member="tbl_booking_confirms" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking_confirm" />
+      <Association Name="tbl_booking_tbl_booking_phone" Member="tbl_booking_phones" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking_phone" />
+      <Association Name="tbl_booking_tbl_booking_source" Member="tbl_booking_sources" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking_source" />
+      <Association Name="tbl_booking_tbl_booking_activity" Member="tbl_booking_activities" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking_activity" />
+      <Association Name="tbl_booking_tbl_booking_product" Member="tbl_booking_products" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking_product" />
+      <Association Name="tbl_booking_tbl_booking_payment" Member="tbl_booking_payments" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking_payment" />
+      <Association Name="tbl_prefix_name_tbl_booking" Member="tbl_prefix_name" ThisKey="prefix_id" OtherKey="prefix_id" Type="tbl_prefix_name" IsForeignKey="true" />
+      <Association Name="tbl_status_tbl_booking" Member="tbl_status" ThisKey="status_id" OtherKey="status_id" Type="tbl_status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_booking_payment" Member="tbl_booking_payments">
+    <Type Name="tbl_booking_payment">
+      <Column Name="booking_payment_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="booking_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="booking_payment_cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="gateway_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="settle_amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="date_payment" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="confirm_payment" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="confirm_settle" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Association Name="tbl_booking_payment_category_tbl_booking_payment" Member="tbl_booking_payment_category" ThisKey="booking_payment_cat_id" OtherKey="booking_payment_cat_id" Type="tbl_booking_payment_category" IsForeignKey="true" />
+      <Association Name="tbl_booking_tbl_booking_payment" Member="tbl_booking" ThisKey="booking_id" OtherKey="booking_id" Type="tbl_booking" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_status" Member="tbl_status">
+    <Type Name="tbl_status">
+      <Column Name="status_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="priority" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_status_tbl_booking_product" Member="tbl_booking_products" ThisKey="status_id" OtherKey="status_id" Type="tbl_booking_product" />
+      <Association Name="tbl_status_tbl_booking" Member="tbl_bookings" ThisKey="status_id" OtherKey="status_id" Type="tbl_booking" />
+    </Type>
+  </Table>
+</Database>

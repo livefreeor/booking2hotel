@@ -1,0 +1,384 @@
+﻿/*Payment Plan*/
+.payment_plan_insert
+{
+    margin:0px;
+     padding:0px;
+}
+.payment_plan_insert table
+{
+    margin:0px;
+     padding:0px;
+}
+.payment_plan_insert table tr td
+{
+    margin:0px;
+     padding:0px;
+     line-height:0px;
+}
+/*================= ANNOUNCEMENT =====================*/
+.product_announcement_left
+{
+    margin:0px;
+    padding:10px;
+    float:left;
+    width:300px;
+    border-right:1px solid #e0e0e0;
+}
+.product_announcement_right
+{
+     margin:0px;
+     padding:0px 0px 0px 15px;
+     float:left;
+     position:relative;
+}
+.product_announcement_left_Gv_item
+{
+    margin:0px;
+    padding:0px 0px 6px 0px;
+    text-align:left;
+    border-bottom:1px solid #eeeee1;
+}
+.product_announcement_left_Gv_item_dis
+{
+     color:#b3b3b3;
+}
+
+/*background-color:#eceff5;
+	filter:alpha(opacity=60);
+	opacity:0.7;*/
+	
+/*====================== PRODUCT POLICY ===============================*/
+.product_policy_information
+{
+    margin:0px;
+    padding:0px;
+}
+.product_policy_information table 
+{
+    margin:0px;
+     padding:0px;
+}
+.product_policy_information table tr td
+{
+     margin:0px;
+     padding:0px;
+}
+/*====================== PRODUCT Location & Style ===============================*/
+#product_location_style
+{
+    margin:0px ;
+    padding:0px;
+    width:100%;
+}
+#product_location_style h4
+{
+     margin:0px 0px 10px 0px;
+     font-size:12px;
+}
+#product_location
+{
+    float:left;
+    width:50%;
+}
+#product_location ul
+{
+    margin:0px ;
+    padding:0px 0px 0px 20px;
+    width:100%;
+}
+#product_location ul li
+{
+    margin:0px ;
+    padding:0px 0px 0px 0px;
+    list-style:none;
+    height:15px;
+    
+    list-style-image:url(../images/greenbt.png);
+    
+}
+
+#product_style
+{
+    float:left;
+    width:50%;
+}
+
+#product_style ul
+{
+    margin:0px ;
+    padding:0px 0px 0px 20px;
+    width:100%;
+}
+#product_style ul li
+{
+    margin:0px ;
+    padding:0px 0px 0px 0px;
+    list-style:none;
+    height:15px;
+    
+    list-style-image:url(../images/greenbt.png);
+    
+}
+.checkBox_list
+{
+    width:100%;
+   margin:0px;
+   padding:10px;
+   border-left:1px solid #555555;
+    border-right:1px solid #555555;
+    
+}
+.checkBox_list tr td
+{
+    margin:0px;
+    padding:0px;
+    font-size:11px;
+}
+
+#Landmark_drop_insert
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    
+}
+
+#landmark_drop_cat
+{
+    float:left;
+    width:210px;
+}
+#landmark_drop
+{
+    float:left;
+    width:250px;
+}
+
+
+
+#Landmark_drop_List_manage
+{
+    margin:0px;
+    padding:0px;
+}
+
+#landmark_list
+{
+    margin:0px;
+    padding:5px;
+     width:80%;
+}
+.landmark_list_item
+{
+    margin:3px 0px 0px 0px;
+    padding:5px;
+    border:1px solid #d8dfea;
+     background-color:#eceff5;
+}
+.landmark_title 
+{
+    margin:0px;
+    padding:0px;
+    font-size:11px;
+    color:#3f5d9d;
+    font-weight:bold;
+    height:20px;
+}
+.landmark_list_item p a
+{
+    float:right;
+    font-size:10px;
+    font-weight:normal;
+}
+.landmark_list_item  span
+{
+    
+    font-size:11px;
+    font-weight:normal;
+    color:#333333;
+}
+
+.landmark_item_td
+{
+    margin:0px;
+    padding:0px;
+    float:left;
+    width:150px;
+}
+.landmark_item_td p
+{
+    margin:0px;
+    padding:0px;
+}
+
+.fac_itemlist
+{
+    margin:0px;
+    padding:0px;
+}
+.fac_itemlist_edit
+{
+    margin:0px;
+ }
+
+.fac_itemlist_edit_body
+{
+    margin:0px;
+    padding:20px 10px 10px 10px;
+     width:370px;
+    
+    background-color:#ffffff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    
+     -webkit-box-shadow: 0px 0px 20px #000;
+    -moz-box-shadow: 0px 0px 20px #000;
+    box-shadow: 0px 0px 20px #000;
+
+
+}
+.fac_itemlist_edit_foot
+{
+    margin:0px;
+    
+}
+#facility_textinput a
+{
+    float : right;
+}
+
+
+
+.formbox_body
+{
+   margin:0px;
+   padding:10px;
+   border-left:1px solid #555555;
+   border-right:1px solid #555555;
+}
+.formbox
+{
+    margin:0px;
+    padding:0px;
+}
+.formbox_head
+{
+    background-color:#6d84b4;
+    color:#ffffff;
+    margin:0px;
+    padding:10px;
+    
+    font-weight:bold;
+    font-size:12px;
+    border-left:1px solid #3b5998;
+    border-right:1px solid #3b5998;
+    border-top:1px solid #3b5998;
+}
+.formbox_buttom
+{
+    margin:0px;
+   padding:10px;
+   border-top:1px solid #cccccc;
+    border-left:1px solid #555555;
+    border-right:1px solid #555555;
+    border-bottom:1px solid #555555;
+    
+}
+
+.box_alert_head
+{
+    background-color:#6d84b4;
+    color:#ffffff;
+    margin:0px;
+    padding:10px;
+    
+     font-weight:bold;
+     font-size:12px;
+    border-left:1px solid #3b5998;
+    border-right:1px solid #3b5998;
+    border-top:1px solid #3b5998;
+}
+.box_alert_body
+{
+   margin:0px;
+   padding:10px;
+   border-left:1px solid #555555;
+   border-right:1px solid #555555;
+}
+.box_alert_bottom
+{
+     margin:0px;
+   padding:10px;
+   border-top:1px solid #cccccc;
+    border-left:1px solid #555555;
+    border-right:1px solid #555555;
+    border-bottom:1px solid #555555;
+}
+
+
+#darkman_pop
+{
+   display: none; /*--hidden by default--*/
+	background: #fff;
+	padding: 0px;
+	
+	float: left;
+	font-size: 1.2em;
+	position:absolute;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	 max-height:500px;
+	 overflow:auto;
+	
+}
+#fade { 
+	
+	display: none; 
+	background: #000;
+	padding: 20px;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	
+	/*--CSS3 Rounded Corners--*/
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	
+	
+	/*filter:alpha(opacity=80);
+	opacity:0.6;*/
+	
+}
+#fade2 { 
+	
+	/*display: none; 
+	background: #000;
+	width: 100%; height: 100%;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	top: 0; left: 0;
+	z-index: 99999;*/
+	
+	display: none;
+  background: #000;
+  position: fixed; left: 0; top: 0;
+  width: 100%; height: 100%;
+  opacity: .50;
+  z-index: 9999;
+	
+	
+	/*--CSS3 Rounded Corners--*/
+	/*-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;*/
+	
+	
+	/*filter:alpha(opacity=80);
+	opacity:0.6;
+	
+}

@@ -1,0 +1,44 @@
+﻿/*Supplement_rate_*/
+.option_supplement_add
+{
+    margin:0px;
+     padding:5px;
+      background:#eeeee1;
+      border:1px solid #b3b3b3;
+}
+.option_supplement_add table
+{
+     margin:0px;
+     padding:0px;
+}
+.option_supplement_add table tr td
+{
+     margin:0px;
+     padding:0px;
+}
+.titleform
+{
+    font-size:11px;
+     margin:0px;
+     padding:0px;
+     color:#3f5d9d;
+     font-weight:bold;
+}
+/*--------------------------------*/
+
+/*WeekDay Rate*/
+.option_week_day_add_rate
+{
+     margin:0px;
+     padding:0px;
+}
+.option_week_day_add_rate table 
+{
+    margin:0px;
+    padding:0px;
+}
+.option_week_day_add_rate table tr td
+{
+    margin:0px;
+    padding:0px;
+}

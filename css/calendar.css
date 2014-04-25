@@ -1,0 +1,38 @@
+.main_calendar_div
+{
+    margin:0px;
+    padding:0px;
+    width:500px;
+    text-align:center;
+}
+.main_calendar_div table{margin:0px;padding:0px;}
+.main_calendar_div table tr td{margin:0px;padding:0px;}
+.main_calendar
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    border: 1px solid #eeeee1;
+}
+
+.calendar_drop_mouth
+{
+}
+.calendar_drop_year
+{
+}
+.calendar_month_previous
+{
+}
+.calendar_month_current
+{
+}
+.calendar_month_next
+{
+}
+.calendar_date_area
+{
+}
+.calendar_today
+{
+}

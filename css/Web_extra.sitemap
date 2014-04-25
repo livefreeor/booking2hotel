@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <!--Root -Main Site Map-->
+    <siteMapNode url="~/extranet/mainextra.aspx" title="Dash Board"  description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,supid">
+        
+        <!--Module Staff Manage-->
+        <siteMapNode url="~/extranet/staffmanage/stafflist.aspx" title="Manage Staff" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,supid" />
+            
+            <siteMapNode url="~/extranet/staffmanage/addnewstaff.aspx" title="Add New Staff"  description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,supid" />
+            <siteMapNode url="~/extranet/staffmanage/staffmanage.aspx" title="Staff Manage"  description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,supid" />
+
+        <!--Module Rate Control-->
+        <siteMapNode  url="~/extranet/ratecontrol/load_tariff.aspx" title="Load Tariff" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,supid" />
+
+
+        <siteMapNode  url="~/extranet/ratecontrol/condition_control.aspx" title="Condition Control" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,supid">
+
+        <siteMapNode url="~/extranet/ratecontrol/condition_manage.aspx" title="Condition Manage" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,cdid,supid" />
+
+        </siteMapNode>
+        
+        <siteMapNode url="~/extranet/ratecontrol/rate_control.aspx" title="Rate Control" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,cdid,supid" />
+        <siteMapNode url="~/extranet/ratecontrol/extra_bed.aspx" title="Extra Bed" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,cdid,supid" />
+        <siteMapNode url="~/extranet/ratecontrol/gala_dinner.aspx" title="Gala Dinner" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,cdid,supid" />
+        
+        <siteMapNode url="~/extranet/ratecontrol/holidays_control.aspx" title="Public Holiday" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,cdid,supid" />
+        
+
+
+        <!--Module Allot Control-->
+        <siteMapNode url="~/extranet/allotment/allotment_control.aspx" title="Add New Allotment" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,cdid,supid" />
+        <siteMapNode url="~/extranet/allotment/allotment_edit.aspx" title="Edit Allotment" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,cdid,supid" />
+        
+
+        <!--Module Promotion Control-->
+        <siteMapNode url="~/extranet/promotion/promotion.aspx" title="Promotion List" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,supid" />
+            
+        <siteMapNode url="~/extranet/promotion/promotion_manage.aspx" title="Manage Promotion" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,cdid,supid" />
+
+        <!--Module AcknowLedge Control-->
+        <siteMapNode url="~/extranet/ordercenter/acknowledge_control.aspx" title="Acknowledge Control" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="pid,supid">
+            
+        </siteMapNode>
+        
+         </siteMapNode>
+        
+    
+    <!--load_tariff.aspx-->
+
+</siteMap>

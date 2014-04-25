@@ -1,0 +1,1176 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hotels2thailandX(Online)" Class="LinqProductionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=BHTSERVER\SQLEXPRESS;Initial Catalog=hotels2thailandX(Online);User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="hotels2thailandX_Online_ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_allotment" Member="tbl_allotments">
+    <Type Name="tbl_allotment">
+      <Column Name="allotment_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_allotment" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_cut_off" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_allotment_tbl_allotment_activity" Member="tbl_allotment_activities" ThisKey="allotment_id" OtherKey="allotment_id" Type="tbl_allotment_activity" />
+      <Association Name="tbl_product_option_tbl_allotment" Member="tbl_product_option" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_allotment_activity" Member="tbl_allotment_activities">
+    <Type Name="tbl_allotment_activity">
+      <Column Name="activity_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="allotment_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="date_activity" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_allotment_tbl_allotment_activity" Member="tbl_allotment" ThisKey="allotment_id" OtherKey="allotment_id" Type="tbl_allotment" IsForeignKey="true" />
+      <Association Name="tbl_allotment_activity_cat_tbl_allotment_activity" Member="tbl_allotment_activity_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_allotment_activity_cat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_allotment_activity_cat" Member="tbl_allotment_activity_cats">
+    <Type Name="tbl_allotment_activity_cat">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_allotment_activity_cat_tbl_allotment_activity" Member="tbl_allotment_activities" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_allotment_activity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_annoucement" Member="tbl_annoucements">
+    <Type Name="tbl_annoucement">
+      <Column Name="annoucement_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_end" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_annoucement_tbl_announcement_content" Member="tbl_announcement_contents" ThisKey="annoucement_id" OtherKey="annoucement_id" Type="tbl_announcement_content" />
+      <Association Name="tbl_product_tbl_annoucement" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_announcement_content" Member="tbl_announcement_contents">
+    <Type Name="tbl_announcement_content">
+      <Column Name="annoucement_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_annoucement_tbl_announcement_content" Member="tbl_annoucement" ThisKey="annoucement_id" OtherKey="annoucement_id" Type="tbl_annoucement" IsForeignKey="true" />
+      <Association Name="tbl_lang_tbl_announcement_content" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_continent" Member="tbl_continents">
+    <Type Name="tbl_continent">
+      <Column Name="continent_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_continent_tbl_country" Member="tbl_countries" ThisKey="continent_id" OtherKey="continent_id" Type="tbl_country" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_destination" Member="tbl_destinations">
+    <Type Name="tbl_destination">
+      <Column Name="destination_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="country_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="group_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="folder_destination" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tbl_destination_tbl_destination_name" Member="tbl_destination_names" ThisKey="destination_id" OtherKey="destination_id" Type="tbl_destination_name" />
+      <Association Name="tbl_destination_tbl_landmark" Member="tbl_landmarks" ThisKey="destination_id" OtherKey="destination_id" Type="tbl_landmark" />
+      <Association Name="tbl_destination_tbl_location" Member="tbl_locations" ThisKey="destination_id" OtherKey="destination_id" Type="tbl_location" />
+      <Association Name="tbl_destination_tbl_product" Member="tbl_products" ThisKey="destination_id" OtherKey="destination_id" Type="tbl_product" />
+      <Association Name="tbl_country_tbl_destination" Member="tbl_country" ThisKey="country_id" OtherKey="country_id" Type="tbl_country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_destination_name" Member="tbl_destination_names">
+    <Type Name="tbl_destination_name">
+      <Column Name="destination_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="file_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_destination_tbl_destination_name" Member="tbl_destination" ThisKey="destination_id" OtherKey="destination_id" Type="tbl_destination" IsForeignKey="true" />
+      <Association Name="tbl_lang_tbl_destination_name" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_facility_product" Member="tbl_facility_products">
+    <Type Name="tbl_facility_product">
+      <Column Name="fac_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lang_tbl_facility_product" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_tbl_facility_product" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_landmark" Member="tbl_landmarks">
+    <Type Name="tbl_landmark">
+      <Column Name="landmark_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="landmark_cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="destination_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="coor_lat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coor_lon" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_landmark_tbl_landmark_name" Member="tbl_landmark_names" ThisKey="landmark_id" OtherKey="landmark_id" Type="tbl_landmark_name" />
+      <Association Name="tbl_landmark_tbl_product_landmark" Member="tbl_product_landmarks" ThisKey="landmark_id" OtherKey="landmark_id" Type="tbl_product_landmark" />
+      <Association Name="tbl_destination_tbl_landmark" Member="tbl_destination" ThisKey="destination_id" OtherKey="destination_id" Type="tbl_destination" IsForeignKey="true" />
+      <Association Name="tbl_landmark_category_tbl_landmark" Member="tbl_landmark_category" ThisKey="landmark_cat_id" OtherKey="landmark_cat_id" Type="tbl_landmark_category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_landmark_category" Member="tbl_landmark_categories">
+    <Type Name="tbl_landmark_category">
+      <Column Name="landmark_cat_id" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_landmark_category_tbl_landmark" Member="tbl_landmarks" ThisKey="landmark_cat_id" OtherKey="landmark_cat_id" Type="tbl_landmark" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_landmark_name" Member="tbl_landmark_names">
+    <Type Name="tbl_landmark_name">
+      <Column Name="landmark_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbl_landmark_tbl_landmark_name" Member="tbl_landmark" ThisKey="landmark_id" OtherKey="landmark_id" Type="tbl_landmark" IsForeignKey="true" />
+      <Association Name="tbl_lang_tbl_landmark_name" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lang" Member="tbl_langs">
+    <Type Name="tbl_lang">
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lang_tbl_announcement_content" Member="tbl_announcement_contents" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_announcement_content" />
+      <Association Name="tbl_lang_tbl_destination_name" Member="tbl_destination_names" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_destination_name" />
+      <Association Name="tbl_lang_tbl_facility_product" Member="tbl_facility_products" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_facility_product" />
+      <Association Name="tbl_lang_tbl_landmark_name" Member="tbl_landmark_names" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_landmark_name" />
+      <Association Name="tbl_lang_tbl_location_name" Member="tbl_location_names" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_location_name" />
+      <Association Name="tbl_lang_tbl_product_construction_content" Member="tbl_product_construction_contents" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_product_construction_content" />
+      <Association Name="tbl_lang_tbl_product_keyword" Member="tbl_product_keywords" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_product_keyword" />
+      <Association Name="tbl_lang_tbl_product_option_content" Member="tbl_product_option_contents" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_product_option_content" />
+      <Association Name="tbl_lang_tbl_product_option_facility" Member="tbl_product_option_facilities" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_product_option_facility" />
+      <Association Name="tbl_lang_tbl_product_pic_content" Member="tbl_product_pic_contents" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_product_pic_content" />
+      <Association Name="tbl_lang_tbl_product_policy_content" Member="tbl_product_policy_contents" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_product_policy_content" />
+      <Association Name="tbl_lang_tbl_product_policy_type_name" Member="tbl_product_policy_type_names" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_product_policy_type_name" />
+      <Association Name="tbl_lang_tbl_product_type_name" Member="tbl_product_type_names" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_product_type_name" />
+      <Association Name="tbl_lang_tbl_promotion_content" Member="tbl_promotion_contents" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_promotion_content" />
+      <Association Name="tbl_lang_tbl_transport_cat_content" Member="tbl_transport_cat_contents" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_transport_cat_content" />
+      <Association Name="tbl_lang_tbl_product_itinerary_content" Member="tbl_product_itinerary_contents" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_product_itinerary_content" />
+      <Association Name="tbl_lang_tbl_product_content" Member="tbl_product_contents" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_product_content" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_location" Member="tbl_locations">
+    <Type Name="tbl_location">
+      <Column Name="location_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="destination_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="folder_location" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tbl_location_tbl_location_name" Member="tbl_location_names" ThisKey="location_id" OtherKey="location_id" Type="tbl_location_name" />
+      <Association Name="tbl_location_tbl_product_location" Member="tbl_product_locations" ThisKey="location_id" OtherKey="location_id" Type="tbl_product_location" />
+      <Association Name="tbl_destination_tbl_location" Member="tbl_destination" ThisKey="destination_id" OtherKey="destination_id" Type="tbl_destination" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_location_name" Member="tbl_location_names">
+    <Type Name="tbl_location_name">
+      <Column Name="location_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="file_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lang_tbl_location_name" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_location_tbl_location_name" Member="tbl_location" ThisKey="location_id" OtherKey="location_id" Type="tbl_location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product" Member="tbl_products">
+    <Type Name="tbl_product">
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="destination_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="supplier_price" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="group_nearby_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="status_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="payment_type_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="product_code" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="star" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="coor_lat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coor_long" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="is_internet_free" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="is_internet_have" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="point_popular" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="flag_feature" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_tbl_annoucement" Member="tbl_annoucements" ThisKey="product_id" OtherKey="product_id" Type="tbl_annoucement" />
+      <Association Name="tbl_product_tbl_facility_product" Member="tbl_facility_products" ThisKey="product_id" OtherKey="product_id" Type="tbl_facility_product" />
+      <Association Name="tbl_product_tbl_product_child" Member="tbl_product_childs" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_child" />
+      <Association Name="tbl_product_tbl_product_construction" Member="tbl_product_constructions" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_construction" />
+      <Association Name="tbl_product_tbl_product_keyword" Member="tbl_product_keywords" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_keyword" />
+      <Association Name="tbl_product_tbl_product_landmark" Member="tbl_product_landmarks" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_landmark" />
+      <Association Name="tbl_product_tbl_product_location" Member="tbl_product_locations" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_location" />
+      <Association Name="tbl_product_tbl_product_option" Member="tbl_product_options" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_option" />
+      <Association Name="tbl_product_tbl_product_payment_plan" Member="tbl_product_payment_plans" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_payment_plan" />
+      <Association Name="tbl_product_tbl_product_period" Member="tbl_product_periods" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_period" />
+      <Association Name="tbl_product_tbl_product_pic" Member="tbl_product_pics" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_pic" />
+      <Association Name="tbl_product_tbl_product_relate" Member="tbl_product_relates" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_relate" />
+      <Association Name="tbl_product_tbl_product_relate1" Member="tbl_product_relates1" ThisKey="product_id" OtherKey="product_relate_id" Type="tbl_product_relate" />
+      <Association Name="tbl_product_tbl_product_supplier" Member="tbl_product_suppliers" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_supplier" />
+      <Association Name="tbl_product_tbl_review_day_trip" Member="tbl_review_day_trips" ThisKey="product_id" OtherKey="product_id" Type="tbl_review_day_trip" />
+      <Association Name="tbl_product_tbl_review_golf" Member="tbl_review_golfs" ThisKey="product_id" OtherKey="product_id" Type="tbl_review_golf" />
+      <Association Name="tbl_product_tbl_review_health" Member="tbl_review_healths" ThisKey="product_id" OtherKey="product_id" Type="tbl_review_health" />
+      <Association Name="tbl_product_tbl_review_hotel" Member="tbl_review_hotels" ThisKey="product_id" OtherKey="product_id" Type="tbl_review_hotel" />
+      <Association Name="tbl_product_tbl_review_show_event" Member="tbl_review_show_events" ThisKey="product_id" OtherKey="product_id" Type="tbl_review_show_event" />
+      <Association Name="tbl_product_tbl_review_spa" Member="tbl_review_spas" ThisKey="product_id" OtherKey="product_id" Type="tbl_review_spa" />
+      <Association Name="tbl_product_tbl_review_water_activity" Member="tbl_review_water_activities" ThisKey="product_id" OtherKey="product_id" Type="tbl_review_water_activity" />
+      <Association Name="tbl_product_tbl_type_product" Member="tbl_type_products" ThisKey="product_id" OtherKey="product_id" Type="tbl_type_product" />
+      <Association Name="tbl_product_tbl_product_policy" Member="tbl_product_policies" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_policy" />
+      <Association Name="tbl_product_tbl_product_minimum_stay" Member="tbl_product_minimum_stays" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_minimum_stay" />
+      <Association Name="tbl_product_tbl_product_itinerary" Member="tbl_product_itineraries" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_itinerary" />
+      <Association Name="tbl_product_tbl_product_content" Member="tbl_product_contents" ThisKey="product_id" OtherKey="product_id" Type="tbl_product_content" />
+      <Association Name="tbl_destination_tbl_product" Member="tbl_destination" ThisKey="destination_id" OtherKey="destination_id" Type="tbl_destination" IsForeignKey="true" />
+      <Association Name="tbl_product_category_tbl_product" Member="tbl_product_category" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_category" IsForeignKey="true" />
+      <Association Name="tbl_product_nearby_group_tbl_product" Member="tbl_product_nearby_group" ThisKey="group_nearby_id" OtherKey="group_nearby_id" Type="tbl_product_nearby_group" IsForeignKey="true" />
+      <Association Name="tbl_product_payment_type_tbl_product" Member="tbl_product_payment_type" ThisKey="payment_type_id" OtherKey="payment_type_id" Type="tbl_product_payment_type" IsForeignKey="true" />
+      <Association Name="tbl_status_tbl_product" Member="tbl_status" ThisKey="status_id" OtherKey="status_id" Type="tbl_status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_category" Member="tbl_product_categories">
+    <Type Name="tbl_product_category">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="folder_cat" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tbl_product_category_tbl_product" Member="tbl_products" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product" />
+      <Association Name="tbl_product_category_tbl_product_type" Member="tbl_product_types" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_type" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_child" Member="tbl_product_childs">
+    <Type Name="tbl_product_child">
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="age" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_tbl_product_child" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_product_child_cat_tbl_product_child" Member="tbl_product_child_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_child_cat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_child_cat" Member="tbl_product_child_cats">
+    <Type Name="tbl_product_child_cat">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_product_child_cat_tbl_product_child" Member="tbl_product_childs" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_child" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_construction" Member="tbl_product_constructions">
+    <Type Name="tbl_product_construction">
+      <Column Name="construction_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="time_open" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="time_close" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_construction_tbl_product_construction_content" Member="tbl_product_construction_contents" ThisKey="construction_id" OtherKey="construction_id" Type="tbl_product_construction_content" />
+      <Association Name="tbl_product_construction_tbl_product_pic" Member="tbl_product_pics" ThisKey="construction_id" OtherKey="construction_id" Type="tbl_product_pic" />
+      <Association Name="tbl_product_tbl_product_construction" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_product_construction_cat_tbl_product_construction" Member="tbl_product_construction_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_construction_cat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_construction_cat" Member="tbl_product_construction_cats">
+    <Type Name="tbl_product_construction_cat">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_construction_cat_tbl_product_construction" Member="tbl_product_constructions" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_construction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_construction_content" Member="tbl_product_construction_contents">
+    <Type Name="tbl_product_construction_content">
+      <Column Name="construction_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbl_lang_tbl_product_construction_content" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_construction_tbl_product_construction_content" Member="tbl_product_construction" ThisKey="construction_id" OtherKey="construction_id" Type="tbl_product_construction" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_keyword" Member="tbl_product_keywords">
+    <Type Name="tbl_product_keyword">
+      <Column Name="keyword_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="keyword" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lang_tbl_product_keyword" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_tbl_product_keyword" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_landmark" Member="tbl_product_landmarks">
+    <Type Name="tbl_product_landmark">
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="landmark_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="transport_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="transport_time" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="transport_distance" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_landmark_tbl_product_landmark" Member="tbl_landmark" ThisKey="landmark_id" OtherKey="landmark_id" Type="tbl_landmark" IsForeignKey="true" />
+      <Association Name="tbl_product_tbl_product_landmark" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_transport_cat_tbl_product_landmark" Member="tbl_transport_cat" ThisKey="transport_id" OtherKey="transport_id" Type="tbl_transport_cat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_location" Member="tbl_product_locations">
+    <Type Name="tbl_product_location">
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="location_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_location_tbl_product_location" Member="tbl_location" ThisKey="location_id" OtherKey="location_id" Type="tbl_location" IsForeignKey="true" />
+      <Association Name="tbl_product_tbl_product_location" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_nearby_group" Member="tbl_product_nearby_groups">
+    <Type Name="tbl_product_nearby_group">
+      <Column Name="group_nearby_id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_nearby_group_tbl_product" Member="tbl_products" ThisKey="group_nearby_id" OtherKey="group_nearby_id" Type="tbl_product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option" Member="tbl_product_options">
+    <Type Name="tbl_product_option">
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="size" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="priority" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsShow" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="time_start" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="time_end" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="time_pickup" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="time_sent" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_option_tbl_allotment" Member="tbl_allotments" ThisKey="option_id" OtherKey="option_id" Type="tbl_allotment" />
+      <Association Name="tbl_product_option_tbl_product_option_content" Member="tbl_product_option_contents" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option_content" />
+      <Association Name="tbl_product_option_tbl_product_option_facility" Member="tbl_product_option_facilities" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option_facility" />
+      <Association Name="tbl_product_option_tbl_product_option_package" Member="tbl_product_option_packages" ThisKey="option_id" OtherKey="option_id_option" Type="tbl_product_option_package" />
+      <Association Name="tbl_product_option_tbl_product_option_package1" Member="tbl_product_option_packages1" ThisKey="option_id" OtherKey="option_id_main" Type="tbl_product_option_package" />
+      <Association Name="tbl_product_option_tbl_product_option_price_last_minute_condition" Member="tbl_product_option_price_last_minute_conditions" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option_price_last_minute_condition" />
+      <Association Name="tbl_product_option_tbl_product_option_supplier" Member="tbl_product_option_suppliers" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option_supplier" />
+      <Association Name="tbl_product_option_tbl_product_option_condition" Member="tbl_product_option_conditions" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option_condition" />
+      <Association Name="tbl_product_option_tbl_product_supplement_date" Member="tbl_product_supplement_dates" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_supplement_date" />
+      <Association Name="tbl_product_option_tbl_product_option_supplement_day" Member="tbl_product_option_supplement_days" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option_supplement_day" />
+      <Association Name="tbl_product_option_tbl_product_option_gala" Member="tbl_product_option_galas" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option_gala" />
+      <Association Name="tbl_product_tbl_product_option" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_product_option_cat_tbl_product_option" Member="tbl_product_option_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_option_cat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_cat" Member="tbl_product_option_cats">
+    <Type Name="tbl_product_option_cat">
+      <Column Name="cat_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_option_cat_tbl_product_option" Member="tbl_product_options" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_option" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_condition_policy" Member="tbl_product_option_condition_policies">
+    <Type Name="tbl_product_option_condition_policy">
+      <Column Name="condition_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="policy_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_product_policy_tbl_product_option_condition_policy" Member="tbl_product_policy" ThisKey="policy_id" OtherKey="policy_id" Type="tbl_product_policy" IsForeignKey="true" />
+      <Association Name="tbl_product_option_condition_tbl_product_option_condition_policy" Member="tbl_product_option_condition" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_product_option_condition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_condition_price" Member="tbl_product_option_condition_prices">
+    <Type Name="tbl_product_option_condition_price">
+      <Column Name="condition_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="period_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rate" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="rate_own" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="rate_rack" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_period_tbl_product_option_condition_price" Member="tbl_product_period" ThisKey="period_id" OtherKey="period_id" Type="tbl_product_period" IsForeignKey="true" />
+      <Association Name="tbl_product_option_condition_tbl_product_option_condition_price" Member="tbl_product_option_condition" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_product_option_condition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_content" Member="tbl_product_option_contents">
+    <Type Name="tbl_product_option_content">
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="title_secound" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbl_lang_tbl_product_option_content" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_option_tbl_product_option_content" Member="tbl_product_option" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_facility" Member="tbl_product_option_facilities">
+    <Type Name="tbl_product_option_facility">
+      <Column Name="fac_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lang_tbl_product_option_facility" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_option_tbl_product_option_facility" Member="tbl_product_option" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_package" Member="tbl_product_option_packages">
+    <Type Name="tbl_product_option_package">
+      <Column Name="option_id_main" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="option_id_option" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_option_tbl_product_option_package" Member="tbl_product_option" ThisKey="option_id_option" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+      <Association Name="tbl_product_option_tbl_product_option_package1" Member="tbl_product_option1" ThisKey="option_id_main" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_price_last_minute" Member="tbl_product_option_price_last_minutes">
+    <Type Name="tbl_product_option_price_last_minute">
+      <Column Name="condition_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_price" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_comment" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_option_price_last_minute_condition_tbl_product_option_price_last_minute" Member="tbl_product_option_price_last_minute_condition" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_product_option_price_last_minute_condition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_price_last_minute_condition" Member="tbl_product_option_price_last_minute_conditions">
+    <Type Name="tbl_product_option_price_last_minute_condition">
+      <Column Name="condition_id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_option_price_last_minute_condition_tbl_product_option_price_last_minute" Member="tbl_product_option_price_last_minutes" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_product_option_price_last_minute" />
+      <Association Name="tbl_product_option_price_last_minute_condition_tbl_promotion_condition_lastminute" Member="tbl_promotion_condition_lastminutes" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_promotion_condition_lastminute" />
+      <Association Name="tbl_product_option_tbl_product_option_price_last_minute_condition" Member="tbl_product_option" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_supplier" Member="tbl_product_option_suppliers">
+    <Type Name="tbl_product_option_supplier">
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_product_option_tbl_product_option_supplier" Member="tbl_product_option" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_payment_plan" Member="tbl_product_payment_plans">
+    <Type Name="tbl_product_payment_plan">
+      <Column Name="payment_plan_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="day_advance" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_end" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="day_payment" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="deposit_percent" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="deposit_room_night" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_tbl_product_payment_plan" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_payment_type" Member="tbl_product_payment_types">
+    <Type Name="tbl_product_payment_type">
+      <Column Name="payment_type_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_payment_type_tbl_product" Member="tbl_products" ThisKey="payment_type_id" OtherKey="payment_type_id" Type="tbl_product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_period" Member="tbl_product_periods">
+    <Type Name="tbl_product_period">
+      <Column Name="period_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_end" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_period_tbl_product_option_condition_price" Member="tbl_product_option_condition_prices" ThisKey="period_id" OtherKey="period_id" Type="tbl_product_option_condition_price" />
+      <Association Name="tbl_product_period_tbl_price_suplement_quantity" Member="tbl_price_suplement_quantities" ThisKey="period_id" OtherKey="period_id" Type="tbl_price_suplement_quantity" />
+      <Association Name="tbl_product_tbl_product_period" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_pic" Member="tbl_product_pics">
+    <Type Name="tbl_product_pic">
+      <Column Name="pic_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="option_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="construction_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="itinerary_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pic_code" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="priority" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_pic_tbl_product_pic_content" Member="tbl_product_pic_contents" ThisKey="pic_id" OtherKey="pic_id" Type="tbl_product_pic_content" />
+      <Association Name="tbl_product_tbl_product_pic" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_product_construction_tbl_product_pic" Member="tbl_product_construction" ThisKey="construction_id" OtherKey="construction_id" Type="tbl_product_construction" IsForeignKey="true" />
+      <Association Name="tbl_product_pic_cat_tbl_product_pic" Member="tbl_product_pic_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_pic_cat" IsForeignKey="true" />
+      <Association Name="tbl_product_pic_type_tbl_product_pic" Member="tbl_product_pic_type" ThisKey="type_id" OtherKey="type_id" Type="tbl_product_pic_type" IsForeignKey="true" />
+      <Association Name="tbl_product_itinerary_tbl_product_pic" Member="tbl_product_itinerary" ThisKey="itinerary_id" OtherKey="itinerary_id" Type="tbl_product_itinerary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_pic_cat" Member="tbl_product_pic_cats">
+    <Type Name="tbl_product_pic_cat">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_pic_cat_tbl_product_pic" Member="tbl_product_pics" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_pic" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_pic_content" Member="tbl_product_pic_contents">
+    <Type Name="tbl_product_pic_content">
+      <Column Name="pic_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Association Name="tbl_lang_tbl_product_pic_content" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_pic_tbl_product_pic_content" Member="tbl_product_pic" ThisKey="pic_id" OtherKey="pic_id" Type="tbl_product_pic" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_pic_type" Member="tbl_product_pic_types">
+    <Type Name="tbl_product_pic_type">
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_pic_type_tbl_product_pic" Member="tbl_product_pics" ThisKey="type_id" OtherKey="type_id" Type="tbl_product_pic" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_policy_cancel" Member="tbl_product_policy_cancels">
+    <Type Name="tbl_product_policy_cancel">
+      <Column Name="cancel_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="policy_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="day_cancel" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="charge_percent_hotel" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="charge_percent_bht" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="charge_room_hotel" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="charge_room_bht" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_policy_tbl_product_policy_cancel" Member="tbl_product_policy" ThisKey="policy_id" OtherKey="policy_id" Type="tbl_product_policy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_policy_cat" Member="tbl_product_policy_cats">
+    <Type Name="tbl_product_policy_cat">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_policy_cat_tbl_product_policy" Member="tbl_product_policies" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_policy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_policy_content" Member="tbl_product_policy_contents">
+    <Type Name="tbl_product_policy_content">
+      <Column Name="policy_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Association Name="tbl_lang_tbl_product_policy_content" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_policy_tbl_product_policy_content" Member="tbl_product_policy" ThisKey="policy_id" OtherKey="policy_id" Type="tbl_product_policy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_policy_type" Member="tbl_product_policy_types">
+    <Type Name="tbl_product_policy_type">
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_policy_type_tbl_product_policy_type_name" Member="tbl_product_policy_type_names" ThisKey="type_id" OtherKey="type_id" Type="tbl_product_policy_type_name" />
+      <Association Name="tbl_product_policy_type_tbl_product_policy" Member="tbl_product_policies" ThisKey="type_id" OtherKey="type_id" Type="tbl_product_policy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_policy_type_name" Member="tbl_product_policy_type_names">
+    <Type Name="tbl_product_policy_type_name">
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lang_tbl_product_policy_type_name" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_policy_type_tbl_product_policy_type_name" Member="tbl_product_policy_type" ThisKey="type_id" OtherKey="type_id" Type="tbl_product_policy_type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_public_holidays" Member="tbl_product_public_holidays">
+    <Type Name="tbl_product_public_holiday">
+      <Column Name="holidays_id" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="holidays_date_title" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="holidays_date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_relate" Member="tbl_product_relates">
+    <Type Name="tbl_product_relate">
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="product_relate_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_product_tbl_product_relate" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_product_tbl_product_relate1" Member="tbl_product1" ThisKey="product_relate_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_supplier" Member="tbl_product_suppliers">
+    <Type Name="tbl_product_supplier">
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_product_tbl_product_supplier" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_type" Member="tbl_product_types">
+    <Type Name="tbl_product_type">
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_type_tbl_product_type_name" Member="tbl_product_type_names" ThisKey="type_id" OtherKey="type_id" Type="tbl_product_type_name" />
+      <Association Name="tbl_product_type_tbl_type_product" Member="tbl_type_products" ThisKey="type_id" OtherKey="type_id" Type="tbl_type_product" />
+      <Association Name="tbl_product_category_tbl_product_type" Member="tbl_product_category" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_type_name" Member="tbl_product_type_names">
+    <Type Name="tbl_product_type_name">
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lang_tbl_product_type_name" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_type_tbl_product_type_name" Member="tbl_product_type" ThisKey="type_id" OtherKey="type_id" Type="tbl_product_type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_promotion" Member="tbl_promotions">
+    <Type Name="tbl_promotion">
+      <Column Name="promotion_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="date_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_end" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_use_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_use_end" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="quantity_min" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="day_min" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="day_advance_num" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="day_mon" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="day_tue" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="day_wed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="day_thu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="day_fri" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="day_sat" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="day_sun" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="is_weekend_all" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_promotion_tbl_promotion_benefit" Member="tbl_promotion_benefits" ThisKey="promotion_id" OtherKey="promotion_id" Type="tbl_promotion_benefit" />
+      <Association Name="tbl_promotion_tbl_promotion_condition" Member="tbl_promotion_conditions" ThisKey="promotion_id" OtherKey="promotion_id" Type="tbl_promotion_condition" />
+      <Association Name="tbl_promotion_tbl_promotion_condition_lastminute" Member="tbl_promotion_condition_lastminutes" ThisKey="promotion_id" OtherKey="promotion_id" Type="tbl_promotion_condition_lastminute" />
+      <Association Name="tbl_promotion_tbl_promotion_content" Member="tbl_promotion_contents" ThisKey="promotion_id" OtherKey="promotion_id" Type="tbl_promotion_content" />
+      <Association Name="tbl_promotion_cat_tbl_promotion" Member="tbl_promotion_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_promotion_cat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_promotion_benefit" Member="tbl_promotion_benefits">
+    <Type Name="tbl_promotion_benefit">
+      <Column Name="promotion_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="day_discount_start" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="day_discount_num" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="discount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="priority" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="tbl_promotion_tbl_promotion_benefit" Member="tbl_promotion" ThisKey="promotion_id" OtherKey="promotion_id" Type="tbl_promotion" IsForeignKey="true" />
+      <Association Name="tbl_promotion_type_tbl_promotion_benefit" Member="tbl_promotion_type" ThisKey="type_id" OtherKey="type_id" Type="tbl_promotion_type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_promotion_cat" Member="tbl_promotion_cats">
+    <Type Name="tbl_promotion_cat">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_promotion_cat_tbl_promotion" Member="tbl_promotions" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_promotion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_promotion_condition" Member="tbl_promotion_conditions">
+    <Type Name="tbl_promotion_condition">
+      <Column Name="promotion_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="condition_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_promotion_tbl_promotion_condition" Member="tbl_promotion" ThisKey="promotion_id" OtherKey="promotion_id" Type="tbl_promotion" IsForeignKey="true" />
+      <Association Name="tbl_product_option_condition_tbl_promotion_condition" Member="tbl_product_option_condition" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_product_option_condition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_promotion_condition_lastminute" Member="tbl_promotion_condition_lastminutes">
+    <Type Name="tbl_promotion_condition_lastminute">
+      <Column Name="promotion_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="condition_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_product_option_price_last_minute_condition_tbl_promotion_condition_lastminute" Member="tbl_product_option_price_last_minute_condition" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_product_option_price_last_minute_condition" IsForeignKey="true" />
+      <Association Name="tbl_promotion_tbl_promotion_condition_lastminute" Member="tbl_promotion" ThisKey="promotion_id" OtherKey="promotion_id" Type="tbl_promotion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_promotion_content" Member="tbl_promotion_contents">
+    <Type Name="tbl_promotion_content">
+      <Column Name="promotion_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lang_tbl_promotion_content" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_promotion_tbl_promotion_content" Member="tbl_promotion" ThisKey="promotion_id" OtherKey="promotion_id" Type="tbl_promotion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_promotion_type" Member="tbl_promotion_types">
+    <Type Name="tbl_promotion_type">
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_promotion_type_tbl_promotion_benefit" Member="tbl_promotion_benefits" ThisKey="type_id" OtherKey="type_id" Type="tbl_promotion_benefit" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_review_day_trip" Member="tbl_review_day_trips">
+    <Type Name="tbl_review_day_trip">
+      <Column Name="review_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cus_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="county_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="positive" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="negative" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="review_from" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="recommend_for" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="rate_overall" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_knowledge" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_service" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_pronunciation" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_punctuality" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_money" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_food" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="vote_all" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_usefull" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_travel" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="status_bin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_tbl_review_day_trip" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_country_tbl_review_day_trip" Member="tbl_country" ThisKey="county_id" OtherKey="country_id" Type="tbl_country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_review_from" Member="tbl_review_froms">
+    <Type Name="tbl_review_from">
+      <Column Name="from_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_review_from_tbl_review_hotel" Member="tbl_review_hotels" ThisKey="from_id" OtherKey="from_id" Type="tbl_review_hotel" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_review_golf" Member="tbl_review_golfs">
+    <Type Name="tbl_review_golf">
+      <Column Name="review_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cus_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="country_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="positive" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="negative" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="review_from" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="recommend_for" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="rate_fairway" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_green" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_difficult" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_speed" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_caddy" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_clubhouse" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_food" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_money" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="vote_all" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_usefull" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_travel" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="status_bin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_tbl_review_golf" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_country_tbl_review_golf" Member="tbl_country" ThisKey="country_id" OtherKey="country_id" Type="tbl_country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_review_health" Member="tbl_review_healths">
+    <Type Name="tbl_review_health">
+      <Column Name="review_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cus_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="county_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="positive" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="negative" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="review_from" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="recommend_for" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="rate_over_all" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_cleanliness" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_diagnose_ability" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_service" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_value_for_money" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="vote_all" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_usefull" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_travel" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status_bin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_product_tbl_review_health" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_country_tbl_review_health" Member="tbl_country" ThisKey="county_id" OtherKey="country_id" Type="tbl_country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_review_hotel" Member="tbl_review_hotels">
+    <Type Name="tbl_review_hotel">
+      <Column Name="review_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cus_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="country_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="recommend_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="from_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="positive" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="negative" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="review_from" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="rate_overall" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_service" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_location" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_room" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_clean" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_money" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="vote_all" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_usefull" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_travel" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="status_bin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_review_hotel_tbl_review_picture" Member="tbl_review_pictures" ThisKey="review_id" OtherKey="review_hotel_id" Type="tbl_review_picture" />
+      <Association Name="tbl_product_tbl_review_hotel" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_review_from_tbl_review_hotel" Member="tbl_review_from" ThisKey="from_id" OtherKey="from_id" Type="tbl_review_from" IsForeignKey="true" />
+      <Association Name="tbl_review_recommend_tbl_review_hotel" Member="tbl_review_recommend" ThisKey="recommend_id" OtherKey="recommend_id" Type="tbl_review_recommend" IsForeignKey="true" />
+      <Association Name="tbl_country_tbl_review_hotel" Member="tbl_country" ThisKey="country_id" OtherKey="country_id" Type="tbl_country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_review_picture" Member="tbl_review_pictures">
+    <Type Name="tbl_review_picture">
+      <Column Name="picture_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="review_hotel_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="path" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_review_hotel_tbl_review_picture" Member="tbl_review_hotel" ThisKey="review_hotel_id" OtherKey="review_id" Type="tbl_review_hotel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_review_recommend" Member="tbl_review_recommends">
+    <Type Name="tbl_review_recommend">
+      <Column Name="recommend_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_review_recommend_tbl_review_hotel" Member="tbl_review_hotels" ThisKey="recommend_id" OtherKey="recommend_id" Type="tbl_review_hotel" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_review_show_event" Member="tbl_review_show_events">
+    <Type Name="tbl_review_show_event">
+      <Column Name="review_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cus_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="country_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="positive" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="negative" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="review_from" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="recommend_for" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="rate_overall" Type="System.String" DbType="NChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="rate_performance" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_punctuality" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_service" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_money" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="vote_all" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_usefull" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_travel" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="status_bin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_tbl_review_show_event" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_country_tbl_review_show_event" Member="tbl_country" ThisKey="country_id" OtherKey="country_id" Type="tbl_country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_review_spa" Member="tbl_review_spas">
+    <Type Name="tbl_review_spa">
+      <Column Name="review_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cus_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="country_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="positive" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="negative" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="review_from" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="recommend_for" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="rate_overall" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_service" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_location" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_room" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_clean" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_money" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="vote_all" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_usefull" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_travel" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="status_bin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="diagnose" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_product_tbl_review_spa" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_country_tbl_review_spa" Member="tbl_country" ThisKey="country_id" OtherKey="country_id" Type="tbl_country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_review_water_activity" Member="tbl_review_water_activities">
+    <Type Name="tbl_review_water_activity">
+      <Column Name="review_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cus_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="country_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="title" Type="System.Data.Linq.Binary" DbType="VarBinary(1000)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="positive" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="negative" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="review_from" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="recommend_for" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="rate_overall" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_knowledge" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_service" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_pronunciation" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_punctuality" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_money" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="rate_food" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="vote_all" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="vote_usefull" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="date_travel" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="date_submit" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="status_bin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_tbl_review_water_activity" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_country_tbl_review_water_activity" Member="tbl_country" ThisKey="country_id" OtherKey="country_id" Type="tbl_country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_status_category" Member="tbl_status_categories">
+    <Type Name="tbl_status_category">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_status_category_tbl_status" Member="tbl_status" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_status" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_status" Member="tbl_status">
+    <Type Name="tbl_status">
+      <Column Name="status_id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Association Name="tbl_status_tbl_product" Member="tbl_products" ThisKey="status_id" OtherKey="status_id" Type="tbl_product" />
+      <Association Name="tbl_status_category_tbl_status" Member="tbl_status_category" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_status_category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_type_product" Member="tbl_type_products">
+    <Type Name="tbl_type_product">
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_product_tbl_type_product" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_product_type_tbl_type_product" Member="tbl_product_type" ThisKey="type_id" OtherKey="type_id" Type="tbl_product_type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_transport_cat" Member="tbl_transport_cats">
+    <Type Name="tbl_transport_cat">
+      <Column Name="transport_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_transport_cat_tbl_product_landmark" Member="tbl_product_landmarks" ThisKey="transport_id" OtherKey="transport_id" Type="tbl_product_landmark" />
+      <Association Name="tbl_transport_cat_tbl_transport_cat_content" Member="tbl_transport_cat_contents" ThisKey="transport_id" OtherKey="transport_id" Type="tbl_transport_cat_content" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_transport_cat_content" Member="tbl_transport_cat_contents">
+    <Type Name="tbl_transport_cat_content">
+      <Column Name="transport_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lang_tbl_transport_cat_content" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_transport_cat_tbl_transport_cat_content" Member="tbl_transport_cat" ThisKey="transport_id" OtherKey="transport_id" Type="tbl_transport_cat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_policy" Member="tbl_product_policies">
+    <Type Name="tbl_product_policy">
+      <Column Name="policy_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_end" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_policy_tbl_product_option_condition_policy" Member="tbl_product_option_condition_policies" ThisKey="policy_id" OtherKey="policy_id" Type="tbl_product_option_condition_policy" />
+      <Association Name="tbl_product_policy_tbl_product_policy_cancel" Member="tbl_product_policy_cancels" ThisKey="policy_id" OtherKey="policy_id" Type="tbl_product_policy_cancel" />
+      <Association Name="tbl_product_policy_tbl_product_policy_content" Member="tbl_product_policy_contents" ThisKey="policy_id" OtherKey="policy_id" Type="tbl_product_policy_content" />
+      <Association Name="tbl_product_tbl_product_policy" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+      <Association Name="tbl_product_policy_cat_tbl_product_policy" Member="tbl_product_policy_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_product_policy_cat" IsForeignKey="true" />
+      <Association Name="tbl_product_policy_type_tbl_product_policy" Member="tbl_product_policy_type" ThisKey="type_id" OtherKey="type_id" Type="tbl_product_policy_type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_minimum_stay" Member="tbl_product_minimum_stays">
+    <Type Name="tbl_product_minimum_stay">
+      <Column Name="mini_stay_id" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_end" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="num_minimum" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_tbl_product_minimum_stay" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_country_market" Member="tbl_country_markets">
+    <Type Name="tbl_country_market">
+      <Column Name="market_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="country_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_country_tbl_country_market" Member="tbl_country" ThisKey="country_id" OtherKey="country_id" Type="tbl_country" IsForeignKey="true" />
+      <Association Name="tbl_country_rate_market_tbl_country_market" Member="tbl_country_rate_market" ThisKey="market_id" OtherKey="market_id" Type="tbl_country_rate_market" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_country" Member="tbl_countries">
+    <Type Name="tbl_country">
+      <Column Name="country_id" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="continent_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="code_phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_country_tbl_destination" Member="tbl_destinations" ThisKey="country_id" OtherKey="country_id" Type="tbl_destination" />
+      <Association Name="tbl_country_tbl_review_day_trip" Member="tbl_review_day_trips" ThisKey="country_id" OtherKey="county_id" Type="tbl_review_day_trip" />
+      <Association Name="tbl_country_tbl_review_golf" Member="tbl_review_golfs" ThisKey="country_id" OtherKey="country_id" Type="tbl_review_golf" />
+      <Association Name="tbl_country_tbl_review_health" Member="tbl_review_healths" ThisKey="country_id" OtherKey="county_id" Type="tbl_review_health" />
+      <Association Name="tbl_country_tbl_review_hotel" Member="tbl_review_hotels" ThisKey="country_id" OtherKey="country_id" Type="tbl_review_hotel" />
+      <Association Name="tbl_country_tbl_review_show_event" Member="tbl_review_show_events" ThisKey="country_id" OtherKey="country_id" Type="tbl_review_show_event" />
+      <Association Name="tbl_country_tbl_review_spa" Member="tbl_review_spas" ThisKey="country_id" OtherKey="country_id" Type="tbl_review_spa" />
+      <Association Name="tbl_country_tbl_review_water_activity" Member="tbl_review_water_activities" ThisKey="country_id" OtherKey="country_id" Type="tbl_review_water_activity" />
+      <Association Name="tbl_country_tbl_country_market" Member="tbl_country_markets" ThisKey="country_id" OtherKey="country_id" Type="tbl_country_market" />
+      <Association Name="tbl_continent_tbl_country" Member="tbl_continent" ThisKey="continent_id" OtherKey="continent_id" Type="tbl_continent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_country_rate_market" Member="tbl_country_rate_markets">
+    <Type Name="tbl_country_rate_market">
+      <Column Name="market_id" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_country_rate_market_tbl_country_market" Member="tbl_country_markets" ThisKey="market_id" OtherKey="market_id" Type="tbl_country_market" />
+      <Association Name="tbl_country_rate_market_tbl_product_option_condition" Member="tbl_product_option_conditions" ThisKey="market_id" OtherKey="market_id" Type="tbl_product_option_condition" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_condition" Member="tbl_product_option_conditions">
+    <Type Name="tbl_product_option_condition">
+      <Column Name="condition_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="market_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="breakfast" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="num_adult" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="num_children" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="num_extra" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_product_option_condition_tbl_product_option_condition_policy" Member="tbl_product_option_condition_policies" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_product_option_condition_policy" />
+      <Association Name="tbl_product_option_condition_tbl_product_option_condition_price" Member="tbl_product_option_condition_prices" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_product_option_condition_price" />
+      <Association Name="tbl_product_option_condition_tbl_promotion_condition" Member="tbl_promotion_conditions" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_promotion_condition" />
+      <Association Name="tbl_product_option_condition_tbl_price_suplement_quantity" Member="tbl_price_suplement_quantities" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_price_suplement_quantity" />
+      <Association Name="tbl_country_rate_market_tbl_product_option_condition" Member="tbl_country_rate_market" ThisKey="market_id" OtherKey="market_id" Type="tbl_country_rate_market" IsForeignKey="true" />
+      <Association Name="tbl_product_option_tbl_product_option_condition" Member="tbl_product_option" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_itinerary_content" Member="tbl_product_itinerary_contents">
+    <Type Name="tbl_product_itinerary_content">
+      <Column Name="itinerary_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbl_lang_tbl_product_itinerary_content" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_itinerary_tbl_product_itinerary_content" Member="tbl_product_itinerary" ThisKey="itinerary_id" OtherKey="itinerary_id" Type="tbl_product_itinerary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_supplement_date" Member="tbl_product_supplement_dates">
+    <Type Name="tbl_product_supplement_date">
+      <Column Name="supplement_date_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_title" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="date_supplement" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="supplement" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_option_tbl_product_supplement_date" Member="tbl_product_option" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_supplement_day" Member="tbl_product_option_supplement_days">
+    <Type Name="tbl_product_option_supplement_day">
+      <Column Name="supplement_day_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_end" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="day_sun" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="day_mon" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="day_tue" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="day_wed" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="day_thu" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="day_fri" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="day_sat" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_option_tbl_product_option_supplement_day" Member="tbl_product_option" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_itinerary" Member="tbl_product_itineraries">
+    <Type Name="tbl_product_itinerary">
+      <Column Name="itinerary_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="time_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="time_end" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_itinerary_tbl_product_pic" Member="tbl_product_pics" ThisKey="itinerary_id" OtherKey="itinerary_id" Type="tbl_product_pic" />
+      <Association Name="tbl_product_itinerary_tbl_product_itinerary_content" Member="tbl_product_itinerary_contents" ThisKey="itinerary_id" OtherKey="itinerary_id" Type="tbl_product_itinerary_content" />
+      <Association Name="tbl_product_tbl_product_itinerary" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_content" Member="tbl_product_contents">
+    <Type Name="tbl_product_content">
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="title_second" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail_short" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="detail" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="detail_internet" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="direction" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="file_name_main" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="file_name_information" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="file_name_review" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="file_name_photo" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="file_name_why" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="file_name_pdf" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lang_tbl_product_content" Member="tbl_lang" ThisKey="lang_id" OtherKey="lang_id" Type="tbl_lang" IsForeignKey="true" />
+      <Association Name="tbl_product_tbl_product_content" Member="tbl_product" ThisKey="product_id" OtherKey="product_id" Type="tbl_product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_price_suplement_quantity" Member="tbl_price_suplement_quantities">
+    <Type Name="tbl_price_suplement_quantity">
+      <Column Name="supplement_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="condition_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="period_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantity_min" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="quantity_max" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="supplement" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_option_condition_tbl_price_suplement_quantity" Member="tbl_product_option_condition" ThisKey="condition_id" OtherKey="condition_id" Type="tbl_product_option_condition" IsForeignKey="true" />
+      <Association Name="tbl_product_period_tbl_price_suplement_quantity" Member="tbl_product_period" ThisKey="period_id" OtherKey="period_id" Type="tbl_product_period" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_product_option_gala" Member="tbl_product_option_galas">
+    <Type Name="tbl_product_option_gala">
+      <Column Name="gala_id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="option_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_end" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="require_adult" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="require_child" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="default_gala" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Is_compulsory" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_product_option_tbl_product_option_gala" Member="tbl_product_option" ThisKey="option_id" OtherKey="option_id" Type="tbl_product_option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Productlist" Method="Productlist">
+    <Parameter Name="ProductCatId" Parameter="productCatId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DestinationId" Parameter="destinationId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SupplierId" Parameter="supplierId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FlagFeature" Parameter="flagFeature" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="StatusProcessId" Parameter="statusProcessId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="ProductlistResult">
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="product_code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCatId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Producttitle" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="Destiantiontitle" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="supplier_price" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="suppliertitle" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="supplierCatId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SupplierCatTitle" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="status_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTitle" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="flag_feature" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ProductPeriodMax" Method="ProductPeriodMax">
+    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SupplierID" Parameter="supplierID" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="ProductPeriodMaxResult">
+      <Column Name="" Member="Column1" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Product_SupplierQuery" Method="Product_SupplierQuery">
+    <Parameter Name="productId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Product_SupplierQueryResult">
+      <Column Name="SupplierTitle" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

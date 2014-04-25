@@ -1,0 +1,220 @@
+
+.clear-all{clear:both; line-height:0px }
+body{ 
+	margin:0px; padding:0px; 
+	font-family:Arial, Helvetica, sans-serif !important; 
+	font-size:14px;
+}
+#main{
+	margin:0 auto;
+	width:1000px;
+	font-size:12px;
+	background:url(images/layout_mail/book_bg_main.jpg) repeat-y 0 0;
+}
+#header{
+	position:relative;
+	margin:0 auto;
+	height:114px;
+	background:url(images/layout_mail/book_head.jpg) no-repeat 0 0;	
+}
+#header img{
+	position:absolute;
+	top:60px;
+	left:25px;
+	width:253px;
+	height:53px;
+	border:none;
+}
+#header img.livechat{
+	position:absolute;
+	top:15px;
+	left:800px;
+	width:155px;
+	height:53px;
+	border:none;
+}
+.end_main{
+	margin:0 auto;
+	width:1000px;
+	height:9px;
+	background:url(images/layout_mail/book_end_main.jpg) no-repeat 0 0;	
+}
+.address{
+	margin:0 auto;
+	padding-top:10px;
+	width:1000px;
+	text-align:center;
+	color:#666;
+}
+.address span{ color:#000; }
+
+.col_left{
+	margin:20px 0 10px 50px;
+	width:740px;
+	float:left;	
+}
+.col_right{
+	margin:20px 0 0 30px;
+	width:150px;
+	text-align:center;
+	float:left;	
+}
+.col_right img{ margin-bottom:50px;}
+
+.first_step{
+	position:relative;
+	height:13px;
+	background:url(images/offer/top.jpg) no-repeat 0 0;
+	z-index:1px;
+}
+.detailP{
+	padding:0px;
+	border-left:solid 1px #cdd5e7;
+	border-right:solid 1px #cdd5e7;
+}
+.end_step{
+	margin-bottom:30px;
+	height:13px;
+	background:url(images/offer/buttom.jpg) no-repeat 0 0;	
+}
+.title{
+	margin-bottom:5px;
+	padding:5px 5px 5px 35px;
+	background:#f2f4eb;
+	color:#03539a;
+	font-size:20px;
+}
+table td{ font-size:14px; }
+.textBoxDate{
+	border:#6ab119 1px Solid;
+	margin-right:5px;
+	width:150px; 
+	height:20px;
+	float:left;	
+}
+.textBoxStyle{ width:290px; height:20px;}
+.inputCountry{ width:190px; height:27px; color:#666;}
+.inputAdult{ width:60px; height:26px; color:#666;}
+.textBoxBudget{ width:120px; height:22px;}
+.selectTxt{ width:60px; height:27px; color:#666;}
+.baht{font-style:italic; color:#77b81c; font-weight:bold; font-size:16px;}
+
+.info{	margin:0 0 0 30px;	}
+.product{
+	margin:15px 0 0 60px;
+	width:670px;
+}
+.product td{ font-size:16px; }
+.note{
+	position:absolute;
+	left:950px;
+	top:205px;
+	padding:8px 0 5px 35px;
+	float:left;
+	width:205px;
+	height:82px;
+	line-height:18px;
+	background:url(images/offer/note.jpg) no-repeat 0 0;	
+}
+
+.end_step_top{
+	position:relative;
+	margin-bottom:30px;
+	height:13px;
+	background:url(images/offer/buttom.jpg) no-repeat 0 0;	
+}
+.lowPrice{
+	position:absolute;
+	line-height:19px;
+	left:168px;
+	top:-16px;	
+}
+.lowPrice span{text-decoration:underline; float:left;}
+.destination{
+	margin:15px 0 0 40px;
+	width:650px;
+}
+.next{
+	margin:0 0 20px 300px;
+	width:120px;
+	height:38px;
+	font-size:17px;
+	color:#FFF;
+	border:none;
+	cursor:pointer;
+	background:url(images/offer/next.png) no-repeat 0 0;	
+}
+.next:hover{
+	background:url(images/offer/next.png) no-repeat 0 -38px;
+}
+.next2{
+	margin:0 0 20px 30px;
+	width:120px;
+	height:38px;
+	font-size:17px;
+	color:#FFF;
+	border:none;
+	cursor:pointer;
+	background:url(images/offer/next.png) no-repeat 0 0;	
+}
+.next2:hover{
+	background:url(images/offer/next.png) no-repeat 0 -38px;
+}
+.edit{
+	margin:0 0 20px 240px;
+	width:120px;
+	height:38px;
+	font-size:17px;
+	color:#FFF;
+	border:none;
+	cursor:pointer;
+	background:url(images/offer/edit.png) no-repeat 0 0;	
+}
+.edit:hover{
+	background:url(images/offer/edit.png) no-repeat 0 -38px;
+}
+.custom{
+	margin:0 auto;
+	width:680px;
+	border:solid 1px #e8eaeb;
+}
+.custom .baht{ margin-left:25px; }
+.custom td{ padding:5px 10px 5px 10px;}
+.custom td.inputF{ background:#eef3fa; }
+.custom td.inputText{ background:#f6f9fc; color:#41607d; }
+.custom td.inputType{color:#41607d; }
+
+
+.customInfo{
+	margin:0 auto;
+	width:680px;
+	background:#f6f9fc;
+	color:#41607d;
+}
+.customInfo td{ padding:5px 10px 5px 10px;}
+.customInfo td.inputText{ background:#fbfcfe; color:#000; border:solid 1px #fff; }
+.thankyou_icon{
+	position:absolute;
+	top:-7px;
+	left:-7px;
+	width:120px;
+	height:122px;
+	background:url(images/icon/thankyou.png) no-repeat 0 0;
+	z-index:1;
+}
+.titleThank{
+	padding:5px 0 5px 0;
+	text-align:center;
+	background:#e1e9f6;
+	color:#03539a;
+	font-size:20px;
+	z-index:-1;
+}
+.thankTxt{
+	margin:0 auto;
+	width:660px;
+	color:#666;
+	line-height:20px;
+	font-size:14px;	
+}
+.price{color:#e6860c;}

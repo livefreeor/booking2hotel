@@ -1,0 +1,125 @@
+﻿.nodata {
+
+}
+
+body {
+     font-size:12px;
+     font-family:Tahoma;
+     color:#5a5758;
+}
+
+.tbl_account_block {
+    padding:20px;
+    margin:0 auto;
+    width:1100px;
+}
+.tbl_acknows {
+     background-color:#cccccc;
+}
+
+.header_fields {
+    background-color:#005ba8;
+     color:#ffffff;
+}
+.row_head {
+       background-color:#EDEDED;
+       color:#333333;
+    font-weight:bold;
+    font-size:14px;
+
+}
+.row_normal {
+}
+
+.row_odd {
+    background-color:#92d5ea;
+  
+    
+
+}
+.row_event {
+    background-color:#ffffff;
+
+}
+#deposit_hotel_list {
+    margin: 0 auto;
+   width:800px;
+}
+.dep_total {
+    margin: 5px 0 0 0;
+    width:100%;
+    text-align:right;
+}
+
+.tbl_account {
+    
+    margin:20px 0 0 0;
+    padding:0px;
+}
+.tbl_account > thead {
+    background-color:#69aed8;
+    color:#ffffff;
+    height:30px;
+    line-height:30px;
+}
+.tbl_account > tbody {
+    background-color:#f3f3f3;
+    font-size:12px;
+}
+.tbl_account > tbody > tr {
+    height:30px;
+}
+.total {
+    background-color:#c8d0d5;
+    color:#333333;
+    font-weight:bold;
+    height:40px  !important;
+    font-size:16px;
+}
+.payment_bht_account {
+
+}
+.txtfee {
+     display:none;
+}
+.invoid_box {
+    margin: 0 auto;
+    padding:20px;
+    background-color:#f1f1f1;
+    border:1px solid #cccccc;
+}
+.invoid_box table {
+        width:500px;
+    }
+.ln_invoid {
+    
+    margin:20px 0 20px 0;
+
+}
+.txt_completed {
+     font-size:18px;
+
+}
+.txt_completed a {
+        font-weight:bold;
+ }
+.pay_list_head {
+    width:100%;
+    text-align:center;
+    margin:0 auto;
+    font-size:18px;
+    font-weight:bold;
+    text-decoration:underline;
+}
+.bht_account_title {
+    display:block;
+    font-size:16px;
+     margin:10px 0 0 0;
+     background-color:#69aed8;
+     text-align:center;
+     padding:10px;
+     font-weight:bold;
+     color:#ffffff;
+     border:1px solid #005ba8;
+}
+

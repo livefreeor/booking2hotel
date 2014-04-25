@@ -1,0 +1,299 @@
+﻿body
+{
+    margin:0px;
+    padding:0px;
+    /*background-image:url(../images/bghead_site_review.jpg);
+    background-position:top ;
+    background-repeat:repeat-x;*/
+    background-color:#ffffff;
+     font-family:Verdana;
+}
+.reivew_site_main
+{
+    width:950px;
+    margin:0 auto;
+    padding:0px 0px 40px 0px;
+    position:relative;
+ }
+ 
+ .site_review_logo
+ {
+     margin:2px 0px 0px 0px;
+     padding:0px;
+     position:absolute;
+     border:0px;
+ }
+
+ .header_bgs
+ {
+     background-color: #e1e9f6;
+     width:100%;
+     margin:0px 0px 0px 0px;
+     padding:10px 0px 10px 0px;
+ }
+ .head_title
+ {
+    
+     margin:0px 0px 0px 0px;
+     padding:0px 0px 0px 25px;
+     border:0px;
+     color:#80a1c1;
+     font-size:18px;
+     z-index:50;
+     
+ }
+  .head_title span
+  {
+      font-weight:bold;
+      color:#29271e;
+      
+  }
+  .head_des
+  {
+     
+     margin:5px 0px 0px 0px;
+     padding:0px 0px 0px 25px;
+     font-size:14px;
+     color:#444444;
+     width:600px;
+     z-index:50;
+  }
+  .display_head
+  {
+      margin:0px;
+     padding:0px;
+     position:absolute;
+     border:0px;
+     top:100px;
+     left:500px;
+     z-index:0;
+  }
+  
+  .tab
+  {
+     margin:0px;
+     padding:20px 0px 0px 0px;
+     position:absolute;
+     border:0px;
+     top:199px;
+     left:120px;
+     width:300px;
+     height:50px;
+     background-image:url(../images/head_title_bg.jpg);
+     background-position:top ;
+     background-repeat:no-repeat;
+     
+     /*color:#444444;*/
+      color:#105cb6;
+      font-size:14px;
+      text-align:center;
+      
+  }
+  .top
+  {
+     margin:0px;
+     padding:0px;
+     height:230px;
+  }
+  .content
+  {
+     margin:0px 0px 0px 0px;
+     padding:40px 0px 0px 0px;
+     background-image:url(../images/head_content.jpg);
+     background-position:top ;
+     background-repeat:no-repeat;
+  }
+  h1
+  {
+     margin:15px 0px 0px 0px;
+     padding:0px 0px 0px 25px;
+     color:#105cb6;
+     font-size:14px;
+     font-weight:bold;
+      
+  }
+  .p_title_sub
+  {
+      margin:5px 0px 15px 0px;
+        padding:0px 0px 0px 25px;
+        font-weight:bold;
+         font-size:12px;
+  }
+  .boxField
+  {
+     margin:0px 0px 0px 15px;
+     padding:15px;
+     width:855px;
+     background:#fbfbfb;
+     border: 1px solid #d6e1f7;
+        /*--CSS3 Rounded Corners--*/
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .thankyou
+  {
+      width:800px;
+  }
+  .title
+  {
+      margin:0px;
+      padding:0px;
+      font-size:12px;
+      font-weight:bold;
+      font-style:italic;
+      
+      
+  }
+  .txtsite_review
+  {
+      margin:0px;
+      padding:3px;
+      width:660px;
+      border:1px solid #d8d8d8;
+      font-size:12px;
+      font-family:Verdana;
+  }
+  
+  .dropsite_review
+  {
+      margin:0px;
+      padding:3px;
+      width:400px;
+      border:1px solid #abadb3;
+      font-size:12px;
+      font-family:Verdana;
+  }
+  
+  #ratebox
+  {
+       margin:0px;
+       padding:0px;
+      
+  }
+  
+  #ratebox ul
+  {
+     margin:0px;
+     padding:0px; 
+  }
+  
+  #ratebox ul li
+  {
+      margin:0px;
+      padding:0px;
+      float:left;
+      width:20px;
+      height:20px;
+      list-style:none;
+      background-image:url(../images/write_blank.png);
+      background-position:0 -40px;
+      
+  }
+  .RadioListreview
+  {
+       margin:0px;
+       padding:0px;
+       width:800px;
+        background-color:#fbfbfb;
+  }
+  .RadioListreview tr
+  {
+      margin:0px;
+       padding:0px;
+       height:25px;
+  }
+  .RadioListreview tr td
+  {
+       margin:0px;
+       padding:0px;
+       width:150px;
+       font-size:11px;
+       font-family:Tahoma;
+       height:25px;
+       background-color:#fbfbfb;
+       text-align:left;
+  }
+  .chekListreview
+  {
+       margin:0px;
+       padding:0px;
+       width:800px;
+        background-color:#fbfbfb;
+  }
+   .chekListreview tr
+   {
+       margin:0px;
+       padding:0px;
+       height:25px;
+   }
+  .chekListreview tr td
+  {
+       margin:0px;
+       padding:0px;
+       width:150px;
+       font-size:11px;
+       font-family:Tahoma;
+       height:25px;
+       background-color:#fbfbfb;
+       text-align:left;
+  }
+  .chekListreview tr td label
+  {
+       margin:0px;
+       padding:0px;
+       height:25px;
+  }
+  .birthday_month 
+  {
+      padding:3px;
+      font-size:14px;
+  }
+  .birthday_day 
+  {
+      padding:3px;
+      font-size:14px;
+  }
+  .birthday_year 
+  {
+      padding:3px;
+      font-size:14px;
+  }
+  
+  .review_btn
+  {
+       margin:10px 0px 0px 0px;
+       padding:0px;
+       text-align:center;
+  }
+
+.booknow
+{
+    width:250px;
+    height:50px;
+    background-image:url(../images/review_now.png);
+    background-position:0px 0px;
+    padding:0px;
+    margin:0px;
+    border:0px;
+    cursor:pointer;
+}
+.table_review_site
+{
+       background-color:#fbfbfb;
+     margin:0px;
+     padding:0px;
+}
+.table_review_site tr
+{
+    background-color:#fbfbfb;
+    margin:0px;
+     padding:0px;
+     height:40px;
+}
+.table_review_site tr td
+{
+    background-color:#fbfbfb;
+    margin:0px;
+     padding:0px;
+}

@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_ControlPanelFirst.master.cs" Inherits="Masterpage_MasterPageFirst_Control_Panel" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<link href="css/Master_style_first.css?ver=02" type="text/css" rel="stylesheet" />
+
+<link href="css/loginPage.css" type="text/css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server">
+<ajaxToolkit:ToolkitScriptManager runat="Server" EnableScriptGlobalization="true"
+        EnableScriptLocalization="true" ID="ScriptManager1" />
+<%--<asp:ScriptManager ID="ScripManagerDefault" runat="server"></asp:ScriptManager>--%>
+<center>
+<div class="main">
+    <div class="header">
+<asp:Image ID="Image1" ImageUrl="http://www.booking2hotels.com/images/logo_hotels2new.png" runat="server" CssClass="logo" />
+       
+     </div>
+    <div style=" clear:both;"></div>
+    <div class="content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <div style=" clear:both;"></div>
+    </div>
+    <div style=" clear:both;"></div>
+    <div class="footer">
+        <p>Hotels2thailand.com @ 2010</p>
+        <p></p>
+        
+    </div>
+    <div style=" clear:both;"></div>
+</div>
+<div style=" clear:both;"></div>
+
+</center>
+</form>    
+</body>
+</html>
+ 

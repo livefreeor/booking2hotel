@@ -1,0 +1,586 @@
+#content_why{
+	padding:6px 0px 6px 0px;
+	width:751px;
+	background:#FFF;	
+}
+#content_why h4{ padding-top:5px; font-size:12px; padding-left:30px; color:#0072bc;}
+#content_why p{ padding:5px 0 5px 30px; width:690px; text-align:justify;}
+#content_why p.font_blue{ color:#0072bc;}
+#content_why p span{ color:#4cb952;}
+
+.backtotop_r{
+	padding:3px 20px 5px 0px;
+	width:75px;
+	float:right;
+	font-size:14px;
+}
+.backtotop_r a{
+	text-decoration:underline;
+	color:#000;
+}
+.backtotop_r a:hover{ color:#000}
+
+/* col left */
+#charity ul{
+	margin:5px 0 10px 18px;
+	width:242px;
+}
+#charity ul li{
+	padding:5px 0 5px 10px;
+	width:230px;
+	line-height:14px;
+}
+#charity ul li img{
+	padding:0 8px 0 0;
+	float:left;
+}
+#charity ul li h4 a{
+	font-size:12px;
+	text-decoration:underline;
+}
+#charity ul li.bg_pop{
+	width:230px;
+	background:#f7f8f8 repeat-x;
+	border:solid 1px #e7e8e9;	
+}
+#head_trip{
+	margin-left:18px;
+	margin-bottom:5px;
+	width:242px;	
+	background:#e1e9f6;	
+}
+#head_trip .title{
+	padding:5px 10px 5px 10px;
+	font-size:18px;
+	color:#5684b7;	
+}
+
+/*-----main menu-----*/
+.bg_topmenu{
+	width:276px;
+	height:52px;
+	background:url(images/layout/bg-topmenu.jpg) no-repeat center top;	
+}
+.bg_topmenu h1{font-size:12px; width:275px; text-align:center; line-height:11px;}
+#charity #main_menu{
+	margin:0px;
+	padding-left:20px;
+	width:240px;
+	font-size:14px;
+}
+#charity #main_menu ul {margin:0px; padding:0px;}
+#charity #main_menu ul li{
+	padding-bottom:0px;
+	display:block;
+	height:40px;
+	line-height:38px;
+	background:url(images/icon/line_topmenu.jpg) no-repeat 28px 19px;
+}
+#charity #main_menu ul li:hover{
+	display:block;
+	height:40px;
+	line-height:38px;
+	background:url(images/icon/line_topmenu_hover.jpg) no-repeat 28px 19px;
+}
+#charity #main_menu ul li.menu_hover{
+	height:40px;
+	display:block;
+	line-height:38px;
+	background:url(images/icon/line_topmenu_hover.jpg) no-repeat 28px 19px;	
+}
+#charity #main_menu ul li.end_menu{
+	height:40px;
+	display:block;
+	line-height:38px;
+	background:url(images/icon/line_endmenu.jpg) no-repeat 28px 19px;
+}
+#charity #main_menu ul li.end_menu:hover{
+	display:block;
+	height:40px;
+	line-height:38px;
+	background:url(images/icon/line_endmenu_hover.jpg) no-repeat 28px 19px;
+}
+#charity #main_menu ul li a{
+	display:block;
+	padding:0px 0px 0px 55px;	
+}
+#charity #main_menu ul li a.iconset{	
+	height:38px;	
+	background:url(images/icon/icon_set1.jpg) no-repeat 0 -5px;
+}
+#charity #main_menu ul li a.iconset_day{	
+	height:38px;	
+	background:url(images/icon/icon_set1.jpg) no-repeat 0 -42px;
+}
+#charity #main_menu ul li a.iconset_golf{	
+	height:38px;	
+	background:url(images/icon/icon_set1.jpg) no-repeat 0 -82px;
+}
+#charity #main_menu ul li a.iconset_water{	
+	height:38px;	
+	background:url(images/icon/icon_set1.jpg) no-repeat 0 -122px;
+}
+#charity #main_menu ul li a.iconset_show{	
+	height:38px;	
+	background:url(images/icon/icon_set1.jpg) no-repeat 0 -162px;
+}
+#charity #main_menu ul li a.iconset_health{	
+	height:38px;	
+	background:url(images/icon/icon_set1.jpg) no-repeat 0 -201px;
+}
+#charity #main_menu ul li a.iconset_spa{	
+	height:38px;	
+	background:url(images/icon/icon_set1.jpg) no-repeat 0 -240px;
+}
+/*-----main menu-----*/
+
+
+
+/* col left */
+
+/* previous-next */
+#review .pre_next{
+	margin:0px;
+	padding:0px;
+	width:220px;
+	height:23px;
+	line-height:23px;
+}
+#review p.previous_tex{
+	margin:0px;
+	padding:0px;
+	width:50px;
+	float:left;
+	text-decoration:none;
+}
+#review p.previous_tex a{ padding:0px; text-decoration:none;}
+#review .previous_icon{
+	width:14px;
+	height:23px;
+	background:url(images/icon/Previous.jpg) no-repeat 0 6px;
+	float:left;
+}
+#review p.number{
+	padding:0px;
+	text-align:center;
+	width:100px;
+	float:left;	
+}
+#review p.number a{padding:0px; text-decoration:none;}
+#review .pre_next_icon{
+	width:14px;
+	height:23px;
+	background:url(images/icon/Pre-next.jpg) no-repeat 0 6px;
+	float:left;
+}
+#review p.next_tex{
+	margin:0px;
+	padding:0 0 0 4px;
+	width:30px;	
+	text-decoration:none;	
+	float:left;
+}
+#review p.next_tex a{ padding:0px; text-decoration:none;}
+
+/* previous-next */
+
+/* why choose page */
+#bg_head_why{
+	margin:0 auto;
+	padding:9px 0 0 80px;
+	width:652px;
+	height:26px;
+	background:url(images/layout/bg_head_why.jpg) no-repeat 0 0;	
+}
+#bg_head_why span{ color:#000;}
+.content_why_main_head{	
+	width:751px;
+	height:18px;
+	background:url(images/layout/trip_header_list.jpg) no-repeat 0 0;
+}
+.content_why_main_head_buttom{
+	margin-top:5px;
+	width:751px;
+	height:35px;
+	background:url(images/layout/main-why-head-top.jpg) no-repeat 0 0 #FFF;
+}
+.content_why_main{
+	width:751px;
+	background:url(images/layout/re-main-why.jpg) repeat-y 0 0;
+}
+.content_why_main a img{ float:left;}
+.head_warp_why{
+	margin-top:10px;
+	width:276px;
+	height:33px;
+	background:url(images/layout/headwrap-left-why.jpg) no-repeat top;	
+}
+.head_warp_why h4{
+	padding:15px 0 0 28px;
+	color:#939598;
+	font-size:12px;	
+}
+.previous{
+	padding:3px 20px 5px 0px;
+	width:140px;
+	float:right;
+}
+.previous a{
+	text-decoration:underline;
+	color:#000;
+}
+.previous a:hover{ color:#000}
+/* why choose page */
+
+/* day trips */
+.trip_header{
+	padding:5px 0 0 34px;
+	font-size:16px;
+	line-height:29px;
+	font-weight:bold;
+	color:#e1e9f6;
+	background:#FFF;
+	height:31px;
+}
+.trip_header_l{
+	width:20px;
+	height:31px;
+	background:url(images/layout/trip_header_l.jpg) no-repeat 0 0;
+	float:left;
+}
+.trip_header_c{
+	height:31px;
+	background:url(images/layout/trip_header.jpg) repeat-x 0 0;
+	float:left;
+}
+.trip_header_r{
+	width:20px;
+	height:31px;
+	background:url(images/layout/trip_header_r.jpg) no-repeat 0 0;
+	float:left;
+}
+.content_why_main img{margin:0 0 10px 32px; float:left;	}
+.trip_detail_bg{ padding-left:15px; width:590px; float:left;}
+.trip_detail{ padding-left:15px; width:590px; float:left;}
+.trip_list{
+	margin:5px 0 0 30px;
+	padding:5px 5px 5px 5px; 
+	width:677px;
+	border:1px solid #CCC;	
+}
+.trip_box{width:169px; float:left;}
+.trip_box_two{width:338px; float:left;}
+
+.trip_list .trip_box img { margin:0px; }
+.trip_list .trip_box_two img { margin:0px; }
+
+a.trip_link{padding-left:5px; width:108px; text-align:left; line-height:12px; float:left;}
+.trip_box_two a.trip_link{padding-left:5px; width:270px; text-align:left; line-height:12px; float:left;}
+
+a.trip_link_end{padding-left:5px; width:113px; text-align:left; line-height:12px; float:right;}
+
+.content_why_main a.view_full{
+	margin-right:32px;
+	padding:5px 12px 0 0;
+	width:500px;
+	display:block;
+	color:#000;
+	text-align:right;
+	text-decoration:underline;
+	background:url(images/icon/pre-next.jpg) no-repeat right 7px;
+	float:right;	
+}
+.content_why_main a.view_full:hover{ color:#0072bc;}
+/* day trips */
+
+/* day trips views */
+#why_head_main{
+	margin-left:15px;
+	background:#e1e9f6;
+	height:24px;
+	width:722px;
+}
+
+#trip_bg_buttom{
+	width:751px;
+	height:22px;
+	background:url(images/layout/main-why-head-top.jpg) no-repeat 0 0 #FFF;
+}
+#trip_view{
+	margin:10px 0 25px 25px;
+	padding:5px 5px 5px 5px; 
+	width:690px;
+	border:1px solid #CCC;
+}
+
+#trip_no_data{
+	margin:10px 0 25px 25px;
+	padding:5px 5px 5px 5px; 
+	width:690px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#why_head_main h4{ line-height:15px;  font-size:15px; color:#5f85b7; padding:4px 0 0 15px;}
+#trip_view img{ margin:0 0 0 3px; paddingt:0px; float:left;}
+#trip_view p{ padding:0 13px 0 13px; width:450px; float:left}
+
+
+.hotels_price{
+	width:120px;
+	height:115px;
+	background:url(images/layout/view_line.jpg) no-repeat left center;	
+	float:left;
+	text-align:center;
+}
+.thb{
+	padding:0px;
+	text-align:center;
+	font-size:20px;
+}
+.price{
+	text-align:center;
+	font-size:30px;
+}
+.list_booknow{ margin:6px 0 0 0;}
+.list_booknow a{
+	margin:0 auto;
+	width:100px;
+	height:29px;
+	display:block;	
+	background:url(images/button/list_booknow.jpg) no-repeat 0 0;		
+}
+.list_booknow a:hover{
+	background:url(images/button/list_booknow.jpg) no-repeat 0 -29px;		
+}
+
+.content_why_main .trip_booknow{ padding:8px 0 4px 585px;}
+.content_why_main .trip_booknow a{
+	width:100px;
+	height:29px;
+	display:block;	
+	background:url(images/button/list_booknow.jpg) no-repeat 0 0;
+}
+.content_why_main .trip_booknow a:hover{
+	background:url(images/button/list_booknow.jpg) no-repeat 0 -29px;	
+}
+
+.content_why_main .trip_booknow{ padding:8px 0 4px 585px;}
+.content_why_main .trip_booknow a{
+	width:100px;
+	height:29px;
+	display:block;	
+	background:url(images/button/list_booknow.jpg) no-repeat 0 0;
+}
+.content_why_main .trip_booknow a:hover{
+	background:url(images/button/list_booknow.jpg) no-repeat 0 -29px;	
+}
+/* day trips views */
+
+/* golf courses */
+#golf_detail{ padding-left:30px;}
+#golf_detail p{ padding:0 10px 6px 10px; width:680px;}
+#golf_detail span{ padding-left:10px; color:#60bb46; font-size:15px; font-weight:bold;}
+
+#golf_boxsearch{
+	position:relative;
+	margin:10px 0 0px 35px;
+	padding:10px 0 0 0;
+	width:683px;
+	height:121px;
+	border:1px solid #d1d2d4;
+}
+#browse_header{
+	margin-bottom:20px;
+	background:#e1e9f6;
+	height:30px;
+	width:683px;
+}
+.bg_golf_boxsearch{
+	position:absolute;
+	padding:10px 0 0 75px;
+	width:584px;
+	height:60px;
+	background:#f4f7fc;
+	left:12px;
+	top:50px;
+}
+.destination{ line-height:20px; width:190px; float:left; font-size:14px; font-weight:bold; color:#000;}
+#golf_button{
+	margin:12px 0 10px 10px;
+	width:118px;
+	float:left;
+}
+#golf_boxsearch #why_head_main{ margin:0 0 10px 0;  width:470px;}
+
+
+#browse_header h4{ padding-left:18px; font-size:19px; line-height:18px;}
+/*-----button boxsearch-----*/
+
+
+.hotel_search_buttom{
+	width:118px; 
+	height:29px;
+	cursor:pointer;
+	border:0px;
+	background:url(images/button/golf_search.jpg) no-repeat 0 0;
+}	
+.hotel_search_buttom:hover{ width:118px;  height:29px; background:url(images/button/golf_search.jpg) no-repeat 0 -29px;}
+/*-----button boxsearch-----*/
+
+#golf_destinations{
+	position:relative;
+	padding-left:20px;
+	top:40px;
+	left:37px;
+	width:662px;
+}
+#golf_destinations ul{
+	width:164px;
+	float:left;
+}
+#golf_destinations ul li{
+	margin-bottom:8px;
+	width:164px;
+	height:40px;
+	display:block;
+	background:url(images/icon/icon_golf2.jpg) no-repeat 0 0;
+}
+#golf_destinations ul li a{
+	margin-left:20px;
+	display:block;
+	font-size:14px;
+	line-height:14px;
+	color:#0b9444;
+	text-decoration:underline;	
+}
+#golf_destinations ul li a:hover{color:#000;}
+
+.golf_images{
+	margin-top:5px;
+	margin-left:35px;
+	width:685px;
+	height:195px;
+	background:url(images/layout/golf_imgaes2.jpg) no-repeat #CFF;	
+}
+.golfter{
+	position:absolute;
+	top:255px;
+	left:420px;
+	width:246px;
+	height:206px;
+	background:url(images/layout/golfer.jpg) no-repeat 0 0;
+	
+}
+/* golf courses */
+
+
+/* golf courses list */
+.golf_header{
+	height:31px;
+	background:url(images/layout/golf_header.jpg) no-repeat 30px 0 #FFF;
+}
+.golf_header h4{ padding-top:0px; width:282px; line-height:28px;  font-size:18px; color:#e1e9f6; text-align:center; }
+
+/* -----sortby---- */
+#sortby{
+	margin:0 0 8px 14px;
+	padding-bottom:2px;
+	width:722px;
+	height:40px;
+	text-align:center;
+	background:#f7f8f8;
+	border:solid 1px #e7e8e9;	
+}
+#sortby p{
+	padding-left:60px;
+	width:80px;
+	float:left;
+	font-size:14px;
+	line-height:38px;
+	color:#000;
+}
+#sortby p{
+	padding-left:60px;
+	width:80px;
+	float:left;
+	font-size:14px;
+	line-height:38px;
+	color:#000;
+}
+
+#sortby form{
+	height:40px;
+	width:520px;
+	float:left;
+}
+#sortby form ul{
+	margin:0 20px 0 0;
+	float:left;
+}
+/* -----sortby---- */
+.content_why h4.display{ padding:0 0 4px 40px; font-size:12px; color:#0072bc;}
+#trip_view #why_head_main{ margin:0 0 5px 3px; width:687px;}
+#trip_view #why_head_main h4{ padding-left:10px; padding-right:10px; float:left;}
+
+.star_golf{
+	margin:3px 20px 0px 0px;
+	height:16px;
+	width:80px;
+	background:url(images/icon/icon_star_golf.jpg) no-repeat top;
+	float:left;	
+}
+.icon_review_golf{
+	margin:0px 5px 5px 14px;
+	padding-left:90px;
+	width:400px;
+	height:16px;
+	background:url(images/icon/icon_review_golf.jpg) no-repeat left top;
+	float:left;
+}
+.icon_review_golf a{ text-decoration:underline;}
+#why_head_main a{ margin-top:5px;}
+
+#trip_view .map{
+	margin:0px 0 2px 15px;
+	padding:5px 0 0 50px;
+	height:21px;
+	width:58px;
+	background:url(images/icon/map_s.jpg) no-repeat 2px 0;
+	float:right;
+}
+#trip_view .map a{ text-decoration:underline;}
+#trip_view td.golf_baht{ padding-left:75px;}
+#trip_view td.golf_baht p{ padding:0px; margin:0px; width:90px; float:left;}
+#trip_view td.golf_baht span{ padding:0px; margin:0px; width:10px; float:left;}
+#trip_view td.golf_baht img{ float:left;}
+
+#trip_view td.golf_date{ width:160px;}
+#trip_view td.golf_type{ width:270px;}
+#golf_table_detail{ background:#f3f3f4; color:#666}
+#golf_table_bg{ background:#eaf0f8; color:#666}
+
+/* golf courses list */
+
+
+
+/*-----footer table-----*/
+table#content_tophotel_footer_b{
+	margin-left:11px;
+	padding:6px 0 8px 0;
+	width:970px;
+	background:url(images/layout/tophotel-content-footer_b.jpg) repeat-y 0 0;
+}
+table#content_tophotel_footer_b td.all_col{ padding:0 0 3px 12px; width:309px; background:none;}
+table#content_tophotel_footer_b td.all_col a{
+	margin:0px;
+	padding-left:12px;
+	font-size:12px;
+	width:288px;
+	display:block;
+	color:#525254;
+	background:url(images/icon/ball_green.jpg) no-repeat 0 3px;
+}
+table#content_tophotel_footer_b td.all_col a:hover{ color:#000;}
+
+/*-----footer table-----*/

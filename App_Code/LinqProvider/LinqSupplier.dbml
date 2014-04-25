@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hotels2thailandX(Online)" Class="LinqSupplierDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=BHTSERVER\SQLEXPRESS;Initial Catalog=hotels2thailandX(Online);User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="hotels2thailandX_Online_ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_supplier_category" Member="tbl_supplier_categories">
+    <Type Name="tbl_supplier_category">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_supplier_category_tbl_supplier" Member="tbl_suppliers" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_supplier" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_supplier_deposit" Member="tbl_supplier_deposits">
+    <Type Name="tbl_supplier_deposit">
+      <Column Name="deposit_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="booking_product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="date_activity" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_supplier_tbl_supplier_deposit" Member="tbl_supplier" ThisKey="supplier_id" OtherKey="supplier_id" Type="tbl_supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_supplier_payment_type" Member="tbl_supplier_payment_types">
+    <Type Name="tbl_supplier_payment_type">
+      <Column Name="payment_type_id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_supplier_payment_type_tbl_supplier" Member="tbl_suppliers" ThisKey="payment_type_id" OtherKey="payment_type_id" Type="tbl_supplier" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_phone_cat" Member="tbl_phone_cats">
+    <Type Name="tbl_phone_cat">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_phone_cat_tbl_supplier_staff_contact_phone" Member="tbl_supplier_staff_contact_phones" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_supplier_staff_contact_phone" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_bank" Member="tbl_banks">
+    <Type Name="tbl_bank">
+      <Column Name="bank_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_bank_tbl_supplier_account" Member="tbl_supplier_accounts" ThisKey="bank_id" OtherKey="bank_id" Type="tbl_supplier_account" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_account_type" Member="tbl_account_types">
+    <Type Name="tbl_account_type">
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_account_type_tbl_supplier_account" Member="tbl_supplier_accounts" ThisKey="type_id" OtherKey="type_id" Type="tbl_supplier_account" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_supplier_payment_policy" Member="tbl_supplier_payment_policies">
+    <Type Name="tbl_supplier_payment_policy">
+      <Column Name="policy_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_end" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="day_advance" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_supplier_tbl_supplier_payment_policy" Member="tbl_supplier" ThisKey="supplier_id" OtherKey="supplier_id" Type="tbl_supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_supplier_department" Member="tbl_supplier_departments">
+    <Type Name="tbl_supplier_department">
+      <Column Name="department_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_supplier_department_tbl_supplier_staff_contact" Member="tbl_supplier_staff_contacts" ThisKey="department_id" OtherKey="department_id" Type="tbl_supplier_staff_contact" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_supplier_staff_contact" Member="tbl_supplier_staff_contacts">
+    <Type Name="tbl_supplier_staff_contact">
+      <Column Name="staff_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="department_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_supplier_staff_contact_tbl_supplier_staff_contact_email" Member="tbl_supplier_staff_contact_emails" ThisKey="staff_id" OtherKey="staff_id" Type="tbl_supplier_staff_contact_email" />
+      <Association Name="tbl_supplier_staff_contact_tbl_supplier_staff_contact_phone" Member="tbl_supplier_staff_contact_phones" ThisKey="staff_id" OtherKey="staff_id" Type="tbl_supplier_staff_contact_phone" />
+      <Association Name="tbl_supplier_department_tbl_supplier_staff_contact" Member="tbl_supplier_department" ThisKey="department_id" OtherKey="department_id" Type="tbl_supplier_department" IsForeignKey="true" />
+      <Association Name="tbl_supplier_tbl_supplier_staff_contact" Member="tbl_supplier" ThisKey="supplier_id" OtherKey="supplier_id" Type="tbl_supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_supplier_staff_contact_email" Member="tbl_supplier_staff_contact_emails">
+    <Type Name="tbl_supplier_staff_contact_email">
+      <Column Name="email_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="staff_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_supplier_staff_contact_tbl_supplier_staff_contact_email" Member="tbl_supplier_staff_contact" ThisKey="staff_id" OtherKey="staff_id" Type="tbl_supplier_staff_contact" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_supplier_staff_contact_phone" Member="tbl_supplier_staff_contact_phones">
+    <Type Name="tbl_supplier_staff_contact_phone">
+      <Column Name="phone_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="staff_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="code_country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="code_local" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="phone_number" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_phone_cat_tbl_supplier_staff_contact_phone" Member="tbl_phone_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_phone_cat" IsForeignKey="true" />
+      <Association Name="tbl_supplier_staff_contact_tbl_supplier_staff_contact_phone" Member="tbl_supplier_staff_contact" ThisKey="staff_id" OtherKey="staff_id" Type="tbl_supplier_staff_contact" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_supplier_account" Member="tbl_supplier_accounts">
+    <Type Name="tbl_supplier_account">
+      <Column Name="acount_id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="bank_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="type_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="account_title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="account_name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="account_number" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="account_branch" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="flag_default" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbl_account_type_tbl_supplier_account" Member="tbl_account_type" ThisKey="type_id" OtherKey="type_id" Type="tbl_account_type" IsForeignKey="true" />
+      <Association Name="tbl_bank_tbl_supplier_account" Member="tbl_bank" ThisKey="bank_id" OtherKey="bank_id" Type="tbl_bank" IsForeignKey="true" />
+      <Association Name="tbl_supplier_tbl_supplier_account" Member="tbl_supplier" ThisKey="supplier_id" OtherKey="supplier_id" Type="tbl_supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_supplier" Member="tbl_suppliers">
+    <Type Name="tbl_supplier">
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="payment_type_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="title_common" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="title_company" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="address_office" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="tax_vat" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="tax_service" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="tax_local" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="suffix_user_extranet" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="tbl_supplier_tbl_supplier_deposit" Member="tbl_supplier_deposits" ThisKey="supplier_id" OtherKey="supplier_id" Type="tbl_supplier_deposit" />
+      <Association Name="tbl_supplier_tbl_supplier_payment_policy" Member="tbl_supplier_payment_policies" ThisKey="supplier_id" OtherKey="supplier_id" Type="tbl_supplier_payment_policy" />
+      <Association Name="tbl_supplier_tbl_supplier_staff_contact" Member="tbl_supplier_staff_contacts" ThisKey="supplier_id" OtherKey="supplier_id" Type="tbl_supplier_staff_contact" />
+      <Association Name="tbl_supplier_tbl_supplier_account" Member="tbl_supplier_accounts" ThisKey="supplier_id" OtherKey="supplier_id" Type="tbl_supplier_account" />
+      <Association Name="tbl_supplier_category_tbl_supplier" Member="tbl_supplier_category" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_supplier_category" IsForeignKey="true" />
+      <Association Name="tbl_supplier_payment_type_tbl_supplier" Member="tbl_supplier_payment_type" ThisKey="payment_type_id" OtherKey="payment_type_id" Type="tbl_supplier_payment_type" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

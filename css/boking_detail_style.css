@@ -1,0 +1,598 @@
+.mainOrder
+{
+    margin:0px;
+    padding:0px;
+    position:relative;
+    width:100%;
+    font-family:Trebuchet MS;
+}
+.BookingHead_aff_booknow
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:86px;
+    background-image:url(http://hotels2thailand.com/images/order_header_bg_aff_paylater.png);
+}
+.BookingHead_aff
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:86px;
+    background-image:url(http://hotels2thailand.com//images/order_header_bg_aff.png);
+}
+.BookingHead_booknow
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:86px;
+    background-image:url(http://hotels2thailand.com/images/order_header_bg_paylater.png);
+}
+.BookingHead_Extranet
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:86px;
+    background-image:url(http://hotels2thailand.com/images/order_header_bg_extranet.png);
+}
+.BookingHead_extranet_aff
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:86px;
+    background-image:url(http://hotels2thailand.com/images/order_header_bg_aff_extranet.png);
+}
+.BookingHead_booknow_extranet
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:86px;
+    background-image:url(http://hotels2thailand.com/images/order_header_bg_paylater_extranet.png);
+}
+.BookingHead_booknow_extranet_aff
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:86px;
+    background-image:url(http://hotels2thailand.com/images/order_header_bg_paylater_extranet_aff.png);
+}
+
+.BookingHead
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:86px;
+    background-image:url(http://hotels2thailand.com/images/order_header_bg.png);
+    
+}
+.booking_head_Number
+{
+    margin:0px;
+     padding:0px;
+     position:absolute;
+     top:42px;
+     left:370px;
+     font-size:24px;
+     font-weight:bold;
+     color:#6da71e;
+}
+.booking_head_aff
+{
+     margin:0px;
+     padding:0px;
+     position:absolute;
+     top:70px;
+     left:200px;
+     font-size:11px;
+     font-weight:bold;
+     color:#ffcc01;
+}
+.booking_head_aff a
+{
+    color:#ff5200;
+}
+#booking_product_list
+{
+     margin:0px;
+     padding:0px 0px 10px 0px;
+     border-bottom:1px solid #e0e0e0;
+}
+.drop_booking_style
+{
+    margin:0px 5px 0px 0px;
+     padding:2px;
+     border:1px solid #97a8c4;
+     font-size:11px;
+     font-family:Tahoma;
+    
+}
+.menu_booking_manage
+{
+    margin:0px;
+    padding:0px 0px 0px 150px;
+    width:100%;
+    text-align:center;
+}
+.menu_booking_manage a
+{
+     width:150px;
+     display:block;
+     padding:0px;
+     margin:5px 0px 5px 3px;
+     float:left;
+     text-align:center;
+     background-color:#515151;
+     font-size:14px;
+     color:#e2dcdc;
+}
+.menu_booking_manage a:hover
+{
+    
+}
+/* booking_product_item */
+
+.booking_product_item
+{
+    margin:5px 0px 0px 0px;
+    padding:5px;
+    width:940px;
+    /*background-color:#e1e9f6;*/
+    /*background-color:#f7f8f8;*/
+    /*background-color:#f7f7f7;*/
+    /*border:1px solid #d7d7d7;*/
+    
+}
+.booking_product_item_head
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    font-size:14px;
+    font-weight:bold;
+}
+.booking_product_item_head p
+{
+    margin:0px;
+    padding:5px 0px 5px 0px;
+    background-color:#ff5200;
+    border:1px solid #d24a06;
+    width:100%;
+    color:#ffffff;
+    text-indent:5px;
+    
+    
+}
+.booking_product_item_head span
+{
+    color:#2f2926;
+    margin:0px;
+    padding:0px;
+}
+.booking_product_item_status_main
+{
+     margin:5px 0px 0px 0px;
+    padding:0px;
+}
+
+.booking_product_item_status
+{
+    width:300px;
+    margin:0px 0px 0px 0px;
+    padding:0px; 
+    float:left;
+   
+}
+.booking_product_confirm_pan
+{
+    margin:5px 0px 0px 0px;
+    padding:0px;
+}
+.booking_product_information
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    background-color:#6da71e;
+    border:1px solid #628c29;
+    height:20px;
+    line-height:20px;
+    width:100%;
+     color:#ffffff;
+     font-weight:bold;
+     font-size:12px;
+}
+.date_check
+{
+    margin:0px 0px 0px 5px;
+    padding:0px; 
+    float:left;
+}
+.adult
+{
+    margin:0px 0px 0px 250px;
+    padding:0px; 
+    float:left;
+}
+.booking_product_information span
+{
+    color:#35491a;
+}
+
+.tbl_booking_product_list_confirm
+{
+    margin:2px 0px 0px 0px;
+    padding:0px;
+}
+.booking_product_id_print_pan
+{
+    margin:5px 0px 0px 20px;
+    padding:0px;
+    float:left;
+}
+.booking_product_id_print_pan a
+{
+    margin:0px 0px 0px 0px;
+    padding:0px 5px 0px 5px;
+}
+.product_item_total
+{
+    margin:5px 0px 0px 0px;
+    padding:0px;
+}
+.product_item_total span
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+}
+.cloasPan
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+}
+.cloasPan a
+{
+    float:right;
+}
+/*------- Booking Item Detail*/
+.booking_product_detail
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    width:100%;
+}
+.booking_product_detail_item
+{
+    margin:10px 0px 0px 0px;
+    padding:0px;
+    width:100%;
+}
+.booking_product_detail_note
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    width:100%;
+}
+.booking_product_detail_SA
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    width:100%;
+}
+.booking_product_detail_supplier
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+}
+
+
+.booking_product_detail_notetAndsupplier
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    float:left;
+    width:49%;
+}
+.booking_product_detail_activity
+{
+    margin:0px 0px 0px 10px;
+    padding:0px;
+    float:left;
+    width:49%;
+}
+/*tbl_booking_product_list_item_detail*/
+
+.tbl_booking_product_list_item_detail
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+}
+
+.product_item_total
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    font-size:14px;
+    font-weight:bold;
+}
+.product_item_total_1
+{
+    color:#72ac58;
+}
+.product_item_total_2
+{
+   color: #ef2d2d;
+}
+.Product_note
+{
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 10px 0px;
+    width:100%;
+    border-bottom:1px solid #e0e0e0;
+}
+.Product_note p
+{
+     margin:0px 0px 0px 0px;
+    padding:0px;
+    font-size:14px;
+     font-weight:bold;
+}
+.trRow
+{
+    background-color:#ffffff;
+     height:25px;
+     text-align:left;
+     padding:0px 0px 0px 0px;
+}
+.trRowalten
+{
+    background-color:#f4f4ff;
+     height:25px;
+     text-align:left;
+     padding:0px 0px 0px 0px;
+}
+.trRow td
+{
+     padding:0px 0px 0px 5px;
+     color:#3f5d9d;
+}
+.trRowalten td
+{
+     padding:0px 0px 0px 5px;
+     color:#3f5d9d;
+}
+.supplier_detail_foot
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    text-align:center;
+}
+.supplier_detail_foot a
+{
+    
+}
+#booking_PriceTotals
+{
+    margin:10px 0px 10px 0px;
+    padding:0px 0px 10px 0px;
+     border-bottom:1px solid #e0e0e0;
+    text-align:center;
+    width:100%;
+}
+
+.Blance
+{
+    margin:5px 0px 0px 0px;
+    padding:0px;
+    text-align:center;
+    width:100%;
+    color:#ffffff;
+    font-size:12px;
+    font-weight:bold;
+    height:20px;
+    line-height:20px;
+   
+}
+.main_total
+{
+     margin:0px 0px 0px 0px;
+    padding:0px;
+    text-align:center;
+    width:100%;
+    background-color:#5baae3;
+    border:1px solid #125f96;
+    color:#1c2a47;
+    font-size:16px;
+    font-weight:bold;
+    height:40px;
+    line-height:40px;
+}
+
+.main_paid
+{
+     margin:5px 0px 0px 0px;
+    padding:0px;
+    text-align:center;
+    width:100%;
+    background-color:#ffcc33;
+    border:1px solid #d8a50a;
+    color:#1c2a47;
+    font-size:14px;
+    font-weight:bold;
+    height:25px;
+    line-height:25px;
+}
+#booking_payment_list
+{
+     margin:0px 0px 0px 0px;
+     padding:0px 0px 10px 0px;
+     border-bottom:1px solid #e0e0e0;
+     width:100%;
+}
+#booking_detail
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    width:100%;
+}
+#booking_detail_info
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    width:50%;
+    float:left;
+}
+#booking_activity
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    width:50%;
+    float:left;
+}
+/* BookingDetail*/
+.last_modify
+{
+    margin:0px 0px 0px 0px;
+    padding:2px;
+}
+.last_modify span
+{
+     margin:0px 0px 0px 0px;
+    padding:0px;
+    font-weight:bold;
+    
+}
+.enable_display
+{
+}
+.disable_display
+{
+    color:#cdcbc9;
+}
+.disable_display a
+{
+    color:#cdcbc9;
+}
+#booking_manage_menu
+{
+    margin:10px 0px 0px 0px;
+    padding:0px;
+    width:100%;
+    text-align:center;
+    
+}
+#booking_manage_menu p
+{
+    margin:0 auto;
+    padding:0px 0px 0px 0px;
+    width:100%
+}
+#booking_manage_menu a
+{
+    margin:5px 0px 0px 3px;
+    padding:0px;
+    width:200px;
+    height:25px;
+    line-height:25px;
+    display:block;
+    color:#ffffff;
+    float:left;
+    
+    font-size:12px;
+    font-weight:bold;
+    background-color:#72ac58;
+    border:1px solid #2c5115;
+     
+}
+
+.supplier_contact
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+.supplier_contact_res
+{
+    margin:0px;
+    padding:0px;
+    width:49%;
+    float:left;
+    
+}
+.supplier_contact_acc
+{
+    margin:0px;
+    padding:0px;
+    width:49%;
+    float:left;
+    
+}
+.dep_name
+{
+    margin:0px;
+    padding:0px 0px 5px 0px;
+    font-size:14px;
+    font-weight:bold;
+    border-bottom:solid 1px #e0e0e0;
+}
+.contact_name
+{
+    margin:0px;
+    padding:0px;
+    font-weight:bold;
+}
+.contact_list
+{
+    margin:0px;
+    padding:0px;
+}
+.contact_list_item
+{
+    margin:0px;
+    padding:0px;
+}
+/* Booking Search =============*/
+#search_booking_normal
+{
+     margin:0px;
+    padding:0px;
+}
+#search_booking_normal fieldset
+{
+     margin:10px 0px 0px 0px;
+    padding:10px;
+}
+#search_booking_normal fieldset legend
+{
+     margin:0px;
+    padding:0px 5px 0px 5px;
+    color:#ff5200;
+    font-weight:bold;
+}
+.txtboxCustom_new
+  {
+      margin:0px;
+      padding:3px;
+      width:660px;
+      border:1px solid #d8d8d8;
+      font-size:12px;
+      font-family:Verdana;
+  }
+  .BookingStatusProductHead
+{
+     margin:10px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    font-size:12px;
+    height:20px;
+     line-height:20px;
+    text-align:center;
+    background-color:#60afe5;
+    font-weight:bold;
+    border:1px solid #3898de;
+    color:#ffffff;
+}

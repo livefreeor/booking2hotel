@@ -1,0 +1,79 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Hotels2thailand.Staffs;
+using Hotels2thailand.ProductOption;
+using Hotels2thailand.Production;
+using System.Text;
+
+
+namespace Hotels2thailand.UI
+{
+    public partial class admin_ajax_condition_minimum_update : Hotels2BasePageExtra_Ajax
+    {
+
+        public string qMinId
+        {
+            get { return Request.QueryString["minid"]; }
+        }
+        
+       
+        public string qConId
+        {
+            get { return Request.QueryString["conid"]; }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (this.Page.IsPostBack)
+            {
+                if (this.IsStaffEdit())
+                {
+                    if (!string.IsNullOrEmpty(this.qMinId) && !string.IsNullOrEmpty(this.qConId))
+                    {
+                        Response.Write(UpdateRate());
+                    }
+                    else
+                    {
+                        Response.Write("method");
+                    }
+                  
+                }
+                else
+                {
+                    Response.Write("method_invalid");
+                }
+                Response.End();
+                
+            }
+        }
+
+        public string UpdateRate()
+        {
+            string result = "False";
+            ConditionminimumDayExtranet cConditionMin = new ConditionminimumDayExtranet();
+            int intMinId = int.Parse(this.qMinId);
+            int intConditionId = int.Parse(this.qConId);
+
+            try
+            {
+                DateTime dDateStart = Request.Form["hd_min_date_From_" + intMinId].Hotels2DateSplitYear("-");
+                DateTime dDateEnd = Request.Form["hd_min_date_To_" + intMinId].Hotels2DateSplitYear("-");
+                byte bytMinAmount = byte.Parse(Request.Form["min_day_amount_" + intMinId]);
+                cConditionMin.UpdateMinimumStay(this.CurrentProductActiveExtra, intMinId, dDateStart, dDateEnd, bytMinAmount);
+                
+
+                result = "True";
+            }
+            catch (Exception ex)
+            {
+                Response.Write("error:" + ex.Message);
+            }
+            return result;
+        }
+
+    }
+}

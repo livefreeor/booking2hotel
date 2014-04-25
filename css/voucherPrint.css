@@ -1,0 +1,71 @@
+@charset "iso-8859-1";
+/* CSS Document */
+BODY
+{
+    FONT-FAMILY: Tahoma,Verdana, Arial, Helvetica, sans-serif;
+}
+TD
+{
+    FONT-SIZE: 12px;
+    FONT-FAMILY: Tahoma,Verdana, Arial, Helvetica, sans-serif
+}
+.f11 {  font-family: Tahoma, "MS Sans Serif"; font-size: 11px}
+.f13 {  font-family: Tahoma, "MS Sans Serif"; font-size: 13px}
+.fsmall {  font-family: Tahoma; font-size: 9px}
+.mail {
+			font-family:Tahoma, "MS Sans Serif"; 
+			font-size:14px;
+			color:#2C2C2C;
+		}
+.s {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px}
+.ss {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: line-through;
+}
+.l1 {
+font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold
+}
+.l2 {
+font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold
+}
+.l3 {
+font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 17px; font-weight: bold
+}
+.l4 {
+font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 19px; font-weight: bold
+}
+.l5 {
+font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 21px; font-weight: bold
+}
+
+.m1 {
+font-family: "Microsoft Sans Serif", "MS Sans Serif", "Cordia New", CordiaUPC; font-size: 13px
+}
+.m2 {
+font-family: Arial, Helvetica, sans-serif; font-size: 10pt
+}
+.mStrong {
+font-family: "Microsoft Sans Serif", "MS Sans Serif", "Cordia New", CordiaUPC; font-size: 13px; font-weight: bold;
+}
+.s2 {
+font-family: Arial, Helvetica, sans-serif; font-size: 12px
+}
+.sb {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+}
+.nu {
+	text-decoration: none;
+}
+
+/*a:link {
+	font-size:12px;
+	text-decoration: none;
+	color:346494;
+}
+a:active {  text-decoration: none}
+/*a:hover { color: #FFFFFF; background-color: #FF9900}*/
+/*a:hover { color: #FE5F10; background-color: #EFF7FF; }*/
+

@@ -1,0 +1,39 @@
+body{ margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif !important; font-size:12px;}
+.clear-all{clear:both; line-height:0px }
+
+.annoucement { 
+	margin:10px 0 15px 16px;
+	padding:0px;
+	border:solid 2px #966; 
+	width:715px;
+}
+.annoucement .style{
+	margin:0px;
+	padding:0px 0px 5px 0px;
+	background:#ffffe5; 
+	font-size:12px;
+}
+.annoucement .style p.header{
+	font-size:14px;
+	font-weight:bold;
+	color:#930;
+	padding:8px 20px 10px 45px;
+	background:#ffffcd url(images/icon/megaphone.jpg) no-repeat 2px 2px;
+}
+.annoucement .style p{ 
+	margin:0px;
+	padding:8px 45px 5px 45px;
+	font-size:12px;
+}
+
+.annoucement .style ul{ margin:5px 0 8px 45px; padding:0px;}
+.annoucement .style li{ padding-left:12px; background:url(images/icon/ball_green_s.jpg) no-repeat 0 4px; list-style:none;}
+
+.annoucement .style p.endhead{
+	margin:5px 0 0 0;
+	font-size:14px;
+	font-weight:bold;
+	color:#930;
+	padding:8px 20px 3px 45px;
+	background:none;
+}

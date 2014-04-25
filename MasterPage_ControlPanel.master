@@ -1,0 +1,203 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_ControlPanel.master.cs" Inherits="Hotels2thailand.UI.MasterPage.Masterpage_MasterPage_Control_Panel" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Src="~/Control/StaffStatusBox.ascx" TagName="LoginBox" TagPrefix="Staff" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<link href="css/Master_style.css?ver=01" type="text/css" rel="stylesheet" />
+<link href="css/staffstyle.css" type="text/css" rel="stylesheet" />
+<link href="css/supplierstyle.css" type="text/css" rel="stylesheet" />
+
+<link href="css/option_style.css" type="text/css" rel="stylesheet" />
+<link href="css/promotion.css" type="text/css" rel="stylesheet" />
+
+<link href="css/calendar.css" rel="Stylesheet" />  
+
+<script type="text/javascript" language="javascript">
+
+    function changein(object) {
+
+        object.cells[0].className = "bgstyleleft";
+
+        count = object.cells.length;
+
+        for (i = 1; i <= count - 1; i++) {
+
+            object.cells[i].className = "bgstyle";
+
+        }
+
+        object.cells[count - 1].className = "bgstyleright";
+
+    }
+
+
+    function changeout(object) {
+
+        object.cells[0].className = "";
+
+        count = object.cells.length;
+
+        for (i = 1; i <= count - 1; i++) {
+
+            object.cells[i].className = "";
+
+        }
+
+        object.cells[count - 1].className = "";
+
+    }
+
+    function clickButton(e, buttonid) {
+        var evt = e ? e : window.event;
+        var bt = document.getElementById(buttonid);
+        if (bt) {
+            if (evt.keyCode == 13) {
+                bt.click();
+                return false;
+            }
+        }
+    }
+
+
+    function insertattribute() {
+        var txtareapage = document.getElementsByTagName("input");
+        for (i = 0; i <= txtareapage.length - 1; i++) {
+
+            txtareapage[i].setAttribute('onkeypress', 'disableEnterKey()');
+
+        }
+
+    }
+    function enableEnterKey() {
+        if (window.event.keyCode == 13) {
+
+            event.returnValue = false;
+            event.cancel = true;
+
+        }
+    }
+    function disableEnterKey(e) {
+        if (!e) e = window.event
+
+        if ((e.target || e.srcElement).tagName == 'TEXTAREA') {
+            //alert("TEST");
+        } else {
+            var key;
+            if (window.event)
+                key = window.event.keyCode; //IE
+            else
+                key = e.which; //firefox      
+
+            return (key != 13);
+        }
+
+    }
+
+
+    function showDiv(id_name) {
+        var target = document.getElementById(id_name);
+        target.style.display = (target.style.display == "none") ? "block" : "none";
+
+    }
+
+    function showDivTwin(id_name, name_id) {
+        var target = document.getElementById(id_name);
+        var t2 = document.getElementById(name_id);
+        target.style.display = (target.style.display == "none") ? "block" : "none";
+        t2.style.display = (t2.style.display == "none") ? "block" : "none";
+    }
+
+    function DisableDiv(id_name) {
+        var target = document.getElementById(id_name);
+        target.style.display = "none";
+
+    }
+
+    function EnableDiv(id_name) {
+        var target = document.getElementById(id_name);
+        target.style.display = "block";
+
+    }
+</script>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body   onkeypress="return disableEnterKey(event)"  >
+<form id="form1" runat="server">
+
+<ajaxToolkit:ToolkitScriptManager runat="Server" EnableScriptGlobalization="true"
+        EnableScriptLocalization="true" ID="ScriptManager1"  />
+
+<center>
+<div class="main">
+    <div class="header">
+    <asp:Image ID="Image1" ImageUrl="http://www.booking2hotels.com/images/logo_hotels2new.png" runat="server" CssClass="logo" />
+    
+    <staff:LoginBox ID="userStaffLoginBox" ClientIDMode="Static" runat="server"></staff:LoginBox>
+   
+         <asp:SiteMapPath ID="SiteMapBar" runat="server" CssClass="sitemap" CurrentNodeStyle-CssClass="sitemapcurrent" PathSeparator=">>" 
+          PathSeparatorStyle-CssClass="separator" ></asp:SiteMapPath>
+     </div>
+    <div style=" clear:both;"></div>
+    <div class="headtitle" style=" text-align:left">
+            
+             <p style=" float:left; margin-top:3px;"><asp:Label ID="lblHeadPageTitle" runat="server"><%= SiteMap.CurrentNode.Title%></asp:Label><br />
+              <span class="titleDes"><asp:Label ID="lblHeadPageDes" runat="server"><%= SiteMap.CurrentNode.Description%></asp:Label></span></p>
+              
+    </div>
+    <div style="clear:both"></div>
+   
+    <div class="content" style="text-align:left">
+        <div id="content_left">
+            <a href="/admin/booking/booking_search.aspx" target="_blank"><img src="/images_extra/icon_search.png" alt="booking search" />Booking Search</a>
+            <br /><br />
+
+
+            <a href="/admin/account/sales_manage.aspx" target="_blank"><img src="/images_extra/member_status_unblock.png" alt="booking search" />Sales Manage</a>
+                        
+            <br /><br />
+            <a href="/admin/account/hotel_commission.aspx" target="_blank"><img src="/images_extra/commission.png" alt="booking search" />Commission Module</a>
+
+            <br /><br />
+            <a href="/admin/account/account_deposit.aspx" target="_blank"><img src="/images_extra/MoneyIcon.jpg" alt="booking search" />Booking Deposit</a>
+             <br /><br />
+            <a href="/admin/account/account_bht_payment.aspx" target="_blank"><img src="/images_extra/notice.png" alt="booking search" />Account Payment List</a>
+            <br /><br />
+            <a href="/admin/account/account_bht_payment_history.aspx" target="_blank"><img src="/images_extra/notice.png" alt="booking search" />Account History</a>
+
+            <br /><br />
+            <a href="http://order.booking2hotels.com/agency/agencylist.aspx" target="_blank"><img src="/images_extra/notice.png" alt="booking search" />B2b Agency List</a>
+        </div>
+        
+            
+         
+        <div id="content_right">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+             
+        </asp:ContentPlaceHolder>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div style=" clear:both;"></div>
+    <div class="footer">
+        <p>Booking2hotels.com @ 2012</p>
+        <p></p>
+        
+    </div>
+    <div style=" clear:both;"></div>
+</div>
+<div style=" clear:both;"></div>
+
+</center>
+</form>  
+ 
+</body>
+</html>
+ 

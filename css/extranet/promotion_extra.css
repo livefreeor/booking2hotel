@@ -1,0 +1,402 @@
+﻿a
+{
+	color:#6a795b;
+	font-weight:bold;
+	text-decoration:none;
+	
+}
+#promotion_result
+{
+    margin:0px 0px 0px 0px;
+    padding:4px;
+    background-color:#f7f7f7;
+}
+.promotion_group_item_selected_list
+{
+    margin:15px 0px 0px 0px;
+    padding:20px 10px 10px 10px;
+    background-color:#fbfbf9;
+    border:1px solid #f7f3da;
+     font-weight:bold;
+}
+.btn_goto_wiz
+{
+    margin:15px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    width:100%;
+}
+#promotion_menu a
+{ 
+    margin:0px 0px 0px 5px;
+    padding:5px 10px 5px 10px;
+     display:block;
+     float:left;
+     
+     line-height:25px;
+     background-color:#ffe392;
+     text-align:center;
+     color:#485156;
+     font-weight:bold;
+     font-size:12px;
+     border:1px solid #f2b100;
+}
+#promotion_menu
+{
+    margin:10px 0px 0px 0px;
+    padding:0px;
+}
+#wiz_main
+{
+    width:100%;
+    
+    position:relative;
+    margin:5px 0px 0px 0px;
+    padding:0px;
+    border:1px solid #f7f3da;
+}
+#main_step
+{
+     margin:0px;
+     padding:0px 0px 0px 0px;
+     float:left;
+     width:555px;
+     font-size:12px;
+     
+     border-right:1px solid #f7f3da;
+}
+
+.wiz_step
+{
+    margin:0px 0px 0px 1px;
+    padding:0px 0px 0px 0px;
+    float:left;
+    width:360px;
+    border-left:1px solid #f7f3da;
+    font-size:11px;
+}
+.DefaultProtitle
+{
+    
+      /*color:#3b5998;*/
+      color:#333333;
+      margin:0px 0px 20px 0px;
+      padding:2px 0px 2px 3px;
+      font-size:12px;
+       font-family:Verdana;
+         border:1px solid #f7f3da;
+        font-style:oblique;
+        background-color:#fff8e5;
+}
+#pro_title
+{
+    margin:15px 0px 0px 0px;
+    padding:0px;
+    width:900px;
+    font-size:14px;
+    font-weight:bold;
+    text-indent:15px;
+    text-decoration:underline;
+    
+}
+#wiz_step ul
+{
+    margin:20px 0px 0px 10px;
+    padding:0px;
+}
+#wiz_step ul li
+{
+     margin:5px 0px 0px 0px;
+     padding:0px;
+     list-style:none;
+     color:#dcd8d8;
+     font-size:14px;
+      font-weight:bold;
+}
+
+.head_step
+{
+    font-size:14px;
+    margin:0px;
+    padding:0px;
+    /*background-color:#ffe392;*/
+    background-color:#faf7dd;
+    height:30px;
+    line-height:30px;
+    text-indent:10px;
+     border-bottom:1px solid #f7f3da;
+     font-weight:bold;
+     color:#8C9051;
+}
+.head_step span
+{
+     color:#333333;
+     
+}
+.step_body
+{
+    margin:0px;
+    padding:5px 10px 20px 10px;
+    background-color:#f7f7f7;
+}
+.step_body label
+{
+     font-weight:bold;
+}
+.btn_step
+{
+    margin:0px 0px 0px 0px;
+    padding:10px 10px 10px 10px;
+    background-color:#f7f7f7;
+    
+}
+
+
+#holiday_applicable
+{
+     margin:20px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+#dayofweek
+{
+    margin:20px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+.foot_step
+{
+    margin:0px;
+    padding:0px;
+    background-color:#fbfbf9;
+    /*background-color:#ffe392;*/
+    height:15px;
+    border-top:1px solid #f7f3da;
+     border-bottom:1px solid #f7f3da;
+}
+
+.proset_step3
+{
+    margin:10px 0px 0px 0px;
+    display:none;
+}
+.condition_select_list
+{
+    padding:0px 0px 0px 10px;
+    margin:0px;
+}
+.room_title
+{
+    margin:0px;
+    padding:0px;
+     color:Green;
+     font-size:14px;
+}
+.line
+{
+    margin:7px 0px 0px 0px;
+    padding:0px;
+    height:1px;
+     width:100%;
+     background-color:#ccccc1;
+}
+#cancelltionAdd_main
+{
+    margin:10px 0px 0px 0px;
+    padding:0px;
+}
+.add_rule
+{
+    margin:0px;
+     padding:0px;
+     text-align:center;
+}
+.add_rule a
+{
+    text-align:center;
+    font-size:12px;
+}
+/*report Step*/
+#step_report
+{
+    margin:0px;
+    padding:10px 0px 10px 10px;
+}
+.report_list
+{
+    margin:0px 0px 15px 0px;
+    padding:0px;
+}
+.step_title
+{
+    margin:0px;
+    padding:0px;
+}
+.step_title a
+{
+    text-decoration:underline;
+    font-size:14px;
+}
+.step_content
+{
+    margin:5px 0px 0px 0px;
+    padding:0px 0px 0px 5px;
+    text-indent:5px;
+}
+.step_content .setting_val
+{
+   font-weight:bold;
+}
+
+.step_report_item
+{ 
+    font-weight:bold;
+}
+.benefit_report_item
+{
+     font-weight:bold;
+     margin:3px 0px 0px 0px;
+     padding:0px;
+}
+.time_sen_report
+{
+    margin:3px 0px 0px 0px;
+    padding:0px;
+}
+.time_sen_report span
+{
+     font-weight:bold;
+}
+.room_list_report
+{
+    margin:0px 0px 3px 0px;
+    padding:0px 0px 3px 0px;
+    border-bottom:1px solid #f1f1f1;
+}
+.room_title_report
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    font-size:12px;
+    font-weight:bold;
+    text-decoration:underline;
+}
+.condition_list_report
+{
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 10px;
+}
+.condition_title_report
+{
+    margin:2px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+
+.new_cancel_report
+{
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 10px;
+}
+.cancel_list_report
+{
+    margin:3px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+.wiz_step_sum
+{
+    margin:0px;
+    padding:0px 0px 0px 0px;
+    
+    float:left;
+    width:600px;
+}
+#summary_head
+{
+    margin:0px;
+    padding:0px 0px 0px 0px;
+    width:920px;
+}
+.summary_head_title
+{
+    color:#8C9051;
+    margin:0px;
+    padding:0px;
+    font-size:16px;
+    font-weight:bold;
+    text-indent:10px;
+    height:30px;
+    line-height:30px;
+    background-color:#fbfbf9;
+    border-bottom:1px solid #f7f3da;
+    
+}
+.summary_head_des span
+{
+    font-weight:bold;
+}
+.summary_head_des
+{
+    margin:5px 0px 0px 0px;
+    padding:0px 0px 0px 10px;
+    font-size:12px;
+}
+.image_button
+{
+     cursor:pointer;
+}
+
+#pro_menu_status
+{
+    margin:10px 0px 0px 0px;
+    padding:0px 0px 0px 400px;
+    background-color:#f7f7f7;
+    text-align:center;
+}
+
+#extranet_tab
+{
+    
+    
+    position:absolute;
+    top:109px;
+    left:920px;
+	margin-left:90px;
+	margin-bottom:-1px;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 32px;
+	width: 200px;
+}
+#extranet_tab li
+{
+	float: left;
+	margin-right:1px;
+	padding: 0 10px;
+	height: 31px;
+	line-height:31px;
+	border-left: none;
+	margin-bottom: -1px;
+	background:#f7f7f7;
+	overflow: hidden;
+	position: relative;
+	font-size:12px;
+	cursor:pointer;
+}
+
+#extranet_tab li.active {
+	display: block;
+	background:#328aa4;
+	color:#ffffff;
+}
+.pro_status_title
+{
+     color:#506eae;
+    margin:0px;
+    padding:10px 0px 10px 10px;
+     font-size:16px;
+     font-weight:bold;
+      background-color:#ffffff;
+      border-left:1px solid #d8dfea;
+      border-right:1px solid #d8dfea;
+       border-top:1px solid #d8dfea;
+     
+}
+

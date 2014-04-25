@@ -1,0 +1,318 @@
+﻿.supplierSeletionBox
+{
+      margin:0px;
+      padding:0px 0px 0px 0px;
+      width:100%;
+      text-align:center;
+}
+.chkTitle
+{
+     margin:0px;
+     padding:0px 0px 0px 100px;
+     text-align:left;
+     color:#837d81;
+}
+
+.chkTitle td
+{
+	margin:0px 0px 0px 0px;
+	padding:10px;
+}
+.DlHeaderStyle
+{
+    font-size:15px;
+    color:#72ac58;
+    font-weight:bolder;
+    padding:5px;
+    margin:0px;
+}
+
+/*--- Supmenu----*/
+.SupmenuSupplier
+{
+    margin:0px;
+    padding:0px;
+    position:absolute;
+    top:165px;
+    right:0px;
+    
+}
+.SupmenuSupplier_link_item
+{
+    margin:0px 5px 0px 5px;
+    padding:0px;
+    float:left;
+    width:50px;
+    height:60px;
+}
+.SupmenuSupplier_link_item p
+{
+    text-align:center;
+    margin:0px;
+    padding:0px;
+}
+.SupmenuSupplier a
+{
+    font-size:11px;
+    font-weight:normal;
+}
+/*----- supplier Contact----*/
+.LeftItem
+{
+    text-align:center;
+    margin:15px 0px 0px 0px;
+    padding:0px 0px 10px 0px;
+    border-bottom : 1px solid #e0e0e0;
+}
+.LeftItem p
+{
+    text-align:left;
+    margin:0px;
+    padding:0px 0px 0px 0px;
+    height:20px;
+    font-weight:bold;
+    line-height:20px;
+    vertical-align:middle;
+    /*border-bottom:1px solid #eeeeee;*/
+}
+.LeftItem img
+{
+    float:left;
+    margin:2px 7px 0px 0px;
+    padding:0px;
+   
+     
+}
+.LeftItem a
+{
+     text-decoration:none;
+     font-size:11px;
+}
+
+.depItemList
+{
+     margin:0px;
+     padding:0px;
+     position:relative;
+}
+.depediticon
+{
+      margin:0px;
+      padding:0px;
+      position:absolute;
+      top:0px;
+      right:0px;
+}
+.depediticon a
+{
+    font-size:10px;
+    font-weight:normal;
+}
+.insertDepartment
+{
+    margin:0px 0px 10px 0px;
+    padding:0px;
+    text-align:left;
+    
+    }
+    .inserttitle
+    {
+        margin:0px;
+        padding:0px;
+      font-size:12px;
+     color:#333333;
+     font-weight:bold;
+      text-align:left;
+    }
+    .inserttitledetail
+    {
+        margin:0px 0px 10px 0px;
+        padding:0px;
+         color:#818181;
+         font-size:11px;
+          font-weight:normal;
+          text-align:left;
+    }
+    .NoItem
+    {
+    margin:0px;
+    color:#818181;
+    font-size:11px;
+    font-weight:bold;
+    padding:15px 0px 15px 0px;
+    /*border-bottom:1px solid #e0e0e0;*/
+    }
+.insertcontact
+{
+    margin:0px;
+    color:#818181;
+    font-size:11px;
+    font-weight:bold;
+    padding:15px 0px 15px 0px;
+    border-bottom:1px solid #e0e0e0;
+}
+.insertcontact table
+{
+    margin:0px;
+    padding:0px
+}
+
+.insertcontact table tr
+{
+    margin:0px;
+    padding:0px
+}
+
+.insertcontact table tr td
+{
+    margin:0px;
+    padding:0px;
+    vertical-align: text-bottom;
+   
+}
+
+.insertcontact table tr td p
+{
+    margin:0px;
+    padding:0px 0px 0px 0px;
+    text-align:right;
+    line-height:100%;
+    
+}
+.btinsertcontact
+{
+    float:right;
+    margin:10px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+.DepartmentTitle
+{
+     font-size:14px;
+     color:#1c2a47;
+     margin:10px 0px 0px 0px;
+     padding:0px 0px 0px 0px;
+     font-weight:bold;
+     text-align:left;
+}
+
+.contactitem
+{
+    margin:0px 0px 0px 0px;
+    padding:15px 0px 15px 0px;
+    border-bottom:1px solid #e0e0e0;
+}
+.contactitem a
+{
+    font-size:10px;
+    font-weight:normal;
+    margin:0px;
+    padding:0px;
+}
+.contactitem p 
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    font-size:12px;
+    font-weight:normal;
+    
+}
+.itemlist p 
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    font-size:12px;
+    font-weight:bold;
+    height:20px;
+}
+.contacttitle
+{
+    margin:15px 0px 0px 0px;
+    padding:0px;
+    text-align:left;
+    height:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.itemlist a
+{
+    font-size:10px;
+    font-weight:normal;
+    margin:0px;
+    padding:0px;
+}
+.deletebt
+{
+    position:absolute;
+    margin:0px;
+    padding:0px;
+    right:0px;
+    top:0px;
+}
+/*---------------*/
+/*----Control Contact List--*/
+.listSelection
+{
+    text-align:left;
+    margin:5px 0px 0px 0px;
+    padding:0px;
+    color:#333333;
+}
+.itemList
+{
+    text-align:left;
+    margin:0px;
+    padding:0px;
+    width:250px;
+}
+.itemList p
+{
+   margin:0px;
+   padding:0px;
+   text-align:left; 
+   font-weight:bold;
+   color:#333333;
+}
+.listSelection p
+{
+    margin:0px;
+    padding:0px;
+    text-align:left;
+}
+.headPhoneCat
+{
+    margin:0px;
+    padding:3px;
+}
+.headPhoneCatDis
+{
+    margin:0px;
+    padding:3px;
+    color:#909090;
+    text-decoration:line-through;
+}
+.contactStaffDis
+{
+    color:#b3b3b3;
+}
+.phoneinsert
+{
+    margin:0px;
+    padding:0px;
+    
+}
+.emailinsert
+{
+      margin:0px;
+    padding:0px;
+}
+.dep
+{
+     margin:2px 0px 0px 0px;
+     padding:0px;
+}
+.emailinsert
+{
+    margin:3px 0px 0px 0px;
+    padding:0px;
+}

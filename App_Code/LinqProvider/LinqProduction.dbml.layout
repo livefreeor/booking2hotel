@@ -1,0 +1,1381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 24.375, 105.875" name="LinqProduction">
+  <DataContextMoniker Name="/LinqProductionDataContext" />
+  <nestedChildShapes>
+    <classShape Id="05edfa72-48fa-4dbb-ac7e-776c848de202" absoluteBounds="15, 81.125, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_allotment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18e371ea-6e15-4587-b9f4-6acef03ce814" absoluteBounds="15.015, 81.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71d36f9a-3791-41d0-8273-35df3a9dd5f7" absoluteBounds="17.75, 83.125, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_allotment_activity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f729136-34f9-445c-be3c-4c90207bab41" absoluteBounds="17.765, 83.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f632e071-af29-4fbf-bb80-9fc97901fc10" absoluteBounds="15, 102.5, 2, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_allotment_activity_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62456da9-8f6a-49a6-a06e-555cd1c7ced8" absoluteBounds="15.015, 102.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bac84f3e-6e24-45e1-98b4-ad8340fd744a" absoluteBounds="6.25, 80.5, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_annoucement" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12cc46f3-b50d-4c7b-98e7-972c54ed9e7d" absoluteBounds="6.265, 80.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85b66e34-fd42-482e-85ce-8d38c8295f88" absoluteBounds="9, 80.625, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_announcement_content" />
+      <nestedChildShapes>
+        <elementListCompartment Id="add3645b-e367-423c-9fdb-c5f618ebb359" absoluteBounds="9.015, 81.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3db69a48-a14c-4ba2-aab8-8bc5bf9030e0" absoluteBounds="1.75, 78.875, 2, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_continent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a6efad7-6af0-45ae-b9a6-f6d503dbd5d0" absoluteBounds="1.7650000000000001, 79.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22d7a13d-3e9a-4793-a31a-55dab9279261" absoluteBounds="0.75, 71.375, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_destination" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3664db4f-e79f-4b76-8752-b353443ca2b9" absoluteBounds="0.765, 71.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a74fe3a8-95e6-432d-aa6a-dcba40aea9e9" absoluteBounds="12.25, 75.25, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_destination_name" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0125c66b-3b28-430e-9502-d9895b32dea4" absoluteBounds="12.265, 75.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b119c09-054f-4238-bd7a-e0843c48013c" absoluteBounds="9.25, 60.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_facility_product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9154eb24-4331-4dcc-95c3-d86c5b2f5e2e" absoluteBounds="9.265, 60.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c73ac2fa-8ff9-4133-95d2-3d347fa68b5b" absoluteBounds="9.5, 83.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_landmark" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a72b1a0a-0e69-4499-b542-aca045f2e44e" absoluteBounds="9.515, 83.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e9db64ad-3d82-4b76-9010-2276c0dca076" absoluteBounds="6.75, 83.625, 2, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_landmark_category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0f0ee14-fb77-4b1d-8544-a8dac87eba26" absoluteBounds="6.765, 84.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="54f082bd-d06d-4f2b-a275-053afeba53dd" absoluteBounds="12.25, 78.125, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_landmark_name" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0abf5187-f3b7-4889-8bc2-26c2271b552d" absoluteBounds="12.265, 78.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f358304d-809a-4485-ad65-c88ed49ebf84" absoluteBounds="3.5, 54.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_lang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4002626a-ab0f-4793-aca4-fd68f7c57bb9" absoluteBounds="3.515, 55.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="db5a5e9f-592b-4ce1-b776-5a1b01fcc29d" absoluteBounds="3.5, 60.375, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="762fe401-3cce-475e-aead-8b92e25373ff" absoluteBounds="3.515, 60.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ddbd8a9-253e-4554-bdf6-7ab030af9d76" absoluteBounds="6.25, 49.625, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_location_name" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ec14b30-6f7e-45f7-8c76-278c5b6594c4" absoluteBounds="6.265, 50.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" absoluteBounds="3.5, 63.125, 2, 4.2708154296875023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62c30bcb-219e-4560-b9ab-c45e10511560" absoluteBounds="3.515, 63.585, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4881baf4-6b11-4a79-a639-8db9bc6ef8f1" absoluteBounds="0.75, 68.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92789793-4f56-479a-83ed-1d89d445197a" absoluteBounds="0.765, 69.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="92a28654-ce2f-4fa4-be21-2fc7f8d1c942" absoluteBounds="9.25, 63.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_child" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5667f46-19f0-4987-8fff-e481cdf74363" absoluteBounds="9.265, 64.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31abd1ff-5dd6-46bc-bece-e90741bde837" absoluteBounds="6.5, 52.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_child_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="275b96e5-6410-42b8-b721-728079b330b8" absoluteBounds="6.515, 53.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="76b31bf3-2389-469f-8cd0-ef9115b45f16" absoluteBounds="12.25, 61.25, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_construction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1cea1e61-f6d8-4d35-8ed6-38d5c668a18f" absoluteBounds="12.265, 61.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d402be31-a8a6-4fd4-9c2f-427a1e2c7d83" absoluteBounds="9.5, 47.75, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_construction_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74331ef8-0d5c-4100-b091-18d29d4156ac" absoluteBounds="9.515, 48.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da094c62-7b16-40f3-b302-c4e4297d57fd" absoluteBounds="21, 61.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_construction_content" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f4b3fbc-fc0d-4614-b6d9-085d7addecb7" absoluteBounds="21.015, 61.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39a538cd-cf6b-4fc7-81bd-04875b97fe76" absoluteBounds="9.25, 68.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_keyword" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac569f75-64c9-45c8-a557-16c3da5be70a" absoluteBounds="9.265, 68.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22179119-bdbe-45a8-931c-088f5f6e9165" absoluteBounds="12.25, 64.375, 2, 1.7708968098958451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_landmark" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5a15d4e-3f0e-457d-b2df-e5c07cf1980e" absoluteBounds="12.265, 64.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="890ea1b7-7334-4f9c-a19f-e6aff989befb" absoluteBounds="6.25, 63.75, 2, 1.193992513020838">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef6b3dd1-cf5b-4f49-9b72-6a245549fcad" absoluteBounds="6.265, 64.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f1fde5b-dcbf-4ea6-bb29-b0d8dbb9ec26" absoluteBounds="0.75, 60.625, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_nearby_group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dbb4ca52-1361-4763-b7a9-8536fc814217" absoluteBounds="0.765, 61.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="889bf86a-fddc-49c2-bcfb-6ef952285983" absoluteBounds="12.25, 70.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee1937f0-af71-416d-b402-078a281bc341" absoluteBounds="12.265, 71.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="48b1736e-ffb2-44e5-8f4a-4985f6fa55a1" absoluteBounds="9.5, 86.75, 2, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f3a1d5f-ad34-448e-ac22-1ba3cd813beb" absoluteBounds="9.515, 87.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2828f988-f434-4119-a17f-ae77b2b4414e" absoluteBounds="18.75, 75.375, 2.625, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_condition_policy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ccc66c6a-5d87-471c-941b-30db4cb4189e" absoluteBounds="18.765, 75.835, 2.5949999999999998, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0133b25e-47a4-4db3-b75b-51d735c67a87" absoluteBounds="20.75, 83.875, 3.125, 1.9631982421875023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_condition_price" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19cb57d6-b5aa-4afc-b398-14cc08851b86" absoluteBounds="20.765, 84.335, 3.0949999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd3c2baa-2b04-4a08-9cf8-cfbacaedad78" absoluteBounds="21, 71.375, 2, 1.7708968098958451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_content" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9532dca0-1cc8-4759-881d-fbb3d9cb523f" absoluteBounds="21.015, 71.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea06b83a-3b0d-47bd-80c2-02d54e7c11ca" absoluteBounds="18, 72.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_facility" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8903d991-b6b3-49a1-bd80-b00f1a4124b7" absoluteBounds="18.015, 72.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0004f966-9627-4d8f-a1e3-8a6e3ebe975a" absoluteBounds="15, 75.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_package" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cedb86b-2d82-4855-bba9-93bb49150cbd" absoluteBounds="15.015, 76.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1092f2b1-cb1a-406a-ad7e-9725b0602b9d" absoluteBounds="17.75, 80.125, 2.75, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_price_last_minute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e26f1373-fbb9-492a-b27e-88dd07af56ac" absoluteBounds="17.765, 80.585, 2.7199999999999998, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a981949-3762-4be0-9a55-a421012cec36" absoluteBounds="15, 78.25, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_price_last_minute_condition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d28b4e33-f46c-442c-bed5-f9e098133de7" absoluteBounds="15.015, 78.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7b701d3-1561-4c18-be2e-fbd2e1f7d449" absoluteBounds="15, 49.875, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_supplier" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed5eb9f8-3eea-4b6e-a14f-d80fbe0d76bc" absoluteBounds="15.015, 50.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2cb47f76-d06b-45f2-8ef4-76e4e91636ef" absoluteBounds="6.25, 91.875, 2, 2.3478011067708451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_payment_plan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28bf3f5c-268a-423c-a578-ece57be78be6" absoluteBounds="6.265, 92.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1747e7aa-d432-41b3-b6ba-9190173dcfe9" absoluteBounds="0.75, 62.625, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_payment_type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25cac4e2-9a60-472c-858e-8e2f14e7c265" absoluteBounds="0.765, 63.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4eac61d7-5f8d-4773-a450-4afa7357efb0" absoluteBounds="6.25, 77.875, 2, 1.7708968098958451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_period" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fc4c56f-d030-42d6-b996-2977ef95ca7f" absoluteBounds="6.265, 78.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4753fb2f-0ac7-453b-91c5-e89194a26493" absoluteBounds="18, 68.875, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_pic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f585c310-b76a-4c19-ba4d-2fc27d18ff4a" absoluteBounds="18.015, 69.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="21a8c082-ee99-4e49-ba64-54b7a4f8baab" absoluteBounds="15.25, 47.75, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_pic_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ecb8d613-3c5a-4dfc-973a-481e1668a0c0" absoluteBounds="15.265, 48.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e702fff-40d0-4497-8366-59346390baa2" absoluteBounds="21.75, 68.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_pic_content" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bac2b076-cfe6-4744-9731-c9a0e70f168d" absoluteBounds="21.765, 68.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b0b54c5f-3e35-4506-a9af-9653ce61ac1d" absoluteBounds="15.25, 45.625, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_pic_type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4874e63e-09e5-411d-832d-224ca3611a9a" absoluteBounds="15.265, 46.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="160a5b7a-c90d-493a-8c00-04b677961ca8" absoluteBounds="15, 52.5, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_policy_cancel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c03e737b-7bc5-4ce9-9708-d325bfabecaf" absoluteBounds="15.015, 52.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd3f0ab1-42dd-456b-b41a-adbe55687e39" absoluteBounds="9.5, 51.75, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_policy_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74522627-7e87-4d51-9c0f-cc123fc8bb19" absoluteBounds="9.515, 52.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7567b289-130f-421f-b3f2-3cc8d55bd651" absoluteBounds="18, 54.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_policy_content" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b59eb72d-195b-4fca-9abf-06d46caee6f0" absoluteBounds="18.015, 54.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f3e3cb1-c59d-4bef-b709-294dc87796ad" absoluteBounds="9.5, 49.625, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_policy_type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3563083a-b8ba-444e-beb4-1424c0f83844" absoluteBounds="9.515, 50.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94f39203-4472-4f63-a16e-7a81db265aca" absoluteBounds="18.25, 52.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_policy_type_name" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e404d3f3-5b85-4196-9083-c1ad0b8fdfe6" absoluteBounds="18.265, 52.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="05200f1a-fdf6-4013-a7e7-fa9f3f719bbc" absoluteBounds="0.75, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_public_holiday" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac31b8fd-23e9-4d35-9688-2762f3f0170c" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="21738f34-6444-460e-bfa1-10f58c137b69" absoluteBounds="6.25, 60.25, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_relate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5bae693-cac5-4f90-966e-bc45d7db802a" absoluteBounds="6.265, 60.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b4ec0eb-e402-41d7-a465-47963c66a4f9" absoluteBounds="6.25, 66.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_supplier" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d6e6d1f-f043-4259-a74b-bec6700ca141" absoluteBounds="6.265, 66.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="449c7c92-a76d-4bca-973e-1ae77971233e" absoluteBounds="3.5, 68.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b399cc1e-4344-45f3-8fa6-087905c42026" absoluteBounds="3.515, 69.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c12bc44-62df-4d4e-bd42-d9c35b9099a3" absoluteBounds="6.25, 68.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_type_name" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ef03b24-fbb6-47c9-a2d0-0a1712475362" absoluteBounds="6.265, 69.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="720da5c3-610c-42f3-a628-dd52aa45266a" absoluteBounds="15, 96.75, 2, 4.4631168619791595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_promotion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9cceed23-ef5c-45a6-adff-712fda012fd5" absoluteBounds="15.015, 97.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="156d0605-2ba2-424e-852c-d217aef231df" absoluteBounds="17.75, 98, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_promotion_benefit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da1cf2c2-3f00-417e-8f16-6aec9aabfe80" absoluteBounds="17.765, 98.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0865648-c2ae-4edb-8e93-a086d326aaae" absoluteBounds="12.25, 98.375, 2, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_promotion_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d4aef63-2f0f-4888-8357-3115f746d3bb" absoluteBounds="12.265, 98.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="098c2879-1025-471f-ac69-bb7841d1b277" absoluteBounds="17.75, 88, 2, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_promotion_condition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cecc2a1b-125c-49fe-b6de-2e6c585ce74d" absoluteBounds="17.765, 88.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c91d208-f3bd-4781-85f9-ef899b37820c" absoluteBounds="17.75, 77.375, 2.625, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_promotion_condition_lastminute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbdb3d07-3fae-43fc-8518-13348abba450" absoluteBounds="17.765, 77.835, 2.5949999999999998, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8bacf91-25fa-4509-8d1b-bc75db77a41a" absoluteBounds="20.75, 78.125, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_promotion_content" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4da47081-c866-47be-af06-40e371b797ad" absoluteBounds="20.765, 78.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="231ba738-fc65-4b4e-8ee8-2f8aa84b6f96" absoluteBounds="15, 104.375, 2, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_promotion_type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24a03ec9-64f1-4c06-a2ed-2aeec67eaab7" absoluteBounds="15.015, 104.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="950c67e0-ffee-47dd-b37e-3e49ef938c83" absoluteBounds="15.25, 62.625, 2, 5.4246240234375023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_review_day_trip" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0fd93d52-a1e5-4410-9c5a-50b8269a2d14" absoluteBounds="15.265, 63.085, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4c916ff-213c-43fd-824c-706d00e51bc3" absoluteBounds="12.5, 47.75, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_review_from" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e23cb503-3c1e-4d96-a1f8-ec0a87e31e73" absoluteBounds="12.515, 48.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84d2002a-e0a5-48f3-823b-20c283391107" absoluteBounds="18.25, 62.5, 2, 5.6169254557291595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_review_golf" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d194868-fa79-4a42-a153-3b32067a1a94" absoluteBounds="18.265, 62.96, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12916c24-05ba-40fa-ac02-1f8ba024b080" absoluteBounds="9.25, 53.75, 2, 5.0400211588541595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_review_health" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6fe7b73-d1df-48ac-b577-91fe436fa3f2" absoluteBounds="9.265, 54.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="417db419-8bdf-455c-900c-0d5a65842ffa" absoluteBounds="15.25, 55.625, 2, 5.4246240234375023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_review_hotel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f77a823-78e5-4f59-aba9-04b99dbe8636" absoluteBounds="15.265, 56.085, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7312969-7a01-4fdd-8230-36f0e6f596db" absoluteBounds="18, 57.375, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_review_picture" />
+      <nestedChildShapes>
+        <elementListCompartment Id="65cecb34-8a78-4372-bcf5-ffdfd77a69e0" absoluteBounds="18.015, 57.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9961462b-d117-429e-b657-2c25ee45bcfc" absoluteBounds="12.5, 45.625, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_review_recommend" />
+      <nestedChildShapes>
+        <elementListCompartment Id="01edd207-46bf-42b0-b65b-81ea04780629" absoluteBounds="12.515, 46.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f5f5e5bf-9f46-4e15-acfc-2ed0ba3818f8" absoluteBounds="9.25, 71.75, 2, 5.0400211588541595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_review_show_event" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd402986-c84e-46f3-9ea0-fa6eca314aab" absoluteBounds="9.265, 72.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ed321f4-b453-468c-95a8-d619eea8cfa7" absoluteBounds="15.25, 69.625, 2, 5.4246240234375023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_review_spa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6007338-3aa4-43f8-98ce-26438ff351a6" absoluteBounds="15.265, 70.085, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fba5d5b4-d77d-49e7-9afb-f4c2c002d3e6" absoluteBounds="12.25, 51.625, 2, 5.4246240234375023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_review_water_activity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="662f21d9-a4a0-4a61-9957-a2de32491e12" absoluteBounds="12.265, 52.085, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8199ab24-bb09-4217-8fc6-99b5244293f1" absoluteBounds="1.5, 57.75, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_status_category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b456192-e739-4fdd-a776-692b753468f3" absoluteBounds="1.5150000000000001, 58.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1cb9a21d-d40e-40fe-95ed-9349565401ee" absoluteBounds="0.75, 64.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_status" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d69ca006-1ba1-4f8c-8298-36b899850184" absoluteBounds="0.765, 64.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="468bef10-ed01-4314-b513-153ecec69723" absoluteBounds="9.25, 66, 2, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_type_product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee2dcf61-ef1a-4aa6-9130-ce49e06e3fbb" absoluteBounds="9.265, 66.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6083d759-9bc8-47e3-b136-a022ea593807" absoluteBounds="9.5, 78.375, 2, 1.1939925130208451">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_transport_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8121663d-09c9-4f08-b1a2-c3c5fee1666c" absoluteBounds="9.515, 78.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f426fb78-1624-4d09-bdc1-b836803c5777" absoluteBounds="18.25, 60.375, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_transport_cat_content" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d36fe815-4ccf-4484-a27a-449bad89abf0" absoluteBounds="18.265, 60.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.96875 : 83.0881982421875); (16.96875 : 83.46875); (17.75 : 83.46875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_allotment/tbl_allotment_tbl_allotment_activity" />
+      <nodes>
+        <classShapeMoniker Id="05edfa72-48fa-4dbb-ac7e-776c848de202" />
+        <classShapeMoniker Id="71d36f9a-3791-41d0-8273-35df3a9dd5f7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 103.09699625651); (17.5 : 103.09699625651); (17.5 : 93.0401025390625); (18 : 93.0401025390625); (18 : 89.4439925130208); (17.5 : 89.4439925130208); (17.5 : 85.4631982421875); (18.75 : 85.4631982421875); (18.75 : 85.0881982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_allotment_activity_cat/tbl_allotment_activity_cat_tbl_allotment_activity" />
+      <nodes>
+        <classShapeMoniker Id="f632e071-af29-4fbf-bb80-9fc97901fc10" />
+        <classShapeMoniker Id="71d36f9a-3791-41d0-8273-35df3a9dd5f7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 81.4142976888021); (8.41666666666667 : 81.4142976888021 : JumpStart); (8.58333333333333 : 81.4142976888021 : JumpEnd); (9 : 81.4142976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_annoucement/tbl_annoucement_tbl_announcement_content" />
+      <nodes>
+        <classShapeMoniker Id="bac84f3e-6e24-45e1-98b4-ad8340fd744a" />
+        <classShapeMoniker Id="85b66e34-fd42-482e-85ce-8d38c8295f88" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.01562725 : 73.3381982421875); (2.01562725 : 76.0392976888021); (2.16666666666667 : 76.0392976888021 : JumpStart); (2.33333333333333 : 76.0392976888021 : JumpEnd); (2.47916666666667 : 76.0392976888021 : JumpStart); (2.64583333333333 : 76.0392976888021 : JumpEnd); (2.88541666666667 : 76.0392976888021 : JumpStart); (3.05208333333333 : 76.0392976888021 : JumpEnd); (3.29166666666667 : 76.0392976888021 : JumpStart); (3.45833333333333 : 76.0392976888021 : JumpEnd); (4.94791616666667 : 76.0392976888021 : JumpStart); (5.11458283333333 : 76.0392976888021 : JumpEnd); (5.76041666666667 : 76.0392976888021 : JumpStart); (6.14583333333333 : 76.0392976888021 : JumpEnd); (6.54166666666667 : 76.0392976888021 : JumpStart); (6.70833333333333 : 76.0392976888021 : JumpEnd); (8.75 : 76.0392976888021); (8.75 : 77.0400211588542); (9.04166666666667 : 77.0400211588542 : JumpStart); (9.20833333333333 : 77.0400211588542 : JumpEnd); (11.3229166666667 : 77.0400211588542 : JumpStart); (11.4895833333333 : 77.0400211588542 : JumpEnd); (11.5416666666667 : 77.0400211588542 : JumpStart); (11.7083333333333 : 77.0400211588542 : JumpEnd); (11.75 : 77.0400211588542); (11.75 : 76.0392976888021); (11.8229166666667 : 76.0392976888021 : JumpStart); (12.2083333333333 : 76.0392976888021 : JumpEnd); (12.25 : 76.0392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_destination/tbl_destination_tbl_destination_name" />
+      <nodes>
+        <classShapeMoniker Id="22d7a13d-3e9a-4793-a31a-55dab9279261" />
+        <classShapeMoniker Id="a74fe3a8-95e6-432d-aa6a-dcba40aea9e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.2187505 : 73.3381982421875); (1.2187505 : 85.0473453776042); (1.41666666666667 : 85.0473453776042 : JumpStart); (1.58333333333333 : 85.0473453776042 : JumpEnd); (3.82291666666667 : 85.0473453776042 : JumpStart); (3.98958333333333 : 85.0473453776042 : JumpEnd); (5.76041666666667 : 85.0473453776042 : JumpStart); (6.08333333333333 : 85.0473453776042 : JumpEnd); (9.16666666666667 : 85.0473453776042 : JumpStart); (9.33333333333333 : 85.0473453776042 : JumpEnd); (9.5 : 85.0473453776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_destination/tbl_destination_tbl_landmark" />
+      <nodes>
+        <classShapeMoniker Id="22d7a13d-3e9a-4793-a31a-55dab9279261" />
+        <classShapeMoniker Id="c73ac2fa-8ff9-4133-95d2-3d347fa68b5b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 84.2219962565104); (9.16666666666667 : 84.2219962565104 : JumpStart); (9.33333333333333 : 84.2219962565104 : JumpEnd); (9.5 : 84.2219962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_landmark_category/tbl_landmark_category_tbl_landmark" />
+      <nodes>
+        <classShapeMoniker Id="e9db64ad-3d82-4b76-9010-2276c0dca076" />
+        <classShapeMoniker Id="c73ac2fa-8ff9-4133-95d2-3d347fa68b5b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 84.2315991210938); (11.8229166666667 : 84.2315991210938 : JumpStart); (11.9895833333333 : 84.2315991210938 : JumpEnd); (13.25 : 84.2315991210938); (13.25 : 79.7035953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_landmark/tbl_landmark_tbl_landmark_name" />
+      <nodes>
+        <classShapeMoniker Id="c73ac2fa-8ff9-4133-95d2-3d347fa68b5b" />
+        <classShapeMoniker Id="54f082bd-d06d-4f2b-a275-053afeba53dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.54687775); (7.91666666666667 : 55.54687775 : JumpStart); (8.08333333333333 : 55.54687775 : JumpEnd); (8.47916666666667 : 55.54687775 : JumpStart); (8.64583333333333 : 55.54687775 : JumpEnd); (8.66666666666667 : 55.54687775 : JumpStart); (8.83333333333333 : 55.54687775 : JumpEnd); (9.0625 : 55.54687775); (9.0625 : 72.125); (9.125 : 72.125); (9.125 : 80.25); (10 : 80.25); (10 : 80.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_announcement_content" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="85b66e34-fd42-482e-85ce-8d38c8295f88" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.710941375); (7.91666666666667 : 55.710941375 : JumpStart); (8.08333333333333 : 55.710941375 : JumpEnd); (8.32291666666667 : 55.710941375 : JumpStart); (8.83333333333333 : 55.710941375 : JumpEnd); (8.9375 : 55.710941375); (8.9375 : 58.9150211588542); (8.97916666666667 : 58.9150211588542 : JumpStart); (9.27836700107104 : 58.9150211588542 : JumpEnd); (10.1666666666667 : 58.9150211588542 : JumpStart); (10.3333333333333 : 58.9150211588542 : JumpEnd); (11.3229166666667 : 58.9150211588542 : JumpStart); (11.4895833333333 : 58.9150211588542 : JumpEnd); (11.5416666666667 : 58.9150211588542 : JumpStart); (11.7083333333333 : 58.9150211588542 : JumpEnd); (11.75 : 58.9150211588542); (11.75 : 74.875); (11.8229166666667 : 74.875 : JumpStart); (12.2083333333333 : 74.875 : JumpEnd); (13.1835935 : 74.875); (13.1835935 : 75.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_destination_name" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="a74fe3a8-95e6-432d-aa6a-dcba40aea9e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.710941375); (7.91666666666667 : 55.710941375 : JumpStart); (8.08333333333333 : 55.710941375 : JumpEnd); (8.47916666666667 : 55.710941375 : JumpStart); (8.64583333333333 : 55.710941375 : JumpEnd); (8.66666666666667 : 55.710941375 : JumpStart); (8.83333333333333 : 55.710941375 : JumpEnd); (9.1875 : 55.710941375); (9.1875 : 59.6650211588542); (9.7500005 : 59.6650211588542); (9.7500005 : 60.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_facility_product" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="2b119c09-054f-4238-bd7a-e0843c48013c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.710941375); (9 : 55.710941375); (9 : 59.7900211588542); (12 : 59.7900211588542); (12 : 77.75); (13.25 : 77.75); (13.25 : 78.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_landmark_name" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="54f082bd-d06d-4f2b-a275-053afeba53dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.7182867976262 : 71.375); (2.81607443490112 : 71.2772123627251 : JumpStart); (3.12142556509888 : 70.9718612325273 : JumpEnd); (3.125 : 70.9682867976262); (3.125 : 61.2604484049479); (3.5 : 61.2604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_destination/tbl_destination_tbl_location" />
+      <nodes>
+        <classShapeMoniker Id="22d7a13d-3e9a-4793-a31a-55dab9279261" />
+        <classShapeMoniker Id="db5a5e9f-592b-4ce1-b776-5a1b01fcc29d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.89843675 : 54.625); (4.89843675 : 50.4142976888021); (5.21354516666667 : 50.4142976888021 : JumpStart); (5.38021183333333 : 50.4142976888021 : JumpEnd); (6.25 : 50.4142976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_location_name" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="4ddbd8a9-253e-4554-bdf6-7ab030af9d76" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 60.375); (4.5 : 56.0737939453125); (5.5625 : 56.0737939453125); (5.5625 : 50.8401985332031); (6.25 : 50.8401985332031)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_location/tbl_location_tbl_location_name" />
+      <nodes>
+        <classShapeMoniker Id="db5a5e9f-592b-4ce1-b776-5a1b01fcc29d" />
+        <classShapeMoniker Id="4ddbd8a9-253e-4554-bdf6-7ab030af9d76" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 63.7573374023438); (5.61394058305928 : 64.6082918660856 : JumpStart); (5.63605941694072 : 64.7734842840881 : JumpEnd); (5.73894058305928 : 65.5418425388286 : JumpStart); (5.76105941694072 : 65.7070349568311 : JumpEnd); (5.86394058305928 : 66.4753932115717 : JumpStart); (5.88605941694072 : 66.6405856295742 : JumpEnd); (6.0625 : 67.9583154296875); (6.0625 : 80.3125); (6.25 : 80.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_annoucement" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="bac84f3e-6e24-45e1-98b4-ad8340fd744a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 66.7634780273438); (5.63634515384615 : 63.0625); (5.76897642649568 : 63.0625 : JumpStart); (6.08333333333333 : 63.0625 : JumpEnd); (8.57291666666667 : 63.0625 : JumpStart); (8.95833333333333 : 63.0625 : JumpEnd); (8.97916666666667 : 63.0625 : JumpStart); (9.21184205112505 : 63.0625 : JumpEnd); (10.25 : 63.0625); (10.25 : 62.0785953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_facility_product" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="2b119c09-054f-4238-bd7a-e0843c48013c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 71.4701386071214); (2.81607443490112 : 71.4040641722203 : JumpStart); (3.12142556509888 : 71.0987130420225 : JumpEnd); (3.3125 : 70.9076386071214); (3.3125 : 65.2604077148438); (3.5 : 65.2604077148438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_destination/tbl_destination_tbl_product" />
+      <nodes>
+        <classShapeMoniker Id="22d7a13d-3e9a-4793-a31a-55dab9279261" />
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 68.6868490375601); (2.81607443490112 : 68.620774602659 : JumpStart); (2.93392556509888 : 68.5029234724612 : JumpEnd); (3.00357443490112 : 68.433274602659 : JumpStart); (3.18392556509888 : 68.2529234724612 : JumpEnd); (3.1875 : 68.2493490375601); (3.1875 : 66.3593635722656); (3.22916666666667 : 66.3593635722656 : JumpStart); (3.39583333333333 : 66.3593635722656 : JumpEnd); (3.5 : 66.3593635722656)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_category/tbl_product_category_tbl_product" />
+      <nodes>
+        <classShapeMoniker Id="4881baf4-6b11-4a79-a639-8db9bc6ef8f1" />
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 63.65625); (5.53113789029814 : 63.65625 : JumpStart); (6.08333333333333 : 63.65625 : JumpEnd); (8.57291666666667 : 63.65625 : JumpStart); (8.95833333333333 : 63.65625 : JumpEnd); (8.97916666666667 : 63.65625 : JumpStart); (9.14583333333333 : 63.65625 : JumpEnd); (9.25 : 63.65625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_child" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="92a28654-ce2f-4fa4-be21-2fc7f8d1c942" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.40625 : 54.0112939453125); (8.40625 : 63.640625); (8.57291666666667 : 63.640625 : JumpStart); (9.14583333333333 : 63.640625 : JumpEnd); (9.25 : 63.640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_child_cat/tbl_product_child_cat_tbl_product_child" />
+      <nodes>
+        <classShapeMoniker Id="31abd1ff-5dd6-46bc-bece-e90741bde837" />
+        <classShapeMoniker Id="92a28654-ce2f-4fa4-be21-2fc7f8d1c942" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.05692307692308 : 63.125); (4.05692307692308 : 62.0118614282853); (5.79166666666667 : 62.0118614282853 : JumpStart); (6.08333333333333 : 62.0118614282853 : JumpEnd); (7.16666666666667 : 62.0118614282853 : JumpStart); (7.33333333333333 : 62.0118614282853 : JumpEnd); (8.32291666666667 : 62.0118614282853 : JumpStart); (9.22869413912156 : 62.0118614282853 : JumpEnd); (11.2291666666667 : 62.0118614282853 : JumpStart); (11.3958333333333 : 62.0118614282853 : JumpEnd); (11.5416666666667 : 62.0118614282853 : JumpStart); (12.2083333333333 : 62.0118614282853 : JumpEnd); (12.25 : 62.0118614282853)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_construction" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="76b31bf3-2389-469f-8cd0-ef9115b45f16" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 48.9439925130208); (12.125 : 49.5689925130208); (12.125 : 62.3209630384615); (12.25 : 62.3209630384615)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_construction_cat/tbl_product_construction_cat_tbl_product_construction" />
+      <nodes>
+        <classShapeMoniker Id="d402be31-a8a6-4fd4-9c2f-427a1e2c7d83" />
+        <classShapeMoniker Id="76b31bf3-2389-469f-8cd0-ef9115b45f16" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.710941375); (7.91666666666667 : 55.710941375 : JumpStart); (8.08333333333333 : 55.710941375 : JumpEnd); (8.32291666666667 : 55.710941375 : JumpStart); (8.73958333333333 : 55.710941375 : JumpEnd); (8.8125 : 55.710941375); (8.8125 : 58.9775211588542); (8.88541666666667 : 58.9775211588542 : JumpStart); (9.2773645102734 : 58.9775211588542 : JumpEnd); (11.5416666666667 : 58.9775211588542 : JumpStart); (11.7708333333333 : 58.9775211588542 : JumpEnd); (11.8229166666667 : 58.9775211588542 : JumpStart); (11.9895833333333 : 58.9775211588542 : JumpEnd); (12.0625 : 58.9775211588542); (12.0625 : 60.8478011067708); (12.1041666666667 : 60.8478011067708 : JumpStart); (12.2708333333333 : 60.8478011067708 : JumpEnd); (14.6041666666667 : 60.8478011067708 : JumpStart); (14.7708333333333 : 60.8478011067708 : JumpEnd); (14.8125 : 60.8478011067708); (14.8125 : 61.8862939453125); (15.1041666666667 : 61.8862939453125 : JumpStart); (15.2708333333333 : 61.8862939453125 : JumpEnd); (17.5416666666667 : 61.8862939453125 : JumpStart); (17.9270833333333 : 61.8862939453125 : JumpEnd); (19.1666666666667 : 61.8862939453125 : JumpStart); (19.3333333333333 : 61.8862939453125 : JumpEnd); (20.75 : 61.8862939453125); (20.75 : 61.25); (22 : 61.25); (22 : 61.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_product_construction_content" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="da094c62-7b16-40f3-b302-c4e4297d57fd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 62.2868969726563); (14.4791666666667 : 62.2868969726563 : JumpStart); (14.7708333333333 : 62.2868969726563 : JumpEnd); (15.1041666666667 : 62.2868969726563 : JumpStart); (15.2708333333333 : 62.2868969726563 : JumpEnd); (17.4166666666667 : 62.2868969726563 : JumpStart); (17.9270833333333 : 62.2868969726563 : JumpEnd); (18.0104171666667 : 62.2868969726563 : JumpStart); (18.1770838333333 : 62.2868969726563 : JumpEnd); (20.4166666666667 : 62.2868969726563 : JumpStart); (20.5833333333333 : 62.2868969726563 : JumpEnd); (21 : 62.2868969726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_construction/tbl_product_construction_tbl_product_construction_content" />
+      <nodes>
+        <classShapeMoniker Id="76b31bf3-2389-469f-8cd0-ef9115b45f16" />
+        <classShapeMoniker Id="da094c62-7b16-40f3-b302-c4e4297d57fd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 54.89062325); (8.75 : 54.89062325); (8.75 : 68.125); (10.25 : 68.125); (10.25 : 68.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_product_keyword" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="39a538cd-cf6b-4fc7-81bd-04875b97fe76" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 66.5129663085938); (5.58167200821534 : 66.6471456571673 : JumpStart); (5.66832799178466 : 66.7895132036427 : JumpEnd); (5.70667200821534 : 66.8525087789786 : JumpStart); (5.79332799178466 : 66.9948763254539 : JumpEnd); (5.83167200821534 : 67.0578719007898 : JumpStart); (5.91832799178466 : 67.2002394472651 : JumpEnd); (5.92970071193386 : 67.2189237457717 : JumpStart); (6.01635669550319 : 67.3612912922471 : JumpEnd); (6.09750806462392 : 67.4946152802622 : JumpStart); (6.18416404819325 : 67.6369828267375 : JumpEnd); (6.265625 : 67.7708154296875); (6.265625 : 67.875); (8.599499613131 : 67.875); (8.69107443490112 : 67.9665748217701 : JumpStart); (8.80892556509888 : 68.0844259519679 : JumpEnd); (8.81607443490112 : 68.0915748217701 : JumpStart); (8.93392556509888 : 68.2094259519679 : JumpEnd); (9.00357443490112 : 68.2790748217701 : JumpStart); (9.18392556509888 : 68.4594259519679 : JumpEnd); (9.25 : 68.525500386869)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_keyword" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="39a538cd-cf6b-4fc7-81bd-04875b97fe76" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 83.25); (11.8473244349011 : 82.9026755650989 : JumpStart); (11.9651755650989 : 82.7848244349011 : JumpEnd); (12.125 : 82.625); (12.125 : 64.9186565058594); (12.25 : 64.9186565058594)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_landmark/tbl_landmark_tbl_product_landmark" />
+      <nodes>
+        <classShapeMoniker Id="c73ac2fa-8ff9-4133-95d2-3d347fa68b5b" />
+        <classShapeMoniker Id="22179119-bdbe-45a8-931c-088f5f6e9165" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 65.661474202474); (5.53886496035227 : 65.661474202474 : JumpStart); (6.08333333333333 : 65.661474202474 : JumpEnd); (8.49479166666667 : 65.661474202474 : JumpStart); (8.95833333333333 : 65.661474202474 : JumpEnd); (8.97916666666667 : 65.661474202474 : JumpStart); (9.14583333333333 : 65.661474202474 : JumpEnd); (11.5416666666667 : 65.661474202474 : JumpStart); (11.8958333333333 : 65.661474202474 : JumpEnd); (11.9166666666667 : 65.661474202474 : JumpStart); (12.2083333333333 : 65.661474202474 : JumpEnd); (12.25 : 65.661474202474)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_landmark" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="22179119-bdbe-45a8-931c-088f5f6e9165" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 62.1458968098958); (5.81607443490112 : 62.4619712447969 : JumpStart); (5.93392556509888 : 62.5798223749947 : JumpEnd); (5.94107443490112 : 62.5869712447969 : JumpStart); (6.05892556509888 : 62.7048223749947 : JumpEnd); (6.125 : 62.7708968098958); (6.125 : 64.3469962565104); (6.25 : 64.3469962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_location/tbl_location_tbl_product_location" />
+      <nodes>
+        <classShapeMoniker Id="db5a5e9f-592b-4ce1-b776-5a1b01fcc29d" />
+        <classShapeMoniker Id="890ea1b7-7334-4f9c-a19f-e6aff989befb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 63.9859981282552); (5.60190336871968 : 63.9859981282552 : JumpStart); (5.76857003538635 : 63.9859981282552 : JumpEnd); (5.79166666666667 : 63.9859981282552 : JumpStart); (6.08333333333333 : 63.9859981282552 : JumpEnd); (6.25 : 63.9859981282552)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_location" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="890ea1b7-7334-4f9c-a19f-e6aff989befb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 61.7868455607472); (2.81607443490112 : 61.8529199956483 : JumpStart); (2.93392556509888 : 61.9707711258461 : JumpEnd); (3.00357443490112 : 62.0404199956483 : JumpStart); (3.26205056509888 : 62.2988961258461 : JumpEnd); (3.28125 : 62.3180955607472); (3.28125 : 64.1614518574219); (3.5 : 64.1614518574219)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_nearby_group/tbl_product_nearby_group_tbl_product" />
+      <nodes>
+        <classShapeMoniker Id="1f1fde5b-dcbf-4ea6-bb29-b0d8dbb9ec26" />
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 72.8919047851563); (14.2781895111931 : 72.9542990190464 : JumpStart); (14.3468104888069 : 73.1061836437097 : JumpEnd); (14.5281895111931 : 73.5076452039335 : JumpStart); (14.5968104888069 : 73.6595298285968 : JumpEnd); (14.8094395111931 : 74.1301596619315 : JumpStart); (14.8780604888069 : 74.2820442865948 : JumpEnd); (14.96875 : 74.4827750667067); (14.96875 : 82.1065991210938); (15 : 82.1065991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_allotment" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="05edfa72-48fa-4dbb-ac7e-776c848de202" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 65.2604077148438); (5.6007120518758 : 65.5909543017854 : JumpStart); (5.6492879481242 : 65.7503850393533 : JumpEnd); (5.7257120518758 : 66.0012162575109 : JumpStart); (5.7742879481242 : 66.1606469950788 : JumpEnd); (5.8507120518758 : 66.4114782132364 : JumpStart); (5.8992879481242 : 66.5709089508043 : JumpEnd); (6.359375 : 68.0809586604567); (6.359375 : 70.375); (11.6666666666667 : 70.375 : JumpStart); (11.8333333333333 : 70.375 : JumpEnd); (11.8765374615385 : 70.375); (11.9410744349011 : 70.4395369733626 : JumpStart); (12.0589255650989 : 70.5573881035604 : JumpEnd); (12.0660744349011 : 70.5645369733626 : JumpStart); (12.1839255650989 : 70.6823881035604 : JumpEnd); (12.2515374615385 : 70.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_option" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 86.7821449522736); (11.90625 : 86.3758949522736); (11.90625 : 72.3085034179688); (11.9166666666667 : 72.3085034179688 : JumpStart); (12.2083333333333 : 72.3085034179688 : JumpEnd); (12.25 : 72.3085034179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option_cat/tbl_product_option_cat_tbl_product_option" />
+      <nodes>
+        <classShapeMoniker Id="48b1736e-ffb2-44e5-8f4a-4985f6fa55a1" />
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.054686875); (8.32291666666667 : 55.054686875 : JumpStart); (8.64583333333333 : 55.054686875 : JumpEnd); (8.65625 : 55.054686875); (8.65625 : 68.25); (8.79166666666667 : 68.25 : JumpStart); (9.20833333333333 : 68.25 : JumpEnd); (10.1666666666667 : 68.25 : JumpStart); (10.3333333333333 : 68.25 : JumpEnd); (11.3229166666667 : 68.25 : JumpStart); (11.4895833333333 : 68.25 : JumpEnd); (11.5416666666667 : 68.25 : JumpStart); (11.8958333333333 : 68.25 : JumpEnd); (11.9166666666667 : 68.25 : JumpStart); (12.2083333333333 : 68.25 : JumpEnd); (14.2291666666667 : 68.25 : JumpStart); (14.3958333333333 : 68.25 : JumpEnd); (14.4791666666667 : 68.25 : JumpStart); (14.7708333333333 : 68.25 : JumpEnd); (14.8541666666667 : 68.25 : JumpStart); (15.0833333333333 : 68.25 : JumpEnd); (15.1041666666667 : 68.25 : JumpStart); (15.2708333333333 : 68.25 : JumpEnd); (17.4166666666667 : 68.25 : JumpStart); (17.9270833333333 : 68.25 : JumpEnd); (18.0104171666667 : 68.25 : JumpStart); (18.1770838333333 : 68.25 : JumpEnd); (19.1666666666667 : 68.25 : JumpStart); (19.3333333333333 : 68.25 : JumpEnd); (21.5 : 68.25); (21.5 : 71); (22 : 71); (22 : 71.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_product_option_content" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="fd3c2baa-2b04-4a08-9cf8-cfbacaedad78" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.2820207307692 : 70.75); (13.2820207307692 : 70.5); (14.2291666666667 : 70.5 : JumpStart); (14.3958333333333 : 70.5 : JumpEnd); (14.4791666666667 : 70.5 : JumpStart); (14.7104001605254 : 70.5 : JumpEnd); (15 : 70.5); (15 : 69.375); (15.1041666666667 : 69.375 : JumpStart); (15.2708333333333 : 69.375 : JumpEnd); (15.6666671666667 : 69.375 : JumpStart); (15.8333338333333 : 69.375 : JumpEnd); (17.2916666666667 : 69.375 : JumpStart); (17.7083333333333 : 69.375 : JumpEnd); (17.75 : 69.375); (17.75 : 72.1498527018229); (20.1666666666667 : 72.1498527018229 : JumpStart); (20.3333333333333 : 72.1498527018229 : JumpEnd); (20.6666666666667 : 72.1498527018229 : JumpStart); (20.8333333333333 : 72.1498527018229 : JumpEnd); (21 : 72.1498527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_product_option_content" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="fd3c2baa-2b04-4a08-9cf8-cfbacaedad78" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.382814125); (8 : 55.382814125); (8 : 59.4150211588542); (8.32291666666667 : 59.4150211588542 : JumpStart); (9.27083333333333 : 59.4150211588542 : JumpEnd); (11.5416666666667 : 59.4150211588542 : JumpStart); (11.7708333333333 : 59.4150211588542 : JumpEnd); (11.8125 : 59.4150211588542); (11.8125 : 68.875); (11.9166666666667 : 68.875 : JumpStart); (12.2083333333333 : 68.875 : JumpEnd); (14.2291666666667 : 68.875 : JumpStart); (14.3958333333333 : 68.875 : JumpEnd); (14.4791666666667 : 68.875 : JumpStart); (14.7708333333333 : 68.875 : JumpEnd); (15.1041666666667 : 68.875 : JumpStart); (15.2708333333333 : 68.875 : JumpEnd); (15.6666671666667 : 68.875 : JumpStart); (15.8333338333333 : 68.875 : JumpEnd); (17.375 : 68.875); (17.375 : 72.125); (17.4166666666667 : 72.125 : JumpStart); (17.5833333333333 : 72.125 : JumpEnd); (19 : 72.125); (19 : 72.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_product_option_facility" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="ea06b83a-3b0d-47bd-80c2-02d54e7c11ca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.25 : 73.8670068359375); (13.25 : 74.3670068359375); (14.2291666666667 : 74.3670068359375 : JumpStart); (14.3958333333333 : 74.3670068359375 : JumpEnd); (14.4791666666667 : 74.3670068359375 : JumpStart); (15.0832792394074 : 74.3670068359375 : JumpEnd); (15.125 : 74.3670068359375); (15.125 : 75.2996240234375); (17.4166666666667 : 75.2996240234375 : JumpStart); (17.5833333333333 : 75.2996240234375 : JumpEnd); (17.625 : 75.2996240234375); (17.625 : 73.2892976888021); (18 : 73.2892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_product_option_facility" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="ea06b83a-3b0d-47bd-80c2-02d54e7c11ca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 72.4880115309495); (14.2816094542961 : 72.5672092647255 : JumpStart); (14.3433905457039 : 72.7220022701303 : JumpEnd); (14.5316094542961 : 73.193586210639 : JumpStart); (14.5933905457039 : 73.3483792160437 : JumpEnd); (14.7503624469721 : 73.7416735364861 : JumpStart); (14.8121435383798 : 73.8964665418909 : JumpEnd); (14.8128594542961 : 73.8982602747916 : JumpStart); (14.8746405457039 : 74.0530532801964 : JumpEnd); (15.0625 : 74.5237366051683); (15.0625 : 76.4431469726563); (15 : 76.4431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_product_option_package" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="0004f966-9627-4d8f-a1e3-8a6e3ebe975a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 72.0841182767428); (14.288101042183 : 72.208547637514 : JumpStart); (14.336898957817 : 72.3679105604527 : JumpEnd); (14.538101042183 : 73.0249909264764 : JumpStart); (14.586898957817 : 73.1843538494151 : JumpEnd); (14.819351042183 : 73.943489626559 : JumpStart); (14.868148957817 : 74.1028525494977 : JumpEnd); (14.913101042183 : 74.2496558599199 : JumpStart); (14.961898957817 : 74.4090187828586 : JumpEnd); (15 : 74.5334481436298); (15 : 75.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_product_option_package1" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="0004f966-9627-4d8f-a1e3-8a6e3ebe975a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 79.2300439453125); (20.46875 : 79.2300439453125); (20.46875 : 80.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option_price_last_minute_condition/tbl_product_option_price_last_minute_condition_tbl_product_option_price_last_minute" />
+      <nodes>
+        <classShapeMoniker Id="1a981949-3762-4be0-9a55-a421012cec36" />
+        <classShapeMoniker Id="1092f2b1-cb1a-406a-ad7e-9725b0602b9d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 71.792417593149); (14.2898846974369 : 71.933870026597 : JumpStart); (14.3351153025631 : 72.0942819031451 : JumpEnd); (14.5398846974369 : 72.8205035134851 : JumpStart); (14.5851153025631 : 72.9809153900333 : JumpEnd); (14.8211346974369 : 73.8179661862343 : JumpStart); (14.8663653025631 : 73.9783780627824 : JumpEnd); (14.9375 : 74.2306596820914); (14.9375 : 79.0392976888021); (15 : 79.0392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_product_option_price_last_minute_condition" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="1a981949-3762-4be0-9a55-a421012cec36" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 71.2763317683293); (14.2760920085581 : 71.2226117015337 : JumpStart); (14.3489079914419 : 71.0726930221957 : JumpEnd); (14.5260920085581 : 70.7078940756752 : JumpStart); (14.5989079914419 : 70.5579753963372 : JumpEnd); (14.6875 : 70.3755759230769); (14.6875 : 50.4719962565104); (15 : 50.4719962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_product_option_supplier" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="b7b701d3-1561-4c18-be2e-fbd2e1f7d449" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 64.7070516967774); (5.54166666666667 : 64.7070516967774 : JumpStart); (5.71049760011639 : 64.7070516967774 : JumpEnd); (5.79166666666667 : 64.7070516967774 : JumpStart); (5.95833333333333 : 64.7070516967774 : JumpEnd); (6 : 64.7070516967774); (6 : 86.5); (7.25 : 86.5); (7.25 : 91.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_payment_plan" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="2cb47f76-d06b-45f2-8ef4-76e4e91636ef" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 63.4719962565104); (2.79166666666667 : 63.4719962565104 : JumpStart); (2.95833333333333 : 63.4719962565104 : JumpEnd); (2.97916666666667 : 63.4719962565104 : JumpStart); (3.36458333333333 : 63.4719962565104 : JumpEnd); (3.5 : 63.4719962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_payment_type/tbl_product_payment_type_tbl_product" />
+      <nodes>
+        <classShapeMoniker Id="1747e7aa-d432-41b3-b6ba-9190173dcfe9" />
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 79.6458968098958); (7.25 : 80.25); (8.5 : 80.25); (8.5 : 83.375); (9.25 : 83.375); (9.25 : 85.4631982421875); (11.8229166666667 : 85.4631982421875 : JumpStart); (11.9895833333333 : 85.4631982421875 : JumpEnd); (14.5416666666667 : 85.4631982421875 : JumpStart); (14.7083333333333 : 85.4631982421875 : JumpEnd); (14.75 : 85.4631982421875); (14.75 : 84.5); (14.7604166666667 : 84.5 : JumpStart); (14.9270833333333 : 84.5 : JumpEnd); (17.25 : 84.5); (17.25 : 85.3381982421875); (18.6666666666667 : 85.3381982421875 : JumpStart); (18.8333333333333 : 85.3381982421875 : JumpEnd); (19.9166666666667 : 85.3381982421875 : JumpStart); (20.0833333333333 : 85.3381982421875 : JumpEnd); (20.375 : 85.3381982421875); (20.375 : 84.8565991210938); (20.4166666666667 : 84.8565991210938 : JumpStart); (20.7083333333333 : 84.8565991210938 : JumpEnd); (20.75 : 84.8565991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_period/tbl_product_period_tbl_product_option_condition_price" />
+      <nodes>
+        <classShapeMoniker Id="4eac61d7-5f8d-4773-a450-4afa7357efb0" />
+        <classShapeMoniker Id="0133b25e-47a4-4db3-b75b-51d735c67a87" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 64.1797011311849); (5.625 : 64.1797011311849); (5.625 : 72.125); (6.625 : 72.125); (6.625 : 77.5); (7.25 : 77.5); (7.25 : 77.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_period" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="4eac61d7-5f8d-4773-a450-4afa7357efb0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 65.6999060058594); (5.54166666666667 : 65.6999060058594 : JumpStart); (6.08333333333333 : 65.6999060058594 : JumpEnd); (8.49479166666667 : 65.6999060058594 : JumpStart); (9.14583333333333 : 65.6999060058594 : JumpEnd); (11.3229166666667 : 65.6999060058594 : JumpStart); (11.8333333333333 : 65.6999060058594 : JumpEnd); (11.875 : 65.6999060058594); (11.875 : 66.3958968098958); (11.9166666666667 : 66.3958968098958 : JumpStart); (12.2708333333333 : 66.3958968098958 : JumpEnd); (14.2291666666667 : 66.3958968098958 : JumpStart); (14.3958333333333 : 66.3958968098958 : JumpEnd); (14.4166666666667 : 66.3958968098958 : JumpStart); (14.7708333333333 : 66.3958968098958 : JumpEnd); (15 : 66.3958968098958); (15 : 68.4294254557292); (15.1041666666667 : 68.4294254557292 : JumpStart); (15.2708333333333 : 68.4294254557292 : JumpEnd); (17.4166666666667 : 68.4294254557292 : JumpStart); (17.9270833333333 : 68.4294254557292 : JumpEnd); (18.0104171666667 : 68.4294254557292 : JumpStart); (18.1770838333333 : 68.4294254557292 : JumpEnd); (18.70312775 : 68.4294254557292); (18.70312775 : 68.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_pic" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="4753fb2f-0ac7-453b-91c5-e89194a26493" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 62.1178429589844); (14.4791666666667 : 62.1178429589844 : JumpStart); (14.7708333333333 : 62.1178429589844 : JumpEnd); (15.1041666666667 : 62.1178429589844 : JumpStart); (15.2708333333333 : 62.1178429589844 : JumpEnd); (17.5416666666667 : 62.1178429589844 : JumpStart); (17.9270833333333 : 62.1178429589844 : JumpEnd); (18.0937505 : 62.1178429589844); (18.0937505 : 68.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_construction/tbl_product_construction_tbl_product_pic" />
+      <nodes>
+        <classShapeMoniker Id="76b31bf3-2389-469f-8cd0-ef9115b45f16" />
+        <classShapeMoniker Id="4753fb2f-0ac7-453b-91c5-e89194a26493" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.25 : 48.9439925130208); (17.625 : 49.3189925130208); (17.625 : 70.5873522018229); (17.6666666666667 : 70.5873522018229 : JumpStart); (17.8333333333333 : 70.5873522018229 : JumpEnd); (18 : 70.5873522018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_pic_cat/tbl_product_pic_cat_tbl_product_pic" />
+      <nodes>
+        <classShapeMoniker Id="21a8c082-ee99-4e49-ba64-54b7a4f8baab" />
+        <classShapeMoniker Id="4753fb2f-0ac7-453b-91c5-e89194a26493" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.710941375); (7.91666666666667 : 55.710941375 : JumpStart); (8.08333333333333 : 55.710941375 : JumpEnd); (8.25 : 55.710941375); (8.25 : 59.2275211588542); (8.32291666666667 : 59.2275211588542 : JumpStart); (9.27335454708287 : 59.2275211588542 : JumpEnd); (11.5416666666667 : 59.2275211588542 : JumpStart); (12.1458333333333 : 59.2275211588542 : JumpEnd); (12.1875 : 59.2275211588542); (12.1875 : 61.0978011067708); (14.4791666666667 : 61.0978011067708 : JumpStart); (14.8958333333333 : 61.0978011067708 : JumpEnd); (14.9375 : 61.0978011067708); (14.9375 : 61.9487939453125); (15.1041666666667 : 61.9487939453125 : JumpStart); (15.2708333333333 : 61.9487939453125 : JumpEnd); (17.5416666666667 : 61.9487939453125 : JumpStart); (17.9270833333333 : 61.9487939453125 : JumpEnd); (19.1666666666667 : 61.9487939453125 : JumpStart); (19.3333333333333 : 61.9487939453125 : JumpEnd); (20.5 : 61.9487939453125); (20.5 : 63.3285953776042); (22.75 : 63.3285953776042); (22.75 : 68.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_product_pic_content" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="9e702fff-40d0-4497-8366-59346390baa2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20 : 69.4767976888021); (20.1666666666667 : 69.4767976888021 : JumpStart); (20.3333333333333 : 69.4767976888021 : JumpEnd); (21.4166666666667 : 69.4767976888021 : JumpStart); (21.5833333333333 : 69.4767976888021 : JumpEnd); (21.75 : 69.4767976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_pic/tbl_product_pic_tbl_product_pic_content" />
+      <nodes>
+        <classShapeMoniker Id="4753fb2f-0ac7-453b-91c5-e89194a26493" />
+        <classShapeMoniker Id="9e702fff-40d0-4497-8366-59346390baa2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.25 : 46.7877640165264); (17.84375 : 47.3815140165264); (17.84375 : 69.9499236009115); (18 : 69.9499236009115)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_pic_type/tbl_product_pic_type_tbl_product_pic" />
+      <nodes>
+        <classShapeMoniker Id="b0b54c5f-3e35-4506-a9af-9653ce61ac1d" />
+        <classShapeMoniker Id="4753fb2f-0ac7-453b-91c5-e89194a26493" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.2187505); (8.32291666666667 : 55.2187505 : JumpStart); (8.83333333333333 : 55.2187505 : JumpEnd); (9 : 55.2187505); (9 : 51.375); (12.0416666666667 : 51.375 : JumpStart); (12.2083333333333 : 51.375 : JumpEnd); (14.3229166666667 : 51.375 : JumpStart); (14.4895833333333 : 51.375 : JumpEnd); (14.6041666666667 : 51.375 : JumpStart); (14.7708333333333 : 51.375 : JumpEnd); (17.1666666666667 : 51.375 : JumpStart); (17.3333333333333 : 51.375 : JumpEnd); (17.5416666666667 : 51.375 : JumpStart); (17.9270833333333 : 51.375 : JumpEnd); (18 : 51.375); (18 : 54.125); (19 : 54.125); (19 : 54.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_product_policy_content" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="7567b289-130f-421f-b3f2-3cc8d55bd651" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 54.89062325); (8.32291666666667 : 54.89062325 : JumpStart); (8.64583333333333 : 54.89062325 : JumpEnd); (8.91666666666667 : 54.89062325 : JumpStart); (9.08333333333333 : 54.89062325 : JumpEnd); (9.125 : 54.89062325); (9.125 : 51.5); (11.9322916666667 : 51.5 : JumpStart); (12.2083333333333 : 51.5 : JumpEnd); (14.3229166666667 : 51.5 : JumpStart); (14.4895833333333 : 51.5 : JumpEnd); (14.6041666666667 : 51.5 : JumpStart); (14.7708333333333 : 51.5 : JumpEnd); (17.1666666666667 : 51.5 : JumpStart); (17.3333333333333 : 51.5 : JumpEnd); (17.5416666666667 : 51.5 : JumpStart); (18.0833333333333 : 51.5 : JumpEnd); (18.125 : 51.5); (18.125 : 53.8862939453125); (19.25 : 53.8862939453125); (19.25 : 53.5112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_product_policy_type_name" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="94f39203-4472-4f63-a16e-7a81db265aca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 49.71875); (12.0416666666667 : 49.71875 : JumpStart); (12.2083333333333 : 49.71875 : JumpEnd); (14.3229166666667 : 49.71875 : JumpStart); (14.4895833333333 : 49.71875 : JumpEnd); (17.6666666666667 : 49.71875 : JumpStart); (17.8333333333333 : 49.71875 : JumpEnd); (19.25 : 49.71875); (19.25 : 52.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_policy_type/tbl_product_policy_type_tbl_product_policy_type_name" />
+      <nodes>
+        <classShapeMoniker Id="0f3e3cb1-c59d-4bef-b709-294dc87796ad" />
+        <classShapeMoniker Id="94f39203-4472-4f63-a16e-7a81db265aca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 64.101791015625); (5.5120018151675 : 64.0224216855172 : JumpStart); (5.5369209877114 : 63.857628443491 : JumpEnd); (5.61718229213323 : 63.3268515671071 : JumpStart); (5.64210146467714 : 63.1620583250809 : JumpEnd); (5.64297976923078 : 63.15625); (5.75201580829054 : 63.15625 : JumpStart); (6.20833333333333 : 63.15625 : JumpEnd); (7.25 : 63.15625); (7.25 : 61.4439925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_relate" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="21738f34-6444-460e-bfa1-10f58c137b69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 63.125); (5.625 : 63); (5.78028350529911 : 63 : JumpStart); (6.08333333333333 : 63 : JumpEnd); (7.25 : 63); (7.25 : 61.4439925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_relate1" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="21738f34-6444-460e-bfa1-10f58c137b69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 66.7578085609976); (5.54166666666667 : 66.7578085609976 : JumpStart); (6.03956648670536 : 66.7578085609976 : JumpEnd); (6.25 : 66.7578085609976)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_supplier" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="1b4ec0eb-e402-41d7-a465-47963c66a4f9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 69.3803239914363); (2.79166666666667 : 69.3803239914363 : JumpStart); (2.95833333333333 : 69.3803239914363 : JumpEnd); (2.97916666666667 : 69.3803239914363 : JumpStart); (3.20833333333333 : 69.3803239914363 : JumpEnd); (3.22916666666667 : 69.3803239914363 : JumpStart); (3.45833333333333 : 69.3803239914363 : JumpEnd); (3.5 : 69.3803239914363)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_category/tbl_product_category_tbl_product_type" />
+      <nodes>
+        <classShapeMoniker Id="4881baf4-6b11-4a79-a639-8db9bc6ef8f1" />
+        <classShapeMoniker Id="449c7c92-a76d-4bca-973e-1ae77971233e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.742193875); (7.875 : 55.742193875); (7.875 : 60); (6.08333333333333 : 60 : JumpStart); (5.91666666666667 : 60 : JumpEnd); (5.875 : 60); (5.875 : 68.25); (7.304687 : 68.25); (7.304687 : 68.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_product_type_name" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="8c12bc44-62df-4d4e-bd42-d9c35b9099a3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 68.9090734863281); (5.54166666666667 : 68.9090734863281 : JumpStart); (5.70833333333333 : 68.9090734863281 : JumpEnd); (6.25 : 68.9090734863281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_type/tbl_product_type_tbl_product_type_name" />
+      <nodes>
+        <classShapeMoniker Id="449c7c92-a76d-4bca-973e-1ae77971233e" />
+        <classShapeMoniker Id="8c12bc44-62df-4d4e-bd42-d9c35b9099a3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 98.9815991210938); (17.1666666666667 : 98.9815991210938 : JumpStart); (17.3333333333333 : 98.9815991210938 : JumpEnd); (17.4166666666667 : 98.9815991210938 : JumpStart); (17.7083333333333 : 98.9815991210938 : JumpEnd); (17.75 : 98.9815991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_promotion/tbl_promotion_tbl_promotion_benefit" />
+      <nodes>
+        <classShapeMoniker Id="720da5c3-610c-42f3-a628-dd52aa45266a" />
+        <classShapeMoniker Id="156d0605-2ba2-424e-852c-d217aef231df" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 98.9719962565104); (15 : 98.9719962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_promotion_cat/tbl_promotion_cat_tbl_promotion" />
+      <nodes>
+        <classShapeMoniker Id="f0865648-c2ae-4edb-8e93-a086d326aaae" />
+        <classShapeMoniker Id="720da5c3-610c-42f3-a628-dd52aa45266a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 99.2924620651042); (17.25 : 99.2924620651042); (17.25 : 97.75); (17.4166666666667 : 97.75 : JumpStart); (17.7083333333333 : 97.75 : JumpEnd); (18.8749995 : 97.75); (18.8749995 : 89.1939925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_promotion/tbl_promotion_tbl_promotion_condition" />
+      <nodes>
+        <classShapeMoniker Id="720da5c3-610c-42f3-a628-dd52aa45266a" />
+        <classShapeMoniker Id="098c2879-1025-471f-ac69-bb7841d1b277" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 78.4094962565104); (17.75 : 78.4094962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option_price_last_minute_condition/tbl_product_option_price_last_minute_condition_tbl_promotion_condition_lastminute" />
+      <nodes>
+        <classShapeMoniker Id="1a981949-3762-4be0-9a55-a421012cec36" />
+        <classShapeMoniker Id="3c91d208-f3bd-4781-85f9-ef899b37820c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 100.284041463542); (17.4166666666667 : 100.284041463542 : JumpStart); (17.5833333333333 : 100.284041463542 : JumpEnd); (17.625 : 100.284041463542); (17.625 : 97.5); (18.7916661666667 : 97.5 : JumpStart); (18.9583328333333 : 97.5 : JumpEnd); (20 : 97.5); (20 : 81.9535953776042); (17.5 : 81.9535953776042); (17.5 : 78.9439925130208); (19.0625 : 78.9439925130208); (19.0625 : 78.5689925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_promotion/tbl_promotion_tbl_promotion_condition_lastminute" />
+      <nodes>
+        <classShapeMoniker Id="720da5c3-610c-42f3-a628-dd52aa45266a" />
+        <classShapeMoniker Id="3c91d208-f3bd-4781-85f9-ef899b37820c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 55.710941375); (7.91666666666667 : 55.710941375 : JumpStart); (8.08333333333333 : 55.710941375 : JumpEnd); (8.32291666666667 : 55.710941375 : JumpStart); (8.83333333333333 : 55.710941375 : JumpEnd); (8.96875 : 55.710941375); (8.96875 : 68.3125); (8.97916666666667 : 68.3125 : JumpStart); (9.20833333333333 : 68.3125 : JumpEnd); (10.1666666666667 : 68.3125 : JumpStart); (10.3333333333333 : 68.3125 : JumpEnd); (11.3229166666667 : 68.3125 : JumpStart); (11.4895833333333 : 68.3125 : JumpEnd); (11.5416666666667 : 68.3125 : JumpStart); (11.8958333333333 : 68.3125 : JumpEnd); (11.9166666666667 : 68.3125 : JumpStart); (12.2083333333333 : 68.3125 : JumpEnd); (14.2291666666667 : 68.3125 : JumpStart); (14.3958333333333 : 68.3125 : JumpEnd); (14.4791666666667 : 68.3125 : JumpStart); (14.7708333333333 : 68.3125 : JumpEnd); (14.8541666666667 : 68.3125 : JumpStart); (15.0833333333333 : 68.3125 : JumpEnd); (15.1041666666667 : 68.3125 : JumpStart); (15.2708333333333 : 68.3125 : JumpEnd); (17.4166666666667 : 68.3125 : JumpStart); (17.9270833333333 : 68.3125 : JumpEnd); (18.0104171666667 : 68.3125 : JumpStart); (18.1770838333333 : 68.3125 : JumpEnd); (19.1666666666667 : 68.3125 : JumpStart); (19.3333333333333 : 68.3125 : JumpEnd); (20.75 : 68.3125); (20.75 : 75.125); (22.0937495 : 75.125); (22.0937495 : 78.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_promotion_content" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="a8bacf91-25fa-4509-8d1b-bc75db77a41a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 98.4899785325521); (17.1666666666667 : 98.4899785325521 : JumpStart); (17.3333333333333 : 98.4899785325521 : JumpEnd); (17.375 : 98.4899785325521); (17.375 : 97.875); (17.4166666666667 : 97.875 : JumpStart); (17.7083333333333 : 97.875 : JumpEnd); (20.5 : 97.875); (20.5 : 81.9535953776042); (20.5416666666667 : 81.9535953776042 : JumpStart); (20.7083333333333 : 81.9535953776042 : JumpEnd); (21.75 : 81.9535953776042); (21.75 : 79.7035953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_promotion/tbl_promotion_tbl_promotion_content" />
+      <nodes>
+        <classShapeMoniker Id="720da5c3-610c-42f3-a628-dd52aa45266a" />
+        <classShapeMoniker Id="a8bacf91-25fa-4509-8d1b-bc75db77a41a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 104.97199625651); (18.75 : 104.97199625651); (18.75 : 99.9631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_promotion_type/tbl_promotion_type_tbl_promotion_benefit" />
+      <nodes>
+        <classShapeMoniker Id="231ba738-fc65-4b4e-8ee8-2f8aa84b6f96" />
+        <classShapeMoniker Id="156d0605-2ba2-424e-852c-d217aef231df" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.468748 : 67.3958154296875); (4.468748 : 67.6458154296875); (5.54166666666667 : 67.6458154296875 : JumpStart); (5.70833333333333 : 67.6458154296875 : JumpEnd); (5.75 : 67.6458154296875); (5.75 : 65.4623120117188); (5.79166666666667 : 65.4623120117188 : JumpStart); (6.08333333333333 : 65.4623120117188 : JumpEnd); (8.49479166666667 : 65.4623120117188 : JumpStart); (9.14583333333333 : 65.4623120117188 : JumpEnd); (11.2291666666667 : 65.4623120117188 : JumpStart); (11.8958333333333 : 65.4623120117188 : JumpEnd); (12.0625 : 65.4623120117188); (12.0625 : 66.5208968098958); (12.1041666666667 : 66.5208968098958 : JumpStart); (12.2708333333333 : 66.5208968098958 : JumpEnd); (14.2291666666667 : 66.5208968098958 : JumpStart); (14.3958333333333 : 66.5208968098958 : JumpEnd); (14.5 : 66.5208968098958); (14.5 : 64.4479489049479); (14.6041666666667 : 64.4479489049479 : JumpStart); (14.8958333333333 : 64.4479489049479 : JumpEnd); (15.25 : 64.4479489049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_review_day_trip" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="950c67e0-ffee-47dd-b37e-3e49ef938c83" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.45951723076923 : 63.125); (4.45951723076923 : 62.625); (5.79166666666667 : 62.625 : JumpStart); (6.08333333333333 : 62.625 : JumpEnd); (7.16666666666667 : 62.625 : JumpStart); (7.33333333333333 : 62.625 : JumpEnd); (8.32291666666667 : 62.625 : JumpStart); (8.48958333333333 : 62.625 : JumpEnd); (8.57291666666667 : 62.625 : JumpStart); (9.21885948670848 : 62.625 : JumpEnd); (10.1666666666667 : 62.625 : JumpStart); (10.3333333333333 : 62.625 : JumpEnd); (11.2291666666667 : 62.625 : JumpStart); (11.3958333333333 : 62.625 : JumpEnd); (11.5625 : 62.625); (11.5625 : 66.2708968098958); (11.6666666666667 : 66.2708968098958 : JumpStart); (12.2708333333333 : 66.2708968098958 : JumpEnd); (14.2291666666667 : 66.2708968098958 : JumpStart); (14.3958333333333 : 66.2708968098958 : JumpEnd); (14.4166666666667 : 66.2708968098958 : JumpStart); (14.7708333333333 : 66.2708968098958 : JumpEnd); (14.8125 : 66.2708968098958); (14.8125 : 62.5); (15.1041666666667 : 62.5 : JumpStart); (15.2708333333333 : 62.5 : JumpEnd); (17.375 : 62.5); (17.375 : 65.3084627278646); (17.4166666666667 : 65.3084627278646 : JumpStart); (17.9270833333333 : 65.3084627278646 : JumpEnd); (18.0104171666667 : 65.3084627278646 : JumpStart); (18.1770838333333 : 65.3084627278646 : JumpEnd); (18.25 : 65.3084627278646)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_review_golf" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="84d2002a-e0a5-48f3-823b-20c283391107" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 63.5068256835938); (5.62451823076924 : 63.28125); (5.72940165068368 : 63.28125 : JumpStart); (5.89606831735035 : 63.28125 : JumpEnd); (5.91666666666667 : 63.28125 : JumpStart); (6.08333333333333 : 63.28125 : JumpEnd); (8.66666666666667 : 63.28125 : JumpStart); (8.83333333333333 : 63.28125 : JumpEnd); (9.125 : 63.28125); (9.25 : 55.4881610076122)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_review_health" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="12916c24-05ba-40fa-ac02-1f8ba024b080" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 65.5498565087891); (5.5048569039973 : 65.5498565087891 : JumpStart); (6.08333333333333 : 65.5498565087891 : JumpEnd); (8.49479166666667 : 65.5498565087891 : JumpStart); (9.14583333333333 : 65.5498565087891 : JumpEnd); (11.3125 : 65.5498565087891); (11.3125 : 61.1875); (11.5416666666667 : 61.1875 : JumpStart); (12.2083333333333 : 61.1875 : JumpEnd); (14.4791666666667 : 61.1875 : JumpStart); (14.8958333333333 : 61.1875 : JumpEnd); (15 : 61.1875); (15 : 61.2996240234375); (15.0416666666667 : 61.2996240234375 : JumpStart); (15.2708333333333 : 61.2996240234375 : JumpEnd); (16.25 : 61.2996240234375); (16.25 : 61.0496240234375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_review_hotel" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="417db419-8bdf-455c-900c-0d5a65842ffa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.40625 : 48.9439925130208); (14.40625 : 59.0424625651042); (14.6041666666667 : 59.0424625651042 : JumpStart); (14.7708333333333 : 59.0424625651042 : JumpEnd); (15.25 : 59.0424625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_review_from/tbl_review_from_tbl_review_hotel" />
+      <nodes>
+        <classShapeMoniker Id="f4c916ff-213c-43fd-824c-706d00e51bc3" />
+        <classShapeMoniker Id="417db419-8bdf-455c-900c-0d5a65842ffa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.25 : 58.2604484049479); (18 : 58.2604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_review_hotel/tbl_review_hotel_tbl_review_picture" />
+      <nodes>
+        <classShapeMoniker Id="417db419-8bdf-455c-900c-0d5a65842ffa" />
+        <classShapeMoniker Id="c7312969-7a01-4fdd-8230-36f0e6f596db" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.5 : 46.2219962565104); (15 : 46.2219962565104); (15 : 49.375); (17.25 : 49.375); (17.25 : 55.375); (16.25 : 55.375); (16.25 : 55.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_review_recommend/tbl_review_recommend_tbl_review_hotel" />
+      <nodes>
+        <classShapeMoniker Id="9961462b-d117-429e-b657-2c25ee45bcfc" />
+        <classShapeMoniker Id="417db419-8bdf-455c-900c-0d5a65842ffa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 65.5109194335938); (5.60019009407043 : 65.8321850371174 : JumpStart); (5.64980990592957 : 65.9912939685099 : JumpEnd); (5.72519009407043 : 66.2330051063373 : JumpStart); (5.77480990592957 : 66.3921140377297 : JumpEnd); (5.85019009407043 : 66.6338251755571 : JumpStart); (5.89980990592957 : 66.7929341069495 : JumpEnd); (6.1875 : 67.7154298143029); (6.1875 : 71.375); (8.87653746153846 : 71.375); (9.00357443490112 : 71.5020369733627 : JumpStart); (9.12142556509888 : 71.6198881035604 : JumpEnd); (9.25153746153846 : 71.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_review_show_event" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="f5f5e5bf-9f46-4e15-acfc-2ed0ba3818f8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 63.3750025); (5.52656782645396 : 63.3750025 : JumpStart); (5.7081658002289 : 63.3750025 : JumpEnd); (5.71244058019539 : 63.3750025 : JumpStart); (6.20833333333333 : 63.3750025 : JumpEnd); (8.32291666666667 : 63.3750025 : JumpStart); (8.48958333333333 : 63.3750025 : JumpEnd); (8.57291666666667 : 63.3750025 : JumpStart); (9.14583333333333 : 63.3750025 : JumpEnd); (11.2291666666667 : 63.3750025 : JumpStart); (11.3958333333333 : 63.3750025 : JumpEnd); (11.4791666666667 : 63.3750025 : JumpStart); (11.8958333333333 : 63.3750025 : JumpEnd); (11.9166666666667 : 63.3750025 : JumpStart); (12.0833333333333 : 63.3750025 : JumpEnd); (12.1875 : 63.3750025); (12.1875 : 66.8958968098958); (14.2291666666667 : 66.8958968098958 : JumpStart); (14.3958333333333 : 66.8958968098958 : JumpEnd); (14.4791666666667 : 66.8958968098958 : JumpStart); (14.7708333333333 : 66.8958968098958 : JumpEnd); (14.9375 : 66.8958968098958); (14.9375 : 68.5496240234375); (15.1041666666667 : 68.5496240234375 : JumpStart); (15.2708333333333 : 68.5496240234375 : JumpEnd); (15.7500005 : 68.5496240234375); (15.7500005 : 69.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_review_spa" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="3ed321f4-b453-468c-95a8-d619eea8cfa7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 65.0098959960938); (5.90884515384616 : 62.75); (5.91666666666667 : 62.75 : JumpStart); (6.08333333333333 : 62.75 : JumpEnd); (11.90625 : 62.75); (11.90625 : 57.3933740234375); (12.25 : 57.0496240234375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_review_water_activity" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="fba5d5b4-d77d-49e7-9afb-f4c2c002d3e6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 65.732001546224); (2.79166666666667 : 65.732001546224 : JumpStart); (2.95833333333333 : 65.732001546224 : JumpEnd); (2.97916666666667 : 65.732001546224 : JumpStart); (3.20833333333333 : 65.732001546224 : JumpEnd); (3.22916666666667 : 65.732001546224 : JumpStart); (3.39583333333333 : 65.732001546224 : JumpEnd); (3.5 : 65.732001546224)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_status/tbl_status_tbl_product" />
+      <nodes>
+        <classShapeMoniker Id="1cb9a21d-d40e-40fe-95ed-9349565401ee" />
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.203125 : 58.9439925130208); (3.203125 : 64.8489513574219); (3.14583333333333 : 64.8489513574219 : JumpStart); (2.97916666666667 : 64.8489513574219 : JumpEnd); (2.95833333333333 : 64.8489513574219 : JumpStart); (2.79166666666667 : 64.8489513574219 : JumpEnd); (2.75 : 64.8489513574219)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_status_category/tbl_status_category_tbl_status" />
+      <nodes>
+        <classShapeMoniker Id="8199ab24-bb09-4217-8fc6-99b5244293f1" />
+        <classShapeMoniker Id="1cb9a21d-d40e-40fe-95ed-9349565401ee" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 66.09375); (5.54166666666667 : 66.09375 : JumpStart); (6.08333333333333 : 66.09375 : JumpEnd); (8.57291666666667 : 66.09375 : JumpStart); (8.95833333333333 : 66.09375 : JumpEnd); (8.97916666666667 : 66.09375 : JumpStart); (9.14583333333333 : 66.09375 : JumpEnd); (9.25 : 66.09375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_type_product" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="468bef10-ed01-4314-b513-153ecec69723" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 68.625); (5.625 : 68.5); (5.97916666666667 : 68.5 : JumpStart); (6.27083333333333 : 68.5 : JumpEnd); (6.27604166666667 : 68.5 : JumpStart); (6.44270833333333 : 68.5 : JumpEnd); (7.22135366666667 : 68.5 : JumpStart); (7.38802033333333 : 68.5 : JumpEnd); (8.49479166666667 : 68.5 : JumpStart); (8.66145833333333 : 68.5 : JumpEnd); (8.79166666666667 : 68.5 : JumpStart); (8.95833333333333 : 68.5 : JumpEnd); (9.125 : 68.5); (9.125 : 67.3199099688001); (9.25091745577925 : 67.1939925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_type/tbl_product_type_tbl_type_product" />
+      <nodes>
+        <classShapeMoniker Id="449c7c92-a76d-4bca-973e-1ae77971233e" />
+        <classShapeMoniker Id="468bef10-ed01-4314-b513-153ecec69723" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.40625 : 78.375); (11.40625 : 64.9186565058594); (11.4791666666667 : 64.9186565058594 : JumpStart); (11.8958333333333 : 64.9186565058594 : JumpEnd); (11.9166666666667 : 64.9186565058594 : JumpStart); (12.0833333333333 : 64.9186565058594 : JumpEnd); (12.25 : 64.9186565058594)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_transport_cat/tbl_transport_cat_tbl_product_landmark" />
+      <nodes>
+        <classShapeMoniker Id="6083d759-9bc8-47e3-b136-a022ea593807" />
+        <classShapeMoniker Id="22179119-bdbe-45a8-931c-088f5f6e9165" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 54.726559625); (8.32291666666667 : 54.726559625 : JumpStart); (8.64583333333333 : 54.726559625 : JumpEnd); (8.91666666666667 : 54.726559625 : JumpStart); (9.08333333333333 : 54.726559625 : JumpEnd); (9.09375 : 54.726559625); (9.09375 : 58.8525211588542); (9.10416666666667 : 58.8525211588542 : JumpStart); (9.27936949186867 : 58.8525211588542 : JumpEnd); (11.3229166666667 : 58.8525211588542 : JumpStart); (11.4895833333333 : 58.8525211588542 : JumpEnd); (11.6875 : 58.8525211588542); (11.6875 : 61.0353011067708); (11.7291666666667 : 61.0353011067708 : JumpStart); (12.2083333333333 : 61.0353011067708 : JumpEnd); (14.6041666666667 : 61.0353011067708 : JumpStart); (14.8958333333333 : 61.0353011067708 : JumpEnd); (15.125 : 61.0353011067708); (15.125 : 61.5496240234375); (17.5416666666667 : 61.5496240234375 : JumpStart); (17.9270833333333 : 61.5496240234375 : JumpEnd); (18 : 61.5496240234375); (18 : 60.125); (19.25 : 60.125); (19.25 : 60.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_transport_cat_content" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="f426fb78-1624-4d09-bdc1-b836803c5777" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 78.9719962565104); (11.75 : 78.9719962565104); (11.75 : 77.875); (11.8229166666667 : 77.875 : JumpStart); (11.9895833333333 : 77.875 : JumpEnd); (12.0416666666667 : 77.875 : JumpStart); (12.2083333333333 : 77.875 : JumpEnd); (13.1666666666667 : 77.875 : JumpStart); (13.3333333333333 : 77.875 : JumpEnd); (14.5416666666667 : 77.875 : JumpStart); (15.0520833333333 : 77.875 : JumpEnd); (17.5 : 77.875); (17.5 : 62.1987939453125); (17.5416666666667 : 62.1987939453125 : JumpStart); (17.9270833333333 : 62.1987939453125 : JumpEnd); (19.25 : 62.1987939453125); (19.25 : 61.7612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_transport_cat/tbl_transport_cat_tbl_transport_cat_content" />
+      <nodes>
+        <classShapeMoniker Id="6083d759-9bc8-47e3-b136-a022ea593807" />
+        <classShapeMoniker Id="f426fb78-1624-4d09-bdc1-b836803c5777" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bdab7e87-0d2d-4d37-8baa-9d2ac0f1bdf5" absoluteBounds="12.25, 58.375, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_policy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e0b23f3-43ea-46a2-9ec3-16524bf60bdd" absoluteBounds="12.265, 58.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13.25 : 60.7228011067708); (13.25 : 60.96875); (14.5625 : 60.96875); (14.5625 : 75.625); (14.6041666666667 : 75.625 : JumpStart); (15.1458333333333 : 75.625 : JumpEnd); (17.4166666666667 : 75.625 : JumpStart); (17.5833333333333 : 75.625 : JumpEnd); (18.125 : 75.625); (18.125 : 76.0344957565104); (18.75 : 76.0344957565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_policy/tbl_product_policy_tbl_product_option_condition_policy" />
+      <nodes>
+        <classShapeMoniker Id="bdab7e87-0d2d-4d37-8baa-9d2ac0f1bdf5" />
+        <classShapeMoniker Id="2828f988-f434-4119-a17f-ae77b2b4414e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.2176923076923 : 58.375); (14.3473244349011 : 58.2453678727912 : JumpStart); (14.4651755650989 : 58.1275167425934 : JumpEnd); (14.6285744349011 : 57.9641178727912 : JumpStart); (14.7464255650989 : 57.8462667425934 : JumpEnd); (14.875 : 57.7176923076923); (14.875 : 53.5777498372396); (15 : 53.5777498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_policy/tbl_product_policy_tbl_product_policy_cancel" />
+      <nodes>
+        <classShapeMoniker Id="bdab7e87-0d2d-4d37-8baa-9d2ac0f1bdf5" />
+        <classShapeMoniker Id="160a5b7a-c90d-493a-8c00-04b677961ca8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 58.4088451538462); (14.3473244349011 : 58.3115207189451 : JumpStart); (14.4651755650989 : 58.1936695887473 : JumpEnd); (14.6285744349011 : 58.0302707189451 : JumpStart); (14.7464255650989 : 57.9124195887473 : JumpEnd); (15 : 57.6588451538462); (15 : 55.0464998372396); (17.1666666666667 : 55.0464998372396 : JumpStart); (17.3333333333333 : 55.0464998372396 : JumpEnd); (17.5416666666667 : 55.0464998372396 : JumpStart); (17.9270833333333 : 55.0464998372396 : JumpEnd); (18 : 55.0464998372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_policy/tbl_product_policy_tbl_product_policy_content" />
+      <nodes>
+        <classShapeMoniker Id="bdab7e87-0d2d-4d37-8baa-9d2ac0f1bdf5" />
+        <classShapeMoniker Id="7567b289-130f-421f-b3f2-3cc8d55bd651" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.48153846153846 : 63.125); (5.70028846153846 : 62.90625); (11.875 : 62.90625); (11.875 : 61.0978011067708); (11.9410744349011 : 61.0317266718697 : JumpStart); (12.0589255650989 : 60.9138755416719 : JumpEnd); (12.25 : 60.7228011067708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_policy" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="bdab7e87-0d2d-4d37-8baa-9d2ac0f1bdf5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.40625 : 52.9439925130208); (11.40625 : 59.0544661458333); (11.5416666666667 : 59.0544661458333 : JumpStart); (11.9895833333333 : 59.0544661458333 : JumpEnd); (12.0416666666667 : 59.0544661458333 : JumpStart); (12.2083333333333 : 59.0544661458333 : JumpEnd); (12.25 : 59.0544661458333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_policy_cat/tbl_product_policy_cat_tbl_product_policy" />
+      <nodes>
+        <classShapeMoniker Id="fd3f0ab1-42dd-456b-b41a-adbe55687e39" />
+        <classShapeMoniker Id="bdab7e87-0d2d-4d37-8baa-9d2ac0f1bdf5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 50.8033777647736); (12.015625 : 51.3190027647736); (12.015625 : 58.6834810729167); (12.25 : 58.6834810729167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_policy_type/tbl_product_policy_type_tbl_product_policy" />
+      <nodes>
+        <classShapeMoniker Id="0f3e3cb1-c59d-4bef-b709-294dc87796ad" />
+        <classShapeMoniker Id="bdab7e87-0d2d-4d37-8baa-9d2ac0f1bdf5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9d0e6028-b1d6-4aaf-bb60-7211b34f0767" absoluteBounds="6.875, 72.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_minimum_stay" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8df82738-5ddf-492c-8843-7bf7896d4583" absoluteBounds="6.89, 72.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 65.2344022623698); (5.54166666666667 : 65.2344022623698 : JumpStart); (5.7811084653042 : 65.2344022623698 : JumpEnd); (5.79166666666667 : 65.2344022623698 : JumpStart); (6.08333333333333 : 65.2344022623698 : JumpEnd); (8.578125 : 65.2344022623698); (8.578125 : 72.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_minimum_stay" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="9d0e6028-b1d6-4aaf-bb60-7211b34f0767" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="298526a8-1760-45ea-b4ad-6a814085dcef" absoluteBounds="22, 55.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_country_market" />
+      <nestedChildShapes>
+        <elementListCompartment Id="020ead9b-f790-4978-946e-ee96a1f443b0" absoluteBounds="22.015, 55.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="593fdf6c-2834-4318-9ebe-29e21c524168" absoluteBounds="2.375, 76.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed2e51d9-448d-415d-b4de-8ce54e71b644" absoluteBounds="2.3899999999999997, 76.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5625 : 76.375); (2.5625 : 73.3381982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country/tbl_country_tbl_destination" />
+      <nodes>
+        <classShapeMoniker Id="593fdf6c-2834-4318-9ebe-29e21c524168" />
+        <classShapeMoniker Id="22d7a13d-3e9a-4793-a31a-55dab9279261" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.375 : 76.375); (3.375 : 67.9623120117188); (5.54166666666667 : 67.9623120117188 : JumpStart); (5.70833333333333 : 67.9623120117188 : JumpEnd); (5.79166666666667 : 67.9623120117188 : JumpStart); (6.08333333333333 : 67.9623120117188 : JumpEnd); (6.10416666666667 : 67.9623120117188 : JumpStart); (6.40655867118391 : 67.9623120117188 : JumpEnd); (8.49479166666667 : 67.9623120117188 : JumpStart); (9.20833333333333 : 67.9623120117188 : JumpEnd); (11.3229166666667 : 67.9623120117188 : JumpStart); (11.4895833333333 : 67.9623120117188 : JumpEnd); (11.5416666666667 : 67.9623120117188 : JumpStart); (11.8958333333333 : 67.9623120117188 : JumpEnd); (11.9166666666667 : 67.9623120117188 : JumpStart); (12.2083333333333 : 67.9623120117188 : JumpEnd); (14.2291666666667 : 67.9623120117188 : JumpStart); (14.3958333333333 : 67.9623120117188 : JumpEnd); (14.4791666666667 : 67.9623120117188 : JumpStart); (14.7708333333333 : 67.9623120117188 : JumpEnd); (14.8541666666667 : 67.9623120117188 : JumpStart); (15.0833333333333 : 67.9623120117188 : JumpEnd); (15.25 : 67.9623120117188)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country/tbl_country_tbl_review_day_trip" />
+      <nodes>
+        <classShapeMoniker Id="593fdf6c-2834-4318-9ebe-29e21c524168" />
+        <classShapeMoniker Id="950c67e0-ffee-47dd-b37e-3e49ef938c83" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 77.4090759863281); (4.94791616666667 : 77.4090759863281 : JumpStart); (5.11458283333333 : 77.4090759863281 : JumpEnd); (5.76041666666667 : 77.4090759863281 : JumpStart); (6.14583333333333 : 77.4090759863281 : JumpEnd); (6.54166666666667 : 77.4090759863281 : JumpStart); (6.70833333333333 : 77.4090759863281 : JumpEnd); (9.04166666666667 : 77.4090759863281 : JumpStart); (9.20833333333333 : 77.4090759863281 : JumpEnd); (11.3229166666667 : 77.4090759863281 : JumpStart); (11.4895833333333 : 77.4090759863281 : JumpEnd); (11.5416666666667 : 77.4090759863281 : JumpStart); (11.7083333333333 : 77.4090759863281 : JumpEnd); (11.8229166666667 : 77.4090759863281 : JumpStart); (12.2083333333333 : 77.4090759863281 : JumpEnd); (14.4375 : 77.4090759863281); (14.4375 : 75.5); (14.4791666666667 : 75.5 : JumpStart); (15.1458333333333 : 75.5 : JumpEnd); (17.4166666666667 : 75.5 : JumpStart); (17.5833333333333 : 75.5 : JumpEnd); (18.5 : 75.5); (18.5 : 74.3285953776042); (20.25 : 74.3285953776042); (20.25 : 68.4919254557292); (19.25 : 68.4919254557292); (19.25 : 68.1169254557292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country/tbl_country_tbl_review_golf" />
+      <nodes>
+        <classShapeMoniker Id="593fdf6c-2834-4318-9ebe-29e21c524168" />
+        <classShapeMoniker Id="84d2002a-e0a5-48f3-823b-20c283391107" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 76.7075110794271); (6.54166666666667 : 76.7075110794271 : JumpStart); (6.70833333333333 : 76.7075110794271 : JumpEnd); (9 : 76.7075110794271); (9 : 74.3958968098958); (9.1875 : 74.3958968098958); (9.1875 : 70.1410953776042); (9.14583333333333 : 70.1410953776042 : JumpStart); (8.97916666666667 : 70.1410953776042 : JumpEnd); (8.875 : 70.1410953776042); (8.875 : 59.0400211588542); (8.91666666666667 : 59.0400211588542 : JumpStart); (9.27636201947577 : 59.0400211588542 : JumpEnd); (10.25 : 59.0400211588542); (10.25 : 58.7900211588542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country/tbl_country_tbl_review_health" />
+      <nodes>
+        <classShapeMoniker Id="593fdf6c-2834-4318-9ebe-29e21c524168" />
+        <classShapeMoniker Id="12916c24-05ba-40fa-ac02-1f8ba024b080" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 77.1165815657552); (4.94791616666667 : 77.1165815657552 : JumpStart); (5.11458283333333 : 77.1165815657552 : JumpEnd); (5.76041666666667 : 77.1165815657552 : JumpStart); (6.14583333333333 : 77.1165815657552 : JumpEnd); (6.54166666666667 : 77.1165815657552 : JumpStart); (6.70833333333333 : 77.1165815657552 : JumpEnd); (9.04166666666667 : 77.1165815657552 : JumpStart); (9.20833333333333 : 77.1165815657552 : JumpEnd); (11.3229166666667 : 77.1165815657552 : JumpStart); (11.4895833333333 : 77.1165815657552 : JumpEnd); (11.5416666666667 : 77.1165815657552 : JumpStart); (11.7083333333333 : 77.1165815657552 : JumpEnd); (11.8229166666667 : 77.1165815657552 : JumpStart); (12.2083333333333 : 77.1165815657552 : JumpEnd); (14.3125 : 77.1165815657552); (14.3125 : 61.4246240234375); (14.4791666666667 : 61.4246240234375 : JumpStart); (15.0208333333333 : 61.4246240234375 : JumpEnd); (15.0416666666667 : 61.4246240234375 : JumpStart); (15.2708333333333 : 61.4246240234375 : JumpEnd); (16.25 : 61.4246240234375); (16.25 : 61.0496240234375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country/tbl_country_tbl_review_hotel" />
+      <nodes>
+        <classShapeMoniker Id="593fdf6c-2834-4318-9ebe-29e21c524168" />
+        <classShapeMoniker Id="417db419-8bdf-455c-900c-0d5a65842ffa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 76.4787555397135); (4.94791616666667 : 76.4787555397135 : JumpStart); (5.11458283333333 : 76.4787555397135 : JumpEnd); (5.76041666666667 : 76.4787555397135 : JumpStart); (5.92708333333333 : 76.4787555397135 : JumpEnd); (5.97916666666667 : 76.4787555397135 : JumpStart); (6.14583333333333 : 76.4787555397135 : JumpEnd); (6.54166666666667 : 76.4787555397135 : JumpStart); (6.70833333333333 : 76.4787555397135 : JumpEnd); (8.91666666666667 : 76.4787555397135 : JumpStart); (9.20833333333333 : 76.4787555397135 : JumpEnd); (9.25 : 76.4787555397135)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country/tbl_country_tbl_review_show_event" />
+      <nodes>
+        <classShapeMoniker Id="593fdf6c-2834-4318-9ebe-29e21c524168" />
+        <classShapeMoniker Id="f5f5e5bf-9f46-4e15-acfc-2ed0ba3818f8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.96875 : 76.375); (2.96875 : 70.59375); (2.97916666666667 : 70.59375 : JumpStart); (3.20833333333333 : 70.59375 : JumpEnd); (3.22916666666667 : 70.59375 : JumpStart); (3.45833333333333 : 70.59375 : JumpEnd); (4.94791616666667 : 70.59375 : JumpStart); (5.11458283333333 : 70.59375 : JumpEnd); (5.54166666666667 : 70.59375 : JumpStart); (5.70833333333333 : 70.59375 : JumpEnd); (5.91666666666667 : 70.59375 : JumpStart); (6.27083333333333 : 70.59375 : JumpEnd); (8.49479166666667 : 70.59375 : JumpStart); (8.66145833333333 : 70.59375 : JumpEnd); (8.97916666666667 : 70.59375 : JumpStart); (9.27083333333333 : 70.59375 : JumpEnd); (11.3229166666667 : 70.59375 : JumpStart); (11.4895833333333 : 70.59375 : JumpEnd); (11.5416666666667 : 70.59375 : JumpStart); (11.8333333333333 : 70.59375 : JumpEnd); (11.9166666666667 : 70.59375 : JumpStart); (12.2083333333333 : 70.59375 : JumpEnd); (13.1986873974359 : 70.59375 : JumpStart); (13.3653540641025 : 70.59375 : JumpEnd); (14.2291666666667 : 70.59375 : JumpStart); (14.3958333333333 : 70.59375 : JumpEnd); (14.4791666666667 : 70.59375 : JumpStart); (14.6648654851568 : 70.59375 : JumpEnd); (15.25 : 70.59375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country/tbl_country_tbl_review_spa" />
+      <nodes>
+        <classShapeMoniker Id="593fdf6c-2834-4318-9ebe-29e21c524168" />
+        <classShapeMoniker Id="3ed321f4-b453-468c-95a8-d619eea8cfa7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 77.65625); (7.16666666666667 : 77.65625 : JumpStart); (7.33333333333333 : 77.65625 : JumpEnd); (9.04166666666667 : 77.65625 : JumpStart); (9.20833333333333 : 77.65625 : JumpEnd); (11.625 : 77.65625); (11.625 : 57.6746240234375); (11.8229166666667 : 57.6746240234375 : JumpStart); (12.2083333333333 : 57.6746240234375 : JumpEnd); (13.281252 : 57.6746240234375); (13.281252 : 57.0496240234375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country/tbl_country_tbl_review_water_activity" />
+      <nodes>
+        <classShapeMoniker Id="593fdf6c-2834-4318-9ebe-29e21c524168" />
+        <classShapeMoniker Id="fba5d5b4-d77d-49e7-9afb-f4c2c002d3e6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 77.2556469726563); (4.94791616666667 : 77.2556469726563 : JumpStart); (5.11458283333333 : 77.2556469726563 : JumpEnd); (5.76041666666667 : 77.2556469726563 : JumpStart); (6.14583333333333 : 77.2556469726563 : JumpEnd); (6.54166666666667 : 77.2556469726563 : JumpStart); (6.70833333333333 : 77.2556469726563 : JumpEnd); (9.04166666666667 : 77.2556469726563 : JumpStart); (9.20833333333333 : 77.2556469726563 : JumpEnd); (11.3229166666667 : 77.2556469726563 : JumpStart); (11.4895833333333 : 77.2556469726563 : JumpEnd); (11.5416666666667 : 77.2556469726563 : JumpStart); (11.7083333333333 : 77.2556469726563 : JumpEnd); (11.8229166666667 : 77.2556469726563 : JumpStart); (12.2083333333333 : 77.2556469726563 : JumpEnd); (14.3541666666667 : 77.2556469726563 : JumpStart); (14.5208333333333 : 77.2556469726563 : JumpEnd); (14.5416666666667 : 77.2556469726563 : JumpStart); (15.0520833333333 : 77.2556469726563 : JumpEnd); (17.4166666666667 : 77.2556469726563 : JumpStart); (17.5833333333333 : 77.2556469726563 : JumpEnd); (20.5416666666667 : 77.2556469726563 : JumpStart); (20.7083333333333 : 77.2556469726563 : JumpEnd); (22.0104161666667 : 77.2556469726563 : JumpStart); (22.1770828333333 : 77.2556469726563 : JumpEnd); (23.90625 : 77.2556469726563); (23.90625 : 56.4439925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country/tbl_country_tbl_country_market" />
+      <nodes>
+        <classShapeMoniker Id="593fdf6c-2834-4318-9ebe-29e21c524168" />
+        <classShapeMoniker Id="298526a8-1760-45ea-b4ad-6a814085dcef" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.0625 : 78.875); (3.0625 : 77.9535953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_continent/tbl_continent_tbl_country" />
+      <nodes>
+        <classShapeMoniker Id="3db69a48-a14c-4ba2-aab8-8bc5bf9030e0" />
+        <classShapeMoniker Id="593fdf6c-2834-4318-9ebe-29e21c524168" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f0fe9ba1-0c58-4ea2-9e37-6fea5f26c7d2" absoluteBounds="3.625, 81.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_country_rate_market" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d4e1498-b120-4153-a10d-129e211d282d" absoluteBounds="3.64, 81.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.0312495 : 81.375); (5.0312495 : 70.2612939453125); (5.54166666666667 : 70.2612939453125 : JumpStart); (5.70833333333333 : 70.2612939453125 : JumpEnd); (5.91666666666667 : 70.2612939453125 : JumpStart); (6.27083333333333 : 70.2612939453125 : JumpEnd); (6.27604166666667 : 70.2612939453125 : JumpStart); (6.44270833333333 : 70.2612939453125 : JumpEnd); (8.49479166666667 : 70.2612939453125 : JumpStart); (8.66145833333333 : 70.2612939453125 : JumpEnd); (8.97916666666667 : 70.2612939453125 : JumpStart); (9.27083333333333 : 70.2612939453125 : JumpEnd); (11.3229166666667 : 70.2612939453125 : JumpStart); (11.4895833333333 : 70.2612939453125 : JumpEnd); (11.5416666666667 : 70.2612939453125 : JumpStart); (11.8333333333333 : 70.2612939453125 : JumpEnd); (11.9166666666667 : 70.2612939453125 : JumpStart); (12.2083333333333 : 70.2612939453125 : JumpEnd); (14.2291666666667 : 70.2612939453125 : JumpStart); (14.3958333333333 : 70.2612939453125 : JumpEnd); (14.4791666666667 : 70.2612939453125 : JumpStart); (14.7708333333333 : 70.2612939453125 : JumpEnd); (14.9166666666667 : 70.2612939453125 : JumpStart); (15.0833333333333 : 70.2612939453125 : JumpEnd); (15.1875 : 70.2612939453125); (15.1875 : 55.5); (16.1666666666667 : 55.5 : JumpStart); (16.3333333333333 : 55.5 : JumpEnd); (17.5 : 55.5); (17.5 : 56.3285953776042); (17.5416666666667 : 56.3285953776042 : JumpStart); (17.9270833333333 : 56.3285953776042 : JumpEnd); (21.625 : 56.3285953776042); (21.625 : 55.8469962565104); (22 : 55.8469962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country_rate_market/tbl_country_rate_market_tbl_country_market" />
+      <nodes>
+        <classShapeMoniker Id="f0fe9ba1-0c58-4ea2-9e37-6fea5f26c7d2" />
+        <classShapeMoniker Id="298526a8-1760-45ea-b4ad-6a814085dcef" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8efb2dae-f1f3-49e8-95ee-0e085dcbb1f3" absoluteBounds="15.75, 90.25, 2, 2.5401025390625">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_condition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4d88ddf-d980-4ef3-8e05-af268cd38fa4" absoluteBounds="15.765, 90.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(17.75 : 90.8537731347656); (17.9166666666667 : 90.8537731347656 : JumpStart); (18.0833333333333 : 90.8537731347656 : JumpEnd); (18.2291639166667 : 90.8537731347656 : JumpStart); (18.3958305833333 : 90.8537731347656 : JumpEnd); (18.7916661666667 : 90.8537731347656 : JumpStart); (18.9583328333333 : 90.8537731347656 : JumpEnd); (19.9166666666667 : 90.8537731347656 : JumpStart); (20.0833333333333 : 90.8537731347656 : JumpEnd); (20.4166666666667 : 90.8537731347656 : JumpStart); (20.5833333333333 : 90.8537731347656 : JumpEnd); (20.625 : 90.8537731347656); (20.625 : 76.5689925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option_condition/tbl_product_option_condition_tbl_product_option_condition_policy" />
+      <nodes>
+        <classShapeMoniker Id="8efb2dae-f1f3-49e8-95ee-0e085dcbb1f3" />
+        <classShapeMoniker Id="2828f988-f434-4119-a17f-ae77b2b4414e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.75 : 91.5200512695313); (17.9166666666667 : 91.5200512695313 : JumpStart); (18.0833333333333 : 91.5200512695313 : JumpEnd); (18.2291639166667 : 91.5200512695313 : JumpStart); (18.3958305833333 : 91.5200512695313 : JumpEnd); (18.7916661666667 : 91.5200512695313 : JumpStart); (18.9583328333333 : 91.5200512695313 : JumpEnd); (19.9166666666667 : 91.5200512695313 : JumpStart); (20.0833333333333 : 91.5200512695313 : JumpEnd); (20.4166666666667 : 91.5200512695313 : JumpStart); (20.5833333333333 : 91.5200512695313 : JumpEnd); (22.3125 : 91.5200512695313); (22.3125 : 85.8381982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option_condition/tbl_product_option_condition_tbl_product_option_condition_price" />
+      <nodes>
+        <classShapeMoniker Id="8efb2dae-f1f3-49e8-95ee-0e085dcbb1f3" />
+        <classShapeMoniker Id="0133b25e-47a4-4db3-b75b-51d735c67a87" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.75 : 92.1863294042969); (17.9166666666667 : 92.1863294042969 : JumpStart); (18.0833333333333 : 92.1863294042969 : JumpEnd); (18.31249725 : 92.1863294042969); (18.31249725 : 89.1939925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option_condition/tbl_product_option_condition_tbl_promotion_condition" />
+      <nodes>
+        <classShapeMoniker Id="8efb2dae-f1f3-49e8-95ee-0e085dcbb1f3" />
+        <classShapeMoniker Id="098c2879-1025-471f-ac69-bb7841d1b277" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.90625 : 82.5689925130208); (3.90625 : 90.60937325); (7.16666666666667 : 90.60937325 : JumpStart); (7.33333333333333 : 90.60937325 : JumpEnd); (14.5416666666667 : 90.60937325 : JumpStart); (14.7083333333333 : 90.60937325 : JumpEnd); (14.7604166666667 : 90.60937325 : JumpStart); (14.9270833333333 : 90.60937325 : JumpEnd); (15.75 : 90.60937325)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_country_rate_market/tbl_country_rate_market_tbl_product_option_condition" />
+      <nodes>
+        <classShapeMoniker Id="f0fe9ba1-0c58-4ea2-9e37-6fea5f26c7d2" />
+        <classShapeMoniker Id="8efb2dae-f1f3-49e8-95ee-0e085dcbb1f3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.2176923076923 : 73.8670068359375); (14.2535744349011 : 73.9028889631463 : JumpStart); (14.3714255650989 : 74.0207400933441 : JumpEnd); (14.5035744349011 : 74.1528889631463 : JumpStart); (14.6214255650989 : 74.2707400933441 : JumpEnd); (14.625 : 74.2743145282452); (14.625 : 91.5200512695313); (14.7604166666667 : 91.5200512695313 : JumpStart); (14.9270833333333 : 91.5200512695313 : JumpEnd); (15.75 : 91.5200512695313)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_product_option_condition" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="8efb2dae-f1f3-49e8-95ee-0e085dcbb1f3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2a485982-7e0d-45e5-beed-babb2ef024a2" absoluteBounds="9, 45.375, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_itinerary_content" />
+      <nestedChildShapes>
+        <elementListCompartment Id="433ce77b-1e89-4fd6-a5c5-4912ff77cdec" absoluteBounds="9.015, 45.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.2968785 : 54.625); (5.2968785 : 46.09375); (9 : 46.09375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_product_itinerary_content" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="2a485982-7e0d-45e5-beed-babb2ef024a2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="687dd679-d633-4ec8-ad4c-31f6a3428ffd" absoluteBounds="13.75, 93.25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_supplement_day" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0cdfc0f8-1308-4f8c-9bd9-171d0ae34dae" absoluteBounds="13.765, 93.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.25 : 72.2772514179688); (14.3033730487258 : 72.2772514179688 : JumpStart); (14.4700397153924 : 72.2772514179688 : JumpEnd); (14.4791666666667 : 72.2772514179688 : JumpStart); (14.6458333333333 : 72.2772514179688 : JumpEnd); (14.84375 : 72.2772514179688); (14.84375 : 93.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_product_option_supplement_day" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="687dd679-d633-4ec8-ad4c-31f6a3428ffd" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6a164448-d321-4f4e-88db-a8a413eaa268" absoluteBounds="6.125, 46.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_itinerary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8b94aa1-b501-4281-b69d-01506e337f95" absoluteBounds="6.14, 47.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.125 : 47.7604484049479); (9.25 : 47.7604484049479); (9.25 : 49.1939925130208); (11.6666666666667 : 49.1939925130208 : JumpStart); (11.8333333333333 : 49.1939925130208 : JumpEnd); (14.3229166666667 : 49.1939925130208 : JumpStart); (14.4895833333333 : 49.1939925130208 : JumpEnd); (17.75 : 49.1939925130208); (17.75 : 68.6875); (18.6197944166667 : 68.6875 : JumpStart); (18.7864610833333 : 68.6875 : JumpEnd); (19.382815875 : 68.6875); (19.382815875 : 68.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_itinerary/tbl_product_itinerary_tbl_product_pic" />
+      <nodes>
+        <classShapeMoniker Id="6a164448-d321-4f4e-88db-a8a413eaa268" />
+        <classShapeMoniker Id="4753fb2f-0ac7-453b-91c5-e89194a26493" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 47.3681266501402); (9.125 : 47.3681266501402); (9.125 : 46.9535953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_itinerary/tbl_product_itinerary_tbl_product_itinerary_content" />
+      <nodes>
+        <classShapeMoniker Id="6a164448-d321-4f4e-88db-a8a413eaa268" />
+        <classShapeMoniker Id="2a485982-7e0d-45e5-beed-babb2ef024a2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.45951723076923 : 63.125); (4.45951723076923 : 62.5); (5.91666666666667 : 62.5 : JumpStart); (6.08333333333333 : 62.5 : JumpEnd); (8.5625 : 62.5); (8.5625 : 47.7604484049479); (8.125 : 47.7604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_itinerary" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="6a164448-d321-4f4e-88db-a8a413eaa268" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5d4dc5d4-dda5-4a77-b618-365729ce836f" absoluteBounds="5.625, 55.875, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_content" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3320405a-3691-46cb-9ec4-bb0dcb9d6485" absoluteBounds="5.64, 56.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 55.8398484375); (6.625 : 55.8398484375); (6.625 : 55.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_lang/tbl_lang_tbl_product_content" />
+      <nodes>
+        <classShapeMoniker Id="f358304d-809a-4485-ad65-c88ed49ebf84" />
+        <classShapeMoniker Id="5d4dc5d4-dda5-4a77-b618-365729ce836f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 66.5791127177735); (6 : 66.5791127177735); (6 : 59.7612125651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product/tbl_product_tbl_product_content" />
+      <nodes>
+        <classShapeMoniker Id="810f88cf-6ce0-4e5e-98a6-1dfbaedb74d6" />
+        <classShapeMoniker Id="5d4dc5d4-dda5-4a77-b618-365729ce836f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5aeefdce-a082-4427-b1a0-137956f59f21" absoluteBounds="1.5, 52.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_price_suplement_quantity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ebd98bc-2bf9-4a8b-938e-4ade42d2bdca" absoluteBounds="1.5150000000000001, 52.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(15.75 : 91.0312505); (14.9270833333333 : 91.0312505 : JumpStart); (14.7604166666667 : 91.0312505 : JumpEnd); (14.7083333333333 : 91.0312505 : JumpStart); (14.5416666666667 : 91.0312505 : JumpEnd); (7.33333333333333 : 91.0312505 : JumpStart); (7.16666666666667 : 91.0312505 : JumpEnd); (1.5 : 91.0312505); (1.5 : 73.5881982421875); (1.93229391666667 : 73.5881982421875 : JumpStart); (2.09896058333333 : 73.5881982421875 : JumpEnd); (2.47916666666667 : 73.5881982421875 : JumpStart); (2.64583333333333 : 73.5881982421875 : JumpEnd); (2.79166666666667 : 73.5881982421875 : JumpStart); (3.05208333333333 : 73.5881982421875 : JumpEnd); (3.0625 : 73.5881982421875); (3.0625 : 59.1939925130208); (1.25 : 59.1939925130208); (1.25 : 54.7804996744792); (2.4999995 : 54.7804996744792); (2.4999995 : 54.4054996744792)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option_condition/tbl_product_option_condition_tbl_price_suplement_quantity" />
+      <nodes>
+        <classShapeMoniker Id="8efb2dae-f1f3-49e8-95ee-0e085dcbb1f3" />
+        <classShapeMoniker Id="5aeefdce-a082-4427-b1a0-137956f59f21" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.25 : 78.7604484049479); (6.14583333333333 : 78.7604484049479 : JumpStart); (5.76041666666667 : 78.7604484049479 : JumpEnd); (5.11458283333333 : 78.7604484049479 : JumpStart); (4.94791616666667 : 78.7604484049479 : JumpEnd); (4 : 78.7604484049479); (4 : 78.2035953776042); (3.14583333333333 : 78.2035953776042 : JumpStart); (2.97916666666667 : 78.2035953776042 : JumpEnd); (2.25 : 78.2035953776042); (2.25 : 73.8381982421875); (2.47916666666667 : 73.8381982421875 : JumpStart); (2.64583333333333 : 73.8381982421875 : JumpEnd); (2.875 : 73.8381982421875); (2.875 : 59.4439925130208); (1 : 59.4439925130208); (1 : 55.0304996744792); (1.16666666666667 : 55.0304996744792 : JumpStart); (1.33333333333333 : 55.0304996744792 : JumpEnd); (3.03125125 : 55.0304996744792); (3.03125125 : 54.4054996744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_period/tbl_product_period_tbl_price_suplement_quantity" />
+      <nodes>
+        <classShapeMoniker Id="4eac61d7-5f8d-4773-a450-4afa7357efb0" />
+        <classShapeMoniker Id="5aeefdce-a082-4427-b1a0-137956f59f21" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9665c9ef-7400-4c8a-b483-2db65e850450" absoluteBounds="4.25, 86.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_option_gala" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70d5428b-b166-4e5c-9426-a56bf3289d2d" absoluteBounds="4.265, 87.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.25 : 71.0625); (12.2083333333333 : 71.0625 : JumpStart); (11.9166666666667 : 71.0625 : JumpEnd); (11.8333333333333 : 71.0625 : JumpStart); (11.5416666666667 : 71.0625 : JumpEnd); (9.27083333333333 : 71.0625 : JumpStart); (8.97916666666667 : 71.0625 : JumpEnd); (8.66145833333333 : 71.0625 : JumpStart); (8.49479166666667 : 71.0625 : JumpEnd); (6.27083333333333 : 71.0625 : JumpStart); (5.97916666666667 : 71.0625 : JumpEnd); (5.84375 : 71.0625); (5.84375 : 86.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_product_option_gala" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="9665c9ef-7400-4c8a-b483-2db65e850450" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="162f0323-eb43-498d-806e-a91425e4ed6c" absoluteBounds="15, 84.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LinqProductionDataContext/tbl_product_supplement_date" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3052cd17-8b5f-40e9-9d7f-c77cc8e0e65e" absoluteBounds="15.015, 85.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.25 : 73.7716212205529); (14.2535744349011 : 73.775195655454 : JumpStart); (14.3714255650989 : 73.8930467856518 : JumpEnd); (14.5035744349011 : 74.025195655454 : JumpStart); (14.6214255650989 : 74.1430467856518 : JumpEnd); (14.6875 : 74.2091212205529); (14.6875 : 86.1843484583333); (14.7604166666667 : 86.1843484583333 : JumpStart); (14.9270833333333 : 86.1843484583333 : JumpEnd); (15 : 86.1843484583333)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqProductionDataContext/tbl_product_option/tbl_product_option_tbl_product_supplement_date" />
+      <nodes>
+        <classShapeMoniker Id="889bf86a-fddc-49c2-bcfb-6ef952285983" />
+        <classShapeMoniker Id="162f0323-eb43-498d-806e-a91425e4ed6c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

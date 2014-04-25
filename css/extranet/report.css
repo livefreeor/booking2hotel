@@ -1,0 +1,680 @@
+﻿#main_chart
+{
+    width: 915px; height: 250px; margin: 0 auto; position:relative;
+    padding:0px 0px 0px 5px;
+    margin:0px 0px 0px 0px;
+     /*border:1px solid #dcdcdc;*/
+}
+.progress_block_stat
+{
+   margin:0 auto;
+   padding:100px 0px 0px 0px;
+   height:70px;
+   width:100%;
+   text-align:center;
+   position:absolute;
+   top:0px;
+   left:0px;
+}
+.progress_block_summary
+{
+    position:absolute;
+    margin:0 auto;
+   padding:70px 0px 0px 0px;
+   height:70px;
+   width:100%;
+   text-align:center;
+   top:0px;
+   left:0px;
+}
+.progress_block_detail
+{
+   
+   margin:0 auto;
+   padding:100px 0px 0px 0px;
+   height:100px;
+   width:100%;
+   text-align:center;
+   top:0px;
+   left:0px;
+}
+/* Date Rang Block*/
+
+ #date_range
+ {
+     float:right;
+     text-align:right;
+     position:relative;
+      
+ }
+ 
+ 
+ #p_date_display 
+ {
+     float:left;
+      margin:0px 15px 0px 0px;
+      padding:0px 0px 0px 0px;
+      
+ }
+ 
+ 
+ .date_rage_result
+ {
+     margin:10px 0px 0px 0px;
+      padding:0px 0px 0px 15px;
+      font-size:20px;
+      color:#333333;
+      
+       border:1px solid #efefef;
+     
+ }
+ .date_rage_result_active
+ {
+      margin:10px 0px 0px 0px;
+      padding:0px 0px 0px 15px;
+      font-size:20px;
+      color:#333333;
+      
+     border:1px solid #aaaaaa;
+ }
+ .display_date_compare
+ {
+     font-size:11px;
+ }
+ #click_date_range
+ {
+       margin:0px 0px 0px 0px;
+      padding:0px 0px 0px 0px;
+     float:left;
+     width:25px;
+     height:30px;
+     background-color:#f7f7f7;
+     background-image:url(http://www.booking2hotels.com/images_extra/down_up.gif);
+     background-repeat:no-repeat;
+    
+ }
+ .compare_text
+ {
+     font-size:11px;
+     color:#666666;
+     margin:0px;
+     padding:0px;
+ }
+  .compare_text span
+ {
+      font-weight:bold;
+ }
+ .click_down
+ {
+    background-position:6px 13px;
+    background-repeat:no-repeat;
+     /*background-position:5px -20px;*/
+ }
+ .click_up
+ {
+     background-position:6px -20px;
+     background-repeat:no-repeat;
+ }
+ #date_rang_select_daily
+ {
+     text-align:right;
+ }
+ #date_rang_selection_hiddend
+ {
+     padding:5px;
+     top:41px;
+      right:0px;
+     position:absolute;
+    width:279px;
+      text-align:left;
+      background-color:#f7f7f7;
+      border:1px solid #aaaaaa;
+      z-index:999;
+      display:none;
+ }
+ .drop
+ {
+     border:1px solid #b2b2b2;
+     font-size:11px;
+     width:100px;
+     
+ }
+ .date_range_title
+ {
+       color:#333333;
+       font-weight:bold;
+       font-size:10px;
+ }
+ .date_range_period
+ {
+     border:1px solid #b2b2b2;
+     font-size:10px;
+     width:80px;
+ }
+ .date_range_btn
+ {
+     margin:10px 0px 0px 0px;
+     padding: 10px 0px 0px 0px;
+      border-top:1px solid #dcdcdc;
+ }
+  .date_range_btn input
+  {
+       font-size:11px;
+  }
+  .date_range_btn a
+  {
+      font-size:11px;
+      font-weight:normal;
+       text-decoration:none;
+  }
+  .down_up
+  {
+      background-image:url(http://hotels2thailand.com/images_extra/down_up_small.png);
+      background-position:6px -9px;
+      background-repeat:no-repeat;
+  }
+  .down_up_coll
+  {
+      background-position:6px 6px;
+  }
+  #date_chart_type span
+  {
+      display:block;
+      float:right;
+      
+      width:18px;
+      height:20px;
+  }
+  #date_chart_type
+  {
+      
+      position:absolute;
+      padding:0px 8px 0px 10px;
+      top:-20px;
+      left:5px;
+      height:20px;
+      line-height:20px;
+      border-left:1px solid #a9a9a9;
+      border-top:1px solid #a9a9a9;
+      border-right:1px solid #a9a9a9;
+      color:#666666;
+      text-decoration:none;
+      background: #ffffff; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZWRlZGUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, #ffffff 0%, #dedede 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dedede)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 0%,#dedede 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 0%,#dedede 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 0%,#dedede 100%); /* IE10+ */
+background: linear-gradient(top, #ffffff 0%,#dedede 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede',GradientType=0 ); /* IE6-8 */
+  }
+  #date_chart_type_detail
+  {
+       display:none;
+      border:1px solid #a9a9a9;
+      margin:0px 0px 5px 0px;
+      padding:0px 15px 15px 15px;
+      background-color:#dfdfdf;
+  }
+  #date_chart_type_detail_line
+  {
+      border-top:1px solid #a9a9a9
+  }
+  #date_chart_type_detail_content
+  {
+      margin:0px 0px 0px 0px;
+      padding:10px;
+     
+      border:1px solid #9a9a9a;
+      background-color:#ffffff;
+  }
+  #chart_mode
+  {
+      margin:10px 0px 10px 0px;
+      padding:0px;
+      font-size:10px;
+      color:#333333;
+      line-height:25px;
+       height:20px;
+       color:#666666;
+       font-weight:bold;
+  }
+  .chart_mode_a
+  {
+      font-size:10px;
+       margin:0px;
+       padding:0px;
+       text-decoration:none;
+  }
+  .chart_mode_a_active
+  {
+       color:#333333;
+  }
+   #chart_mode img
+   {
+       padding:0px 0px 0px 0px;
+        margin:0px 0px 0px 0px;
+   }
+   
+  #date_chart_type_block
+  {
+      margin:10px 0px 0px 5px;
+      padding:0px 0px 0px 0px;
+      position:relative;
+      width:915px;
+  }
+  #date_chart_type_detail_content
+  {
+       font-size:11px;
+  }
+  #metric_selec radio
+  {
+       background-color:Blue;
+  }
+  .bg
+  {
+      background-color:#99ccff;
+      padding:2px;
+  }
+  .bg_active
+  {
+       background-color:#0077cc;
+      padding:2px;
+  }
+  .bg_compare
+  {
+      background-color:#ffcc99;
+      padding:2px;
+      
+  }
+  .bg_compare_active
+  {
+      background-color:#ff9900;
+      padding:2px;
+  }
+  #one_metric
+  {
+      
+  }
+  #two_metric
+  {
+      display:none;
+  }
+  #two_metric table tbody tr td
+  {
+      padding:4px;
+  }
+/*End Date rang Block */
+
+#summary
+{
+    position:relative;
+    margin:0px;
+    padding:0px 0px 0px 0px;
+    height:140px;
+    
+}
+#summary_result a:hover
+{
+     text-decoration:underline;
+}
+#summary_result
+{
+    position:relative;
+    margin:0px;
+    padding:0px 0px 0px 60px;
+    height:140px;
+    width:100%;
+    display:none;
+}
+#summary_result div
+{
+     float:left;
+     width:430px;
+     height:60px;
+     
+     
+}
+#summary_result span
+{
+     color:#fdbe14;
+     font-weight:bold;
+   font-size:24px;
+   text-decoration:underline;
+     
+}
+#summary_result table
+{
+    margin:0px;
+    padding:0px;
+}
+#summary_result table tr
+{
+     margin:0px;
+    padding:0px;
+}
+#summary_result table tr td
+{
+     margin:0px;
+    padding:0px;
+    font-size:16px;
+    font-weight:bold;
+   
+}
+#summary_result div a
+{
+    font-weight:bold;
+    text-decoration:none;
+}
+.booking_summary
+{
+     position:relative;
+     width:100%;
+     background-color:#666666;
+     border:1px solid #dcdcdc;
+     height:30px;
+      line-height:30px;
+      color:#ffffff;
+      font-weight:bold;
+      font-size:14px;
+      text-indent:10px;
+     
+}
+
+
+/*-------------- REport Detail */
+#main_booking_stat_block
+{
+      margin:5px 0px 0px 0px;
+      padding:0px 0px 0px 0px;
+      width:100%;
+}
+#booking_condition_stat
+{
+    position:relative;
+    margin:0px;
+    padding:0px 0px 0px 0px;
+    float:left;
+    width:453px;
+    border:1px solid #dddddd;
+   
+}
+#booking_country_stat
+{
+    position:relative;
+    margin:0px 0px 0px 10px;
+    padding:0px 0px 0px 0px;
+    float:left;
+      width:453px;
+      border:1px solid #dddddd;
+    
+}
+.stat_block_detail
+{
+     margin:0px;
+     padding:0px 10px 15px 20px;
+     
+}
+.stat_block_detail_map
+{
+    margin:0px;
+     padding:0px;
+     height:222px;
+}
+.room_title
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    color:#333333;
+    font-weight:bold;
+}
+.room_title label
+{
+    margin:0px 0px 0px 5px;
+    padding:0px;
+}
+.condition_select_list
+{
+    margin:0px;
+    padding:0px 0px 0px 20px;
+}
+.block_head
+{
+    margin:0px;
+    padding:0px;
+     width:100%;
+     background-color:#666666;
+     height:30px;
+      line-height:30px;
+      color:#ffffff;
+      font-weight:bold;
+      font-size:14px;
+      text-indent:10px;
+     
+}
+
+.summary_total
+{
+    margin:5px 0px 0px 0px;
+    padding:0px;
+    font-size:18px;
+    font-weight:bold;
+    text-align:right;
+    width:100%;
+}
+.summary_total label
+{
+    font-size:12px;
+}
+#condition_box
+{
+    margin:0px;
+    padding:0px;
+
+}
+.total_result
+{
+    font-size:14px;
+    font-weight:bold;
+    color:#0077cc;
+    text-decoration:underline;
+}
+.view_report
+{
+    margin:0px;
+    padding:0px;
+     background-color:#e5e5e5;
+     border-top:1px solid #bbbbbb;
+     height:25px;
+}
+.view_report a
+{
+    margin:0px 0px 0px 15px;
+    padding:0px 0px 0px 0px;
+    line-height:25px;
+     font-size:11px;
+    font-family:Tahoma;
+}
+#main_booking_stat_bar
+{
+     width:98%;
+     margin:0 auto;
+}
+.bar_color
+{
+    background-color:#1a87d5;
+   
+    height:15px;
+    margin:0px;
+    padding:0px;
+    text-align:right;
+}
+.tr_bar
+{
+    height:30px; 
+    background-color:#ffffff;
+    border-bottom:1px solid #eeeeee;
+   
+}
+.td_bar_left
+{
+    padding:0px 20px 0px 50px;
+    width:25%; 
+    border-bottom:1px solid #eeeeee; 
+    font-size:16px;
+    font-family:Cordia New;
+    text-align:right;
+   
+}
+.td_bar_right
+{
+    border-left:1px solid #999999;
+    width:75% ;
+    border-bottom:1px solid #eeeeee;
+    
+   
+}
+.bar_sum
+{
+   
+    margin:0px 0px 0px 10px ;
+    padding:0px 0px 0px 5px;
+    font-size:11px;
+    background-color:#ffffff;
+}
+.summary_total_bar
+{
+     margin:0px 0px 0px 0px;
+     padding:0px 0px 10px 0px;
+     border-bottom:1px solid #999999;
+     font-size:18px;
+     font-weight: bold;
+}
+/*-------------------------*/
+
+/**** Country Page*/
+#booking_stat_bar
+{
+     margin:15px 0px 0px 0px;
+}
+#main_block_country
+{
+     width:100%;
+     border-top:3px solid #666666;
+     
+}
+
+#block_top
+{
+     width:900px;
+     border-right:1px solid #dddddd;
+    
+     height:60px;
+}
+#block_top div
+{
+    margin:0px;
+    padding:10px 0px 0px 10px;
+    
+    float:left;
+    width:23%;
+    height:50px;
+    border-left:1px solid #dddddd;
+}
+.block_top_name
+{
+    font-size:12px;
+   
+    margin:0px;
+    padding:0px;
+}
+.block_top_result
+{
+    font-size:20px;
+    font-weight:bold;
+    margin:0px;
+    padding:0px;
+}
+#block_content
+{
+    margin:0px;
+    padding:0px;
+}
+#block_content table
+{
+    padding:0px;
+    margin:0px;
+    width:100%;
+    background-color:#dddddd;
+}
+#block_content table tr th
+{
+    background-color:#e5e5e5;
+    height:25px;
+    font-size:11px;
+    font-weight:normal;
+     text-align:center;
+     padding:0px 5px 0px 0px;
+      border:1px solid #bbbbbb;
+     font-weight:bold;
+    
+}
+#block_content table tr td
+{
+    height:30px;
+    text-align:center;
+    font-size:11px;
+    padding:0px 5px 0px 0px;
+}
+#block_content table tr
+{
+}
+.title_total_sum
+{
+    font-size:20px;
+    font-weight:bold;
+}
+/*-------------------------------*/
+/* Condition Detail */
+
+
+#booking_condition_block
+{
+     width:100%;
+     border-top:3px solid #666666;
+}
+#booking_condition_block
+{
+     margin:0px;
+     padding:0px;
+     
+}
+#booking_condition_block table
+{
+    padding:0px;
+    margin:0px;
+    width:100%;
+    background-color:#dddddd;
+}
+#booking_condition_block table tr th
+{
+    background-color:#e5e5e5;
+    height:25px;
+    font-size:11px;
+    font-weight:normal;
+     text-align:center;
+     padding:0px 5px 0px 0px;
+      border:1px solid #bbbbbb;
+     font-weight:bold;
+    
+}
+#booking_condition_block table tr td
+{
+    height:30px;
+    text-align:center;
+    font-size:11px;
+    padding:0px 5px 0px 0px;
+}
+/*--------------------------*/

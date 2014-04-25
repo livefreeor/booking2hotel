@@ -1,0 +1,87 @@
+div { margin:0px; padding:0px;}
+
+body {
+margin:0px;
+padding:0px;
+cursor : default;
+font-size : 11px;
+line-height : 16px;
+text-align : center;
+font-family:Arial, Helvetica, sans-serif !important;
+}
+
+a:link, a:visited {/*text1 2 3 4 5*/
+color : #FFF;
+text-decoration : none;
+padding:0px;
+}
+
+
+a img {border : 0;}
+
+
+div#header div#slide-holder div#slide-runner {
+position:absolute;
+top:0px;
+left : 0px;
+width : 751px;
+height : 315px;
+overflow : hidden;
+background:#6084b8;
+}
+
+div#header div#slide-holder img {
+display : none;
+position : absolute;
+left:0px;
+top:0px;
+padding:0px;
+margin:0px;
+border:none;
+width:751px;
+height:315px;
+}
+
+
+div#header div#slide-holder div#slide-controls {/*size38-->50*/
+position:absolute;
+left:97px;
+top:278px;
+display : none;
+}
+div#header div#slide-holder div#slide-controls p.text {
+float : left;
+color : #000;
+display : inline;
+margin :0px;
+padding:0px;
+}
+div#header div#slide-holder div#slide-controls p#slide-nav {/*height button1*/
+height : 37px;
+display : inline;
+margin :0px;
+}
+
+div#header div#slide-holder div#slide-controls p#slide-nav a { behavior: url(/iepngfix.htc)}
+
+div#header div#slide-holder div#slide-controls p#slide-nav a {
+margin:0px;
+padding:5px 0px 0px 0px;
+float : left;
+width : 112px;
+height : 33px;
+display : inline;
+font-size : 13px;
+line-height : 14px;
+font-weight : bold;
+text-align : center;
+text-decoration : none;
+background:url(/images-slide/button.png) no-repeat 0 0;
+}
+
+
+
+div#header div#slide-holder div#slide-controls p#slide-nav a.on {
+background-position : 0 -37px;
+}
+

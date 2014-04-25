@@ -1,0 +1,350 @@
+body{ margin:0px; padding:0px;}
+.clear-all{clear:both; line-height:0px }
+p { margin:10px 0 0 35px; line-height:18px; width:860px; color:#666;}
+p a{ color:#3771ba; }
+p a:hover{ color:#000; }
+p span {font-size:13px; font-weight:bold; color:#666; }
+span.read { color:#F00; }
+
+
+h1{ margin:0px;}
+ul{ padding:0px;}
+ul li{ list-style:none;}
+
+#main{
+	margin:0 auto;
+	padding-bottom:17px;
+	width:968px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14px;
+	background:url(images/layout_mail/mail_bg_main.jpg) repeat-y 0 0;
+}
+#header{
+	position:relative;
+	margin:0 auto;
+	width:968px;
+	height:184px;
+	background:url(images/layout_mail/mail_bg_head.jpg) no-repeat 0 0;	
+}
+#header img{
+	position:absolute;
+	top:60px;
+	left:25px;
+	width:253px;
+	height:53px;
+	border:none;
+}
+#livechat{
+	position:absolute;
+	top:9px;
+	left:715px;
+	width:152px;
+	height:55px;
+	font-size:14px;
+	text-align:center;
+}
+#livechat span{color:#0066a8}
+#livechat a{
+	height:25px;
+	display:block;
+	background:url(images/layout_mail/livechat_b.jpg) no-repeat 0 0;
+}
+
+#livechat a:hover{
+	background:url(images/layout_mail/livechat_b.jpg) no-repeat 0 -29px;
+}
+.name_page{
+	position:absolute;	
+	top:70px;
+	left:320px;
+	width:255px;	
+}
+.name_page h1{
+	margin:0px;
+	font-size:12px;
+	color:#333;
+	font-weight:normal;
+}
+.menu{
+	position:absolute;
+	width:110px;
+	top:97px;
+	left:745px;
+	color:#FFF;
+	font-weight:bold;
+}
+.menu a{ color:#FFF; text-decoration:none; font-size:12px}
+.menu a:hover{ color:#000;}
+
+.main_menu{
+	position:absolute;
+	top:134px;
+	left:48px;
+	text-decoration:none;
+	color:#3771ba
+}
+.main_menu a{ padding:0 5px 0 5px; color:#3771ba; font-size:11px; font-weight:bold; text-decoration:none;}
+.main_menu a:hover{ color:#000; }
+#flag_index{
+	position:absolute;
+	top:132px;
+	left:830px;
+}
+#content_line{
+	margin-left:24px;
+	padding:0 0 4px 0;
+	width:922px;
+	background:#5f85b7;	
+}
+#content{
+	margin:0 auto;
+	width:914px;
+	background:#FFF;	
+}
+.header_bg{
+	padding-left:35px;
+	height:26px;
+	background:#e1e9f6;
+}
+.complete{
+	text-align:left;
+	color:#0674b6;
+	font:italic 1.2em/0.9em Georgia, 'Times New Roman', serif;
+	font-size:20px;
+	line-height:24px;
+}
+.end_main{
+	margin:0 auto;
+	width:968px;
+	height:14px;
+	background:url(images/layout_mail/mail_end_main.jpg) no-repeat 0 0;	
+}
+.box{
+	margin:4px 0 10px 20px;
+	width:880px;
+	background:url(images/layout_mail/re_content.jpg) repeat-y 0 0;	
+}
+.line_top{	
+	padding:15px 0 0 20px;
+	width:860px;
+	height:25px;
+	color:#f7941e;
+	font:italic 1.2em/0.9em Georgia, 'Times New Roman', serif;
+	background:url(images/layout_mail/line_top1.jpg) no-repeat 0 0;
+}
+.line_top span{ color:#8b5e3b; }
+.line_top span.red{ color:#F00; font-size:12px;}
+.line_top span.black{ color:#333; font-size:12px;}
+.line_menu{
+	margin-left:6px;
+	width:867px;
+	height:6px;
+	background:url(images/layout_mail/line_menu.jpg) repeat-x 0 0;
+	
+}
+.line_buttom{
+	width:880px;
+	height:22px;
+	background:url(images/layout_mail/line_buttom.jpg) no-repeat 0 0;
+}
+
+
+/* hotel print */
+
+#header_print{
+	margin:0 auto;
+	width:968px;
+	height:80px;
+	background:url(images/layout_mail/print_head.jpg) no-repeat 0 0;	
+}
+#header_print img{ border:0px; margin:25px 0 0 30px;}
+#sub_head_print{
+	margin:0 auto;
+	height:33px;
+	background:url(images/layout_mail/print_sub_head.jpg) no-repeat 0 0;	
+}
+#end_print{
+	margin:0 auto;
+	height:33px;
+	background:url(images/layout_mail/print_head_end.jpg) no-repeat 0 0;	
+}
+#content_line_print{
+	margin-left:24px;
+	width:922px;
+	background:#5f85b7;	
+}
+#title{
+	margin:0px;
+	width:529px;
+	height:27px;
+	float:left;	
+}
+.title_hotels h1{
+	padding:0 10px 4px 30px;
+	font-size:20px;
+	line-height:18px;
+	float:left;	
+	color:#5d85b8;
+}
+.class_star{
+	margin:0px;
+	height:18px;
+	width:94px;
+	background:url(images/icon/icon_star.jpg) no-repeat top;
+	float:left;	
+}
+.address{
+	padding:0 0 10px 30px;
+}
+
+.hotel_img{
+	margin:0 20px 0 30px;
+	float:left;	
+}
+.detail{ padding:0px; margin-top:0px; font-weight:bold;}
+.hotel_detail{ margin:5px 0 0 0; width:580px; float:left;}
+
+table{
+	margin:0 auto;
+	padding:0px;
+	background:#adc5e6;
+	text-align:center;
+}
+table tr td{ background:#FFF; }
+table tr td.period{
+	height:20px;
+	background:#edf5fe;
+	font-weight:bold;
+	text-align:center;
+	color:#5d85b8;
+	font-size:14px;
+}
+table tr td.room_type{
+	background:#edf5fe;
+	font-weight:bold;
+	text-align:center;
+	color:#5d85b8;
+	font-size:14px;
+}
+table tr td ul.room_type_list{
+	padding-left:20px;
+	text-align:left;
+}
+table tr td.rate{
+	background:#edf5fe;
+	font-weight:bold;
+	text-align:center;
+	color:#5d85b8;
+	font-size:14px;
+}
+table tr td.cerrency{
+	width:100px;
+	background:#edf5fe;
+	text-align:center;
+	color:#5d85b8;
+	font-size:14px;
+}
+.hotel_name{
+	padding:0 0 3px 18px;
+	text-align:left;
+	color:#0674b6;
+	font:italic 1.2em/0.9em Georgia, 'Times New Roman', serif;
+	font-size:20px;
+	line-height:22px;
+}
+tr.remarks td{
+	padding:10px;
+	background:#fffaef;
+	
+}
+p.remarks{
+	margin:0px;
+	padding-left:25px;
+	font-weight:bold;
+	text-align:left;
+	color:#F60;
+}
+ul.remarks{
+	margin:5px;
+}
+ul.remarks li{
+	margin-left:35px;
+	padding:0px;
+	font-size:13px;
+	text-align:left;
+	list-style:url(images/icon/ball_green_s.jpg);
+}
+ul.remarks_list{
+	margin:5px;
+}
+ul.remarks_list li{
+	margin-left:45px;
+	padding:0px;
+	font-size:14px;
+	color:#666;
+	text-align:left;
+	list-style:url(images/icon/ball_green_s.jpg);	
+}
+.backtotop{ text-align:right; padding:0 22px 0 0; color:#5d85b8;}
+.backtotop a:hover{ color:#000;}
+
+.colum{
+	width:420px;
+	float:left;
+}
+p.service{
+	margin:0px;
+	padding:0 0 3px 45px;
+	width:860px;
+	color:#f7941e;
+	font:italic 1em/0.9em Georgia, 'Times New Roman', serif;
+}
+
+.inbox{
+	margin:0px;
+	padding:5px 0 0 45px;
+	width:820px;
+	
+}
+/* hotel print */
+
+
+/*-----footer-----*/
+#footer{
+	margin:0 0 0 24px;
+	padding:0 0 4px 0;
+	width:922px;
+	background:#5f85b7;	
+}
+#bgwrite{
+	margin:0px;
+	padding:0px;
+	width:912px;
+	background:#FFF;
+}
+#tophotel{
+	padding:20px 10px 0px 30px;
+}
+#content_tophotel{
+	padding:5px 10px 20px 30px;
+}
+#content_tophotel ul{
+	margin:0px 5px 0 0;
+	padding:5px 10px 10px 10px;
+	width:188px;
+	float:left;
+	font-size:14px;
+	line-height:20px;
+	border:solid 1px #CCC;
+}
+#content_tophotel ul a{ color:#666;}
+#copyright{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	margin:10px 0px 10px 0px;
+	text-align:center;
+	
+}
+/*-----footer-----*/
+
+

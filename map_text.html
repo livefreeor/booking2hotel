@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" language="javascript" src="scripts/jquery-1.7.1.min.js"></script>
+ 
+
+ <script type="text/javascript" language="javascript" src="scripts/jquery-ui-1.8.18.custom.min.js"></script>
+ 
+    
+  <link href="css/productMap.css" type="text/css" rel="stylesheet" />
+   
+    
+    <title></title>
+     <script language="javascript" type="text/javascript">
+
+         $(document).ready(function () {
+             var ga = document.createElement('script'); ga.type = 'text/javascript';
+
+             //var post = $("#form1").find("input,textarea,select,hidden").not("#__VIEWSTATE,#__EVENTVALIDATION").serialize();
+
+             var productid = $("#map_hotel_id").val();
+             
+             ga.src = 'http://www.booking2hotels.com/map_hotel.aspx?pid=' + productid;
+             //var s = document.getElementsByTagName('script')[3]; s.parentNode.insertBefore(ga, s);
+
+             alert(ga.nodeValue);
+             $("#map_block_main").append(ga);
+             $("<script type=\"text/javascript\" src=\"http://maps.googleapis.com/maps/api/js?sensor=false&language=en\"><\/script>").appendTo("#map_block_main");
+             $("<script type=\"text/javascript\" src=\"js/productMap.js\"><\/script>").appendTo("#map_block_main");
+         });
+
+     </script>
+    <style type="text/css">
+        
+
+   </style>
+</head>
+<body>
+    <!--REview_tag-->
+   <div id="map_block_main">
+   <input type="hidden" id="map_hotel_id" value="3652" />
+
+    
+   </div>
+   <!-- REview_tag_end-->
+</body>
+</html>

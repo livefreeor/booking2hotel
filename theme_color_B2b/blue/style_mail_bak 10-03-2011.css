@@ -1,0 +1,110 @@
+body{ margin:0px; padding:0px;}
+.clear-all{clear:both; line-height:0px }
+
+#main{
+	margin:0 auto;
+	padding-bottom:17px;
+	width:968px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14px;
+	background:url(images/layout_mail/mail_bg_main.jpg) repeat-y 0 0;
+}
+#header{
+	position:relative;
+	margin:0 auto;
+	width:968px;
+	height:184px;
+	background:url(images/layout_mail/mail_bg_head.jpg) no-repeat 0 0;	
+}
+#header img{
+	position:absolute;
+	top:60px;
+	left:25px;
+	width:253px;
+	height:53px;
+	border:none;
+}
+#livechat{
+	position:absolute;
+	top:9px;
+	left:715px;
+	width:152px;
+	height:55px;
+	font-size:14px;
+	text-align:center;
+}
+#livechat span{color:#0066a8}
+#livechat a{
+	height:25px;
+	display:block;
+	background:url(images/layout_mail/livechat_b.jpg) no-repeat 0 0;
+}
+
+#livechat a:hover{
+	background:url(images/layout_mail/livechat_b.jpg) no-repeat 0 -29px;
+}
+.name_page{
+	position:absolute;	
+	top:70px;
+	left:320px;
+	width:255px;	
+}
+.name_page h1{
+	margin:0px;
+	font-size:12px;
+	color:#333;
+	font-weight:normal;
+}
+.menu{
+	position:absolute;
+	width:110px;
+	top:97px;
+	left:745px;
+	color:#FFF;
+	font-weight:bold;
+}
+.menu a{ color:#FFF; text-decoration:none; font-size:12px}
+.menu a:hover{ color:#000;}
+
+.main_menu{
+	position:absolute;
+	top:134px;
+	left:48px;
+	color:#999;
+	text-decoration:none;
+}
+.main_menu a{ padding:0 5px 0 5px; color:#333; font-size:13px; text-decoration:none; font-weight:bold;}
+.main_menu a:hover{ color:#8ac73e;}
+#flag_index{
+	position:absolute;
+	top:132px;
+	left:830px;
+}
+#content_line{
+	margin-left:24px;
+	padding-bottom:4px;
+	width:922px;
+	background:#5f85b7;	
+}
+#content_bg{
+	margin:0 auto;
+	width:914px;
+	background:#FFF;	
+}
+.header_bg{
+	width:914px;
+	height:35px;
+	background:#e1e9f6;
+}
+.complete{
+	width:310px;
+	height:28px;
+	background:url(images/layout_mail/complete.jpg) no-repeat 10px 5px;	
+}
+.end_main{
+	margin:0 auto;
+	width:968px;
+	height:14px;
+	background:url(images/layout_mail/mail_end_main.jpg) no-repeat 0 0;
+	
+}

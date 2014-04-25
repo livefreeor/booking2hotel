@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.875" name="LingStaff">
+  <DataContextMoniker Name="/LinqStaffDataContext" />
+  <nestedChildShapes>
+    <classShape Id="934ea18b-470f-4a01-90be-7b450c80a531" absoluteBounds="3.5, 7.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/LinqStaffDataContext/tbl_authorize_staff" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47b3c03e-dd2a-43f7-bd9e-61b46c49f72b" absoluteBounds="3.515, 7.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aaea930d-b6c0-4375-b374-e03d5cf83dbf" absoluteBounds="6.25, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/LinqStaffDataContext/tbl_staff_activity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95a32c11-d43b-4532-805f-55ff1e6e1bfa" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ddea92a8-73dd-41b7-8e64-3569b78bd4be" absoluteBounds="3.5, 1.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/LinqStaffDataContext/tbl_staff_activity_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f43623aa-d2c2-4602-acba-db17fcfec913" absoluteBounds="3.515, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="993448f5-e001-4737-80b9-a096fa24a7b4" absoluteBounds="6.25, 4.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/LinqStaffDataContext/tbl_staff_authorize" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2488aecf-ac0c-414b-9f3b-433c71e1ecf7" absoluteBounds="6.265, 4.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf659309-ce26-4bc1-95bb-395c4d5b3cee" absoluteBounds="6.25, 6.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/LinqStaffDataContext/tbl_staff_product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="426f4f49-dd30-4364-bf99-37b4e5f18c61" absoluteBounds="6.265, 6.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.55894653320312); (6.25 : 2.55894653320312)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqStaffDataContext/tbl_staff_activity_cat/tbl_staff_activity_cat_tbl_staff_activity" />
+      <nodes>
+        <classShapeMoniker Id="ddea92a8-73dd-41b7-8e64-3569b78bd4be" />
+        <classShapeMoniker Id="aaea930d-b6c0-4375-b374-e03d5cf83dbf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.375); (5.875 : 7); (5.875 : 5.94399251302083); (6.25 : 5.56899251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqStaffDataContext/tbl_authorize_staff/tbl_authorize_staff_tbl_staff_authorize" />
+      <nodes>
+        <classShapeMoniker Id="934ea18b-470f-4a01-90be-7b450c80a531" />
+        <classShapeMoniker Id="993448f5-e001-4737-80b9-a096fa24a7b4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="61e7aabe-1105-4f86-a2ae-8c25b52f9244" absoluteBounds="1, 4.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LinqStaffDataContext/tbl_staff_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aafad16c-8e83-4395-8db6-35ea50203d52" absoluteBounds="1.0150000000000001, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7a1b25c-4922-4608-a10f-2c86c4e6568d" absoluteBounds="3.5, 4, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/LinqStaffDataContext/tbl_staff" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08b7e52d-24e9-4c8c-a033-46a67fb1d7dc" absoluteBounds="3.5149999999999997, 4.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4); (5.875 : 3.625); (5.875 : 1.92390055338542); (6.25 : 1.92390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqStaffDataContext/tbl_staff/tbl_staff_tbl_staff_activity" />
+      <nodes>
+        <classShapeMoniker Id="b7a1b25c-4922-4608-a10f-2c86c4e6568d" />
+        <classShapeMoniker Id="aaea930d-b6c0-4375-b374-e03d5cf83dbf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.94074375651042); (6.25 : 4.94074375651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqStaffDataContext/tbl_staff/tbl_staff_tbl_staff_authorize" />
+      <nodes>
+        <classShapeMoniker Id="b7a1b25c-4922-4608-a10f-2c86c4e6568d" />
+        <classShapeMoniker Id="993448f5-e001-4737-80b9-a096fa24a7b4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.28626164523237); (5.81607443490112 : 6.60233608013349 : JumpStart); (5.93392556509888 : 6.72018721033125 : JumpEnd); (6.0625 : 6.84876164523237); (6.0625 : 6.0625); (6.25 : 6.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqStaffDataContext/tbl_staff/tbl_staff_tbl_staff_product" />
+      <nodes>
+        <classShapeMoniker Id="b7a1b25c-4922-4608-a10f-2c86c4e6568d" />
+        <classShapeMoniker Id="bf659309-ce26-4bc1-95bb-395c4d5b3cee" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 5.51849609375); (3.5 : 5.51849609375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqStaffDataContext/tbl_staff_cat/tbl_staff_cat_tbl_staff" />
+      <nodes>
+        <classShapeMoniker Id="61e7aabe-1105-4f86-a2ae-8c25b52f9244" />
+        <classShapeMoniker Id="b7a1b25c-4922-4608-a10f-2c86c4e6568d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2f43fb80-04e2-46b0-91e5-1ac45b642caf" absoluteBounds="1, 2, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LinqStaffDataContext/tbl_staff_session" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ffadc59-cc9a-4c19-936e-3aa536dac765" absoluteBounds="1.0150000000000001, 2.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

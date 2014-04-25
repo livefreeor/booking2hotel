@@ -1,0 +1,81 @@
+ul#ratingPan{
+	
+	padding:0px;
+	margin:0px;
+	width:600px;
+}
+ul#ratingPan li{
+font-family:Verdana, Geneva, sans-serif;
+font-size:12px;
+color:#333;
+display:block;
+float:left;
+width:200px;
+padding:5px 0px;
+list-style:none;
+background-image:none;
+}
+.review_rate_select_box{
+	margin-left:5px;
+	padding-left:10px;
+	width:665px;
+	color:#000;
+}
+.review_rate_select_box span{
+	padding-right:8px;
+	font-size:15px;
+	color:#77787b;
+	font-weight:bold;
+	float:left;
+}
+#review_box .review_rate_select_box ul li{ width:240px; margin-right:50px;}
+#review_box{
+	position:relative;
+	margin:10px 0 0px 32px;
+	padding:6px 0 0 0;
+	width:100%;
+	
+}
+#review_box span
+{
+     font-size:11px;
+     margin:0px 0px 5px 0px;
+}
+.review_box_header{
+	margin:0 0 6px 5px;
+	padding-left:10px;
+	background:#f4f7fc;
+	width:665px;
+	height:34px;
+	font-size:22px;
+	color:#F93;
+	font-weight:bold;
+	line-height:28px;	
+}
+.rating_header_orage{
+	margin-left:5px;
+	padding:35px 0 0 10px;
+	width:665px;
+	font-size:15px;
+	color:#f57f20;
+	font-weight:bold;	
+}
+.rating_header_orage span{ font-weight:normal; color:#000; font-size:13px;}
+
+.rating_header_tell{
+	margin-left:5px;
+	padding:0 0 20px 10px;
+	width:665px;
+	font-size:15px;
+	color:#f57f20;
+	font-weight:bold;	
+}
+.rating_header_tell span{
+	padding-left:10px;
+	font-size:12px;
+	color:#000;
+	font-weight:normal;
+}
+#review_box .rating_header_tell .captcha{ margin:0px; padding:0px;}
+#review_box .rating_header_tell a{ padding-left:10px; text-decoration:underline; line-height:30px;}
+#review_box .rating_header_tell .captcha img{ margin:0px; padding:0 0 10px 10px; width:103px; height:25px; float:left;}

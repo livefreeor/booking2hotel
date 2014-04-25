@@ -1,0 +1,346 @@
+﻿.Gvproducttype
+{
+    margin:0px;
+    padding:20px;
+     width:350px;
+     
+     float:left;
+     /*border-right:1px solid #b3b3b3;*/
+}
+.insertproductType
+{
+     margin:0px;
+     padding:20px;
+     border-bottom:1px solid #e0e0e0;
+}
+.insertproducttypename
+{
+    margin:0px;
+    padding:20px;
+    width:400px;
+    float:left;
+    border-left:1px solid #b3b3b3;
+}
+.productTypeList
+{
+    margin:0px;
+    padding:20px;
+    width:300px;
+    
+}
+.productTypeCat
+{
+    margin:0px;
+    padding:0px 0px 20px 20px;
+    border-bottom:1px solid #e0e0e0;
+}
+.product_detail_style
+{
+     margin:0px;
+     padding:0px;
+}
+.product_detail_style_left
+{
+    margin:0px;
+    padding:0px;
+    float:left;
+    width:450px;
+}
+.product_detail_style_left h5
+{
+    width:100px;
+}
+
+.product_detail_style_right
+{
+    margin:0px;
+    padding:0px;
+    float:left;
+    width:500px;
+}
+.supItemList
+{
+     text-align:left;
+    padding:10px;
+    font-size:12px;
+    font-family:Tahoma;
+    
+}
+.disableRow
+{
+    text-decoration:line-through;
+}
+
+.CheckBoxSupplier
+{
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    
+}
+.CheckBoxSupplier tr
+{
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    
+}
+.CheckBoxSupplier tr td
+{
+    margin:0px 0px 0px 0px;
+    padding:4px 0px 4px 0px;
+    
+}
+/*--------- ProductContentLang----------*/
+.productcontentLangBox
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    width:100%;
+    position:relative;
+}
+
+.productmenuBox
+{
+    height:25px;
+    width:500px;
+    
+    position:absolute;
+    top:-25px;
+    left:0px;
+}
+.productmenuBox img
+{
+     width:15px;
+     height:15px;
+     margin:0px;
+     padding:0px;
+}
+.iteminactiveLang
+{
+    margin:0px;
+    padding:0px;
+    
+}
+.iteminactiveLang a
+{
+    display:block;
+    color:#ffffff;
+    margin:0px 1px 0px 0px;
+    padding:0px;
+    background:url(../images/btmenuBG.gif) top  repeat-x;
+    background-color:#627aad;
+    width:100px;
+    height:25px;
+    border:1px solid #d8dfea;
+    text-align:center;
+    line-height:25px;
+   
+}
+
+.itemactiveLang
+{
+     margin:0px 0px 0px 0px;
+     padding:0px;
+     
+}
+ .itemactiveLang a
+{
+    display:block;
+    margin:0px 1px 0px 0px;
+    padding:0px;
+    height:25px;
+    background-color:#f7f7f7;
+    border-left:1px solid #d8dfea;
+    border-right:1px solid #d8dfea;
+    border-top:1px solid #d8dfea;
+    border-bottom:1px solid #f7f7f7;
+    width:100px;
+    text-align:center;
+    line-height:25px;
+}
+
+.productcontentLangBox_item
+{
+    margin:31px 0px 0px 0px;
+    padding:20px 20px 20px 10px;
+    background:#f7f7f7;
+    border-top:1px solid #d8dfea;
+    border-left:1px solid #d8dfea;
+    border-right:1px solid #d8dfea;
+    border-bottom:1px solid #d8dfea;
+    /*width:500px;
+    height:200px;*/
+}
+.productcontentLangBox_item p
+{
+    margin:0px 5px 0px 0px;
+    padding:0px 0px 0px 0px;
+    text-align:right;
+   
+}
+.productcontentLangBox_item_left
+{
+    
+    margin:0px;
+    padding:0px;
+    float:left;
+    
+}
+.productcontentLangBox_item_left p
+{
+    
+    margin:0px 5px 0px 0px;
+    padding:0px 0px 0px 0px;
+    font-size:12px;
+    font-weight:bold;
+    
+    
+}
+.productcontentLangBox_item_right
+{
+    margin:0px;
+    padding:0px 0px 0px 15px;
+    float:left;
+    
+}
+.productContentLangBox_Location_list
+{
+    
+}
+.productcontentLangBox_item_right p
+{
+    margin:0px;
+    padding:0px;
+    font-weight:bold;
+    text-align:left;
+}
+.productPanel
+{
+    margin:0px 0px 0px 0px;
+    padding:15px 0px 15px 0px;
+    border-bottom:1px solid #e0e0e0; 
+}
+.productPanel_nofootline
+{
+    margin:0px 0px 0px 0px;
+    padding:15px 0px 15px 0px;
+    
+}
+.productPanel fieldset
+{
+     margin:5px 0px 5px 0px;
+     padding:0px;
+     border:none;
+}
+.productPanel fieldset label
+{
+    width:200px;
+    font-size:11px;
+    margin:0px 5px 0px 5px;
+    padding:0px;
+    color:#3b59aa;
+    font-weight:normal;
+    text-align:left;
+}
+ 
+.productPanelcolor
+{
+    margin:0px 0px 0px 0px;
+    padding:5px 15px 15px 15px;
+    border-top:1px solid #e0e0e0; 
+    border-bottom:1px solid #e0e0e0; 
+    border-left:1px solid #e0e0e0; 
+    border-Right:1px solid #e0e0e0; 
+}
+
+.contentheadedetail
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    color:#818181;
+    font-size:11px;
+    font-weight:normal;
+    text-align:left;
+}
+/*----------- ProductList ----------*/
+.product_list_sort_box
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+}
+.product_list_sort_box p
+{
+    margin:0px;
+    padding:0px;
+    color:Black;
+    font-weight:bold;
+}
+.product_list
+{
+    font-size:11px;
+     margin:0px;
+    padding:0px;
+    
+}
+.product_list a
+{
+    font-size:11px;
+    font-weight:normal;
+}
+.product_list_record
+{
+    margin:0px;
+    padding:0px;
+}
+.product_list_table
+{
+    width:100%;
+    margin:0px;
+    padding:0px;
+}
+.product_list_table tr td
+{
+   text-align:center;
+   margin:0px;
+   padding:0px;
+}
+.GV_product_list
+{
+     margin:0px;
+     padding:0px;
+}
+.GV_product_list tr
+{
+     margin:0px;
+     padding:0px;
+   
+}
+.GV_product_list tr td
+{
+     margin:0px;
+     padding:2px 0px 2px 0px;
+     height:20px;
+}
+.product_list_record_hidden
+{
+     margin:0px;
+     padding:0px 0px 0px 0px;
+     font-size:12px;
+}
+.product_list_record_hidden a
+{
+    margin:0px;
+     padding:0px 0px 0px 0px;
+     font-size:12px;
+}
+.panelsupplier
+{
+     margin:0px;
+     padding:0px;
+     cursor: pointer;
+}
+.expiredStyle
+{
+    font-weight:bold;
+    
+}
+

@@ -1,0 +1,424 @@
+
+#main_browse{
+	margin:0 auto;
+	width:1029px;
+	background:url(images/layout/bg_main_browse.jpg) repeat-y 0 0;	
+}
+#content_top{
+	margin:0 auto;
+	padding:0 0 17px 0;
+	width:1029px;
+	background:url(images/layout/browse_top_end.jpg) no-repeat center bottom;
+}
+#content_top h1{
+	color:#000;
+	line-height:13px;
+	padding:0 0 2px 32px;
+	padding-bottom:2px;
+}
+#content_top #navigator_rate{
+	color:#666;
+	width:815px;
+	font-size:14px;
+}
+#content_top #navigator_rate img{ margin-top:0px;}
+#content_top #navigator_rate span{ color:#3870b7; font-weight:bold;}
+#content_top #navigator_rate span.black_c{ color:#000; font-weight:bold;}
+#browse_boxsearch{
+	position:relative;
+	width:457px;
+	height:215px;
+	background:url(images/layout/browse_bg_boxsearch.jpg) no-repeat 16px 8px;
+	float:left;
+}
+#browse_boxsearch h2{ padding:17px 0 10px 45px; font-size:18px; color:#FFF;}
+#browse_boxsearch .boxsearch{ 
+	position:absolute; 
+	width:210px;
+	left:35px;
+}
+#browse_boxsearch .boxsearch ul{ padding:8px 0 4px 26px;}
+#browse_boxsearch .boxsearch li{ padding-bottom:4px;}
+.row_rate{
+	position:relative;
+	width:186px;
+	height:154px;
+	left:255px;
+}
+#wat_prakaew{
+	width:559px;
+	height:215px;
+	background:url(images/layout/browse_wat.jpg) no-repeat 5px 5px;
+	float:left;
+}
+
+/* content */
+#content_left_right{
+	padding-bottom:10px;
+	width:1029px;
+	background:url(images/layout/browse_content_rp.jpg) repeat-y 0 0;
+}
+.content_top_bg{
+	height:51px;
+	width:1029px;
+	background:url(images/layout/browse_content_top.jpg) no-repeat center top;	
+}
+
+/* content left */
+#content_left{
+	padding-left:15px;
+	width:554px;
+	float:left;		
+}
+.head_featured{
+	width:580px;
+	height:51px;
+	background:url(images/layout/browse_header_featured.jpg) no-repeat 30px 20px;
+	float:left;
+}
+.head_featured h2{ font-size:18px; padding:23px 0 0 49px;}
+.head_landmarks{
+	width:449px;
+	height:51px;
+	background:url(images/layout/browse_header_view.jpg) no-repeat  40px 20px;
+	float:left;
+}
+.head_landmarks h2{ font-size:18px; padding:23px 0 0 62px;}
+.bg_block{
+	margin:0 0 12px 0;
+	width:554px;
+	background:url(images/layout/browse_bg_block.jpg) repeat-y 0 0;
+}
+.bg_block_top{
+	height:14px;
+	background:url(images/layout/browse_block_top.jpg) no-repeat 0 0;	
+}
+.bg_block_down{
+	height:15px;
+	background:url(images/layout/browse_block_down.jpg) no-repeat 0 0;	
+}
+ul #images_hotel{
+	width:162px;
+	float:left;	
+}
+#content_left ul img{margin:7px 0 0 8px;}
+#content_left ul #images_hotel a{ padding:0px; }
+#content_left ul #images_hotel a.bg_pic{
+	margin:0 0 0 15px;
+	width:147px;
+	height:145px;
+	background:url(images/layout/browse_bg_pic.jpg) no-repeat 0 0;	
+}
+#content_left ul #images_hotel .map{
+	margin-left:68px;
+	width:51px;
+	height:32px;
+	background:url(images/icon/map_b.jpg) no-repeat 0 2px;
+}
+#content_left ul #images_hotel a.view_map{
+	margin-left:52px;
+	width:80px;
+	text-align:center;
+	
+}
+.browse_hotel_name{
+	padding:0 0 4px 6px;
+	width:380px;
+	float:left;
+}
+#content_left ul .browse_hotel_name a{ font-size:16px; line-height:12px;}
+#browse_detail{
+	margin:0 0 0 6px;
+	width:280px;
+	float:left;
+}
+#content_left ul a{
+	font-size:13px;
+	padding:2px 0 5px 0;
+	text-decoration:underline;
+	float:left;	
+}
+#content_left ul .class_star_s{
+	margin:0px 0 0 5px;	
+}
+#browse_detail a.score_review_link{ 
+	margin:0 0 0 10px; 
+	color:#000; 
+	line-height:12px; 
+	font-size:13px;
+}
+#browse_detail a.score_review_link:hover{color:#0066a8;}
+#browse_detail .internet{
+	margin:0 0 0 8px;
+	width:90px;
+	height:19px;
+	background:url(images/icon/browse_net.jpg) no-repeat 0 0;
+	float:left;
+}
+#browse_detail ul.nearby{ padding:5px 0 0 0; line-height:14px;}
+ul #detail_price{
+	width:100px;
+	height:110px;
+	background:url(images/layout/browse_line.jpg) no-repeat left center;
+	text-align:center;
+	float:right;
+}
+ul #detail_price .thb{
+	margin:0 auto;
+	padding:5px 0 0 0;
+	text-align:center;
+	font-size:22px;
+	color:#39b54a;
+}
+ul #reviews{
+	margin:3px 0 0 2px;
+	padding:8px 0 0 12px;
+	width:271px;
+	height:70px;	
+	background:url(images/layout/browse_bg_review.jpg) no-repeat 0 0;	
+	font:italic 1.1em/1.2em Georgia, 'Times New Roman', serif;	
+	float:left;
+}
+ul #reviews p{ width:240px; height:62px; color:#0b9444;}
+.name_custom_review{
+	padding-top:20px;
+	width:100px;
+	float:right;
+	line-height:12px;
+}
+.name_custom_review img{
+	margin:0px;
+	padding:0px;
+	
+}
+/* content left */
+
+
+/* content right */	
+/* landmarks */	
+#content_right{
+	padding:0 13px 0 0;
+	width:412px;
+	float:right;
+}
+.bg_block_right{
+	width:412px;
+	background:url(images/layout/browse_bg_colright.jpg) repeat-y 0 0;	
+}
+.bg_top_colright{
+	height:13px;
+	background:url(images/layout/browse_top_colright.jpg) no-repeat 0 0;	
+}
+.bg_down_colrigh{
+	height:16px;
+	background:url(images/layout/browse_down_colright.jpg) no-repeat 0 0;
+}
+.landmarks_colleft{
+	padding:0 0 0 10px;
+	width:192px;
+	float:left;
+}
+.landmarks_colright{
+	padding:0 10px 0 0;
+	width:192px;
+	float:right;
+}
+.header_top{
+	padding:0 0 3px 12px;
+	height:14px;
+	color:#000;	
+}
+.header{
+	padding:5px 0 3px 12px;
+	height:14px;
+	color:#000;	
+}
+li.ball_green{
+	padding:0 0 0 12px;
+	height:13px;
+	line-height:9px;
+	background:url(images/icon/ball_green.jpg) no-repeat 0 0;
+}
+.ball_green a{ text-decoration:underline; color:#666;}
+
+/* landmarks */	
+
+/* last viewed */	
+#last_viewed_header{
+	margin:10px 0 0 0;
+	height:31px;
+	background:url(images/layout/browse_header_view.jpg) no-repeat  15px 0;
+}
+#last_viewed_header h2{ font-size:18px; padding:4px 0 0 36px;}
+.last_viewed{
+	width:412px;
+	background:url(images/layout/browse_bg_colright.jpg) repeat-y 0 0;	
+}
+#last_view_list_top{ margin-left:4px; width:402px;}
+#last_view_list{ padding-top:5px; margin-left:4px; width:402px;}
+#last_view_list_bg{ padding-top:5px; margin-left:4px; width:402px; background:#fafafb; border:#e7e8e9 solid 1px;}
+.last_viewed img{
+	margin:0 0 5px 10px;
+	float:left;
+}
+.last_viewed .hotels_name{
+	padding-left:8px;
+	width:330px;
+	font-size:12px;
+	line-height:17px;
+	float:left;
+}
+.last_viewed .hotels_name a{ text-decoration:underline; margin-right:7px; float:left; font-size:14px;}
+.last_viewed .class_star_s{ margin:0px;}
+.last_viewed .location{ margin:0px;}
+.last_viewed .close a{ margin-right:0px; width:13px; height:13px; background:url(images/icon/close.jpg) no-repeat 0 0; float:right;}
+
+/* Popular Right Now */	
+#popular_header{
+	margin-top:10px;
+	height:31px;
+	background:url(images/layout/browse_pop_header.jpg) no-repeat  15px 0;
+}
+#popular_header h2{ font-size:18px; padding:4px 0 0 36px;}
+#popular_list #last_view_list{ padding:2px 0 8px 0;}
+#popular_list #last_view_list_bg{ padding:2px 0 8px 0; width:402px;}
+#popular_list .hotels_name{
+	padding-left:15px;
+	width:380px;
+	font-size:12px;
+	line-height:17px;
+	float:left;
+}
+#popular_list #last_view_list_bg .hotels_name{
+	padding:2px 0 0 15px;
+	width:380px;
+	font-size:12px;
+	line-height:17px;
+	float:left;
+}
+#popular_list img{ margin:2px 0 0 15px;}
+
+#popular_list .detail_top{ margin-top:2px; width:300px; float:left;}
+#popular_list .icon_review{ margin:3px 0 0 10px;}
+#popular_list a.score_review_link{ margin:4px 0 0 0; color:#000; font-size:12px; text-decoration:underline; float:left;}
+#popular_list a.score_review_link:hover{color:#0072bc;}
+#popular_list .internet{
+	margin:3px 0 0 10px;
+	width:90px;
+	height:19px;
+	background:url(images/icon/browse_net.jpg) no-repeat 0 0;
+	float:left;
+}
+
+#popular_list .detail_buttom{ margin-top:4px; width:300px; float:left;}
+
+#popular_list .detail_buttom .map{
+	margin-left:20px;
+	width:60px;
+	float:left;	
+}
+#popular_list .detail_buttom .map img{
+	margin-left:2px;
+	float:none;	
+}
+#popular_list .map a{ margin-left:2px; text-decoration:underline;}
+#popular_list .detail_price{
+	margin:2px 5px 0 0;
+	width:180px;
+	float:left;
+	text-align:center;
+	font-size:12px;
+	float:right;
+}
+#popular_list .detail_price .thb{font-size:20px; color:#39b54a;}
+
+.backtotop_b{
+	padding:8px 13px 4px 0px;
+	width:121px;
+	float:right;	
+}
+.backtotop_b a{
+	text-decoration:underline;
+	font-size:14px;
+}
+/* content right */	
+
+/*-----footer-----*/
+table#content_tophotel_footer_b{
+	margin-left:11px;
+	padding:6px 0 8px 0;
+	width:970px;
+	background:url(images/layout/tophotel-content-footer_b.jpg) repeat-y 0 0;
+}
+table#content_tophotel_footer_b td.all_col{ padding:0 0 3px 10px; width:315px}
+table#content_tophotel_footer_b td.all_col a{
+	margin:0px;
+	padding-left:12px;	
+	width:288px;
+	display:block;
+	color:#525254;
+	background:url(images/icon/ball_green.jpg) no-repeat 0 3px;
+}
+table#content_tophotel_footer_b td.all_col a:hover{ color:#000;}
+
+#tophotel_footer_all{
+	margin:10px 0 0 3px;
+	width:965px;
+	height:27px;
+	background:url(images/layout/bg-tophotel-footer1.jpg) no-repeat;
+}
+#tophotel_footer_all h3{ padding-left:20px; font-size:14px;}
+
+/* ------images old picture------- */
+ul.bg_block #images_hotel_old{
+	width:135px;
+	float:left;	
+}
+ul.bg_block #images_hotel_old .bg_pic_old{
+	width:126px;
+	height:112px;
+	background:url(images/layout/list_bg-pic_old.jpg) no-repeat 20px center;
+	float:left;
+}
+ul.bg_block #images_hotel_old .bg_pic_old img{
+	width:90px;
+	height:95px;
+	margin:7px 0 0 28px;
+	float:left;	
+}
+#content_left ul #images_hotel_old .map{
+	margin-left:50px;
+	width:51px;
+	height:25px;
+	background:url(images/icon/map_b.jpg) no-repeat 0 4px;
+}
+#content_left ul #images_hotel_old a.view_map{
+	margin-left:35px;
+	width:80px;
+	text-align:center;	
+}
+ul.bg_block #reviews_old{
+	position:relative;
+	margin:3px 0 0 2px;
+	padding:8px 0 0 12px;
+	width:271px;
+	height:100px;	
+	background:url(images/layout/browse_bg_review2.jpg) no-repeat 0 0;	
+	font:italic 1.1em/1.2em Georgia, 'Times New Roman', serif;	
+	float:left;
+}
+ul.bg_block #reviews_old p{
+	width:240px; 
+	height:62px; 
+	color:#000;
+}
+.name_custom_review_old{
+	position:absolute;
+	width:150px;
+	height:26px;
+	top:82px;
+	left:70px;
+	line-height:12px;
+	font-family:Verdana, Geneva, sans-serif;
+}
+/* ------images old picture------- */

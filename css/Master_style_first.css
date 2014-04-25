@@ -1,0 +1,272 @@
+
+/* CSS Document */
+/* Them for All project*/
+html
+{
+    
+    position:relative;
+    margin:0px;
+	padding:0px;
+	/*background-image:url(../Masterpage/images/bg_body.gif);
+    background-repeat:repeat-x;
+    background-position:center bottom;*/
+}
+
+body
+{
+    
+	margin:0px;
+	padding:0px;
+	background:url(../images/bghead.jpg) top  repeat-x;
+    background-color:#f1f1f1;
+	font-family:Tahoma;
+	font-size:11px;
+	color:#333333;	
+}
+a
+{
+	color:#3b59aa;
+	font-weight:bold;
+	text-decoration:none;
+}
+.modalBackground {
+	background-color:#eceff5;
+	filter:alpha(opacity=60);
+	opacity:0.7;
+}
+a:hover
+{
+	text-decoration:underline;
+}
+.main
+{
+    position:relative;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	width:1300px;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+
+.header{
+	margin:0px;
+	padding:0px;
+	width:950px;
+	height:60px;
+}
+
+.logo{
+	top:2px;
+	left:10px;
+	position:absolute;
+}
+
+.menutop
+{
+   /* position:absolute;
+     margin:0px;
+     padding:0px;
+     top:60px;
+     left:900px;*/
+}
+.menutop a 
+{
+    /* margin:0px;
+     padding:0px;
+     display:block;
+     float:right;
+     width:40px;
+     height:40px;
+     background:url(../images/icHome.gif) 0px 0px no-repeat;*/
+}
+.content
+{
+    margin:0px;
+	padding:0px 0px 0px 0px;
+	width:100%;
+    min-height:450px;
+	text-align:left;
+}
+.LeftPan
+{
+    margin:10px 0px 0px 0px;
+    padding:0px 0px 0px 10px;
+    width:600px;
+    float:left;
+    
+}
+.RightPan
+{
+    margin:0px;
+    padding:0px;
+    width:300px;
+    float:left;
+}
+.footer
+{
+    margin:20px 0px 20px 0px;
+    padding:5px 0px 0px 0px;
+	width:100%;
+	position:relative;
+	border-top:2px solid #b3b3b3;
+	color:#737373;
+	font-size:11px;
+	
+}
+.footer p
+{
+    text-align:left;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+	
+	
+}
+
+/* Button Style*/
+.btStyle
+{
+    background-color:#5973a8;
+    border:1px solid #29457f;
+    font-family:Verdana;
+    font-size:11px;
+    height:25px;
+    color:#ffffff;
+    font-weight:bold;
+}
+.btStyle:hover
+{
+    cursor:pointer;
+    background-color:#6981b4;
+}
+
+.btStyleGreen
+{
+    background-color:#72ac58;
+    border:1px solid #2c5115;
+    font-family:Verdana;
+    font-size:11px;
+    height:25px;
+    color:#ffffff;
+    font-weight:bold;
+}
+.btStyleGreen:hover
+{
+    cursor:pointer;
+    background-color:#7eac6a;
+}
+
+.btStyleWhite
+{
+    background-color:#f5f6f6;
+    border:1px solid #999999;
+    font-family:Verdana;
+    font-size:11px;
+    height:25px;
+    color:#333333;
+    font-weight:bold;
+}
+.btStyleWhite:hover
+{
+    cursor:pointer;
+    background-color:#e6e6e6;
+}
+
+.picStaff
+{
+    width:145px;
+    height:165px;
+    border:1px solid #dcd8d8;
+}
+/*Head Title Page*/
+h2
+{
+    font-size:15px;
+    margin:0px;
+    padding:0px;
+    color:#333333;
+    font-weight:normal;
+}
+/* Head title inf form*/
+h5
+{
+    font-size:11px;
+    margin:0px;
+    padding:0px;
+    color:#3b59aa;
+    font-weight:normal;
+}
+h4
+{
+   font-size:14px;
+    margin:10px 0px 0px 0px;
+    padding:0px 0px 5px 0px;
+    color:#3b59aa;
+    font-weight:normal; 
+    border-bottom:1px solid #eeeeee;
+}
+/* Link Box */
+.Linkbox
+{
+	width:145px;
+	margin:4px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	
+}
+
+.Linkbox a
+{
+    width:140px;
+	font-size:11px;
+	font-weight:normal;
+	height:20px;
+	display:block;
+	text-decoration:none;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 5px;
+	border-bottom:solid 1px #d8dfea;
+	line-height:20px;
+	position:relative;
+	text-align:left;
+}
+.Linkbox a:hover
+{
+    color:#ffffff;
+	background-color:#3b5998;
+}
+
+/* headtitle */
+.headtitle
+{
+    margin:0px 0px 0px 0px;
+    padding:10px 0px 10px 0px;
+    width:100%;
+    height:50px;
+    background:#edeff4;
+    border:1px solid #d8dfea;
+    /*border-bottom:1px solid #b3b3b3;*/
+}
+.headtitle P
+{
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 20px;
+    color:#333333;
+    font-size:20px;
+    font-weight:bold;
+}
+.titleDes
+{
+     color:#666666;
+     font-size:14px;
+     font-weight:normal;
+}
+.submenu
+{
+    margin:10px 0px 10px 0px;
+    padding:0px 0px 0px 0px;
+    height:20px;
+}
+.submenu a
+{
+    margin:0px 10px 0px 10px;
+    padding:0px 0px 0px 0px;
+    font-size:11px;
+}

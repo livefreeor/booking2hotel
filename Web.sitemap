@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <!--Root -Main Site Map-->
+  <siteMapNode url="~/admin/mainpanel.aspx" title="Main Panel"  description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="bid,bpid,dis">
+    
+      <!--Module Staff-->
+      <siteMapNode title="BlueHouse Staff " url="~/admin/staff/staffmanage.aspx" description="Manage Bluehouse Travel Staff Every Department">
+          <siteMapNode title="StaffPageAuthorize" url="~/admin/staff/staffpageauthorize.aspx" description="StaffPageAuthorize" >
+              <siteMapNode title="StaffPageAuthorize" url="~/admin/staff/staffpageauthorize_action.aspx" description="StaffPageAuthorize" />
+          </siteMapNode>
+      </siteMapNode>
+      <!--============================-->
+
+      <!--Module Review-->
+      <siteMapNode title="Manage Review" url="~/admin/review/Review_admin.aspx" description="Manage Review">
+        <siteMapNode title="Manage Review Website" url="~/admin/review/review_site_admin_list.aspx" description="Manage Review">
+          <siteMapNode title="Manage Review Website Detail" url="~/admin/review/review_site_admin_detail.aspx" description="Manage Review Detail" />
+        </siteMapNode>
+      </siteMapNode>
+
+      <!--============================-->
+
+      <!--Module Report-->
+      <siteMapNode title="Hotels2 Report" url="~/admin/report/admin_report.aspx" description="Manage Review">
+          <siteMapNode title="Booking Report" url="~/admin/report/ReportBookingStat.aspx" description="Manage Review"></siteMapNode>
+          <siteMapNode title="Product Report" url="~/admin/report/product_report.aspx" description="Manage Review"></siteMapNode>
+      </siteMapNode>
+      
+
+      <!--Module Supplier-->
+      <siteMapNode title="Supplier List" url="~/admin/supplier/supplier_list.aspx" description="Manage Supplier Detail, Phone , Fax ,Contact Person" queryStringToInclude="supid">
+        
+          <siteMapNode title="Add-Edit Supplier" url="~/admin/supplier/supplier_add.aspx" description="Add-Edit Supplier" queryStringToInclude="supid">
+              <siteMapNode title="Payment Policy" url="~/admin/supplier/supplier_payment_policy.aspx" description="Add-Edit Supplier" />
+              <siteMapNode title="Contact" url="~/admin/supplier/supplier_contact.aspx" description="Manage Contact by Department , Email, Phone, Fax"/>
+            
+              <siteMapNode title="Account" url="~/admin/supplier/supplier_account_list.aspx" description="Manage Account">
+                  <siteMapNode title="Account Add Edit" url="~/admin/supplier/supplier_account_add.aspx" description="Add Edit Account"/>
+              </siteMapNode>
+
+          </siteMapNode>
+      </siteMapNode>
+
+      <!--============================-->
+
+      <!--Module Rd-->
+      <siteMapNode title="Rd" url="~/admin/rd/rd_main.aspx" description="Manage Supplier Detail, Phone , Fax ,Contact Person" >
+
+          <siteMapNode title="Rd Location" url="~/admin/rd/rd_location.aspx" description="Add Edit Account"/>
+          <siteMapNode title="Rd Location" url="~/admin/rd/rd_destination.aspx" description="Add Edit Account"/>
+      </siteMapNode>
+
+      <!--============================-->
+      
+      
+      <!--Module Account-->
+      
+        
+      
+      <siteMapNode title="Account Order center" url="~/admin/account/account_booking_list.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid">
+          <siteMapNode title="Settle Report" url="~/admin/account/account_settle_report.aspx" description="Manage Settle to Print out" queryStringToInclude="bid,rid">
+              <siteMapNode title="Report History" url="~/admin/account/account_settle_report_print.aspx" description="Manage History of Settle Print" />
+          </siteMapNode>
+          <siteMapNode title="Currency" url="~/admin/account/currency_edit.aspx" description="Manage currency" />
+          <siteMapNode title="GateWay Plan" url="~/admin/account/set_gateway_plan.aspx" description="Manage currency" />
+        
+        
+      </siteMapNode>
+
+
+    <siteMapNode title="Account Order center" url="~/admin/account/account_bookings_list.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid">
+      <siteMapNode title="Account Booking Detail" url="~/admin/account/account_booking_detail.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid">
+        <siteMapNode title=" Review Send" url="~/admin/account/review_send.aspx" description="" />
+        <siteMapNode title="Print Slip Display" url="~/admin/account/voucher_admin_preview.aspx" description="" />
+    </siteMapNode>
+
+
+      <siteMapNode title="ccommission" url="~/admin/account/hotel_commission.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid">
+      <siteMapNode title="BHT Manage Commission" url="~/admin/account/com_bht_manage.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid">
+        <siteMapNode title="Commission Booking List" url="~/admin/account/com_bht_manage_booking_sel.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid"/>
+      </siteMapNode>
+        
+        
+      <siteMapNode title="Account Hotel Manage Commission" url="~/admin/account/com_hotel_manage.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid">
+        <siteMapNode title="Account Hotel Manage Selection" url="~/admin/account/com_hotel_manage_sel.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid"/>
+        <siteMapNode title="Account Hotel Manage Payment Pendding" url="~/admin/account/account_hotel_manage_payment.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid"/>
+        <siteMapNode title="Account Hotel Manage Detail" url="~/admin/account/com_hotel_manage_detail.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid">
+      </siteMapNode>
+      </siteMapNode>
+        <siteMapNode title="Account Monthly Commission" url="~/admin/account/com_monthly_rate.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid">
+          <siteMapNode title="Account Monthly Commission Detail" url="~/admin/account/com_monthly_rate_detail.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid"/>
+        </siteMapNode>
+
+    </siteMapNode>
+
+
+      <siteMapNode title="Account Deposit" url="~/admin/account/account_deposit.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid">
+        <siteMapNode title="Account Deposit Detail" url="~/admin/account/account_deposit_detail.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid"/>
+      </siteMapNode>
+
+
+      <siteMapNode title="BHT Accout Payment" url="~/admin/account/account_bht_payment_history.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid">
+      <siteMapNode title="BHT Accout Payment" url="~/admin/account/account_bht_payment.aspx" description="Booking Center For Account" queryStringToInclude="bid,rid"/>
+      </siteMapNode>
+  </siteMapNode>
+    
+    <siteMapNode title="Sales Manage" url="~/admin/account/sales_manage.aspx" description="Manage currency" />
+      <!--============================-->
+      <!--Module Product Thai Content-->
+      <siteMapNode title="Product Thai Content Manage" url="~/admin/product/product_thai_content.aspx" description="Add-Edit Product" queryStringToInclude="pid,pdcid">
+          <siteMapNode title="GProduct Thai Content Add" url="~/admin/product/product_thai_content_add.aspx" description="Add-Edit Product Type all Language" />
+
+      </siteMapNode>
+      <!--============================-->
+      <!--Module Product-->
+      <siteMapNode title="Product List" url="~/admin/product/product-list.aspx" description="Hotel List" queryStringToInclude="pid,supid,pdcid" >
+       
+          <siteMapNode title="Landmark Manage" url="~/admin/product/landmark.aspx" description="Add-Edit Product Type all Language" />
+          <siteMapNode title="Public Holidays" url="~/admin/product/public_holidays.aspx" description="Add-Edit Public Holidays" />
+          <siteMapNode title="Facility Manage" url="~/admin/product/facility_manage.aspx" description="Add-Edit Facility &amp; Ameniity" />
+          <siteMapNode title="Country Market List" url="~/admin/product/country_market_list.aspx" description="Add-Edit Market List" queryStringToInclude="mrid"  >
+              <siteMapNode title="Country Market Manage" url="~/admin/product/country_market.aspx" description="Add-Edit Product Type all Language" queryStringToInclude="mrid" >
+                  <siteMapNode title="Country Market Group Manage" url="~/admin/product/country_market_group.aspx" description="Add-Edit Product Type all Language" />
+              </siteMapNode>
+
+            
+          </siteMapNode>
+        <siteMapNode title="Page Product Check List" url="~/admin/product/product-check-list.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid" />
+        <siteMapNode title="Add new Partner" url="~/admin/extranet/addnewextranet.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid" />
+        <siteMapNode title="Add new Partner Chain" url="~/admin/extranet/addnewextranet_chain.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid" />
+        <siteMapNode title="Add new Partner Extention Chain" url="~/admin/extranet/addnewextranet_chain_extend.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid" />
+        <siteMapNode title="Add new Partner" url="~/admin/extranet/extranetManage.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid,supid" />
+        <siteMapNode title="Public Holiday ExtraNet" url="~/admin/extranet/extranet_public_holidays.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid,supid" />
+              
+          <siteMapNode title="Product Manage" url="~/admin/product/product.aspx" description="Add-Edit Product" queryStringToInclude="pid,supid,pdcid">
+          <siteMapNode title="Gala Dinner" url="~/admin/productOption/product_option_gala.aspx" description="Add-Edit Product Type all Language" />
+          <siteMapNode title="Picture Manage" url="~/admin/product/product_picture.aspx" description="Add-Edit Picture" />
+            
+          <siteMapNode title="Picture Auto Generate" url="~/admin/product/product_picture_generate.aspx" description="Auto Generate And Rename" queryStringToInclude="pid,pdcid">
+              <siteMapNode title="Picture Manage" url="~/admin/product/product_picture_generate_product.aspx" description="Add-Edit Picture" />
+              <siteMapNode title="Picture Manage" url="~/admin/product/product_picture_generate_construction.aspx" description="Add-Edit Picture" />
+              <siteMapNode title="Picture Manage" url="~/admin/product/product_picture_generate_option.aspx" description="Add-Edit Picture" />
+          </siteMapNode>
+          
+          <siteMapNode title="Option List" url="~/admin/productOption/product_option_list.aspx" description="Add-Edit Product Type all Language" queryStringToInclude="pid,pdcid">
+              <siteMapNode title="Option Add-Edit" url="~/admin/productOption/option_add.aspx" description="Add-Edit Product Type all Language" queryStringToInclude="pid,pdcid,oid">
+                  <siteMapNode title="Product Itinerary" url="~/admin/productOption/product_itinerary.aspx" description="Add-Edit Product Type all Language" queryStringToInclude="pid,pdcid,oid" />
+              </siteMapNode>
+              <siteMapNode title="Option Rate Manage" url="~/admin/productOption/product_option_rate.aspx" description="Manage Rate Period" queryStringToInclude="pid,pdcid,oid"/>
+              <siteMapNode title="Week day" url="~/admin/productOption/product_option_weekday.aspx" description="Manage Weekday" queryStringToInclude="pid,pdcid,oid"/>
+              <siteMapNode title="Option Supplement Date Holidays" url="~/admin/productOption/product_option_holidays_supplement.aspx" description="Manage Holidays" queryStringToInclude="pid,pdcid,oid"/>
+              <siteMapNode title="Allotment" url="~/admin/productOption/product_option_allotment.aspx" description="Manage inventory Hotel" queryStringToInclude="pid,pdcid,oid">
+              <siteMapNode title="Allotment Normal Edit" url="~/admin/productOption/product_option_allotment_edit.aspx" description="Manage inventory Hotel" queryStringToInclude="pid,pdcid,oid"/>
+          </siteMapNode>
+          <siteMapNode title="Promotion List" url="~/admin/productOption/product_option_promotion_list.aspx" description="Manage inventory Hotel" queryStringToInclude="pid,pdcid,oid">
+              <siteMapNode title="Promotion Manage" url="~/admin/productOption/product_option_promotion.aspx" description="Manage inventory Hotel" queryStringToInclude="pid,pdcid,oid"/>
+            </siteMapNode>
+          </siteMapNode>
+
+          
+          <siteMapNode title="Minimum Stay" url="~/admin/product/product_minimum_stay.aspx" description="Add-Edit Product Type all Language" queryStringToInclude="pid,pdcid" />
+          <siteMapNode title="Announcement List" url="~/admin/product/annoucement_list.aspx" description="Add-Edit Product Type all Language" queryStringToInclude="pid,pdcid" />
+          <siteMapNode title="Product Construction" url="~/admin/product/product_construction.aspx" description="Add-Edit Product Type all Language" queryStringToInclude="pid,pdcid" />
+          
+          <siteMapNode title="Product Policy" url="~/admin/product/product_policy.aspx" description="Add-Edit Product Type all Language" queryStringToInclude="pid,pdcid,pol" >
+            <siteMapNode title="Product Policy Add-Edit" url="~/admin/product/product_policy_add.aspx" description="Add-Edit Product Type all Language" queryStringToInclude="pid,pdcid" />
+          </siteMapNode>
+            
+          
+          
+        </siteMapNode>
+      </siteMapNode>
+      <!--============================-->
+      <!--Module Product Config-->
+      <siteMapNode title="Product Point" url="~/admin/product_config/product_point.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid" />
+      <!--============================-->
+
+
+      <!--Module Extranet Config-->
+      <!--<siteMapNode title="Extranet Hotel List" url="~/admin/extranet/extranethotelList.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid,supid" >
+      <siteMapNode title="Add new Partner" url="~/admin/extranet/addnewextranet.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid" />
+          <siteMapNode title="Add new Partner Chain" url="~/admin/extranet/addnewextranet_chain.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid" />
+          <siteMapNode title="Add new Partner Extention Chain" url="~/admin/extranet/addnewextranet_chain_extend.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid" />
+      <siteMapNode title="Add new Partner" url="~/admin/extranet/extranetManage.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid,supid" />
+          <siteMapNode title="Public Holiday ExtraNet" url="~/admin/extranet/extranet_public_holidays.aspx" description="Manage Product Point" queryStringToInclude="pid,pdcid,supid" />
+          
+      </siteMapNode>-->
+      <!--============================-->
+      
+
+      <siteMapNode title="Booking List " url="~/admin/booking/booking_list_test.aspx" description="" queryStringToInclude="" />
+      
+      <siteMapNode title="Booking List " url="~/admin/booking/booking_list.aspx" description="" queryStringToInclude="bid,bpid,dis">
+        <siteMapNode title="Booking List B2b" url="~/admin/booking/booking_list_b2b.aspx" description="" queryStringToInclude="bid,bpid,dis"/>
+          <siteMapNode title="Booking Product Recommend" url="~/admin/booking/booking_allot_report.aspx" description="" queryStringToInclude=""/>
+      <siteMapNode title="Booking Search " url="~/admin/booking/booking_search.aspx" description="" queryStringToInclude=""/>
+          <siteMapNode title="Booking Payment Move" url="~/admin/booking/payment_move.aspx" description="" queryStringToInclude=""/>
+        
+      <siteMapNode title="Booking Detail " url="~/admin/booking/booking_detail.aspx" description="" queryStringToInclude="bid,bpid,dis">
+          <siteMapNode title="Print Display" url="~/admin/booking/print_booking_display.aspx" description="" />
+          <siteMapNode title="Print Slip Display" url="~/admin/booking/print_booking_slip.aspx" description="" />
+          <siteMapNode title="Print Slip Display" url="~/admin/booking/voucher_admin_preview.aspx" description="" />
+          <siteMapNode title=" Resubmit " url="~/admin/booking/resubmit_send.aspx" description="" />
+          <siteMapNode title=" Voucher " url="~/admin/booking/voucher_send.aspx" description="" />
+          <siteMapNode title=" Full Charge Completed " url="~/admin/booking/confirm_fullcahrge_send.aspx" description="" />
+          <siteMapNode title=" Cancellation mail " url="~/admin/booking/cancellation_send.aspx" description="" />
+          <siteMapNode title=" Fully Book And Offer mail" url="~/admin/booking/fullybook_send.aspx" description="" />
+          <siteMapNode title=" Review Send" url="~/admin/booking/review_send.aspx" description="" />
+          
+      </siteMapNode>
+     
+    </siteMapNode>
+
+      <siteMapNode siteMapFile="Web_extra.sitemap" />
+    </siteMapNode>
+
+    
+    
+</siteMap>

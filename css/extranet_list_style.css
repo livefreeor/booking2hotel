@@ -1,0 +1,162 @@
+﻿#main_extra_list
+{
+    width:1020px;
+    margin:10px 0px 0px 0px;
+    padding:0px;
+    
+}
+.RowHover
+{
+    background-color:#f2f2f2;
+}
+#product_extra_list
+{
+    width:1020px;
+    margin:0px;
+    padding:0px;
+    float:left;
+    height:380px;
+    overflow:scroll;
+}
+#product_extra_manage
+{
+    display:none;
+    margin:0px 0px 0px 2px;
+    padding:5px;
+    background-color:#ebf0f3;
+    float:left;
+    border:1px solid #9cacbc;
+    height:370px;
+}
+#product_extra_manage_block
+{
+     overflow:auto;
+    margin:0px;
+    padding:5px;
+    background-color:#ffffff;
+    border:1px solid #b2b7bb;
+    height:330px;
+}
+#product_extra_manage_head_block
+{
+    margin:0px;
+    padding:0px;
+    height:30px;
+    
+}
+#product_extra_manage_head_block p
+{
+    margin:0px;
+    padding:0px;
+     font-size:14px;
+     font-weight:bold;
+     text-align:center;
+}
+#product_extra_manage_head_block img
+{
+     margin:0px;
+    padding:0px;
+    float:right;
+     cursor:pointer;
+}
+#product_extra_list table
+{
+    margin:0px;
+    padding:0px;
+    background-color:#d6d6d6;
+    width:100%;
+}
+
+#product_extra_list table tr
+{
+    margin:0px;
+    padding:0px;
+    height:25px;
+    line-height:25px;
+  
+}
+
+#product_extra_list table tr th
+{
+    margin:0px;
+    padding:0px;
+    color:#ffffff;
+    text-align:center;
+}
+
+#product_extra_list table tr td
+{
+    margin:0px;
+    padding:0px;
+    text-align:center;
+    text-indent:10px;
+    font-size:12px;
+}
+.supplier_title_style
+{
+    font-size:14px;
+    color:#333333;
+    font-weight:bold;
+}
+.supplier_title_style img
+{
+    float:left;
+     margin:0px 0px 0px 5px;
+}
+.extra_manage_hotel_name
+{
+    font-size:16px;
+    font-weight:bold;
+     color:#333333;
+}
+.extra_manage_head
+{
+    margin:0px;
+    padding:0px;
+    font-size:12px;
+    font-weight:bold;
+}
+.active_block
+{
+    margin:0px;
+    padding:0px 0px 20px 0px;
+    border-bottom:1px solid #cccccc;
+}
+.extra_manage_commission_head
+{
+    margin:0px;
+    padding:0px;
+    background-color:#3f5d9d;
+    
+}
+.extra_manage_commission_head table tr
+{
+    text-align:center;
+    color:#ffffff;
+}
+.extra_manage_commission_item
+{
+    margin:0px;
+    padding:0px 0px 5px 0px;
+    border-bottom:1px solid #ebf0f3;
+}
+.commission_block
+{
+    margin:15px 0px 0px 0px;
+    padding:0px 0px 20px 0px;
+    border-bottom:1px solid #cccccc;
+    
+}
+.commission_insert_block
+{
+    margin:25px 0px 0px 0px;
+    padding:10px;
+     background-color:#f2f2f2;
+     border:1px solid #d6d6d6;
+}
+.commission_insert_block p
+{
+    margin:0px;
+    padding:0px;
+    font-weight:bold;
+}

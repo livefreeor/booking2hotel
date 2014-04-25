@@ -1,0 +1,301 @@
+body{ margin:0px; padding:0px; font-family:Verdana, Geneva, sans-serif; font-size:12px; background:#dde4ea;}
+.clear-all{clear:both; line-height:0px }
+
+/* curve */
+*.rtop *,.rbottom *{display:block; overflow:hidden;}
+.r1,.r2,.r3,.r4,.r5,.r6{height:1px; font-size:0;}
+.r7,.r8{height:2px;font-size:0;}
+.r1{background-color:#CDCDCD;}
+.r2,.r3{border-left:2px solid #CDCDCD;border-right:2px solid #CDCDCD;}
+.r4,.r5,.r6,.r7,.r8,.rcontent{border-left:1px solid #CDCDCD; border-right:1px solid #CDCDCD;}
+.r1{margin:0 10px}
+.r2{margin:0 8px;}
+.r3{margin:0 6px;}
+.r4{margin:0 5px;}
+.r5{margin:0 4px;}
+.r6{margin:0 3px;}
+.r7{margin:0 2px;}
+.r8{margin:0 1px;}
+/* curve */
+
+.first_step{
+	position:relative;
+	height:13px;
+	background:url(images/layout_mail/top.jpg) no-repeat 0 0;	
+}
+.detailP{
+	padding:0px;
+	background:#FFF;
+	border-left:solid 1px #cdd5e7;
+	border-right:solid 1px #cdd5e7;
+}
+.end_step{
+	margin-bottom:20px;
+	height:13px;
+	background:url(images/layout_mail/buttom.jpg) no-repeat 0 0;	
+}
+.end_main{
+	margin:0 auto;
+	width:850px;
+	height:9px;
+	background:url(images/offer/credit_end_main.jpg) no-repeat 0 0;	
+}
+
+
+
+/* credit */
+#main{
+	margin:0 auto;
+	width:850px;
+	font-size:12px;
+	background:url(images/offer/credit_bg_main.jpg) repeat-y 0 0;
+}
+#head{
+	position:relative;
+	margin:0 auto;
+	height:100px;
+	background:url(images/offer/header.jpg) no-repeat 0 0;	
+}
+#head img{
+	position:absolute;
+	top:40px;
+	left:25px;
+	width:253px;
+	height:53px;
+	border:none;
+}
+.content{
+	margin:0 auto;
+	padding-bottom:25px;
+	width:773px;
+}
+.title1{
+	margin-bottom:5px;
+	padding:5px 5px 5px 60px;
+	background:#dde4ea url(images/offer/head1.png) no-repeat 30px 4px;
+	color:#03539a;
+	font-size:22px;	
+}
+.title2{
+	padding:5px 5px 5px 60px;
+	background:#eef3fa url(images/offer/head2.png) no-repeat 25px 4px;
+	color:#03539a;
+	font-size:20px;	
+}
+.title{
+	padding:5px 5px 5px 52px;
+	background:#eef3fa url(images/offer/header.png) no-repeat 20px 2px;
+	color:#03539a;
+	font-size:20px;	
+}
+.titleThank{
+	padding:5px 0 5px 0;
+	text-align:center;
+	background:#e1e9f6;
+	color:#03539a;
+	font-size:20px;	
+}
+.textBoxStyle{
+	/*border:solid 1px #97A8C4;*/
+	font-size:12px;	
+}
+.info{ margin:0 auto;}
+.info tr td{
+	background:none;
+	font-size:14px;
+	color:#4e4038;
+}
+.product{margin:15px 0 0 0; }
+.product td{ width:200px;}
+
+.fieldName{	width:80px;}
+
+.address{
+	margin:0 auto;
+	padding-top:10px;
+	width:850px;
+	text-align:center;
+	color:#666;
+}
+.address span{ color:#000; }
+.send{
+	margin-top:40px;
+	padding:0px;
+	width:180px;
+	height:38px;
+	border:none;
+	cursor:pointer;
+	color:#FFF;
+	font-size:15px;
+	background:url(images/offer/send.png) no-repeat 0 0;	
+}
+.send:hover{
+	background:url(images/offer/send.png) no-repeat 0 -38px;
+}
+.info td.headPro{
+	padding-left:22px;
+	font-size:18px;
+	line-height:25px;
+	font-weight:bold;
+	color:#369;
+	background:url(images/offer/list.png) no-repeat 0 6px;
+}
+.info td.headTrip{
+	padding-left:22px;
+	font-size:18px;
+	line-height:25px;
+	font-weight:bold;
+	color:#369;
+	background:url(images/offer/trip.png) no-repeat 0 6px;
+}
+.adult{
+	padding-left:20px;
+	font-size:18px;
+	line-height:25px;
+	color:#369;
+	background:url(images/offer/adult.png) no-repeat 0 0;
+	
+}
+.info td.adult{
+	padding-left:2px;
+	font-size:16px;
+	line-height:25px;
+	color:#369;
+	font-weight:bold;
+}
+.info td.adult span{ color:#8cc63e; }
+.textBoxDate{
+	border:#6ab119 1px Solid; 
+	margin-right:5px; 
+	padding-right:4px; 
+	width:145px; 
+	background:#FFF;
+	height:19px; 
+	float:left; 
+	line-height:25px;	
+}
+.hotelClass{
+	margin:10px 0 0 20px;
+	width:520px;
+	border:solid #e1e9f6 1px;
+}
+.hotelClass td{ width:120px;}
+.hotelClass td img{ margin-left:4px;}
+.star{
+	width:90px;
+	height:16px;
+	background:url(images/offer/star.png) no-repeat 0 0;	
+}
+.selectTxt{
+	border:#97A8C4 1px Solid; 
+	height:20px; 
+	color:#09F;
+	width:85px;
+}
+.DropDownStyle{
+	border:#97A8C4 1px Solid; 
+	height:20px; 
+	color:#09F;
+}
+.destination{ margin:15px 0 0 25px;}
+.destination tr td.location{ width:250px; color:#336699; font-size:13px;}
+.destination tr td.locat{font-size:13px; color:#336699;}
+
+.detailTxt{
+	margin:0 0 20px 0;
+	border-right:solid 1px #ebebeb;
+	border-top:solid 1px #ebebeb;
+}
+.detailTxt td{ padding:5px 10px 5px 10px; border-bottom:solid 1px #ebebeb;}
+.detailTxt td.textB{ padding:5px 10px 5px 10px; background:#FFF;}
+.detailTxt td.fieldList{
+	background:#f6f9fe; 
+	text-align:right; 
+	border-bottom:solid 1px #ebebeb; 
+	border-left:solid 1px #ebebeb; 
+	border-right:solid 1px #ebebeb;
+}
+
+.list{
+	margin:0 0 20px 0;
+	background:#bcd2f8;
+}
+.list th{ padding:5px 10px 5px 10px; background:#5e85b7; color:#FFF; font-weight:normal;}
+.info .list td{ padding:5px 10px 5px 10px; background:#FFF;}
+.list td.textB{ padding:5px 10px 5px 10px; background:#FFF;  color:#296093;}
+.list td.price{ text-align:right; color:#090;}
+
+.more{ color:#000;}
+.more:hover{ color:#999;}
+.condition{
+	margin:0px;
+	padding:0px;
+	width:60px;
+}
+.condition li{
+	padding-left:12px;
+	background:url(images/icon/ball_green_s.jpg) no-repeat 0 3px;
+	font-size:12px;
+	list-style:none;
+}
+
+.budget{
+	width:520px;
+	margin:15px 0 0 25px;
+	border:solid #dde4ea 1px;
+}
+
+.detail{
+	margin:0 0 10px 0;
+	background:#e1e9f6;
+}
+.info .detail td{ padding:4px 8px 4px 8px; background:#FFF; color:#333;}
+.detail th.textB{ 
+	padding:2px; 
+	background:#5e85b7;
+	color:#FFF;
+	font-size:14px;
+	line-height:20px;
+	text-align:center;
+	font-weight:normal;
+}
+.detail td.price{color:#090; font-weight:bold; font-size:16px; text-align:center;} 
+.accept{
+	margin-bottom:10px;
+	padding:0px;
+	width:160px;
+	height:38px;
+	border:none;
+	cursor:pointer;
+	color:#FFF;
+	font-size:15px;
+	background:url(images/offer/button.png) no-repeat 0 0;
+}
+.accept:hover{
+	background:url(images/offer/button.png) no-repeat 0 -38px;
+}
+.thankyou_icon{
+	position:absolute;
+	top:-7px;
+	left:-7px;
+	width:120px;
+	height:122px;
+	background:url(images/icon/thankyou.png) no-repeat 0 0;	
+}
+.thankTxt{
+	margin:0 auto;
+	width:700px;
+	color:#666;
+	line-height:20px;
+	font-size:14px;	
+}
+.price{color:#e6860c;}
+td.baht{
+	width:150px;
+	font-style:italic;
+	color:#090;	
+}
+
+
+
+

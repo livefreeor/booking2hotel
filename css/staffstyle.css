@@ -1,0 +1,200 @@
+﻿.GvStaffList_userConTrl 
+{
+    width:500px;
+    margin:0px;
+    padding:0px;
+ 
+}
+.StaffAc_UserContrl
+{
+}
+.Staffinsert_UserContrl
+{
+}
+.InsertNewstaff
+{
+   margin:0px;
+   padding:0px;    
+}
+
+.FileUploadPicStaff_userContrl
+{
+    background:#f2f2f2;
+    border:1px solid #cbcbcb;
+    margin:0px;
+    padding:10px;
+    width:450px;
+}
+.btinsert
+{
+    margin:0px;
+    padding:0px;
+    position:absolute;
+    top:160px;
+    right:30px;
+}
+#resetPW
+{
+    margin:0px;
+    padding:5px;
+    background:#eceff5;
+}
+/* Control Panel */ 
+
+.leftpan{
+	width:100px;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+.rightpan{
+	width:950px;
+	float:left;
+	margin:0px;
+	padding:0px 0px 0px 35px;
+	
+}
+.rightpan a{
+	margin:0px;
+	padding:0px;
+	color:#333333;	
+}
+.rightpan a:hover div{
+	background:#f2f2f2;
+	}
+.iconset{
+	margin:0px;
+	padding:0px;
+	width:60px;
+	height:60px;
+	float:left;
+}
+.panelitem{
+	float:left;
+	margin:10px 0px 0px 10px;
+	padding:10px 10px 10px 10px;
+	/*width:280px;
+	height:50px;*/
+}
+.paneltitle{
+	margin:18px 0px 0px 0px;
+	padding:0px 0px 0px 70px;
+	color:#4a6296;
+	font-weight:bold;
+	font-size:12px;
+	
+}
+.paneldes{
+	margin:0px;
+	padding:0px 0px 0px 70px;
+	
+	font-size:11px;
+}
+/*------------------------- */
+.StatusBox
+{
+    margin:0px;
+    padding:3px;
+}
+.StatusBox img 
+{
+     margin:0px 5px 0px 0px; 
+     padding:0px;
+     border:0px;
+}
+
+/*----- authorize Page*/
+#page_result
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+     width:100%;
+}
+.table_staff_page
+{
+    width:100%;
+    background-color:#dddddd;
+}
+.table_staff_page tr
+{
+    height:25px;
+}
+.table_staff_page tr th
+{
+    margin:0px;
+    padding:0px;
+    background-color:#3f5d9d;
+    height:30px;
+    text-align:center;
+    color:#ffffff;
+}
+.table_staff_page tr td
+{
+    margin:0px;
+    padding:0px;
+    
+}
+.main_module
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+.main_modult_title
+{
+    margin:30px 0px 0px 0px;
+    padding:0px;
+     font-size:24px;
+     font-weight:bold;
+     width:100%;
+     text-align:center;
+     height:30px;
+     background-color:#f7f7f7;
+     border:1px solid #d6d6d6;
+     line-height:30px;
+}
+.modult_title
+{
+    margin:15px 0px 0px 0px;
+    padding:0px 0px 5px 0px;
+    font-size:18px;
+    height:20px;
+    line-height:20px;
+    border-bottom:1px solid #aaaaaa;
+}
+.table_page_list
+{
+     margin:0px;
+     padding:0px;
+     
+}
+.table_page_list table
+{
+    width:50%;
+    margin:0px;
+     padding:0px;
+     background-color:#d6d6d6;
+}
+.table_page_list table tr
+{
+    margin:0px;
+     padding:0px;
+     
+     height:20px;
+}
+.table_page_list table tr th
+{
+    margin:0px;
+     padding:0px;
+     color:#ffffff;
+     text-align:center;
+}
+.table_page_list table tr td
+{
+    margin:0px;
+     padding:0px;
+     text-align:center;
+}
+
+

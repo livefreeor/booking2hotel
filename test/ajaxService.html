@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="../scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        //$(document).ready(function () {
+        //    alert('KKKK');
+        //});
+        function go() {
+            //window.location.href = "index.php";
+
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                url: '/ServiceGetBooking.asmx/GetBookingDetail',
+                // notice the usage of the function provided in #1:
+                data: "{}",
+                dataType: 'json',
+                error: function (jqXHR, textStatus, errorThrown) {
+                    // responseText contains all of the interesting
+                    // bits and pieces:
+                    $("#result").html(jqXHR.responseText);
+                    //alert(jqXHR.responseText);
+                },
+                success: function (msg) {
+                    var objJson = JSON.parse(msg.d);
+                    $("#result").html(msg.d);
+                    
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <input type="button" value="Go go" onclick="go();" />
+    <div id="result"></div>
+    <div id="dd"></div>
+</body>
+</html>

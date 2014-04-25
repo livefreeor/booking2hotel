@@ -1,0 +1,227 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_ExtranetControlPanel.master.cs" Inherits="Hotels2thailand.UI.MasterPage.Masterpage_MasterPage_Control_Panel" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Src="~/Control/StaffStatusBox_Extra.ascx" TagName="LoginBox" TagPrefix="Staff" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<link href="~/css/extranet/Master_style_extra.css" type="text/css" rel="stylesheet" />
+<link href="~/css/extranet/extranet_style_core.css" type="text/css" rel="stylesheet" />
+
+    <title>Booking2hotels Engine</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script language="javascript" type="text/javascript">
+
+      
+        //function disableEnterKey(e) {
+        //    if (!e) e = window.event
+        //    //        if (!e) {
+        //    //            var obj = window.event.srcElement;
+        //    //        }
+        //    //        else {
+        //    //            var obj = e.target;
+        //    //        }
+        //    //alert(obj.tagName);
+        //    if ((e.target || e.srcElement).tagName == 'TEXTAREA') {
+        //        //alert("TEST");
+        //    } else {
+        //        var key;
+        //        if (window.event)
+        //            key = window.event.keyCode; //IE
+        //        else
+        //            key = e.which; //firefox      
+
+        //        return (key != 13);
+        //    }
+
+        //}
+
+    </script>
+</head>
+<%--onkeydown onkeypress="disableEnterKey()" onload="insertattribute()"onkeypress--%>
+<%--onkeypress="return disableEnterKey(event)"--%>
+
+<body onkeypress="return disableEnterKey(event)"  >
+<form id="form1" runat="server">
+
+<ajaxToolkit:ToolkitScriptManager runat="Server" EnableScriptGlobalization="true"
+        EnableScriptLocalization="true" ID="ScriptManager1"  />
+
+<center>
+<div class="main">
+    <div class="header">
+    <asp:Image ID="Image1" ImageUrl="~/images_extra/logo_bookingengine.png" runat="server" CssClass="logo" />
+    
+    <staff:LoginBox ID="userStaffLoginBox" runat="server"></staff:LoginBox>
+    
+         <div class="menutop">
+            <%--<asp:HyperLink ID="linkhome" runat="server" NavigateUrl="~/admin/mainpanel.aspx" ImageUrl="~/images/home.png"></asp:HyperLink>--%>
+         </div>
+         
+         <asp:SiteMapPath ID="SiteMapBar" runat="server"  ClientIDMode="Static"  CssClass="sitemap" CurrentNodeStyle-CssClass="sitemapcurrent"  PathSeparator="" 
+          PathSeparatorStyle-CssClass="separator"  ></asp:SiteMapPath>
+     </div>
+    <div style=" clear:both;"></div>
+    <asp:Panel ID="paneldrop" runat="server" ClientIDMode="Static">
+     <table  cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+       <td style="text-align:right;" class="hotelschange">Current Product Active:&nbsp; </td>
+       <td style="text-align:left;">
+       <asp:DropDownList ID="dropHotelStaffExtranet" CssClass="Extra_Drops_small" Width="350px" ClientIDMode="Static" EnableTheming="false" runat="server" ></asp:DropDownList>
+    <asp:Button ID="btnchangehotel" runat="server" Text="Go" OnClick="btnchangehotel_OnClick" />
+       </td>
+      </tr>
+     </table>
+    </asp:Panel>
+    <asp:Panel ID="paneltxt" runat="server" ClientIDMode="Static">
+        <table  cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+           <td style="text-align:right;" class="hotelschange">Current Product Active: &nbsp;</td>
+           <td style="text-align:left;">
+           <asp:Label ID="lblProductTitle" ClientIDMode="Static" Visible="false" runat="server" CssClass="txtProductTitle"></asp:Label>
+           </td>
+          </tr>
+        </table>
+    </asp:Panel>
+    
+   
+    
+   
+    <div style="clear:both"></div>
+    <div class="content" style="text-align:left">
+        <div class="contentLeft">
+        <div class="menu_left">
+        
+        <ul>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnDash"  NavigateUrl="~/extranet/mainextra.aspx" runat="server">Dash Board</asp:HyperLink></li>
+        </ul>
+        <ul class="menu_staff_admin">
+          <panel>Manage Staff</panel>
+           <li class="menu_staff_admin"><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnStaffList"  NavigateUrl="~/extranet/staffmanage/stafflist.aspx" runat="server">Staff List</asp:HyperLink></li>
+           <li class="menu_staff_admin"><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnStaffAddStaff"  NavigateUrl="~/extranet/staffmanage/addnewstaff.aspx" runat="server">Add New Staff</asp:HyperLink></li>
+        </ul>
+        <ul>
+        <panel>Rate Control</panel>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnHolidays" NavigateUrl="~/extranet/ratecontrol/holidays_control.aspx" runat="server">Public Holiday</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnRoom" NavigateUrl="~/extranet/ratecontrol/room_manage.aspx" runat="server">Product Manage</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lndeposit" NavigateUrl="~/extranet/ratecontrol/deposit_manage.aspx" runat="server">Deposit</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnloadtariff" NavigateUrl="~/extranet/ratecontrol/load_tariff.aspx" runat="server">Load Tariff</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnRoomControl" NavigateUrl="~/extranet/ratecontrol/condition_control.aspx"  runat="server">Condition Control</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnRate" NavigateUrl="~/extranet/ratecontrol/rate_control.aspx"  runat="server">Selling Rate Control</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnExtraBed" NavigateUrl="~/extranet/ratecontrol/extra_bed.aspx"  runat="server">Extra Bed</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lntransfer" NavigateUrl="~/extranet/ratecontrol/transfer.aspx"  runat="server">Transfer</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnGala" NavigateUrl="~/extranet/ratecontrol/gala_dinner.aspx"  runat="server">Gala Dinner</asp:HyperLink></li>
+            <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnMeal" NavigateUrl="~/extranet/ratecontrol/meal.aspx"  runat="server">Meal</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnmin" NavigateUrl="~/extranet/ratecontrol/minimum_night.aspx"  runat="server">Minimum Night</asp:HyperLink></li>
+            
+           <%--<li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnRatePlan" NavigateUrl="~/extranet/ratecontrol/rate_plan.aspx"  runat="server">Rate Plan</asp:HyperLink></li>--%>
+           </ul>
+           <asp:Panel ID="panel_member" runat="server" Visible="false">
+           <ul>
+           
+            <panel>Member</panel>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnmemberlist" NavigateUrl="~/extranet/member/member_list.aspx"  runat="server">Member list</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnmemberprice" NavigateUrl="~/extranet/member/member_price.aspx"  runat="server">Member Price</asp:HyperLink></li>
+           <%--<li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnmemberbenefit" NavigateUrl="~/extranet/member/member_benefit.aspx"  runat="server">Member Benefit</asp:HyperLink></li>--%>
+           </ul>
+           </asp:Panel>
+
+           <asp:Panel ID="panel_package" runat="server" Visible="true">
+           <ul>
+           
+            <panel>Package</panel>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnPackageManage" NavigateUrl="~/extranet/package/package_manage.aspx"  runat="server">Create New Package</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnPackageList" NavigateUrl="~/extranet/package/package.aspx"  runat="server">Package list</asp:HyperLink></li>
+           </ul>
+           </asp:Panel>
+           <ul>
+            <panel>Manage Allotment</panel>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnAllotment" NavigateUrl="~/extranet/allotment/allotment_control.aspx"  runat="server">Add New Allotment</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnAllotEdit" NavigateUrl="~/extranet/allotment/allotment_edit.aspx"  runat="server">Edit Allotment</asp:HyperLink></li>
+           </ul>
+           <ul>
+            <panel>Manage Promotion</panel>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnPromotion" NavigateUrl="~/extranet/promotion/promotion_manage.aspx"  runat="server">Create New Promotion</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnProList" NavigateUrl="~/extranet/promotion/promotion.aspx"  runat="server">Promotion list</asp:HyperLink></li>
+           </ul>
+           <ul>
+           <panel>Manage Booking</panel>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnBookingList" NavigateUrl="~/extranet/ordercenter/booking_list.aspx"  runat="server">Booking Center</asp:HyperLink></li>
+               <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnBookingSearch" Target="_blank" NavigateUrl="~/extranet/ordercenter/booking_search.aspx"  runat="server">Booking Search</asp:HyperLink></li>
+           </ul>
+            <ul>
+           <panel>Manage Review</panel>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnReview" NavigateUrl="~/extranet/review/review_list.aspx"  runat="server">Review Center</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnReviewAdd" NavigateUrl="~/extranet/review/addreview.aspx"  runat="server">Add New Review</asp:HyperLink></li>
+           </ul>
+           <ul>
+           <panel>Report</panel>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnBookingreport"  NavigateUrl="~/extranet/report/booking_report.aspx"  runat="server"> Booking Report</asp:HyperLink></li>
+           </ul>
+             <asp:Panel ID="panel_Newsletter" runat="server" Visible="false">
+            <ul>
+           <panel>Newsletter Manage</panel>
+            <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" />
+                <asp:HyperLink ID="hlNewsCreate"  NavigateUrl="~/extranet/newsletter/sendNewsletter.aspx"  runat="server">Create New</asp:HyperLink></li>
+                <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" />
+                <asp:HyperLink ID="hloutbox"  NavigateUrl="~/extranet/newsletter/showNewsletterList.aspx"  runat="server">Out Box</asp:HyperLink></li>
+             <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" />
+                <asp:HyperLink ID="hlSentbox"  NavigateUrl="~/extranet/newsletter/showNewsletterList.aspx"  runat="server">Sent Box</asp:HyperLink></li>
+             
+
+           <%--<li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" />
+                <asp:HyperLink ID="nlDrafts"  NavigateUrl="~/extranet/newsletter/showNewsletterList.aspx"  runat="server">Draft</asp:HyperLink></li>--%>
+                <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" />
+                <asp:HyperLink ID="nlDel"  NavigateUrl="~/extranet/newsletter/showNewsletterList.aspx"  runat="server">Deleted</asp:HyperLink></li>
+
+          <%-- <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnNewsletteraull"  NavigateUrl="~/extranet/newsletter/sendNewsletter.aspx"  runat="server">Customer</asp:HyperLink></li>
+                  <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="lnNewsletter_mem"  NavigateUrl="~/extranet/newsletter/sendNewsletter.aspx"  runat="server">Member only</asp:HyperLink></li>--%>
+           </ul>
+             </asp:Panel>
+         <%--<ul>
+           <panel>Documentation</panel>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="HyperLink1" Target="_blank" NavigateUrl="~/extranet/manual/Hotels2 Extranet System Manual(V.1.01)-PartI.pdf"  runat="server"> Hotels2 Extranet System Manual - Part I</asp:HyperLink></li>
+
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="HyperLink2" Target="_blank" NavigateUrl="~/extranet/manual/Hotels2 Extranet System Manual(V.1.01)-PartII.pdf"  runat="server"> Hotels2 Extranet System Manual - Part II</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="HyperLink3" Target="_blank" NavigateUrl="~/extranet/manual/Hotels2 Extranet System Manual(V.1.01)-PartIII.pdf"  runat="server"> Hotels2 Extranet System Manual - Part III</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="HyperLink4" Target="_blank" NavigateUrl="~/extranet/manual/Hotels2 Extranet System Manual(V.1.01)-LastMinutePromotion.pdf"  runat="server"> Hotels2 Extranet System Manual - Last minute</asp:HyperLink></li>
+           <li><img src="http://www.booking2hotels.com/images_extra/ico-square-small.png" /><asp:HyperLink ID="HyperLink5" Target="_blank" NavigateUrl="~/extranet/manual/Hotels2 Extranet System Manual(V.1.01)-RatePlan.pdf"  runat="server"> Hotels2 Extranet System Manual - Rate plan</asp:HyperLink></li>
+           </ul>--%>
+        
+        </div>
+        
+        </div>
+        
+        <div class="contentRight">
+            <div class="contentRight_inner">
+                <div class="headtitle" style="text-align:left">
+                <p style=" float:left; margin-top:3px;"><asp:Label ID="lblHeadPageTitle" runat="server"><%= SiteMap.CurrentNode.Title%></asp:Label><br /></p>
+                <%--<span class="titleDes"><asp:Label ID="lblHeadPageDes" runat="server"><%= SiteMap.CurrentNode.Description%></asp:Label></span></p>--%>
+                </div>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+             
+            </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div style=" clear:both;"></div>
+    </div>
+    <div style=" clear:both;"></div>
+    <div class="footer">
+        <p>Copyright © 1996-2012 Hotels 2 Thailand .com. All rights reserved.</p>
+        <p>hotels2thailand.com is a registered travel agent with the Tourism Authority of Thailand. TAT License No. 11/3240</p>
+        
+    </div>
+    <div style=" clear:both;"></div>
+</div>
+<div style=" clear:both;"></div>
+
+</center>
+</form>  
+ 
+</body>
+</html>
+ 

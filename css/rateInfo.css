@@ -1,0 +1,344 @@
+﻿@charset "utf-8";
+/* CSS Document */
+#roomRatePanel td{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#555555;
+}
+#rateOptionList
+{
+	width:100%;
+	border:3px solid #8a8a8a;
+}
+#rateOptionList > th
+{
+	font-weight:normal;
+	font-family:helvetica;
+	font-size:20px;
+	height:30px;
+	line-height:30px;
+}
+#rateOptionList td
+{
+	padding:5px 0px;
+}
+.rateOptionList-outer{
+	width:100%;
+	border:2px solid #d4d4d4;
+}
+#rateOptionList .optionImg
+{
+	padding:2px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
+	margin:10px;
+	float:left;
+}
+#rateExtraOptionList
+{
+	width:100%;
+	border:3px solid #8a8a8a;
+}
+#rateExtraOptionList td
+{
+	padding:5px 0px;
+}
+
+#rateOptionTitleList
+{
+	width:100%;
+	border:3px solid #8a8a8a;
+}
+#rateOptionTitleList td
+{
+	padding:5px 0px;
+}
+.optionTitle{
+	display:block;
+	margin-top:10px;
+	font-size:18px;
+	font-family:helvetica;
+	color:#222222;
+}
+.promotionTitle{
+	display:block;
+	margin-top:5px;
+	font-size:12px;
+	font-family:helvetica;
+	color:#3a74ba;
+}
+a{ text-decoration:none;}
+.tooltip_content{display:none;}
+.condition_list{ list-style:none; margin:10px 10px 0px 10px; padding:0px;}
+.condition_list li{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#222; font-weight:bold; line-height:16px;}
+.optionAdult{
+	display:block;
+	padding-left:15px; 
+	margin:5px 0px 10px 20px;
+	background:url(http://engine.booking2hotels.com/images/ico_max_adult.gif) no-repeat top left; 
+	font-size:12px;  font-family:Arial, Helvetica, sans-serif; 
+	line-height:20px;
+	color:#8a8a8a;
+	}
+.conditionFloat{
+	display:block;
+	padding-left:15px; 
+	margin:5px 0px 0px 15px;
+	background:url(http://engine.booking2hotels.com/images/ico_small_info2.png) no-repeat top left; 
+	text-decoration:underline;
+	font-size:12px;  font-family:Arial, Helvetica, sans-serif; 
+	line-height:14px;
+	color:#3a74ba;
+}
+.extraOptionTitle{
+	padding-left:10px;
+	font-size:18px;
+	font-family:helvetica;
+	color:#222222;
+}
+.rackRate{
+font-size:16px;  font-family:Arial, Helvetica, sans-serif; line-height:20px;color:#6f6f6f;
+text-decoration:line-through;
+}
+.rackOwn{
+	font-size:20px;  font-family:Arial, Helvetica, sans-serif; line-height:20px;color:#222222;
+}
+.savePrice{
+	font-size:14px;  font-family:Arial, Helvetica, sans-serif; line-height:20px;
+	color:#d20229;}
+	.roomAval{
+	font-size:11px;  font-family:Arial, Helvetica, sans-serif; line-height:20px;
+	color:#009129;}
+#guestSelect{
+	width:100%;
+	border:3px solid #8a8a8a;
+}
+.btnSubmitBooking{height:40px; font-size:16px; width:250px;}
+#submitPan
+{
+	width:100%;
+	
+	text-align:right;
+}
+#rateContentMain{
+	width:900px;
+}
+#guaranteeTrips{
+	padding:0px 10px;
+}
+#guaranteeSSL{font-size:18px; background:url(http://engine.booking2hotels.com/images/logo_ssl.jpg) no-repeat top left; padding-left:55px; height:60px; line-height:20px;}
+#guaranteeOffer{padding:0px 10px;}
+#tooltip {
+	color:#333;
+	background:#ffffff;
+	/*opacity: .8;*/
+	border:2px solid #efa303;
+	display:none; /*--Hides by default--*/
+	position:absolute;	z-index:1000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding:5px;
+}
+.tooltip_content{
+display:none;	
+}
+#RateResult{margin-top:20px;}
+ul.condition_list{list-style:none; margin:10px 10px 0px 10px; padding:0px;}
+
+ul.condition_list li{padding-left:10px;margin:0px;font-size:12px; font-family:Verdana, Geneva, sans-serif; font-weight:normal;}
+a.tooltip ul.condition_list li{color:#222222; text-decoration:none;}
+.errorMessage
+{	
+	display:block;
+	width:500px;
+	height:30px;
+	color:red;
+	border:1px solid #900;
+	background-color:#FFC;	
+}
+
+.extraDiscount{display:block;font-size:11px; color:#d20229;padding-left:0px; background:url(http://engine.booking2hotels.com/images/ico_sure.png) no-repeat top left;width:190px; line-height:18px;}
+#dateci,#dateco{ background:url(http://engine.booking2hotels.com/images/ico_calendar_red.png) no-repeat right 1px; border:1px inset #ccc; height:26px; padding-left:3px;}
+#currencyBox{width:704px;}
+#currencyBox td{font-size:12px; font-family:Arial, Helvetica, sans-serif;}
+
+.tr-price-hidden{
+    display:none;
+    margin:0px;
+}
+
+#expandBox{
+	width:  167px;
+	height:33px;
+    padding-left:33px;
+	line-height:33px;
+	color:#FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	cursor:pointer;
+
+	}
+	.expand{background:url(http://engine.booking2hotels.com/images/btnExpand.png) no-repeat top left}
+	.contract{background:url(http://engine.booking2hotels.com/images/btnContract.png) no-repeat top left}
+	.benefit_content{display:none;}
+	.memberBenefit{
+	font-size:11px;  font-family:Arial, Helvetica, sans-serif; line-height:20px;
+	color:#f26522;
+}
+
+#modalPanBG { 
+display: none;
+  background: #000;
+  position: fixed; left: 0; top: 0;
+  width: 100%; height: 100%;
+  opacity: .30;
+  z-index: 9999;
+}
+#modalPan
+{
+	 display: none; /*--hidden by default--*/
+	background: #fff;
+	padding: 0px;
+	
+	float: left;
+	font-size: 1.2em;
+	position:absolute;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	 max-height:500px;
+	 overflow:auto;
+	 padding:2px;
+	-moz-box-shadow: 0 0 10px #888;
+	-webkit-box-shadow: 0 0 10px#888;
+	box-shadow: 0 0 10px #888;
+}
+
+#registerForm{
+		
+		padding:0px;
+		margin-top:20px;
+		width:600px;
+	}
+	#registerForm p{font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#555; clear:both; padding:0px 0px;}
+	#registerForm p label{width:150px; display:block; float:left;line-height:30px; padding-right:10px; text-align:right; font-size:18px; font-family:helvetica;}
+	#registerForm input.text{width:300px; height:30px; border:2px solid #efefef; font-size:18px; font-family:helvetica; color:#cccccc;padding-left:10px; line-height:30px; color:#555}
+	#registerForm select{font-size:16px;border:2px solid #cccccc;padding:5px; margin-right:5px;}
+	#registerForm p input.btnSubmit{margin-left:160px; font-size:16px;}
+	body{padding:0px; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+	h3{margin:0px; padding:0px;}
+	.fnLarge{font-family:helvetica; font-size:24px; line-height:50px;font-weight:normal;}
+	.errorSignupContent{margin-bottom:10px;color:red !important;padding:10px !important; border:2px solid #FC9; background-color:#FFFCED}
+	.btnSimply{display:block; width:100px; height:30px; background-color:#06C; color:#FFF; border:1px solid #06C; float:left; margin-right:10px;}
+	.errorSignup{display:none;}
+	#proceedBox{width:500px;display:none; margin:20px 0px 15px 15px;}
+#b2hFacilityBox{padding:10px;}
+#b2hFacilityBox h1{font-family:Arial, Helvetica, sans-serif;font-size:18px; color:#222; font-weight:normal;margin-bottom:15px;}
+#b2hFacilityBox h2{font-family:Arial, Helvetica, sans-serif;font-size:14px; color:#222;}
+
+#b2hFacilityBox img.mainImage{float:left;margin-right:20px; border:1px solid #ccc; padding:3px;}
+#b2hRoomDetailBox{float:left;padding:0px 10px;}
+#b2hFacility{padding:0px;margin:0px;}
+#b2hFacility li{font-size:12px; padding:0px; margin:0px;}
+
+
+/*Daily rateBooking Engine 2.5 by Darkman*/
+.div_dialy_rate_pan {
+     text-align:right !important;
+     
+     padding: 0 0px 10px 0px !important ;
+    
+}
+.tbl_dialy_rate {
+     width:100% !important;
+     border-collapse:collapse !important;
+     
+  
+}
+.tbl_dialy_rate th{
+     font-size:11px  !important;
+     font-weight:bold !important;
+     background-color:#333333 !important;
+     color:#ffffff !important;
+     text-align:center !important;
+     height:15px !important;
+     line-height:15px !important;
+     border:1px solid #555555 !important;
+     width:14% !important;
+     
+}
+    .date_daily {
+        margin:0px !important;
+        padding:0px !important;
+        color:#ffffff;
+        font-weight:normal;
+
+    }
+    .tbl_dialy_rate td {
+     font-size:11px !important;
+     font-weight:bold !important;
+     text-align:center !important;
+     border:1px solid #555555 !important;
+    }
+.tbl_dialy_rate td p {
+    margin:0px !important;
+    padding:0px !important;
+        }
+
+.normal_rate {
+}
+.normal_base_rate {
+     text-decoration:line-through;
+    color:#6f6f6f;
+}
+.normal_pro_rate {
+    color:#000000;
+}
+.normal_free_rate {
+    color:#009129;
+}
+.normal_extra_rate {
+    color:#d20229;
+}
+.link_show_daily_rate {
+    color:#3a74ba !important;
+    font-size:11px !important;
+    margin:10px 0 0 0 !important;
+    display:block !important;
+}
+.cur_code {
+  
+     display:block;
+     float:left;
+     vertical-align:middle;
+      margin:10px 0px 0px 0px ;
+      padding:0px 0px 0px 0px;
+}
+/**/
+
+/*Prmotion List*/
+
+
+/*--------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+
+h1
+{
+	font-size:16px;
+	line-height:24px;
+	padding:0px;
+	margin:0px;
+}
+.mapContent
+{
+	text-align:left;
+	background:none;
+}
+.mapContent td
+{
+	font-size:12px;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+  #map_canvas { height: 100% }
+  .mapPan
+  {
+	  font-family:Verdana, Geneva, sans-serif;
+	  font-size:12px;
+	  padding:10px;
+
+  }
+
+    /* class big star */
+.class_star{
+	margin:4px 0px 0px 0px;
+	height:18px;
+	width:94px;
+	background:url(/images/icon/icon_star_b.jpg) no-repeat top;
+	float:left;	
+}
+.class_star_one-point-zero{
+	margin:4px 0px 0px 0px;
+	height:18px;
+	width:94px;
+	background:url(/images/icon/icon_star_b.jpg) no-repeat top;
+	float:left;	
+}
+.class_star_one-point-five{
+	margin:4px 0px 0px 0px;
+	height:18px;
+	width:94px;
+	background:url(/images/icon/icon_star_b.jpg) no-repeat 0 -20px;
+	float:left;	
+}
+.class_star_two-point-zero{
+	margin:4px 0px 0px 0px;
+	height:18px;
+	width:94px;
+	background:url(/images/icon/icon_star.jpg) no-repeat 0 -40px;
+	float:left;	
+}
+.class_star_two-point-five{
+	margin:4px 0px 0px 0px;
+	height:18px;
+	width:94px;
+	background:url(/images/icon/icon_star_b.jpg) no-repeat 0 -60px;
+	float:left;	
+}
+.class_star_three-point-zero{
+	margin:4px 0px 0px 0px;
+	height:18px;
+	width:94px;
+	background:url(/images/icon/icon_star_b.jpg) no-repeat 0 -80px;
+	float:left;	
+}
+.class_star_three-point-five{
+	margin:4px 0px 0px 0px;
+	height:18px;
+	width:94px;
+	background:url(/images/icon/icon_star_b.jpg) no-repeat 0 -100px;
+	float:left;	
+}
+.class_star_four-point-zero{
+	margin:4px 0px 0px 0px;
+	height:18px;
+	width:94px;
+	background:url(/images/icon/icon_star.jpg) no-repeat 0 -120px;
+	float:left;	
+}
+.class_star_four-point-five{
+	margin:4px 0px 0px 0px;
+	height:18px;
+	width:94px;
+	background:url(/images/icon/icon_star_b.jpg) no-repeat 0 -140px;
+	float:left;	
+}
+.class_star_five-point-zero{
+	margin:4px 0px 0px 0px;
+	height:18px;
+	width:94px;
+	background:url(/images/icon/icon_star.jpg) no-repeat 0 -160px;
+	float:left;	
+}
+.checkrate{
+	width:100px;
+	height:29px;
+	border:none;
+	cursor:pointer;
+	background:url(/theme_color/blue/images/button/check_rate_mail.jpg) no-repeat 0 0;	
+}
+.checkrate:hover{background:url(/theme_color/blue/images/button/check_rate_mail.jpg) no-repeat 0 -29px;}
+.mapContent td img{ border:none;}

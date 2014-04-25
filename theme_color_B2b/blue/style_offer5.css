@@ -1,0 +1,131 @@
+
+.clear-all{clear:both; line-height:0px }
+body{ 
+	margin:0px; 
+	padding:0px; 
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	background:url(images/offer/bg_content.gif);
+}
+/*.logo_b{
+	margin-bottom:20px;
+	height:80px;
+	background:url(images/offer/main_top.png) repeat-x 0 bottom;
+}*/
+.main{
+	margin:0 auto;
+	width:910px;	
+}
+.contentP{
+	width:730px;
+	float:left;
+}
+.content{
+	position:relative;
+	width:680px;
+	padding:10px 20px 10px 30px;
+	background:url(images/offer/main_bg.png) repeat-y 0 0;
+}
+.line{
+	margin:0 0 10px 8px;
+	width:712px;
+	height:7px;
+	background:url(images/offer/main_top1.png) no-repeat 0 0;	
+}
+.line_top{
+	margin:10px 0 0 8px;
+	width:712px;
+	height:7px;
+	background:url(images/offer/main_top2.png) no-repeat 0 0;	
+}
+.guaranteed{
+	width:180px;
+	float:left;
+}
+.guaranteed .icon{ margin:0 auto; display:block; text-align:center;}
+
+.header{
+	position:absolute;
+	top:65px;
+	left:-7px;
+	padding-left:40px;
+	width:678px;
+	height:70px;
+	font-size:20px;
+	line-height:65px;
+	background:url(images/offer/head_bg.png) no-repeat 0 0;	
+}
+.head{
+	margin:20px 0 0 4px;
+	font-size:14px;
+	color:#03539a;
+	width:650px;
+	border-bottom:solid 1px #dedede;
+}
+.head span{ 
+	background:#eeeeee; 
+	display:block; 
+	color:#000;
+	float:left;
+	padding:5px 10px 5px 10px;
+}
+.info{
+	margin:15px 0 0 15px;
+	float:left;	
+}
+.textBoxStyle{ width:250px; height:20px;}
+.inputCountry{ width:183px; height:27px; color:#666;}
+.inputAdult{ width:50px; height:26px; color:#666;}
+.textBoxBudget{ width:100px; height:20px;}
+.selectTxt{ width:105px; height:27px; color:#666;}
+
+.textBoxDate{
+	border:#6ab119 1px Solid;
+	margin-right:5px;
+	width:145px; 
+	height:20px;
+	float:left;	
+}
+
+.budget{
+	margin:20px 0 0 55px;
+	float:left;
+	border:solid 1px #cae1f5;
+}
+.budgetTable{margin:20px 30px 25px 20px;}
+
+.budgetTable td{ padding:5px;}
+.budgetTable .baht{ padding:5px; border:solid #56a1d5 1px; width:94px; font-style:italic; color:#5684b7; font-weight:bold;}
+.budgetTitle{ background:#e1e9f6; line-height:20px; padding:5px 0 5px 10px; color:#396fb5; font-size:14px;}
+
+.product{
+	margin:10px 0 10px 50px;
+	width:600px;
+}
+
+.destination{
+	margin:15px 0 0 15px;
+	width:650px;
+}
+
+.next{
+	margin:20px 0 20px 270px;
+	width:120px;
+	height:38px;
+	font-size:16px;
+	color:#FFF;
+	border:none;
+	cursor:pointer;
+	background:url(images/offer/next.png) no-repeat 0 0;	
+}
+.next:hover{
+	background:url(images/offer/next.png) no-repeat 0 -38px;
+}
+
+.address{
+	padding-top:5px;
+	width:740px;
+	text-align:center;
+	color:#666;
+}
+.address span{ color:#000; }

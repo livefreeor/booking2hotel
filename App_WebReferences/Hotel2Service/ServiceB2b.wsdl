@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPicThumbnail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intProductId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bytProductCat" type="s:unsignedByte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPicThumbnailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPicThumbnailResult" type="tns:FrontProductDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FrontProductDetail">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Hotels2BaseClass">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ProductID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TitleDefault" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DestinationID" type="s:short" />
+              <s:element minOccurs="0" maxOccurs="1" name="DestinationTitle" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:short" />
+              <s:element minOccurs="0" maxOccurs="1" name="LocationTitle" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PaymentTypeID" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:unsignedByte" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Detail" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Star" type="s:float" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileMain" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileInfo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FilePhoto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FilePDF" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileReview" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileWhy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileContact" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FolderDestination" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsInternetFree" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasInternet" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="InternetDetail" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumPic" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsNewPic" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AverageReview" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Thumbnail" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RateLowest" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Promotion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="langID" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumHotel" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumProductOther" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsExtranet" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Hotels2BaseClass">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DataConnect" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DataConnect" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPicThumbnailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPicThumbnail" />
+  </wsdl:message>
+  <wsdl:message name="GetPicThumbnailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPicThumbnailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceB2bSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPicThumbnail">
+      <wsdl:input message="tns:GetPicThumbnailSoapIn" />
+      <wsdl:output message="tns:GetPicThumbnailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceB2bSoap" type="tns:ServiceB2bSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPicThumbnail">
+      <soap:operation soapAction="http://tempuri.org/GetPicThumbnail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceB2bSoap12" type="tns:ServiceB2bSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPicThumbnail">
+      <soap12:operation soapAction="http://tempuri.org/GetPicThumbnail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceB2b">
+    <wsdl:port name="ServiceB2bSoap" binding="tns:ServiceB2bSoap">
+      <soap:address location="http://order.hotels2thailand.com/ServiceB2b.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceB2bSoap12" binding="tns:ServiceB2bSoap12">
+      <soap12:address location="http://order.hotels2thailand.com/ServiceB2b.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

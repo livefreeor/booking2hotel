@@ -1,0 +1,477 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hotels 2 Thailand : Expert Thailand Travel</title>
+
+<link href="/theme_color/blue/layout.css" rel="stylesheet" type="text/css" />
+<link href="/theme_color/blue/color.css" rel="stylesheet" type="text/css" />
+
+<!--Box Search Control Script-->
+<link rel="stylesheet" type="text/css" href="/css/smoothness/jquery-ui-1.7.2.custom.css">
+<script language="javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.7.2.custom.min.js"></script>   
+<SCRIPT type=text/javascript src="/js/locationjs.js"></SCRIPT>
+<SCRIPT type=text/javascript src="/js/visa.ui-1.js"></SCRIPT>
+<script type="text/javascript" src="/js/jquery.autocomplete.js"></script>  
+<script type="text/javascript" language="javascript">
+    $.ajaxSetup({
+        // Disable caching of AJAX responses
+        cache: false
+    });
+    function SearchClick() {
+        var scrh = $("#txtSearch").val();
+        window.location.href = "hotels_search.aspx?k=" + scrh;
+    }
+
+    $(document).ready(function () {
+		CreateCalendar("dateSearchPan");
+		dropdownLocation();
+		sideMenu();
+        //var data = "Core Selectors Attributes Traversing Manipulation CSS Events Effects Ajax Utilities".split(" ");
+        var result = $.get("/admin/front/ajax_front_search_suggest.aspx", function (data) {
+            arrData = data.split(";!;");
+            $("#txtSearch").autocomplete(arrData);
+        });
+
+	$("#txtSearch").focus(function(){
+				if($("#txtSearch").val()=="Quick Search"){
+					$("#txtSearch").val("");
+				}
+			});
+			
+			$("#txtSearch").blur(function(){
+				if($("#txtSearch").val()==""){
+					$("#txtSearch").val("Quick Search");
+				}
+			});
+
+
+
+        
+
+
+
+
+    });
+
+    function ProductTitle(catId) {
+
+        var Title = "";
+        switch (catId) {
+            case "29":
+                Title = "Hotels";
+                break;
+            case "32":
+                Title = "Golf Course";
+                break;
+            case "34":
+                Title = "Day Trips";
+                break;
+            case "36":
+                Title = "Water Activity";
+                break;
+            case "38":
+                Title = "Show & Event";
+                break;
+            case "39":
+                Title = "Health Check Up";
+                break;
+            case "40":
+                Title = "Spa";
+                break;
+        }
+        return Title;
+    }
+
+    $(document).ready(function () {
+	
+        $("#btn_hotel").attr("value", "Search For Hotels");
+        $("#menu_hotsearch :radio").each(function () {
+            var Value = $(this).attr("value");
+
+
+            $(this).click(function () {
+                $("#h4 span").html(ProductTitle(Value));
+
+                if (Value != 29) {
+                    $("#ddLocation_li").hide();
+                    $("#dateEnd_li").hide();
+                    $("#btn_hotel").attr("value", "Search For " + ProductTitle(Value));
+
+                }
+                else {
+                    $("#ddLocation_li").show();
+                    $("#dateEnd_li").show();
+                    $("#btn_hotel").attr("value", "Search For Hotels");
+                }
+CreateCalendar("dateSearchPan");
+            })
+        })
+    });
+
+</script>
+<!--End Box Search Control Script-->
+</head>
+
+<body>
+<!--##@HeaderStart##-->
+<div id="top">
+  
+  <div id="logo"><a href="http://www.hotels2thailand.com"><img src="/theme_color/blue/images/layout/logo.jpg" title="Thailand hotels" /></a></div>
+  
+  <div id="livechat"><a href="#"></a></div>  
+     
+    <div id="search_form">
+    <form action="hotels_search.asp" Method="Post">
+      <input type="text" name="txtSearch" id="txtSearch" value="Quick Search" class="inputbox" /> 
+    </form>
+    <div class="quick_search"><a href="#"></a></div>   
+	</div>
+    
+<div class="clear-all"></div>    
+</div><!--top--> 
+<!--##@HeaderEnd##-->
+
+<div id="main">
+   <div id="col_left">
+    <div class="bg_topmenu"><h1>Thailand Hotels</h1></div>
+    <!--##@MainMenuStart##-->
+     <div id="main_menu">
+        
+        <ul>
+
+        	<li >
+            <a id="29" href="http://174.36.32.56/thailand-hotels.asp" class="iconset" >HOTELS </a>
+            <div id="div_29" class="sub_menu_bg" style= "position:absolute; margin:0px; z-index:50; display:none;"></div>
+            </li>
+
+            <li >
+            <a  id="34" href="http://174.36.32.56/thailand-day-trips.asp" class="iconset_day">DAY TRIPS </a>
+            <div id="div_34" class="sub_menu_bg" style= "position:absolute; margin:0px; z-index:50; display:none;"></div>
+            </li>
+
+            <li >
+            <a id="32" href="http://174.36.32.56/thailand-golf-courses.asp" class="iconset_golf">GOLF COURSES </a>
+            <div id="div_32" class="sub_menu_bg" style= "position:absolute; margin:0px; z-index:50; display:none;"></div>
+            </li>
+
+            <li >
+            <a  id="36" href="http://174.36.32.56/thailand-water-activity.asp" class="iconset_water">WATER ACTIVITIES </a>
+            <div  id="div_36" class="sub_menu_bg" style= "position:absolute; margin:0px; z-index:50; display:none;"></div>
+            </li>
+
+            <li >
+            <a id="38" href="http://174.36.32.56/thailand-show-event.asp" class="iconset_show">SHOW & EVENT </a>
+            <div id="div_38" class="sub_menu_bg" style= "position:absolute; margin:0px; z-index:50; display:none;"></div>
+            </li>
+
+            <li >
+            <a id="39" href="http://174.36.32.56/thailand-health-check-up.asp" class="iconset_health">HEALTH </a>
+            <div id="div_39" class="sub_menu_bg" style= "position:absolute; margin:0px; z-index:50; display:none;"></div>
+            </li>
+
+            <li class="end_menu">
+            
+            <a id="40"  href="http://174.36.32.56/thailand-spa.asp" class="iconset_spa">SPA </a>
+            <div  id="div_40" class="sub_menu_bg" style= "position:absolute; margin:0px; z-index:50; display:none;"></div>
+            </li>        
+
+        </ul>     
+
+    </div><!--main_menu-->   
+    
+    <!--##@MainMenuEnd##-->
+       
+  <div id="testimonial">
+     	<div class="head_warp"></div>
+     	<div id="header_bg"><div class="title">User Testimonial</div></div>
+       	
+        <div id="why_header"></div>       
+        <div id="testimonail_icon">
+        	<div class="testimonail_detail">
+            	<div class="review_tex">“ Service is good and efficient. Price is ideal. No complaint.....” </div>
+                <div class="flag"> <img src="/theme_color/blue/images/flag/flag_20.jpg" title="--" /> </div>
+                <div class="testimonail_custom">Alan Sampson </div>
+                
+            </div>
+        	<a href="#" title="View Testimonail Hotels2Thailand"></a>
+        </div> 
+     <div class="clear-all"></div>
+     </div><!--testimonial--> 
+      
+    <div id="booking_status">
+       <div class="head_warp"></div>
+       <div id="header_bg"><div class="title">Booking Status</div></div>
+       
+       <div id="search_bg">
+       <p>Check your order status
+You can check your 
+order status by fill 
+your email and order id <br />
+to this form and<br /> 
+click <span>"Submit request "</span></p>
+<form>
+	   <div class="form_booking">
+         <h5>Booking ID</h5>
+         <input type="text" name="search3" value="" class="booking_id" /><br />
+         
+         <h5>E-mail</h5>
+	     <input type="text" name="search2" value="" class="booking_id" />
+       </div>
+</form>	
+       <a href="#" class="submit"></a> 
+      </div><!--search_bg-->  
+                   
+    </div><!--booking status-->  
+      
+      
+          
+  </div><!--col_left--> 
+    
+    <!-------col_right-->    
+  <div id="col_right">  
+  		<div style="height:24px"></div>
+	<!--flag-->  
+                
+    <div class="clear-all"></div>  
+    
+   	<div id="intro">
+      <img src="../theme_color/blue/images/layout/intro_top_l.png" class="left_t" />
+      <img src="../theme_color/blue/images/layout/intro_top_r.png" class="right_t" />
+   	  <!--##Slider Image-->
+   	  <iframe src="slider_intro.html" width="751" height="315" scrolling="no" frameborder="no" align="center" ></iframe>
+   	  <!--##Slider Image End-->
+      <img src="../theme_color/blue/images/layout/intro_butt_l.png" class="left_b" />
+      <img src="../theme_color/blue/images/layout/intro_butt_r.png" class="right_b" />
+   	</div><!--intro-->
+        
+	<div id="content">       	
+   	  <form action="search_process.aspx" method="post" id="bookingForm" name="bookingForm">
+      
+   	  <div id="hot_search">
+      	
+        <!--<div id="hot_deal"><a href="#"></a></div>-->
+			
+        <div id="hot_search_header"></div>            
+			
+			<div id="menu_hotsearch"> 
+            
+				 <strong>Choose Product</strong>
+                 <ul class="line_right">
+
+   			      <li class="menu_hotsearch"><input type="radio" name="category" value="29" checked="checked" /> HOTELS</li>
+
+         			<li><input type="radio" name="category" value="34"/> DAY TRIPS </li>
+
+       				<li><input type="radio" name="category" value="32"/> GOLF COURSES </li>
+
+        			<li><input type="radio" name="category" value="36"/> WATER ACTIVITIES </li>
+
+         			<li><input type="radio" name="category" value="38"/> SHOW & EVENT </li>
+
+         			<li><input type="radio" name="category" value="39"/> HEALTH </li>
+
+         		    <li class="end_menu"><input type="radio" name="category" value="40"/> SPA </li>
+
+      			 </ul>     
+
+   		  </div><!--menu_hotsearch-->
+
+
+                  <div id="boxsearch">
+                 
+                  	<strong>Find The Best Deal</strong>
+               	    <h4 id="h4">Search For <span>HOTELS</span> in Thailand</h4>
+                    
+                	  <ul class="dateSearchPan">
+        				<li class="menu_hotsearch"><div id="ddDestination"></div></li>
+
+         				<li id="ddLocation_li"><div id="ddLocation"></div></li>
+              
+       					<li>
+       					  <input type="text" name="dateStart" class="vPicker" id="dateStart" rel="" style=" margin-bottom:6px; width:145px; background:#edf2fa; height:18px; float:left; line-height:25px;"/>
+       					  <img src="/images/ico_calendar_green1.jpg" id="cal_in" onclick="pickCalendar('dateStart');" style="padding-left:2px;" />
+                        </li>
+
+        				<li id="dateEnd_li">
+                       	  <input type="text" name="dateEnd" class="vPicker" id="dateEnd" rel="" style="width:145px; background:#edf2fa; height:18px; float:left;" />
+                       	  <img src="/images/ico_calendar_green1.jpg" id="cal_out" onclick="pickCalendar('dateEnd');" style="padding-left:2px;"  />
+                        </li> 
+                        
+                      
+      				  </ul> 
+                      
+                     <img src="../theme_color/blue/images/icon/row_rate.png" class="lowrates" title="Low Rates Guarantee" />
+
+                     <div id="buttom_center"> 
+                      <table cellspacing="0" align="left">
+                      	<tr>
+                        	<td class="search_button_left"></td>
+                            <td class="index_search_button"><input type="submit" value=" Search For Hotel " name="btntest" class="inner"/></td>
+                            <td class="search_button_right"></td>                        
+                        </tr>
+                      </table> 
+                    </div><!--buttom center--> 
+
+          </div><!--boxsearch-->
+          
+          
+
+          <div id="bg_box_footer"></div>             
+
+        </div><!--hot_search-->
+        </form>   
+      <div id="destinations_header">
+      	<h2>Hot Thailand Hotels Destinations</h2>        
+        <div id="destinations_colright">
+       	  <ul class="hotels_inbkk_bg">
+            	<div class="hotels_inbkk_header"><h3>Lastest Review</h3></div>
+                
+        		<li> <a href="#">Sukhothai Treasure Resort & Spa </a> 
+                	 <div class="class_star_s_three-point-five"></div> <br class="clear-all" />
+                	 <p>In the hotel web site facilities page has Fitness Center but there is none, this is not correct... 
+                     <a href="#" class="read_more">Read More</a>
+                     </p>                	 
+                </li>
+                
+                <li> <a href="#">Park Plaza Sukhumvit Hotel </a> 
+                	 <div class="class_star_s_three-point-five"></div> <br class="clear-all" />
+                	 <p>In the hotel web site facilities page has Fitness Center but there is none, this is not correct... 
+                     <a href="#" class="read_more">Read More</a>
+                     </p>                	 
+                </li>       		
+          </ul>        
+        
+        </div><!--colright--> 
+      </div><!--destinations_header-->  
+         <!--##@HotDestinationStart##-->    
+    	 <div id="destinations">      
+              <ul>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p1.jpg" title="Bangkok Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/bangkok-hotels.asp">Bangkok Hotels</a></li>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p4.jpg" title="Khao Yai Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/khao-yai-hotels.asp">Khao Yai Hotels</a></li>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p7.jpg" title="Krabi Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/krabi-hotels.asp">Krabi Hotels</a></li>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p10.jpg" title="Phang Nga Hotels" /></a>
+                	<a href="http:/www.hotels2thailand.com/phang-nga-hotels.asp">Phang Nga Hotels</a></li>
+              </ul>
+              <ul>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p2.jpg" title="Chiang Mai Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/chiang-mai-hotels.asp">Chiang Mai Hotels</a></li>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p5.jpg" title="Koh Chang Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/koh-chang-hotels.asp">Koh Chang Hotels</a></li>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p8.jpg" title="Pattaya Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/pattaya-hotels.asp">Pattaya Hotels</a></li>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p11.jpg" title="Phuket Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/phuket-hotels.asp">Phuket Hotels</a></li>
+              </ul>
+              <ul>
+              	<li><a href="#"><img src="/theme_color/blue/images/destination/p12.jpg" title="Hat Yai Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/hat-yai-hotels.asp">Hat Yai Hotels</a></li>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p3.jpg" title="Hua Hin Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/hua-hin-hotels.asp">Hua Hin Hotels</a></li>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p6.jpg" title="Koh Samui Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/koh-samui-hotels.asp">Koh Samui Hotels</a></li>
+                <li><a href="#"><img src="/theme_color/blue/images/destination/p9.jpg" title="Phangan Hotels" /></a>
+                	<a href="http://www.hotels2thailand.com/koh-phangan-hotels.asp">Phang Nga Hotels</a></li>                
+              </ul>    
+   
+                                                      
+   	  </div><!--destinations-->
+      <!--##@HotDestinationEnd##-->    
+	  <div id="bg_box_footer"></div>       
+        
+</div><!--content-->   
+                                   
+               
+  </div>
+  <!--col_right-->
+<div class="clear-all"></div>  
+
+</div><!--main-->
+
+
+<div id="footer">
+
+	<div id="bgwrite">
+    	<div id="tophotel_footer">
+            <h2>Top Thailand Hotels Destinations</h2>        
+        </div>
+        <!--##@TopHotelDestinationStart##-->
+     	<div id="content_tophotel_footer">
+        	<ul>
+            	<li class="head_bue"><a href="http://www.hotels2thailand.com/bangkok-hotels.asp">Bangkok Hotels</a></li>
+          		<li><a href="#">Pratunam Hotels</a> </li>
+				<li><a href="#">Silom Hotels</a></li>
+				<li><a href="#">Sukhumvit Hotels</a></li>
+            </ul>
+            
+            <ul>
+            	<li class="head_bue"><a href="#">Chiang Mai Hotels</a> </li>
+          		<li><a href="#">Chiang Mai City Hotels</a> </li>
+				<li><a href="#">Hangdong Hotels</a></li>
+				<li><a href="#">Sansai Hotels</a></li>
+            </ul>
+            
+              <ul class="col_three">
+            	<li class="head_bue"><a href="#">Koh Samui Hotels</a></li>
+          		<li><a href="#">Bo Phut Beach Resorts</a> </li>
+				<li><a href="#">Chaweng Beach Resorts</a></li>
+				<li><a href="#">Lamai Beach Rresorts</a></li>
+            </ul>
+            
+              <ul class="col_four">
+            	<li class="head_bue"><a href="#">Pattaya Hotels</a></li>
+          		<li><a href="#">Central Pattaya Hotels</a></li>
+				<li><a href="#">Jomtien Beach Hotels</a></li>
+				<li><a href="#">South Pattaya Hotels</a></li>
+            </ul>
+            
+              <ul class="col_four">
+            	<li class="head_bue"><a href="#">Krabi Hotels</a></li>
+          		<li><a href="#">Ao Nang Hotels</a> </li>
+				<li><a href="#">Koh Lanta Resorts</a> </li>
+				<li><a href="#">Phi Phi Island Resorts</a></li>
+            </ul>
+            
+              <ul class="col_four">
+            	<li class="head_bue"><a href="#">Phuket Hotels</a></li>    
+          		<li><a href="#">Karon Beach Hotels</a></li>
+				<li><a href="#">Kata Beach Hotels</a></li>
+				<li><a href="#">Patong Beach Hotels</a></li>
+            </ul>
+            <div class="clear-all"></div>
+        </div>
+        <!--##@TopHotelDestinationEnd##-->
+        <div id="bg_end_footer"></div>
+        
+        <div id="menu_footer">
+        <a href="http://www.hotels2thailand.com">Hotels2Thailand</a>    | 
+        <a href="http://www.hotels2thailand.com/thailand-hotels">Hotels </a>    |    
+        <a href="http://www.hotels2thailand.com/thailand-day-trips.asp">Day Trips</a>    |    
+        <a href="http://www.hotels2thailand.com/thailand-golf-courses.asp">Golf Courses</a>    |    
+        <a href="http://www.hotels2thailand.com/thailand-water-activity.asp">Water Activities</a>    |  
+        <a href="http://www.hotels2thailand.com/thailand-show-event.asp">Show & Event</a>    |    
+        <a href="http://www.hotels2thailand.com/thailand-health-check-up.asp">Health</a>    |  
+        <a href="http://www.hotels2thailand.com/thailand-spa.asp">Spa</a>    |   
+        <a href="http://www.hotels2thailand.com/partners">Affiliate</a>
+        </div>
+        
+        <div id="visa"> 
+        	<a href="#" class="register"></a>    
+        </div>
+        
+        <div id="copyright">
+        Copyright © 1996-2010 Hotels 2 Thailand .com. All rights reserved.<br />
+hotels2thailand.com is a registered travel agent with the Tourism Authority of Thailand. TAT License No. 11/3240
+		</div>
+    </div><!--bgwrite-->
+    
+    </div><!--footer-->
+ 
+
+	
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_ExtranetControlPanelFirst.master.cs"  Inherits="Masterpage_MasterPageFirst_Control_Panel" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+<link href="~/css/extranet/Master_style_first_extra.css" type="text/css" rel="stylesheet" />
+<link href="~/css/extranet/extranet_style_core.css" type="text/css" rel="stylesheet" />
+
+    <title>Booking2hotels Engine</title>
+    <asp:ContentPlaceHolder id="head" runat="server" >
+    
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server">
+<ajaxToolkit:ToolkitScriptManager runat="Server" EnableScriptGlobalization="true"
+        EnableScriptLocalization="true" ID="ScriptManager1" />
+
+<center>
+<div class="main">
+    <div class="header">
+    <asp:Image ID="Image1" ImageUrl="~/images_extra/logo_bookingengine.png" runat="server" CssClass="logo" />
+         
+    </div>
+    
+    <div class="contentLogin" id="contentLogin">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" >
+        
+        </asp:ContentPlaceHolder>
+     </div>
+   
+    <div class="footer">
+        <p>Copyright © 1996-2012 Hotels 2 Thailand .com. All rights reserved.</p>
+        <p>hotels2thailand.com is a registered travel agent with the Tourism Authority of Thailand. TAT License No. 11/3240</p>
+        
+    </div>
+    
+</div>
+</center>
+</form>    
+</body>
+</html>
+ 

@@ -1,0 +1,107 @@
+﻿body {
+    padding:10px;
+    margin:0px;
+     font-size:14px;
+     font-family:Tahoma;
+     color:#5a5758;
+}
+#main_template {
+    width:850px;
+    margin:0 auto;
+     
+}
+.bht_name {
+    margin:20px 0 0 0;
+    padding:0px;
+     color:#5a5758;
+     font-weight:bold;
+     font-size:16px;
+     
+}
+.bht_site {
+    margin:5px 0 0 0;
+    padding:0px;
+    font-weight:bold;
+    font-size:16px;
+}
+.bht_mail {
+    margin:5px 0 0 0;
+    padding:0px;
+    color:#3a8fba;
+     font-weight:bold;
+     font-size:16px;
+}
+.head_title {
+    font-family:Tahoma;
+    font-size:40px;
+      margin:0px;
+    padding:0px;
+}
+.date_submit {
+    margin:0px;
+    padding:0px;
+}
+.address {
+    margin:5px 0 0 0 ;
+    font-size:12px;
+}
+
+.span {
+    color:#1e5e95;
+}
+.slip_no {
+    margin:5px 0 0 0;
+    padding:0 0 0 0;
+    
+    font-weight:bold;
+}
+.account_inform {
+    margin:5px 0 0 0;
+    padding:0 0 0 0;
+      font-size:16px;
+    font-weight:bold;
+}
+
+
+.hotel_name {
+    margin:5px 0 0 0;
+    padding:0 0 0 0;
+    font-size:16px;
+    font-weight:bold;
+}
+.hotel_address {
+    margin:5px 0 0 0;
+    padding:0 0 0 0;
+}
+.tbl_account {
+    
+    margin:0px;
+    padding:0px;
+    background-color:#000000;
+   
+}
+    .tbl_account > thead {
+        background-color:#69aed8;
+        color:#ffffff;
+        height:30px;
+        line-height:30px;
+    }
+    .tbl_account > tbody {
+background-color:#f3f3f3;
+ font-size:12px;
+    }
+    .tbl_account > tbody > tr {
+            height:35px;
+    }
+.total {
+    background-color:#c8d0d5;
+    color:#333333;
+    font-weight:bold;
+    height:40px  !important;
+    font-size:18px;
+}
+.payment_detail {
+  color:#1e5e95;
+   font-size:18px;
+   font-weight:bold;
+}

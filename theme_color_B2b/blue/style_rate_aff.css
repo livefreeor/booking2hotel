@@ -1,0 +1,82 @@
+html{width:700px;}
+body{width:700px; margin:0 auto; padding:0px; font-family:Arial, Helvetica, sans-serif !important; font-size:12px;}
+.clear-all{clear:both; line-height:0px }
+
+
+p { margin:0px; line-height:18px; width:860px; color:#666;}
+ul{ margin:0px; padding:0px 0px 0px 20px;}
+input { float:left;width:120px;}
+
+
+.check_in{ width:250px; float:left;}
+
+.date{
+	margin:0px;
+	padding:0px;
+	float:left;	
+}
+.date h4{ margin:0px;}
+.date span{ color:#0b9444; }
+.date a{ color:#3771ba; font-weight:bold; }
+.date a:hover{ color:#000; }
+
+.currency{
+	margin-bottom:10px;
+	width:200px;
+	float:left;
+}
+.currency select{ float:right;}
+.currency img{ float:right;}
+
+
+
+
+#table_rate_old,#table_rate{ background:#e1e9f6;}
+#table_rate_old th,#table_rate th{ background:#5f85b6; color:#FFF; padding:4px;}
+#table_rate_old td,#table_rate td{ background:#FFF; color:#666; padding-left:5px;}
+#table_rate_old td.center,#table_rate td.center{ text-align:center;}
+#table_rate_old td img,#table_rate td img{ border:none;}
+
+.extra{background:#5f85b6; color:#FFF; padding:4px;}
+.rate{background:#5f85b6; color:#FFF; padding:4px;}
+.quantity{background:#5f85b6; color:#FFF; padding:4px;}
+
+.row_rate img { border:none; float:left; padding-right:20px;}
+.incase p{ margin:5px 20px 0 0; float:left; width:250px; color:#000;}
+.take_time{ margin-top:5px; float:left; width:100px;}
+.booknow {margin:5px 0 0 20px; float:left; width:150px;}
+
+.booknow a{
+	margin:0 auto;
+	width:136px;
+	height:36px;
+	display:block;	
+	background:url(images/button/booknow.jpg) no-repeat 0 0;	
+}
+.booknow a:hover{
+	background:url(images/button/booknow.jpg) no-repeat 0 -36px;	
+}
+
+#tooltip {
+	color: #333;
+	background:#FFC;
+	/*opacity: .8;*/
+	border:1px solid #663;
+	display:none; /*--Hides by default--*/
+	padding:10px;
+	position:absolute;	z-index:1000;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.tooltip_content{
+display:none;	
+}
+#currencyBox option{
+	padding-left:25px;
+}
+#ht2th_box_search
+{
+	background-color:#EAEAFF;
+	border:2px solid #36C;
+}

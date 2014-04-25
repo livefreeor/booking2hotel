@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15, 13.125" name="LinqSupplier">
+  <DataContextMoniker Name="/LinqSupplierDataContext" />
+  <nestedChildShapes>
+    <classShape Id="434cf1d5-8bec-4866-a5f6-42a12648affc" absoluteBounds="0.75, 6.75, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_supplier_category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a38f998-523f-4109-8839-1c9b7cf53e4c" absoluteBounds="0.765, 7.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2077312-18b5-4cd3-b41d-c3966da643f3" absoluteBounds="6.25, 5.5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_supplier_deposit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6a56e183-f277-416a-99d1-d8f33fd8f801" absoluteBounds="6.265, 5.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8ef89de-935a-4c2f-9d9d-9aa0380e9c1d" absoluteBounds="0.75, 3.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_supplier_payment_type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83caa89f-d219-4887-8230-f6c9e3d109a4" absoluteBounds="0.765, 4.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29e7f411-5736-4178-b109-d7d20809ab40" absoluteBounds="9.75, 1.625, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_phone_cat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8ba68c6-22cf-4e61-b386-335fe7ae92de" absoluteBounds="9.765, 2.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1b10e21-7edc-4a7b-8f35-ea4d445693b7" absoluteBounds="6.5, 8.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_bank" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b286133-2ae1-432b-aa98-c610b3540261" absoluteBounds="6.515, 9.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aaadac3c-930d-4f22-93e8-3761c4a8752b" absoluteBounds="6.5, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_account_type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bd42952-a250-4dae-8459-a80cb2ad9333" absoluteBounds="6.515, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b4a7886-04a6-4bec-92e1-0331fdf47bc4" absoluteBounds="6.5, 3.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_supplier_payment_policy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ab60660-2590-4915-92c7-f9332aa55f1b" absoluteBounds="6.515, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85eef909-ab52-426f-afc4-32abbee5e7cc" absoluteBounds="7.25, 11.625, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_supplier_department" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23c453d4-1a6c-4191-a834-664f389853f6" absoluteBounds="7.265, 12.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7eb842fa-057f-442d-bd93-ad45f963e814" absoluteBounds="10, 10.25, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_supplier_staff_contact" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5c129f5-cca4-41cb-bfd8-a5a8a6f2d2bb" absoluteBounds="10.015, 10.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.25 : 11.9190991210937); (10 : 11.9190991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_supplier_department/tbl_supplier_department_tbl_supplier_staff_contact" />
+      <nodes>
+        <classShapeMoniker Id="85eef909-ab52-426f-afc4-32abbee5e7cc" />
+        <classShapeMoniker Id="7eb842fa-057f-442d-bd93-ad45f963e814" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="89f9e8a3-e3aa-44f5-938d-ec9765ca7a95" absoluteBounds="12.75, 10.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_supplier_staff_contact_email" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62d44de2-2340-496f-828a-6d9e5a644548" absoluteBounds="12.765, 10.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="205c9472-c7c1-42c9-a4b6-45300f4063c9" absoluteBounds="12.75, 5.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_supplier_staff_contact_phone" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a97a518-6d58-4d85-b977-4e177b4ec719" absoluteBounds="12.765, 6.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12 : 11.3742496744792); (12.75 : 11.3742496744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_supplier_staff_contact/tbl_supplier_staff_contact_tbl_supplier_staff_contact_email" />
+      <nodes>
+        <classShapeMoniker Id="7eb842fa-057f-442d-bd93-ad45f963e814" />
+        <classShapeMoniker Id="89f9e8a3-e3aa-44f5-938d-ec9765ca7a95" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.75 : 2.81899251302083); (10.75 : 7.04650358723958); (11.2760391666667 : 7.04650358723958 : JumpStart); (11.4427058333333 : 7.04650358723958 : JumpEnd); (11.9479166666667 : 7.04650358723958 : JumpStart); (12.1145833333333 : 7.04650358723958 : JumpEnd); (12.75 : 7.04650358723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_phone_cat/tbl_phone_cat_tbl_supplier_staff_contact_phone" />
+      <nodes>
+        <classShapeMoniker Id="29e7f411-5736-4178-b109-d7d20809ab40" />
+        <classShapeMoniker Id="205c9472-c7c1-42c9-a4b6-45300f4063c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.09375 : 10.25); (10.09375 : 6.42949929361979); (10.6666666666667 : 6.42949929361979 : JumpStart); (10.8333333333333 : 6.42949929361979 : JumpEnd); (11.2760391666667 : 6.42949929361979 : JumpStart); (11.4427058333333 : 6.42949929361979 : JumpEnd); (11.9479166666667 : 6.42949929361979 : JumpStart); (12.1145833333333 : 6.42949929361979 : JumpEnd); (12.75 : 6.42949929361979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_supplier_staff_contact/tbl_supplier_staff_contact_tbl_supplier_staff_contact_phone" />
+      <nodes>
+        <classShapeMoniker Id="7eb842fa-057f-442d-bd93-ad45f963e814" />
+        <classShapeMoniker Id="205c9472-c7c1-42c9-a4b6-45300f4063c9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ac45ecdf-53e5-4e65-9de3-c3601fb3d5f5" absoluteBounds="10.25, 7.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_supplier_account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7df7ffa0-fb26-4f51-a656-7447475ec994" absoluteBounds="10.265, 8.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 1.15625); (12.03125 : 1.15625); (12.03125 : 7.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_account_type/tbl_account_type_tbl_supplier_account" />
+      <nodes>
+        <classShapeMoniker Id="aaadac3c-930d-4f22-93e8-3761c4a8752b" />
+        <classShapeMoniker Id="ac45ecdf-53e5-4e65-9de3-c3601fb3d5f5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 9.34699625651042); (10.25 : 9.34699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_bank/tbl_bank_tbl_supplier_account" />
+      <nodes>
+        <classShapeMoniker Id="d1b10e21-7edc-4a7b-8f35-ea4d445693b7" />
+        <classShapeMoniker Id="ac45ecdf-53e5-4e65-9de3-c3601fb3d5f5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cd2c683d-5c52-45f2-b5ad-006f6e8a3740" absoluteBounds="3.5, 4.5, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/LinqSupplierDataContext/tbl_supplier" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ad1a0eb-e24a-4fe6-8034-2d6927cfa4da" absoluteBounds="3.515, 4.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.48159912109375); (6.25 : 6.48159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_supplier/tbl_supplier_tbl_supplier_deposit" />
+      <nodes>
+        <classShapeMoniker Id="cd2c683d-5c52-45f2-b5ad-006f6e8a3740" />
+        <classShapeMoniker Id="f2077312-18b5-4cd3-b41d-c3966da643f3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.88544840494792); (6.5 : 4.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_supplier/tbl_supplier_tbl_supplier_payment_policy" />
+      <nodes>
+        <classShapeMoniker Id="cd2c683d-5c52-45f2-b5ad-006f6e8a3740" />
+        <classShapeMoniker Id="0b4a7886-04a6-4bec-92e1-0331fdf47bc4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 8.00160970052083); (4.5 : 10.90625); (10 : 10.90625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_supplier/tbl_supplier_tbl_supplier_staff_contact" />
+      <nodes>
+        <classShapeMoniker Id="cd2c683d-5c52-45f2-b5ad-006f6e8a3740" />
+        <classShapeMoniker Id="7eb842fa-057f-442d-bd93-ad45f963e814" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.38544840494792); (10.6666666666667 : 5.38544840494792 : JumpStart); (10.8333333333333 : 5.38544840494792 : JumpEnd); (11.3593725 : 5.38544840494792); (11.3593725 : 7.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_supplier/tbl_supplier_tbl_supplier_account" />
+      <nodes>
+        <classShapeMoniker Id="cd2c683d-5c52-45f2-b5ad-006f6e8a3740" />
+        <classShapeMoniker Id="ac45ecdf-53e5-4e65-9de3-c3601fb3d5f5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.34699625651042); (3.5 : 7.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_supplier_category/tbl_supplier_category_tbl_supplier" />
+      <nodes>
+        <classShapeMoniker Id="434cf1d5-8bec-4866-a5f6-42a12648affc" />
+        <classShapeMoniker Id="cd2c683d-5c52-45f2-b5ad-006f6e8a3740" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.75564697265625); (3.5 : 4.75564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqSupplierDataContext/tbl_supplier_payment_type/tbl_supplier_payment_type_tbl_supplier" />
+      <nodes>
+        <classShapeMoniker Id="f8ef89de-935a-4c2f-9d9d-9aa0380e9c1d" />
+        <classShapeMoniker Id="cd2c683d-5c52-45f2-b5ad-006f6e8a3740" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

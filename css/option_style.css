@@ -1,0 +1,295 @@
+﻿/* import  Option PictureManage*/
+/*@import url(~/css/option_section/option_picture_style.css);*/
+
+.option_add
+{
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+.option_add_left
+{
+  width:350px;
+  margin:0px;
+  padding:0px 10px 0px 0px;
+  float:left;
+  border-right:1px solid #e0e0e0;
+}
+.option_add_right
+{
+    width:570px;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 10px;
+    float: left;
+    position:relative;
+    
+    
+    
+}
+.option_add_left table
+{
+    margin:0px;
+    padding:0px;
+}
+.option_add_left table tr
+{
+    margin:0px;
+    padding:0px;
+}
+.option_add_left table td
+{
+    margin:0px;
+    padding:0px;
+}
+/*.option_add_left table td p
+{
+    margin:0px;
+    padding:0px;
+}*/
+.dropPrioritystyle
+{
+     padding:1px;
+     margin:0px;
+}
+
+.linkDisable
+{
+     color:#b3b3b3;
+}
+
+.product_period_box
+{
+     margin:10px 0px 0px 0px;
+     padding:0px;
+}
+
+.product_period_box_insert
+{
+     margin:10px 0px 0px 0px;
+     background:#f2f2f2 ;
+     border:1px solid #d8dfea;
+     padding:5px;
+     width:450px;
+     
+}
+.product_period_box_List
+{
+     margin:5px 0px 0px 0px;
+     padding:5px;
+     width:450px;
+     border-bottom:1px solid #d8dfea;
+}
+.line
+{
+      margin:30px 0px 30px 0px;
+      padding:0px 0px 0px 0px;
+      border-bottom:1px solid #e0e0e0;
+       width:100%;
+}
+.chkFac_tamplateStyle
+{
+      margin:0px;
+      padding:10px;
+      width:100%;
+      
+      
+}
+.chkFac_tamplateStyle td
+{
+      margin:0px;
+      padding:0px;
+      width:180px;
+      font-size:11px;
+      font-weight:bold;
+      color:#818181;
+      
+}
+#facility_template_box
+{
+    margin:0px;
+    padding:0px 0px 0px 10px;
+    width:100%;
+    text-align:left;
+}
+#facility_template_box fieldset
+{
+      width:100%;
+      font-size:11px;
+      font-weight:bold;
+      color:#818181;
+      border:1px solid #e0e0e0;
+}
+
+#facility_template_box fieldset Legend
+{
+    font-size:12px;
+      font-weight:bold;
+      color:#1c2a47;
+}
+#facility_template_box fieldset label
+{
+    width:200px;
+    font-size:11px;
+    margin:0px 5px 0px 5px;
+    padding:0px;
+    color:#3b59aa;
+    font-weight:bold;
+    text-align:left;
+}
+#facility_used_box
+{
+    margin:0px;
+     padding:10px;
+     background:#f7f7f7;
+    
+}
+#facility_used_box fieldset
+{
+        width:100%;
+      font-size:11px;
+      font-weight:bold;
+      margin:0px;
+     padding:10px;
+      color:#818181;
+      border:1px solid #e0e0e0;
+}
+#facility_used_box fieldset Legend
+{
+    font-size:12px;
+      font-weight:bold;
+      color:#1c2a47;
+}
+#facility_used_box fieldset label
+{
+     width:200px;
+    font-size:11px;
+    margin:0px 5px 0px 5px;
+    padding:0px;
+    color:#3b59aa;
+    font-weight:bold;
+    text-align:left;
+}
+#CurrentFac
+{
+    margin:0px 0px 0px 0px;
+    padding:10px;
+    border:1px solid #d9dfea;
+    text-align:left;
+   
+}
+.dlCurrentFac_style
+{
+     margin:0px;
+     padding:0px;
+}
+
+.dlCurrentFac_Item_Style
+{
+    text-align:left;
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    width:270px;
+    height:25px;
+    font-family:Tahoma;
+    font-size:11px;
+    font-weight:bold;
+   
+}
+
+.dlCurrentFac_Item_Style a
+{
+    font-weight:normal;
+     font-size:11px;
+}
+/*------------ option Rate---------------------*/
+.product_option_rate
+{
+    margin:0px;
+    padding:0px;
+}
+#product_option_rate_left
+{
+     margin:0px;
+     padding:0px;
+     float:left;
+     width:200px;
+}
+#product_option_rate_right
+{
+    margin:0px;
+    padding:0px;
+    float:left;
+    width:500px;
+}
+.timeinput
+{
+    margin:0px 0px 0px 0px;
+    padding:10px;
+    background:#f7f7f7;
+    border:1px  solid #d8dfea;
+    
+}
+.timeinput table
+{
+    
+}
+.time_table_form td
+{
+    text-align:left;
+    width:80px;
+    font-size:11px;
+    
+}
+.sup_quantity_insert_box
+{
+    margin:0px;
+    padding:0px;
+    text-align:left;
+}
+.sup_quantity_insert_box table 
+{
+    margin:5px 0px 0px 0px;
+    padding:0px;
+}
+.sup_quantity_insert_box table tr td
+{
+    margin:0px;
+    padding:2px 5px 2px 5px;
+}
+.sup_quantity_insert_box p
+{
+    margin:5px;
+    padding:0px 0px 0px 0px;
+    font-size:11px;
+    color:Black;
+    font-weight:bold;
+    text-align:left;
+}
+/*---Option Holidays--*/
+.PublicHolidaysTemplate
+{
+     margin:0px;
+     padding:0px;
+     
+}
+
+.holiday_Enable
+{
+    margin:0px 1px 0px 0px;
+     display:block;
+     float:left;
+     padding:5px 20px 5px 20px;
+    background-color:#3f5d9d;
+    color:#ffffff;
+}
+
+.holiday_Disable
+{
+     margin:0px 1px 0px 0px;
+     display:block;
+     float:left;
+     padding:5px 20px 5px 20px;
+     background-color:#ffffff;
+     color:#3f5d9d;
+    
+}

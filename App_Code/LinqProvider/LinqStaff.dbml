@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hotels2thailandX" Class="LinqStaffDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=BHTSERVER\SQLEXPRESS;Initial Catalog=hotels2thailandX;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="hotels2thailandXConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_authorize_staff" Member="tbl_authorize_staffs">
+    <Type Name="tbl_authorize_staff">
+      <Column Name="authorize_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_authorize_staff_tbl_staff_authorize" Member="tbl_staff_authorizes" ThisKey="authorize_id" OtherKey="authorize_id" Type="tbl_staff_authorize" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_staff_activity" Member="tbl_staff_activities">
+    <Type Name="tbl_staff_activity">
+      <Column Name="activity_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="staff_id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="booking_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="date_activity" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_staff_activity_cat_tbl_staff_activity" Member="tbl_staff_activity_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_staff_activity_cat" IsForeignKey="true" />
+      <Association Name="tbl_staff_tbl_staff_activity" Member="tbl_staff" ThisKey="staff_id" OtherKey="staff_id" Type="tbl_staff" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_staff_activity_cat" Member="tbl_staff_activity_cats">
+    <Type Name="tbl_staff_activity_cat">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_staff_activity_cat_tbl_staff_activity" Member="tbl_staff_activities" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_staff_activity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_staff_authorize" Member="tbl_staff_authorizes">
+    <Type Name="tbl_staff_authorize">
+      <Column Name="staff_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="authorize_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_authorize_staff_tbl_staff_authorize" Member="tbl_authorize_staff" ThisKey="authorize_id" OtherKey="authorize_id" Type="tbl_authorize_staff" IsForeignKey="true" />
+      <Association Name="tbl_staff_tbl_staff_authorize" Member="tbl_staff" ThisKey="staff_id" OtherKey="staff_id" Type="tbl_staff" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_staff_product" Member="tbl_staff_products">
+    <Type Name="tbl_staff_product">
+      <Column Name="staff_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_staff_tbl_staff_product" Member="tbl_staff" ThisKey="staff_id" OtherKey="staff_id" Type="tbl_staff" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_staff_cat" Member="tbl_staff_cats">
+    <Type Name="tbl_staff_cat">
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_staff_cat_tbl_staff" Member="tbl_staffs" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_staff" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_staff" Member="tbl_staffs">
+    <Type Name="tbl_staff">
+      <Column Name="staff_id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="supplier_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="user_name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="last_access" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_staff_tbl_staff_activity" Member="tbl_staff_activities" ThisKey="staff_id" OtherKey="staff_id" Type="tbl_staff_activity" />
+      <Association Name="tbl_staff_tbl_staff_authorize" Member="tbl_staff_authorizes" ThisKey="staff_id" OtherKey="staff_id" Type="tbl_staff_authorize" />
+      <Association Name="tbl_staff_tbl_staff_product" Member="tbl_staff_products" ThisKey="staff_id" OtherKey="staff_id" Type="tbl_staff_product" />
+      <Association Name="tbl_staff_cat_tbl_staff" Member="tbl_staff_cat" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_staff_cat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_staff_session" Member="tbl_staff_sessions">
+    <Type Name="tbl_staff_session">
+      <Column Name="SessionLogId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="staff_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lang_Id" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="browser" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="last_access_url" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="access_time" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="leave_time" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
