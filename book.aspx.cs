@@ -107,12 +107,6 @@ public partial class book : System.Web.UI.Page
             pathName = HttpContext.Current.Server.MapPath("/Layout/booking-th.html");
         }
 
-        
-
-        
-
-        
-
         byte categoryID = byte.Parse(Request.Form["cat_id"]);
         string ConditionSelect = Request.Form["ddPrice"];
         string ExtraSelect = Request.Form["ddPriceExtra"];
@@ -129,7 +123,7 @@ public partial class book : System.Web.UI.Page
         byte ManageID = 0;
         byte paymentMethod = 2;
         bool IsMember = bool.Parse(Request.Form["mm"]);
-            
+
         using (SqlConnection cn = new SqlConnection(connString))
         {
             string strSql = "select product_id,booking_type_id,folder,web_site_name,manage_id from tbl_product_booking_engine where product_id=" + ProductID;
@@ -137,28 +131,24 @@ public partial class book : System.Web.UI.Page
             cn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            
+
             HotelUrl = reader["web_site_name"].ToString();
             HotelFolder = reader["folder"].ToString();
-            ManageID=(byte)reader["manage_id"];
+            ManageID = (byte)reader["manage_id"];
             paymentMethod = (byte)reader["booking_type_id"];
         }
 
         StreamReader objReader = new StreamReader(pathName);
-        string layout = objReader.ReadToEnd();       
+        string layout = objReader.ReadToEnd();
         objReader.Close();
         pathName = HttpContext.Current.Server.MapPath("/hotels-template/" + HotelFolder + "/header.html");
 
         objReader = new StreamReader(pathName);
         HotelHeader = objReader.ReadToEnd();
         objReader.Close();
-        
 
-        
-
-        
         decimal totalPriceDeposit = 0;
-        
+
         decimal vatInclude = Convert.ToDecimal(1.177);
 
         DateTime dateStart = Hotels2thailand.Hotels2DateTime.Hotels2DateSplitYear(Request.Form["date_start"], "-");
@@ -198,11 +188,11 @@ public partial class book : System.Web.UI.Page
             condition = ConditionSelect.Split(',');
 
             int countSelect = ConditionSelect.Count();
-             conditionID = new int[countSelect];
-             optionID = new int[countSelect];
-             quantity = new int[countSelect];
-             promotionID = new int[countSelect];
-             maxAdult = new int[countSelect];
+            conditionID = new int[countSelect];
+            optionID = new int[countSelect];
+            quantity = new int[countSelect];
+            promotionID = new int[countSelect];
+            maxAdult = new int[countSelect];
         }
 
 
@@ -313,7 +303,7 @@ public partial class book : System.Web.UI.Page
             priceProductExtra = new FrontProductPriceExtranet(ProductID, categoryID, dateStart, dateEnd);
             priceProductExtra.DiscountPrice = discountPrice;
             priceProductExtra.LoadPrice();
-            if(IsMember)
+            if (IsMember)
             {
                 priceProductExtra.memberAuthen = true;
             }
@@ -326,7 +316,7 @@ public partial class book : System.Web.UI.Page
         priceSupplement.LoadPriceSupplementByProductID(ProductID);
         //End General Process
 
-        layout = layout.Replace("<!--###ProductTitle###-->",ProductTitle);
+        layout = layout.Replace("<!--###ProductTitle###-->", ProductTitle);
 
 
         switch (categoryID)
@@ -651,6 +641,10 @@ public partial class book : System.Web.UI.Page
         int roomNight = dateEnd.Subtract(dateStart).Days;
         decimal priceAverage = 0;
         decimal priceABF = 0;
+
+        string cancellationAgreement = string.Empty;
+        cancellationAgreement = "<span id=\"policyContractCancelDesc\" class=\"reveal-modal\">";
+
         if (!string.IsNullOrEmpty(ConditionSelect))
         {
             for (int conditionCount = 0; conditionCount < condition.Count(); conditionCount++)
@@ -669,13 +663,7 @@ public partial class book : System.Web.UI.Page
                 {
                     promotionTmp = promotionID[conditionCount];
                 }
-
             }
-
-            
-
-
-
             switch (categoryID)
             {
                 case 29:
@@ -731,7 +719,7 @@ public partial class book : System.Web.UI.Page
             Check for gala
              */
 
-           
+
 
             for (int conditionCount = 0; conditionCount < conditionID.Count(); conditionCount++)
             {
@@ -852,6 +840,10 @@ public partial class book : System.Web.UI.Page
                         priceReal = (priceAverage * quantity[conditionCount]) * roomNight;
                         priceTotal = priceTotal + priceReal + priceABF;
                         priceSummary = priceSummary + priceOption + priceABF;
+
+                        cancellationAgreement = cancellationAgreement + "<p>";
+                        cancellationAgreement = cancellationAgreement + "<span class=\"headerPolicy\">" + GetProductExtraTitle(optionID[conditionCount], PriceListBaseExtra) + "</span>";
+
                         List<string> promotionDetail = GetPromotionExtra(promotionID[conditionCount], 1);
                         if (priceProductExtra.CheckPromotionAccept(promotionID[conditionCount]))
                         {
@@ -862,17 +854,24 @@ public partial class book : System.Web.UI.Page
                             {
                                 //promotion has cancellation
                                 policyContentDisplay = policyExtra.GetPolicyContent(policyListExtra, cancellationListExtra, conditionID[conditionCount], promotionID[conditionCount], promotionTitle, promotionDetail[2], bool.Parse(promotionDetail[1]));
+                                cancellationAgreement = cancellationAgreement + policyExtra.GetPolicyCancellation(policyListExtra, cancellationListExtra, conditionID[conditionCount], promotionID[conditionCount], promotionTitle, promotionDetail[2], bool.Parse(promotionDetail[1]));
                             }
                             else
                             {
                                 policyContentDisplay = policyExtra.GetPolicyContent(policyListExtra, cancellationListExtra, conditionID[conditionCount], promotionID[conditionCount], promotionTitle, promotionDetail[2], bool.Parse(promotionDetail[1]));
+                                cancellationAgreement = cancellationAgreement + policyExtra.GetPolicyCancellation(policyListExtra, cancellationListExtra, conditionID[conditionCount], promotionID[conditionCount], promotionTitle, promotionDetail[2], bool.Parse(promotionDetail[1]));
                             }
                         }
                         else
                         {
                             policyDisplay = policyExtra.GetConditionPolicyList(policyListExtra, conditionID[conditionCount], "");
                             policyContentDisplay = policyExtra.GetPolicyContent(policyListExtra, cancellationListExtra, conditionID[conditionCount], 0, "", "", false);
+                            cancellationAgreement = cancellationAgreement + policyExtra.GetPolicyCancellation(policyListExtra, cancellationListExtra, conditionID[conditionCount], 0, "", "", false);
                         }
+
+                        cancellationAgreement = cancellationAgreement + "</p>";
+                        cancellationAgreement = cancellationAgreement + "<br>";
+                        cancellationAgreement = cancellationAgreement + "<br>";
 
                         //Response.Write(priceABF);
                         if (objAllotment.CheckAllotAvaliable(PriceListBaseExtra[0].SupplierPrice, optionID[conditionCount], quantity[conditionCount], dateStart, dateEnd))
@@ -883,9 +882,6 @@ public partial class book : System.Web.UI.Page
                         {
                             has_allotment = has_allotment & false;
                         }
-
-
-
 
                         if (langID == 1)
                         {
@@ -988,7 +984,7 @@ public partial class book : System.Web.UI.Page
 
                     //Response.Write(rateExtraOption* int.Parse(extraOption[6]));
                     priceTotal = priceTotal + itemPackage.Price * int.Parse(packageOption[6]);
-                    priceSummary = priceSummary + itemPackage.Price * int.Parse(packageOption[6]) ;
+                    priceSummary = priceSummary + itemPackage.Price * int.Parse(packageOption[6]);
                     //RoomResult = RoomResult + "<tr>\n";
                     //RoomResult = RoomResult + "<td colspan=\"2\" align=\"left\">" + GetProductExtraTitle(int.Parse(extraOption[1]), PriceListBaseExtra) + "</td>\n";
                     //RoomResult = RoomResult + "<td>" + extraOption[6] + "</td>\n";
@@ -1104,12 +1100,12 @@ public partial class book : System.Web.UI.Page
                                 RoomResult = RoomResult + "</div>\n";
                                 RoomResult = RoomResult + "<br class=\"clearAll\" />\n";
                                 RoomResult = RoomResult + "</td><td>" + roomNight + "</td><td>" + extraOption[6] + "</td><td>THB " + ((int)(rateExtraOption * int.Parse(extraOption[6]) * roomNight)).ToString("#,###") + "</td></tr>\n";
-                                
+
                             }
                             else
                             {
                                 priceTotal = priceTotal + rateExtraOption * int.Parse(extraOption[6]);
-                                
+
                                 //RoomResult = RoomResult + "<tr>\n";
                                 //RoomResult = RoomResult + "<td colspan=\"2\" align=\"left\">" + GetProductTitle(int.Parse(extraOption[1]), PriceListBase) + "</td>\n";
                                 //RoomResult = RoomResult + "<td>" + extraOption[6] + "</td>\n";
@@ -1132,7 +1128,6 @@ public partial class book : System.Web.UI.Page
             }
         }
         else
-            
         {
             priceProductExtra.LoadExtraOptionPrice();
             PriceListBaseExtra = priceProductExtra.RateBase(2);
@@ -1161,13 +1156,13 @@ public partial class book : System.Web.UI.Page
                             if (extraItem.OptionCategoryID != 43 && extraItem.OptionCategoryID != 44)
                             {
                                 priceOption = priceProductExtra.CalculateAll(extraItem.ConditionID, extraItem.OptionID, 0).Price * Convert.ToInt32(extraOption[6]);
-                                
+
                                 priceAverage = (int)((priceOption / Convert.ToInt32(extraOption[6])) / roomNight);
-                                priceReal = (priceAverage * Convert.ToInt32(extraOption[6])*roomNight);
+                                priceReal = (priceAverage * Convert.ToInt32(extraOption[6]) * roomNight);
 
                                 priceTotal = priceTotal + priceOption;
                                 priceSummary = priceSummary + priceOption;
-                               // priceTotal = priceTotal + rateExtraOption * int.Parse(extraOption[6]) * roomNight;
+                                // priceTotal = priceTotal + rateExtraOption * int.Parse(extraOption[6]) * roomNight;
                                 //RoomResult = RoomResult + "<tr>\n";
                                 //RoomResult = RoomResult + "<td align=\"left\">" + GetProductExtraTitle(int.Parse(extraOption[1]), PriceListBaseExtra) + "</td>\n";
                                 //RoomResult = RoomResult + "<td>" + extraOption[6] + "</td>\n";
@@ -1189,7 +1184,7 @@ public partial class book : System.Web.UI.Page
                             {
                                 //Response.Write(rateExtraOption* int.Parse(extraOption[6]));
                                 priceTotal = priceTotal + rateExtraOption * int.Parse(extraOption[6]);
-                                priceSummary = priceSummary + rateExtraOption * int.Parse(extraOption[6]) ;
+                                priceSummary = priceSummary + rateExtraOption * int.Parse(extraOption[6]);
                                 //RoomResult = RoomResult + "<tr>\n";
                                 //RoomResult = RoomResult + "<td colspan=\"2\" align=\"left\">" + GetProductExtraTitle(int.Parse(extraOption[1]), PriceListBaseExtra) + "</td>\n";
                                 //RoomResult = RoomResult + "<td>" + extraOption[6] + "</td>\n";
@@ -1208,7 +1203,7 @@ public partial class book : System.Web.UI.Page
                                 {
                                     totalPriceDeposit = totalPriceDeposit + rateExtraOption * int.Parse(extraOption[6]);
                                 }
-                                
+
                             }
                         }
                     }
@@ -1216,8 +1211,6 @@ public partial class book : System.Web.UI.Page
                 optionTmp = extraItem.OptionID;
             }
         }
-
-        
 
         if (!checkTransfer)
         {
@@ -1256,10 +1249,6 @@ public partial class book : System.Web.UI.Page
             }
         }
 
-
-
-
-
         //Gala
         GalaDinner gala = new GalaDinner(ProductID, dateStart, dateEnd);
         List<GalaDinner> galaList = null;
@@ -1284,7 +1273,7 @@ public partial class book : System.Web.UI.Page
         DateTime dateGalaCheck;
 
         string GalaResult = "";
-        
+
         GalaResult = GalaResult + "<tr>\n";
         if (langID == 1)
         {
@@ -1486,13 +1475,15 @@ public partial class book : System.Web.UI.Page
             totalResult = totalResult + "No hidden cost and no surprised charge. You can see the grand total in net rate without additional charge when you check in at hotel or use the service.";
             totalResult = totalResult + "</p>\n";
             totalResult = totalResult + "</td></tr>\n";
-            if (gatewayID!=5)
+            if (gatewayID != 5)
             {
                 totalResult = totalResult + "<tr><td colspan=\"2\"><img src=\"/images/logo_booking_offer.gif\" /><br /><br /></td></tr>\n";
-            }else{
+            }
+            else
+            {
                 totalResult = totalResult + "<tr><td colspan=\"2\"><img src=\"/images/logo_booking_offer2.gif\" /><br /><br /></td></tr>\n";
             }
-            
+
             totalResult = totalResult + "</table>\n";
         }
         else
@@ -1516,8 +1507,7 @@ public partial class book : System.Web.UI.Page
             totalResult = totalResult + "</table>\n";
         }
 
-
-
+        #region // Old
 
         //switch (categoryID)
         //{
@@ -1625,8 +1615,10 @@ public partial class book : System.Web.UI.Page
 
         //RoomResult = RoomResult + "</div>\n";
 
+        #endregion
+
         layout = layout.Replace("<!--###Tracking###-->", "<script language=\"javascript\" src=\"http://track.hotels2thailand.com/application/track.aspx?ht2thPageID=9010470000000&ht2thAD=&affID=&camID=&keyword=&datein=&dateout=&desID=&locID=&bookingID=&ht2thRefer=\"  type=\"text/javascript\"></script>");
-        string Keyword  = Utility.GetKeywordReplace(layout, "<!--###BookingSummaryStart###-->", "<!--###BookingSummaryEnd###-->");
+        string Keyword = Utility.GetKeywordReplace(layout, "<!--###BookingSummaryStart###-->", "<!--###BookingSummaryEnd###-->");
 
 
         //For some hotel is not allotment and not receive booking on request
@@ -1641,7 +1633,7 @@ public partial class book : System.Web.UI.Page
             layout = layout.Replace(Keyword, HotelHeader);
             Keyword = Utility.GetKeywordReplace(layout, "<!--###ProceedCheckoutStart###-->", "<!--###ProceedCheckoutEnd###-->");
             layout = layout.Replace(Keyword, "");
-            
+
             layout = layout.Replace("<!--###cssHotelBook###-->", "<link href=\"http://www.booking2hotels.com/hotels-template/" + HotelFolder + "/css/bookForm.css\" rel=\"stylesheet\" type=\"text/css\" />");
 
             Response.Write(layout);
@@ -1653,7 +1645,7 @@ public partial class book : System.Web.UI.Page
         }
         //
 
-        
+
 
         Keyword = Utility.GetKeywordReplace(layout, "<!--###totalBookingMiniStart###-->", "<!--###totalBookingMiniEnd###-->");
         layout = layout.Replace(Keyword, totalResult);
@@ -1682,21 +1674,22 @@ public partial class book : System.Web.UI.Page
             string cNameDefault = string.Empty;
             string cEmailDefault = string.Empty;
 
-            
+
 
             formInfo = formInfo + "<h3 class=\"fnBig fnBlue\">About you</h3><br />\n";
             formInfo = formInfo + "<div><label>Prefix:<span class=\"fnRed\">*</span></label> <select name=\"prefix\" id=\"prefix\"><option value=\"1\">None</option><option value=\"2\" selected=\"selected\">Mr.</option><option value=\"4\">Miss.</option><option value=\"3\">Mrs.</option></select></div>\n";
             if (IsMember)
             {
                 Customer objCustomer = new Customer(int.Parse(Request.Form["mmid"]));
-                formInfo = formInfo + "<div><label>Full name:<span class=\"fnRed\">*</span></label><input type=\"text\"  name=\"first_name\" id=\"first_name\" class=\"required\" value=\""+objCustomer.FullName+"\" /></div>\n";
-                formInfo = formInfo + "<div><label>Email address:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"email\" id=\"email\" class=\"required email\" value=\""+objCustomer.Email+"\"/></div>\n";
+                formInfo = formInfo + "<div><label>Full name:<span class=\"fnRed\">*</span></label><input type=\"text\"  name=\"first_name\" id=\"first_name\" class=\"required\" value=\"" + objCustomer.FullName + "\" /></div>\n";
+                formInfo = formInfo + "<div><label>Email address:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"email\" id=\"email\" class=\"required email\" value=\"" + objCustomer.Email + "\"/></div>\n";
                 formInfo = formInfo + "<div><label>Repeat email:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"re_email\" id=\"re_email\" class=\"required\"  value=\"" + objCustomer.Email + "\"/></div>\n";
                 formInfo = formInfo + "<div><label>Phone:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"phone\" id=\"phone\" class=\"required\"/></div>\n";
                 formInfo = formInfo + "<div><label>Country:<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAll()) + "</div>\n";
 
             }
-            else {
+            else
+            {
                 formInfo = formInfo + "<div><label>Full name:<span class=\"fnRed\">*</span></label><input type=\"text\"  name=\"first_name\" id=\"first_name\" class=\"required\" /></div>\n";
                 formInfo = formInfo + "<div><label>Email address:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"email\" id=\"email\" class=\"required email\" /></div>\n";
                 formInfo = formInfo + "<div><label>Repeat email:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"re_email\" id=\"re_email\" class=\"required\" /></div>\n";
@@ -1720,7 +1713,7 @@ public partial class book : System.Web.UI.Page
                 formInfo = formInfo + "<div><label>Remark</label><textarea style=\"width:300px; height:100px;\" name=\"transfer_detail\">Pickup from airport and transfer to " + ProductTitle + "</textarea></div>\n";
                 formInfo = formInfo + "</div>\n";
             }
-            
+
 
         }
         else
@@ -1753,7 +1746,7 @@ public partial class book : System.Web.UI.Page
             formInfo = formInfo + "</table>\n";
         }
 
-
+        #region // Old
 
         //string optionRequire = string.Empty;
         //optionRequire = optionRequire + "\n";
@@ -1771,6 +1764,8 @@ public partial class book : System.Web.UI.Page
         //optionRequire = optionRequire + "<div class=\"head_step_right\"></div>\n";
         //optionRequire = optionRequire + "</div>\n";
         //optionRequire = optionRequire + "<div class=\"bg_step\">\n";
+
+        #endregion
 
         switch (categoryID)
         {
@@ -1800,7 +1795,8 @@ public partial class book : System.Web.UI.Page
                         //Response.Write("ddPackage_" + itemPackage.ConditionID + "_" + itemPackage.OptionID + "<br>");
                         if (int.Parse(packageOption[6]) != 0)
                         {
-                            if (int.Parse(packageOption[6]) == 1){
+                            if (int.Parse(packageOption[6]) == 1)
+                            {
                                 formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                 formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
                                 formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + itemPackage.OptionTitle + "</strong></span><br /><br />\n";
@@ -1809,21 +1805,23 @@ public partial class book : System.Web.UI.Page
                                 formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_1\" value=\"1\" />1 King size bed</span>\n";
                                 formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_1\" value=\"2\" />Twin beds</span><br class=\"clearAll\">\n";
                                 formInfo = formInfo + "</div>\n";
-                                if (ProductID!=3590)
+                                if (ProductID != 3590 && ProductID != 3687)
                                 {
                                     formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_1\" value=\"1\" />Non-Smoking</span>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_1\" value=\"2\" />Smoking</span><br class=\"clearAll\">\n";
                                     formInfo = formInfo + "</div>\n";
-                                }else{
+                                }
+                                else
+                                {
                                     formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-1\"></span>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_1\" value=\"1\" checked=\"checked\" />Non-Smoking</span>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
                                     formInfo = formInfo + "</div>\n";
-                                    }
-                                
+                                }
+
 
                                 formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
                                 formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
@@ -1833,7 +1831,9 @@ public partial class book : System.Web.UI.Page
                                 formInfo = formInfo + "<textarea name=\"sp_require_" + itemPackage.ConditionID + "_1\"></textarea>\n";
                                 formInfo = formInfo + "</div>\n";
                                 formInfo = formInfo + "</div>\n";
-                            }else{
+                            }
+                            else
+                            {
                                 for (int roomCount = 1; roomCount <= int.Parse(packageOption[6]); roomCount++)
                                 {
                                     formInfo = formInfo + "<div class=\"formCustomer\">\n";
@@ -1845,21 +1845,23 @@ public partial class book : System.Web.UI.Page
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"1\" />1 King size bed</span>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"2\" />Twin beds</span><br class=\"clearAll\">\n";
                                     formInfo = formInfo + "</div>\n";
-                                    if (ProductID != 3590)
+                                    if (ProductID != 3590 && ProductID != 3687)
                                     {
-                                    formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"1\" />Non-Smoking</span>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"2\" />Smoking</span><br class=\"clearAll\">\n";
-                                    formInfo = formInfo + "</div>\n";
-                                    }else{
-                                    formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-1\"></span>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"1\"  checked=\"checked\"/>Non-Smoking</span>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
-                                    formInfo = formInfo + "</div>\n";
+                                        formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"1\" />Non-Smoking</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"2\" />Smoking</span><br class=\"clearAll\">\n";
+                                        formInfo = formInfo + "</div>\n";
                                     }
-                                    
+                                    else
+                                    {
+                                        formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-1\"></span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"1\"  checked=\"checked\"/>Non-Smoking</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
+                                        formInfo = formInfo + "</div>\n";
+                                    }
+
                                     formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"1\" />High floor</span>\n";
@@ -1905,7 +1907,7 @@ public partial class book : System.Web.UI.Page
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_1\" value=\"1\" />1 King size bed</span>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_1\" value=\"2\" />Twin beds</span><br class=\"clearAll\">\n";
                                     formInfo = formInfo + "</div>\n";
-                                    if (ProductID != 3590)
+                                    if (ProductID != 3590 && ProductID != 3687)
                                     {
                                         formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + conditionID[productCount] + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
@@ -1956,7 +1958,7 @@ public partial class book : System.Web.UI.Page
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_1\" value=\"2\" />เตียงคู่</span><br class=\"clearAll\">\n";
                                     formInfo = formInfo + "</div>\n";
 
-                                    if (ProductID != 3590)
+                                    if (ProductID != 3590 && ProductID != 3687)
                                     {
                                         formInfo = formInfo + "<div><label><strong>สูบบุหรี่:</strong></label>\n";
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + conditionID[productCount] + "_1\" value=\"3\" checked=\"checked\" />ไม่ระบุ</span>\n";
@@ -2014,7 +2016,7 @@ public partial class book : System.Web.UI.Page
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"1\" />1 King size bed</span>\n";
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"2\" />Twin beds</span><br class=\"clearAll\">\n";
                                         formInfo = formInfo + "</div>\n";
-                                        if (ProductID != 3590)
+                                        if (ProductID != 3590 && ProductID != 3687)
                                         {
                                             formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
                                             formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
@@ -2065,7 +2067,7 @@ public partial class book : System.Web.UI.Page
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"1\" />เตียงใหญ่</span>\n";
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"2\" />เตียงคู่</span><br class=\"clearAll\">\n";
                                         formInfo = formInfo + "</div>\n";
-                                        if (ProductID != 3590)
+                                        if (ProductID != 3590 && ProductID != 3687)
                                         {
                                             formInfo = formInfo + "<div><label><strong>สูบบุหรี่ :</strong></label>\n";
                                             formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />ไม่ระบุ</span>\n";
@@ -2134,6 +2136,9 @@ public partial class book : System.Web.UI.Page
                             formInfo = formInfo + "</div>\n";
 
                         }
+
+                        #region // Old
+
                         //formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
                         //formInfo = formInfo + "<span class=\"fnMedium\"><strong>Room :" + GetProductTitle(optionID[productCount], OptionTitleList) + "</strong></span><br /><br />\n";
 
@@ -2150,6 +2155,8 @@ public partial class book : System.Web.UI.Page
                         //optionRequire = optionRequire + "</table >\n";
                         //optionRequire = optionRequire + "<div class=\"clear-all\"></div><br />\n";
 
+                        #endregion
+
                         break;
 
                     }
@@ -2157,6 +2164,8 @@ public partial class book : System.Web.UI.Page
 
                 break;
         }
+
+        #region // Old
 
         //optionRequire = optionRequire + "<input type=\"hidden\" name=\"ln\" value=\"" + langID + "\">\n";
         //optionRequire = optionRequire + "<input type=\"hidden\" name=\"discount\" value=\"" + Request.Form["discount"] + "\">\n";
@@ -2168,19 +2177,26 @@ public partial class book : System.Web.UI.Page
         //optionRequire = optionRequire + "<input type=\"hidden\" name=\"date_end\" value=\"" + Request.Form["date_end"] + "\">\n";
         //optionRequire = optionRequire + "<input type=\"hidden\" name=\"refCountry\" value=\"" + Request.Form["refCountry"] + "\">\n";
 
+        #endregion
+
+        cancellationAgreement = cancellationAgreement + "</span>";
+        formInfo = formInfo + cancellationAgreement;
+
         if (has_allotment)
         {
             formInfo = formInfo + "<input type=\"hidden\" name=\"al\" value=\"1\">\n";
         }
-        else {
+        else
+        {
             formInfo = formInfo + "<input type=\"hidden\" name=\"al\" value=\"0\">\n";
         }
 
-       if(IsMember)
+        if (IsMember)
         {
             formInfo = formInfo + "<input type=\"hidden\" name=\"au_m\" value=\"1\">\n";
         }
-        else {
+        else
+        {
             formInfo = formInfo + "<input type=\"hidden\" name=\"au_m\" value=\"0\">\n";
         }
 
@@ -2205,46 +2221,57 @@ public partial class book : System.Web.UI.Page
             formInfo = formInfo + "<input type=\"hidden\" name=\"tee_off_min\" value=\"" + Request.Form["tee_min"] + "\">\n";
         }
 
+        #region // Old
+
         //optionRequire = optionRequire + "<input type=\"hidden\" name=\"sum_price\" value=\"" + (int)(priceVatInc) + "\">\n";
         //optionRequire = optionRequire + selectOption;
         //optionRequire = optionRequire + "</div>\n";
         //optionRequire = optionRequire + "<!--bg setp-->\n";
         //optionRequire = optionRequire + "<div class=\"end_step\"></div>\n";
-        if(productDeposit.Deposit==0)
+
+        #endregion
+
+        if (productDeposit.Deposit == 0)
         {
             formInfo = formInfo + "<input type=\"hidden\" name=\"sum_price\" value=\"" + (int)priceVatInc + "\">\n";
-        }else{
-            if (priceVatInc>totalPriceDeposit)
+        }
+        else
+        {
+            if (priceVatInc > totalPriceDeposit)
             {
                 formInfo = formInfo + "<input type=\"hidden\" name=\"sum_price\" value=\"" + (int)totalPriceDeposit + "\">\n";
-            }else{
+            }
+            else
+            {
                 formInfo = formInfo + "<input type=\"hidden\" name=\"sum_price\" value=\"" + (int)priceVatInc + "\">\n";
             }
         }
-        
-        
+
+
         formInfo = formInfo + selectOption;
 
 
 
         string paymentForm = string.Empty;
 
-        
-        
+
+
 
         if (payLater.ProductID == 0)
         {
 
             if (langID == 1)
             {
-                
+
                 formInfo = formInfo + "<div id=\"paymentMethod\">\n";
                 formInfo = formInfo + "<h3 class=\"fnBig fnBlue\">Payment Method</h3>\n";
 
                 if (totalPriceDeposit == (int)priceVatInc)
                 {
                     formInfo = formInfo + "<span class=\"fnBig fnGray\">Grand Total Price : " + ((int)priceVatInc).ToString("#,###") + " Baht" + priceSummaryDisplay + "</span> <a href=\"javascript:void(0)\" class=\"tooltip fnGold\">(Included of Tax and Service Charge)<span class=\"tooltip_content\"><strong>No hidden cost and no surprised charge.</strong> You can see the grand total in net rate without additional charge when you check in at hotel or use the service.</span></a><br /><br />\n";
-                }else{
+                }
+                else
+                {
                     if (int.Parse(Request.Form["hotel_id"]) == 3465)
                     {
                         formInfo = formInfo + "<span class=\"fnBig fnGray\">Grand Total Price : " + ((int)priceVatInc).ToString("#,###") + " Baht" + priceSummaryDisplay + "</span> <a href=\"javascript:void(0)\" class=\"tooltip fnGold\">(Included of Tax and Service Charge)<span class=\"tooltip_content\"><strong>No hidden cost and no surprised charge.</strong> You can see the grand total in net rate without additional charge when you check in at hotel or use the service.</span></a><br />\n";
@@ -2262,25 +2289,31 @@ public partial class book : System.Web.UI.Page
                 {
                     if (has_allotment || ManageID == 2)
                     {
-                        if (gatewayID == 3 || gatewayID==13)
+                        if (gatewayID == 3 || gatewayID == 13)
                         {
                             formInfo = formInfo + "<div class=\"card_offer\"><input type=\"radio\" name=\"bank_id\" value=\"" + gatewayID + "\" checked=\"checked\"  style=\"float:left; margin-top:8px;\" /><img src=\"../theme_color/blue/images/layout_mail/VisaMastercard.jpg\" /></div>\n";
 
-                        }else{
+                        }
+                        else
+                        {
                             formInfo = formInfo + "<div class=\"card_offer\"><input type=\"radio\" name=\"bank_id\" value=\"" + gatewayID + "\" checked=\"checked\"  style=\"float:left; margin-top:8px;\" /><img src=\"../theme_color/blue/images/layout_mail/VisaMastercard.jpg\" /><img src=\"../theme_color/blue/images/layout_mail/jcb.jpg\" /></div>\n";
                         }
                     }
-                    else {
+                    else
+                    {
                         formInfo = formInfo + "<div class=\"card_offer\"><input type=\"hidden\" name=\"bank_id\" value=\"" + gatewayID + "\"/></div>\n";
                     }
-                }else{
+                }
+                else
+                {
                     if (int.Parse(Request.Form["hotel_id"]) == 3465)
                     {
                         //Only C House Executive Condomenium
                         formInfo = formInfo + "<input type=\"hidden\" id=\"cardnum\" name=\"cardnum\" value=\"only_c-house\"/></td>\n";
 
                     }
-                    else {
+                    else
+                    {
                         formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
                         formInfo = formInfo + "<h3 class=\"fnBig fnBlue\">Credit Card Details</h3>\n";
                         formInfo = formInfo + "<table id=\"cardForm\" cellpadding=\"0\" cellspacing=\"0\">\n";
@@ -2346,25 +2379,29 @@ public partial class book : System.Web.UI.Page
                         formInfo = formInfo + "</table>\n";
                         formInfo = formInfo + "</div>\n";
                     }
-                    
-                    
+
+
                 }
             }
-            
+
 
             formInfo = formInfo + "<br class=\"clearAll\" />\n";
             if (langID == 1)
             {
                 if (has_allotment || ManageID == 2)
                 {
+                    formInfo = formInfo + "<div class=\"card_offer\"><input type=\"checkbox\" name=\"chkPolicy\" id=\"chkPolicy\" value=\"0\">I have read and agree to the <a href=\"javascript:void(0)\" data-reveal-id=\"policyContractCancelDesc\" >Cancellation Policy and User Agreement</a></div>\n";
                     formInfo = formInfo + "<div><a href=\"javascript:void(0)\" onclick=\"viewBooking();\" style=\"float:left\"><img src=\"/images/btn_edit_booking.gif\" id=\"editBooking\" /></a><input type=\"submit\" class=\"btnPayment-en\" id=\"btnPayment\" name=\"submit\" value=\"\" /></div>\n";
                 }
-                else { 
+                else
+                {
+                    formInfo = formInfo + "<div class=\"card_offer\"><input type=\"checkbox\" name=\"chkPolicy\" id=\"chkPolicy\" value=\"0\">I have read and agree to the <a href=\"javascript:void(0)\" data-reveal-id=\"policyContractCancelDesc\" >Cancellation Policy and User Agreement</a></div>\n";
                     formInfo = formInfo + "<div><a href=\"javascript:void(0)\" onclick=\"viewBooking();\" style=\"float:left\"><img src=\"/images/btn_edit_booking.gif\" id=\"editBooking\" /></a><input type=\"submit\" class=\"btnConfirm\" id=\"btnPayment\" name=\"submit\" value=\"\" /></div>\n";
                 }
             }
             else
             {
+                formInfo = paymentForm + "<div class=\"card_offer\"><input type=\"checkbox\" name=\"chkPolicy\" id=\"chkPolicy\" value=\"0\">I have read and agree to the <a href=\"javascript:void(0)\" data-reveal-id=\"policyContractCancelDesc\" >Cancellation Policy and User Agreement</a></div>\n";
                 formInfo = formInfo + "<div><a href=\"javascript:void(0)\" onclick=\"viewBooking();\" style=\"float:left\"><img src=\"/images/btn_edit_booking_th.gif\" id=\"editBooking\" /></a><input type=\"submit\" class=\"btnPayment-th\" id=\"btnPayment\" name=\"submit\" value=\"\" /></div>\n";
             }
 
@@ -2377,14 +2414,15 @@ public partial class book : System.Web.UI.Page
             Keyword = Utility.GetKeywordReplace(layout, "<!--###HotelHeaderStart###-->", "<!--###HotelHeaderEnd###-->");
             layout = layout.Replace(Keyword, HotelHeader);
 
-            layout = layout.Replace("<!--###cssHotelBook###-->", "<link href=\"http://www.booking2hotels.com/hotels-template/"+HotelFolder+"/css/bookForm.css\" rel=\"stylesheet\" type=\"text/css\" />");
-            
+            layout = layout.Replace("<!--###cssHotelBook###-->", "<link href=\"http://www.booking2hotels.com/hotels-template/" + HotelFolder + "/css/bookForm.css\" rel=\"stylesheet\" type=\"text/css\" />");
 
-            
+
+
             Response.Write(layout);
             Response.End();
 
-            //old
+            #region // Old
+
             //    paymentForm = paymentForm + "<div class=\"bg_step\">\n";
             //    paymentForm = paymentForm + "<div class=\"make_payment\">\n";
             //    paymentForm = paymentForm + "<span>Total Price :</span> " + Math.Round(priceVatInc).ToString("#,###") + " Baht" + priceSummaryDisplay + " <span class=\"include\">(Included of Tax and Service Charge)</span> \n";
@@ -2414,6 +2452,8 @@ public partial class book : System.Web.UI.Page
             //paymentForm = paymentForm + "<div class=\"clear-all\"></div><br />\n";
             //paymentForm = paymentForm + "</div> \n";
             //paymentForm=paymentForm+"<div class=\"end_step\"></div>";
+
+            #endregion
 
         }
         else
@@ -2489,16 +2529,24 @@ public partial class book : System.Web.UI.Page
             paymentForm = paymentForm + "</tr>\n";
             paymentForm = paymentForm + "</table>\n";
 
+            #region // Old
+
             //paymentForm = paymentForm + "<div class=\"total_review\">\n";
             //paymentForm = paymentForm + "<div><span style=\"color:#000;\">Total Price :</span> " + Math.Round(priceVatInc).ToString("#,###") + " Baht" + priceSummaryDisplay + "<br />\n";
             //paymentForm = paymentForm + "<span class=\"included\">(Included of Tax and Service Charge)</span></div><br />\n";
             //paymentForm = paymentForm + "<div class=\"charged\"><span>**</span>You will be charged only <span>$1</span> <br />for holding guarantee of your booking.</div> \n";
             //paymentForm = paymentForm + "</div>\n";
+
+            #endregion
+
             paymentForm = paymentForm + "<div class=\"clear-all\"></div>\n";
+            paymentForm = paymentForm + "<div class=\"card_offer\"><input type=\"checkbox\" name=\"chkPolicy\" id=\"chkPolicy\" value=\"0\">I have read and agree to the <a href=\"javascript:void(0)\" data-reveal-id=\"policyContractCancelDesc\" >Cancellation Policy and User Agreement</a></div>\n";
             paymentForm = paymentForm + "<input type=\"submit\" value=\"\" class=\"check_buttom\" style=\"margin:10px 0 0 240px\" />\n";
             paymentForm = paymentForm + "</div>\n";
 
         }
+
+        #region // Old
 
         /* Bank Transfer*/
         //paymentForm = paymentForm + "<br /><br /><br /><div class=\"bg_write\">\n";
@@ -2509,6 +2557,9 @@ public partial class book : System.Web.UI.Page
         //paymentForm = paymentForm + "<div class=\"clear-all\"></div>\n";
         //paymentForm = paymentForm + "<p class=\"post\">You will be taken to a page that summarizes your booking and instructions on how to make a payment. You may print out that page for your future reference.</p>\n";
         //paymentForm = paymentForm + "</div>\n";
+
+        #endregion
+
         if (langID == 2)
         {
             paymentForm = paymentForm + "<br /><br /><br />\n";
@@ -2528,8 +2579,10 @@ public partial class book : System.Web.UI.Page
 
         if (has_allotment && int.Parse(Request.Form["hotel_id"]) == 3466)
         {
-            
-        }else{
+
+        }
+        else
+        {
             layout = layout.Replace(Keyword, paymentForm);
         }
         Response.Write(layout);
@@ -2627,7 +2680,7 @@ public partial class book : System.Web.UI.Page
 
     }
 
- 
+
 
     public List<string> GetPromotionExtra(int PromotionID, byte langID)
     {
@@ -2765,10 +2818,10 @@ public partial class book : System.Web.UI.Page
     private bool IsDepositFull(int ProductID)
     {
         string[] arrProduct = { "3456", "3457", "3458", "3459" };
-        bool result=false;
-        foreach(string item in arrProduct)
+        bool result = false;
+        foreach (string item in arrProduct)
         {
-            if(ProductID==int.Parse(item))
+            if (ProductID == int.Parse(item))
             {
                 result = true;
                 break;
@@ -2776,5 +2829,5 @@ public partial class book : System.Web.UI.Page
         }
         return result;
     }
-    
+
 }

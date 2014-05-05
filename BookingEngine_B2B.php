@@ -5,6 +5,15 @@ ob_start();
 ?>
 <?php
 
+function getMainSite()
+{
+    $mainSite = "http://b2b25.booking2hotels.com";
+   //$mainSite = "http://10.1.1.189:6767";
+    //$mainSite = "http://192.168.43.95:6767";
+    
+    return $mainSite;
+}
+
 function getRealIpAddr()
 {
     //if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
@@ -81,7 +90,7 @@ function GenDropDownQuantity($strName,$optionValue,$minNum,$maxNum,$numDefault,$
             return $result;
 }
 
-function GenPricingtable($xmlSource,$pid)
+function GenPricingtable($xmlSource,$pid,$AgendID,$TierId)
 {
     if($xmlSource->CountryID[0]=="208" && $pid=="592")
     {
@@ -91,11 +100,15 @@ function GenPricingtable($xmlSource,$pid)
     }else{
         $result=$result.RenderCurrencyBox($xmlSource,$_SESSION['currencyID']);
         $result=$result."<div id=\"errorRoom\" class=\"errorMsg\"></div> ";
-        $result=$result."<form id=\"FormBooking\" action=\"http://www.booking2hotels.com/book.aspx\" method=\"post\"> ";
+        $result=$result."<form id=\"FormBooking\" action=\"".getMainSite()."/book.aspx\" method=\"post\"> ";
         $result=$result.GenTableOption($xmlSource,$pid);
         $result=$result."<input type=\"hidden\" name=\"sid\" value=\"".$xmlSource->SupplierID[0]."\" /> ";
         $result=$result."<input type=\"hidden\" id=\"discount\" name=\"discount\" value=\"".$xmlSource->Discount[0]."\" /> ";
         $result=$result."<input type=\"hidden\" name=\"hotel_id\" value=\"".$pid."\" /> ";
+        
+        $result=$result."<input type=\"hidden\" name=\"hdAgencyID\" value=\"".$AgendID."\" /> ";
+        $result=$result."<input type=\"hidden\" name=\"hdTierID\" value=\"".$TierId."\" /> ";
+        
         $result=$result."<input type=\"hidden\" name=\"cat_id\" value=\"29\" /> ";
         $result=$result."<input type=\"hidden\" name=\"date_start\" value=\"".$_SESSION['dateStart']."\" /> ";
         $result=$result."<input type=\"hidden\" name=\"date_end\" value=\"".$_SESSION['dateEnd']."\" /> ";
@@ -118,7 +131,7 @@ function GenPricingtableBak($xmlSource,$pid)
     }else{
         $result=$result.RenderCurrencyBox($xmlSource,$_SESSION['currencyID']);
         $result=$result."<div id=\"errorRoom\" class=\"errorMsg\"></div> ";
-        $result=$result."<form id=\"FormBooking\" action=\"http://www.booking2hotels.com/book.aspx\" method=\"post\"> ";
+        $result=$result."<form id=\"FormBooking\" action=\"".getMainSite()."/book.aspx\" method=\"post\"> ";
         $result=$result.GenTableOption($xmlSource,$pid);
         $result=$result."<input type=\"hidden\" name=\"sid\" value=\"".$xmlSource->SupplierID[0]."\" /> ";
         $result=$result."<input type=\"hidden\" id=\"discount\" name=\"discount\" value=\"".$xmlSource->Discount[0]."\" /> ";
@@ -168,15 +181,18 @@ function GenTableOption($xmlSource,$pid)
     {
         $hasRoomRate=true;
         $resultRow="";
+        $tierDetail = "type:". $option->TierValueType . "value:" . $option->TierValue ;
         //echo $option->PriceRack . "-----". (float)$_SESSION['currencyPrefix'];
         if((float)$_SESSION['currencyPrefix'] > 0)
         {
             $rateRack=  $option->PriceRack/(float)$_SESSION['currencyPrefix'];
             $rateDisplay= $option->Price/(float)$_SESSION['currencyPrefix'];
+            $rateBarDisply = $option->PriceBar/(float)$_SESSION['currencyPrefix'];
         }else
         {
             $rateRack=  (string)$option->PriceRack;
             $rateDisplay= (string)$option->Price;
+             $rateDisplay= (string)$option->PriceBar;
         }
       
         if($rowCount>4)
@@ -185,7 +201,8 @@ function GenTableOption($xmlSource,$pid)
         }else{
             $resultRow=$resultRow."<tr><td valign=\"top\">";
         }
-        if($option->OptionImage!="http://www.booking2hotels.com")
+        
+        if($option->OptionImage!="http://b2b25.booking2hotels.com")
         {
             $resultRow=$resultRow."<img src=\"".html_entity_decode($option->OptionImage)."\" class=\"optionImg\"/> ";
         }
@@ -207,7 +224,7 @@ function GenTableOption($xmlSource,$pid)
         $discount=number_format((($rateRack-$rateDisplay)/$rateRack)*100);
         if((int)$option->Price!=(int)$option->PriceRack)
         {
-            $resultRow=$resultRow."<span class=\"rackRate\">".$currencyCode." ".number_format($rateRack)."</span><br /> ";
+            $resultRow=$resultRow."<span class=\"rackRate\">".$currencyCode." ".number_format($rateRack)."/span><br /> ";
             $resultRow=$resultRow."<span class=\"rackOwn\">".$currencyCode." ".number_format($rateDisplay)."</span><br /> ";
             if($option->MemberBenefit!="")
             {
@@ -227,7 +244,7 @@ function GenTableOption($xmlSource,$pid)
             {
                 $resultRow=$resultRow."<span class=\"roomAval\">Limited room available</span> ";
             }
-            
+        $resultRow=$resultRow."<span style=\"display:none;\">[".$rateBarDisply."]".$tierDetail."</span>";
         $resultRow=$resultRow."<a href=\"#\" class=\"link_show_daily_rate\" >Show Daily Rate</a>";
         $resultRow=$resultRow."</td><td align=\"center\">".GenDropDownQuantity("ddPrice",$option->ConditionValue,0,20,0,1)."</td></tr> ";
         
@@ -285,14 +302,11 @@ function GenTableOption($xmlSource,$pid)
         if($PerdayCount < 7)
             {
             
-              
                 for($i = 0; $i < (7 - $intheadCount); $i++)
                  {
                     $NumDay = $NumDay + 1;
                     
-                    
                     $dateAdd =  date('(M d)',strtotime($dateCheck->format('Y-m-d')) + (24*3600*($i +1)));
-                    
                     
                     if($NumDay > 6)
                     {
@@ -330,7 +344,7 @@ function GenTableOption($xmlSource,$pid)
        
             $dateCheck = new DateTime($priceperday->dm_date); 
              
-            $hiddenrate = "<input type=\"hidden\" value=\"Base:".$priceperday->dm_pricebase."#!#Pro:".$priceperday->dm_pricepro."#!#abf:".$priceperday->dm_priceAbf."\" />";
+            $hiddenrate = "<input type=\"hidden\" value=\"Base:".$priceperday->dm_pricebase."#!#Pro:".$priceperday->dm_pricepro."#!#abf:".$priceperday->dm_priceAbf."#!#".$priceperday->dm_pricebar."\" />";
             
              $priceNormal ;
             // .number_format($rateDisplay)
@@ -417,8 +431,7 @@ function GenTableOption($xmlSource,$pid)
             $resultRow=$resultRow."<tr><td colspan=\"4\" style=\"border-bottom:1px solid #d2d2d2\"></td></tr> ";
         }
         
-        // Fully book 
-        if(($pid==3605 || $pid==3619|| $pid==3617 || $pid==3484 || $pid==3612|| $pid==3565|| $pid==3568|| $pid==3567 ) && ($option->RoomAvailable!="true")){
+        if(($pid==3615 || $pid==3619) && ($option->RoomAvailable!="true")){
             $resultRow="";
         }else{
             $roomTotal=$roomTotal+1;
@@ -462,7 +475,7 @@ function GenTableOption($xmlSource,$pid)
     $result=$result."</div><br/> ";
 
     if($OptionCount>0){
-        $result=$result."<span class=\"serviceChargeTitle\">*** Rate is not included 7% tax and 10% service charge.</span>";
+        $result=$result."<span class=\"serviceChargeTitle\">*** Rate is net in Thai baht includes of 7% Tax and 10% Service Charge.</span>";
     }
     
     
@@ -473,23 +486,6 @@ function GenTableOption($xmlSource,$pid)
     $result=$result."<div id=\"submitPan\"> ";
     $result=$result."<input type=\"submit\" id=\"btnBooking\" name=\"btnBooking\" value=\"Continue to Checkout >>\" class=\"btnSubmitBooking\" /> ";
     $result=$result."</div> ";
-    
-    //if($roomTotal>0){
-        
-    //    $result=$result.GenTableExtraOption($xmlSource)."<br/>";
-        
-    //    $result=$result.GenGuestBox()."<br/>";
-    //    $result=$result."<div id=\"submitPan\"> ";
-    //    $result=$result."<input type=\"submit\" id=\"btnBooking\" name=\"btnBooking\" value=\"Continue to Checkout >>\" class=\"btnSubmitBooking\" /> ";
-    //    $result=$result."</div> ";
-
-    //}else{
-
-    //    $result=$result."<div class=\"rateOptionList-outer\"> ";
-    //    $result=$result."<br/><center><font style=\"font-size:14px; color:#333333;\">No rate is shown in your selected period. Please contact to our hotel staff.</font></center><br/>";
-    //    $result=$result."</div> ";
-    //}
-    
     
     return $result;
 }
@@ -505,7 +501,6 @@ function GenTablePackageOption($xmlSource)
     $rowCount=1;
     
     $hasPackage=false;
-    //$benefitDetail="<div id=\"benefitPan\" style=\"display:none;\">";
     $currencyCode=$_SESSION['currencyCode'];
     $result=$result."<div class=\"rateOptionList-outer\"> ";
     $result=$result."<table id=\"rateOptionList\"> ";
@@ -523,34 +518,24 @@ function GenTablePackageOption($xmlSource)
         }else{
             $result=$result."<tr><td valign=\"top\"> ";
         }
-        if($option->OptionImage!="http://www.booking2hotels.com")
+        if($option->OptionImage!="http://b2b25.booking2hotels.com")
         {
             $result=$result."<img src=\"".$option->OptionImage."\" class=\"optionImg\"/> ";
         }
         
         $result=$result."<span class=\"optionTitle\">".$option->OptionTitle."</span> ";
-        //$result=$result."<span class=\"promotionTitle\"><a href=\"#benefitContent_".$option->ConditionID."_".$option->attributes()->id."\" class=\"benefitBox\" >View benefit</a></span> ";
         $result=$result."<span class=\"promotionTitle\"><a href=\"javascript:void(0)\" class=\"tooltip\">View benefit<span class=\"tooltip_content\">".$option->OptionDetail."</span></a></span> ";
 
         $result=$result."</td><td valign=\"top\"> ";
         $result=$result.str_replace("\n","",$option->ConditionDetail);
-        
-        //$benefitDetail=$benefitDetail."<div id=\"benefitContent_".$option->ConditionID."_".$option->attributes()->id."\">".$option->OptionDetail."</div>";
-        
+               
         if((int)$option->MaxAdult>0)
         {
             $result=$result."<span class=\"optionAdult\">Max Adult: ".$option->MaxAdult."</span> ";
             }else{
                 $result=$result."<span class=\"optionAdult\">Max Child: ".$option->MaxChild."</span> ";
                 }
-        
-        //if($option->MaxAdult>0)
-//      {
-//          $result=$result."<span class=\"optionAdult\">Max Adult: ".$option->MaxAdult."</span> ";
-//      }else{
-//          $result=$result."<span class=\"optionAdult\">Max Child: ".$option->MaxAdult."</span> ";
-//      }
-        
+       
         $result=$result."<a href=\"javascript:void(0)\" class=\"tooltip\"><span class=\"conditionFloat\">View Condition</span><span class=\"tooltip_content\">".$option->PolicyContent."</span></a> ";
         $result=$result."</td><td align=\"right\"> ";
         $discount=number_format((($rateRack-$rateDisplay)/$rateRack)*100);
@@ -578,7 +563,6 @@ function GenTablePackageOption($xmlSource)
         $rowCount=$rowCount+1;
     }
     $hiddenDiscount=(float)$xmlSource->Discount[0];
-    //$hiddenDiscount=100;
     if($rowCount>4)
         {
             $txtExpand="<div id=\"expandBox\" class=\"expand\">Show more room type</div>";
@@ -607,9 +591,7 @@ function GenTablePackageOption($xmlSource)
     
     $result=$result."</table> ";
     $result=$result."</div> ";
-    $result=$result."<span class=\"serviceChargeTitle\">*** Rate is not included 7% tax and 10% service charge.</span>";
-    //$benefitDetail=$benefitDetail."</div>";
-    //$result=$result.$benefitDetail;
+    $result=$result."<span class=\"serviceChargeTitle\">*** Rate is net in Thai baht includes of 7% Tax and 10% Service Charge.</span>";
     if(!$hasPackage)
     {
         $result="";
@@ -620,6 +602,8 @@ function GenTableExtraOption($xmlSource)
 {
     $result="";
     $rateDisplay=0;
+    $rateBarDisplay = 0;
+    
     $hasExtra=false;
     $optionCate=0;
     
@@ -630,6 +614,7 @@ function GenTableExtraOption($xmlSource)
     $result=$result."<tr><td colspan=\"3\"><div id=\"errorTransfer\" class=\"errorMsg\"></div></td></tr>";
     foreach($xmlSource->ExtraOption->Option as $option)
     {
+        $tierDetail = "type:". $option->TierValueType . "value:" . $option->TierValue ;
         switch((int)$option->OptionCateID)
         {
             case 39:
@@ -641,7 +626,8 @@ function GenTableExtraOption($xmlSource)
         }
         $hasExtra=true;
         $rateDisplay=$option->Price/(float)$_SESSION['currencyPrefix'];
-        $result=$result."<tr><td><span class=\"extraOptionTitle\">".$option->OptionTitle."</span></td><td align=\"right\"><span class=\"rackOwn\">".$currencyCode." ".number_format($rateDisplay)."</span></td><td width=\"90\" align=\"center\">".GenDropDownQuantity("ddPriceExtra_".$option->ConditionID."_".$option->attributes()->id,$option->ConditionValue,0,20,0,$optionCate)."</td></tr> ";
+        $rateBarDisplay =$option->PriceBar/(float)$_SESSION['currencyPrefix'];
+        $result=$result."<tr><td><span class=\"extraOptionTitle\">".$option->OptionTitle."</span></td><td align=\"right\"><span class=\"rackOwn\">".$currencyCode." ".number_format($rateDisplay)."</span><label style=\"display:none;\">[".$rateBarDisplay."]".$tierDetail."</label></td><td width=\"90\" align=\"center\">".GenDropDownQuantity("ddPriceExtra_".$option->ConditionID."_".$option->attributes()->id,$option->ConditionValue,0,20,0,$optionCate)."</td></tr> ";
         $result=$result."<tr><td colspan=\"3\" style=\"border-bottom:1px solid #d2d2d2\"></td></tr> ";
     }
     
@@ -649,20 +635,13 @@ function GenTableExtraOption($xmlSource)
     {
         $hasExtra=true;
         $rateDisplay=$option->Price/(float)$_SESSION['currencyPrefix'];
-        $result=$result."<tr><td><span class=\"extraOptionTitle\">".$option->OptionTitle."</span></td><td align=\"right\"><span class=\"rackOwn\">".$currencyCode." ".number_format($rateDisplay)."</span></td><td width=\"90\" align=\"center\">".GenDropDownQuantity("ddMeal_".$option->ConditionID."_".$option->attributes()->id,$option->ConditionValue,0,20,0,4)."</td></tr> ";
+        $result=$result."<tr><td><span class=\"extraOptionTitle\">".$option->OptionTitle."</span></td><td align=\"right\"><span class=\"rackOwn\">".$currencyCode." ".number_format($rateDisplay)."</span></td><td width=\"90\" align=\"center\">".GenDropDownQuantity("ddMeal_".$option->ConditionID."_".$option->attributes()->id,$option->ConditionValue,0,20,0,4)."</td></tr>";
         $result=$result."<tr><td colspan=\"3\" style=\"border-bottom:1px solid #d2d2d2\"></td></tr> ";
     }
     
-    //foreach($xmlSource->Meals->Option as $option)
-//  {
-//      $hasExtra=true;
-//      $rateDisplay=$option->Price/(float)$_SESSION['currencyPrefix'];
-//      $result=$result."<tr><td><span class=\"extraOptionTitle\">".$option->OptionTitle."</span></td><td align=\"right\"><span class=\"rackOwn\">".$currencyCode." ".number_format($rateDisplay)."</span></td><td width=\"90\" align=\"center\">".GenDropDownQuantity("ddMeal_".$option->ConditionID."_".$option->attributes()->id,$option->ConditionValue,0,20,0,4)."</td></tr> ";
-//      $result=$result."<tr><td colspan=\"3\" style=\"border-bottom:1px solid #d2d2d2\"></td></tr> ";
-//  }
     $result=$result."</table> ";
     $result=$result."</div> ";
-    $result=$result."<span class=\"serviceChargeTitle\">*** Rate is not included 7% tax and 10% service charge.</span>";
+    $result=$result."<span class=\"serviceChargeTitle\">*** Rate is net in Thai baht includes of 7% Tax and 10% Service Charge.</span>";
     if(!$hasExtra)
     {
         $result="";
@@ -676,19 +655,6 @@ function GenTableOptionNoDate($xmlSource,$pid)
     $data=$xmlSource->Title;
     $countryRef= $xmlSource->CountryRef;
     $productID= $pid;
-    
-    //$result="";
-//  $result=$result."<table border=\"1\"><tr><td>Option Title</td></tr>";
-//  if(count($data)>0)
-//  {
-//      for($intCount=0;$intCount<count($data);$intCount++)
-//      {
-//          $result=$result."<tr><td>".$xmlSource->Title[$intCount]."</td></tr>";
-//      }
-//  }else{
-//      echo "No rate";
-//  }
-//  $result=$result."</table>";
     
     $result="";
     $result=$result."<div class=\"rateOptionList-outer\"> ";
@@ -706,7 +672,6 @@ function GenTableOptionNoDate($xmlSource,$pid)
             }
             
         }else{
-            //echo "No rate";
             $result="<div class=\"rateOptionList-outer\"> ";
                 $result=$result."<br/><center><font style=\"font-size:14px; color:#333333;\">We have not rate in this period please check again.</font></center><br/>";
                 $result=$result."</div> ";
@@ -715,8 +680,6 @@ function GenTableOptionNoDate($xmlSource,$pid)
     }
     
     $result=$result."</div>";
-//  $result=$result."<input type=\"hidden\" name=\"p\" value=\"".$productID."\"> ";
-//  $result=$result."<input type=\"hidden\" name=\"r\" value=\"".$countryRef."\"> ";
     return $result;
 }
 
@@ -734,7 +697,6 @@ function GenGuestBox()
 function RenderCurrencyBox($xmlSource,$currencyDefault)
 {
     $result="";
-    //$result="<br/>";
     $result=$result."<form action=\"\" method=\"post\" id=\"changeCurrency\"> ";
     $result=$result."<table cellspacing=\"0\" id=\"currencyBox\" align=\"center\"><tr><td width=\"500\">&nbsp;</td><td>Change currency:</td><td width=\"24\"><img src=\"http://engine.booking2hotels.com/images/currency/flag_".$_SESSION['currencyID'].".jpg\" /></td><td width=\"61\"><select id=\"selCurrency\" name=\"selCurrency\">";
     foreach($xmlSource->Exchange->Currency as $currency)
@@ -754,8 +716,9 @@ function RenderCurrencyBox($xmlSource,$currencyDefault)
     return $result;
 }
 
-function RenderRate($pid)
+function RenderRate($pid,$AgendID,$TierId)
 {
+    
     if(!isset($_SESSION['currencyID']))
     {
         $_SESSION['currencyID']=25;
@@ -781,21 +744,30 @@ function RenderRate($pid)
         }
     }
     
+    
     $dateStart=$_SESSION['dateStart'];
     $dateEnd=$_SESSION['dateEnd'];
+    
     
     $memberAuthen="0";
     if(isset($_GET["mm"])){
         $memberAuthen=$_GET["mm"];
     }
     
+    
     //Default Currency
     if($dateStart!="")
     {
         
-         $dataSource="http://www.booking2hotels.com/affiliate_include/AffiliateFeed.aspx?uip=".getRealIpAddr()."&pid=".$pid."&datein=".$dateStart."&dateout=".$dateEnd."&mm=".$memberAuthen;
-        // $dataSource="http://www.booking2hotels.com/affiliate_include/AffiliateFeed.aspx?uip=127.0.0.1&pid=3449&datein=2012-11-23&dateout=2012-11-25";
-        // echo $dataSource;    
+        //$dataSource="http://192.168.43.95:6767/affiliate_include/AffiliateFeed.aspx?uip=".getRealIpAddr()."&pid=".$pid."&datein=".$dateStart."&dateout=".$dateEnd."&mm=".$memberAuthen. "&ag=" . $AgendID . "&tierid=" .$TierId ;
+        
+        $dataSource="".getMainSite()."/affiliate_include/AffiliateFeed.aspx?uip=".getRealIpAddr()."&pid=".$pid."&datein=".$dateStart."&dateout=".$dateEnd."&mm=".$memberAuthen. "&ag=" . $AgendID . "&tierid=" .$TierId ;
+        
+        //$dataSource="http://10.1.1.189:6767/affiliate_include/AffiliateFeed.aspx?uip=".getRealIpAddr()."&pid=".$pid."&datein=".$dateStart."&dateout=".$dateEnd."&mm=".$memberAuthen. "&ag=" . $AgendID . "&tierid=" .$TierId ;
+        
+        
+        // $dataSource="http://b2b25.booking2hotels.com/affiliate_include/AffiliateFeed.aspx?uip=127.0.0.1&pid=3449&datein=2012-11-23&dateout=2012-11-25";
+      // echo $dataSource;    
         //echo $dataSource;
         $xmlString=file_get_contents($dataSource);
         //echo $xmlString;  
@@ -827,7 +799,7 @@ function RenderRate($pid)
                 
             
             }
-            return GenPricingTable($xmlSource,$pid);
+            return GenPricingTable($xmlSource,$pid,$AgendID,$TierId);
             
             ////return 'sss';
         }else{
@@ -854,7 +826,7 @@ function RenderRate($pid)
         
     }else{
          
-        $dataSource="http://www.booking2hotels.com/affiliate_include/AffiliateFeed.aspx?uip=".getRealIpAddr()."&pid=".$pid;
+        $dataSource="".getMainSite()."/affiliate_include/AffiliateFeed.aspx?uip=".getRealIpAddr()."&pid=".$pid. "&ag=" . $AgendID . "&tierid=" .$TierId ;
        //echo $dataSource;
         $xmlString=file_get_contents($dataSource);
         //echo $xmlString;  
@@ -872,25 +844,18 @@ function RenderRate($pid)
    
     //echo $dateStart.' '.$dateEnd.' '.$_SESSION['currencyID'];
 }
-function clean($string) {
-    
-    //$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-    $string = str_replace("'", "&apos;", $string);
-    $string = str_replace('\'', '\\\'', $string);
-    //$string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-
-    return $string;
-    //return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
-}
 //$dataSource="xml_data.xml";
 //echo $_GET["Hddateci"];
 //echo $_GET["pid"];
-$returnHtml=RenderRate($_GET['pid']);
+
+
+
+
+$returnHtml=RenderRate($_GET['pid'],$_GET['hdAgencyID'],$_GET['hdTierID']);
 
 //echo $returnHtml;
 //echo "document.write('".$returnHtml."')";
-echo "jQuery('.b2hRateResult').html('".clean($returnHtml)."');";
-//echo "jQuery('.b2hRateResult').html('".str_replace("'","&apos;",$returnHtml)."');";
+echo "jQuery('.b2hRateResult').html('".str_replace("'","&apos;",$returnHtml)."');";
 echo "tooltip();";
 echo "setEventToDropDown();";
 echo "imgFloat();";

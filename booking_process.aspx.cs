@@ -8,7 +8,6 @@ using Hotels2thailand.Front;
 using Hotels2thailand;
 using System.Data.SqlClient;
 using Hotels2thailand.DataAccess;
-using Hotels2thailand;
 using Hotels2thailand.Affiliate;
 using Hotels2thailand.Booking;
 using System.Web.Configuration;
@@ -568,7 +567,7 @@ public partial class booking_process : System.Web.UI.Page
                             item.PriceSupplier = (int)(decimal)total_commission * unit;
 
 
-                            Hotels2LogWriter.WriteFile("admin/logfile/bookingitem.html", ((decimal)total_commission * unit) + "--" + item.PriceSupplier);
+                            //Hotels2LogWriter.WriteFile("admin/logfile/bookingitem.html", ((decimal)total_commission * unit) + "--" + item.PriceSupplier);
                             //Response.Write(item.PriceSupplier + "a<br>");
                             //edit price
                             item.Price = (int)item.PriceSupplier;

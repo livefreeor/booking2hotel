@@ -11,7 +11,7 @@ using Hotels2thailand.Suppliers;
 using Hotels2thailand.Production;
 using Hotels2thailand.Booking;
 using Hotels2thailand.Front;
-
+using System.Text;
 
 
 public partial class admin_account_slip_print : System.Web.UI.Page
@@ -119,7 +119,7 @@ public partial class admin_account_slip_print : System.Web.UI.Page
             {
 
                
-                cBookingProduct = cBookingProduct.getBookingProductDisplayByBookingProductId(repay.ClassDeposit.ClassBookingDetail.BookingProductId);
+                //cBookingProduct = cBookingProduct.getBookingProductDisplayByBookingProductId(repay.ClassDeposit.ClassBookingDetail.BookingProductId);
 
                 strDep.Append("<tr>");
                 strDep.Append("<td colspan=\"3\" align=\"left\">เครดิตคงค้างที่ยังรอตัด Booking No. " + repay.ClassDeposit.ClassBookingDetail.BookingHotelId + "</td>");

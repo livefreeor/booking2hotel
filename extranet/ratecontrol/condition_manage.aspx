@@ -57,6 +57,91 @@
         getCancelList();
         SaveCondition();
         resetCondition();
+
+        var optionId = GetValueQueryString("oid");
+        var connameid = $("#hd_ConditionName").val();
+        var Dropadult = $("#drop_adult").val();
+        var Abf = $("#drop_breakfast").val();
+
+        $("<td><img class=\"img_progress\" src=\"../../images_extra/preloader.gif\" alt=\"Progress\" /></td>").appendTo("#progresscheck").ajaxStart(function () {
+            $(this).show();
+        }).ajaxStop(function () {
+            $(this).remove();
+        });
+
+        $.get("../ajax/ajax_condition_name_check.aspx?connid=" + connameid + "&oid=" + optionId + "&adu=" + Dropadult + "&abf=" + Abf + GetQuerystringProductAndSupplierForBluehouseManage("append"), function (data) {
+            //alert(data);
+            if (data != "0") {
+
+                ValidateAlert("load_tariff_condition", "*This condition and adult has been used. Please use the different condition.", "");
+                $("#hd_duplicate").val("no");
+
+            }
+            else {
+                ValidateAlertClose("load_tariff_condition");
+                $("#hd_duplicate").val("yes");
+            }
+
+        });
+
+
+        $("#drop_breakfast").change(function () {
+            var optionId = GetValueQueryString("oid");
+            var connameid = $("#hd_ConditionName").val();
+            var Dropadult = $("#drop_adult").val();
+            var Abf = $(this).val();
+
+            $("<td><img class=\"img_progress\" src=\"../../images_extra/preloader.gif\" alt=\"Progress\" /></td>").appendTo("#progresscheck").ajaxStart(function () {
+                $(this).show();
+            }).ajaxStop(function () {
+                $(this).remove();
+            });
+
+            $.get("../ajax/ajax_condition_name_check.aspx?connid=" + connameid + "&oid=" + optionId + "&adu=" + Dropadult + "&abf=" + Abf + GetQuerystringProductAndSupplierForBluehouseManage("append"), function (data) {
+
+                if (data != "0") {
+
+                    ValidateAlert("load_tariff_condition", "*This condition and adult has been used. Please use the different condition.", "");
+                    $("#hd_duplicate").val("no");
+                }
+                else {
+                    ValidateAlertClose("load_tariff_condition");
+                    $("#hd_duplicate").val("yes");
+                }
+
+            });
+
+
+        });
+
+        $("#drop_adult").change(function () {
+            var optionId = GetValueQueryString("oid");
+            var connameid = $("#hd_ConditionName").val();
+            var Dropadult = $(this).val();
+            var Abf = $("#drop_breakfast").val();
+
+            $("<td><img class=\"img_progress\" src=\"../../images_extra/preloader.gif\" alt=\"Progress\" /></td>").appendTo("#progresscheck").ajaxStart(function () {
+                $(this).show();
+            }).ajaxStop(function () {
+                $(this).remove();
+            });
+
+            $.get("../ajax/ajax_condition_name_check.aspx?connid=" + connameid + "&oid=" + optionId + "&adu=" + Dropadult + "&abf=" + Abf + GetQuerystringProductAndSupplierForBluehouseManage("append"), function (data) {
+
+                if (data != "0") {
+
+                    ValidateAlert("load_tariff_condition", "*This condition and adult has been used. Please use the different condition.", "");
+                    $("#hd_duplicate").val("no");
+                }
+                else {
+                    ValidateAlertClose("load_tariff_condition");
+                    $("#hd_duplicate").val("yes");
+                }
+
+            });
+
+
+        });
     });
 
     function removeEle(targetid) {
@@ -822,7 +907,7 @@
 
             //document.getElementById('btnSave').disabled = 'true';
 
-            if (DayancelCheckLoadTariff("condition_manage_save", "") == "0" && CancelCheckLoadTariff("condition_manage_save", "") == "0") {
+            if ($("#hd_duplicate").val() == "yes" && DayancelCheckLoadTariff("condition_manage_save", "") == "0" && CancelCheckLoadTariff("condition_manage_save", "") == "0") {
                
 
                 var post = $("#form1").find("input,textarea,select,hidden").not("#__VIEWSTATE,#__EVENTVALIDATION").serialize();
@@ -1062,6 +1147,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <input type="hidden" id="hd_duplicate" />
 <div class="head_condition"><label>Condition: </label><asp:Label ID="lblTitleCondition" runat="server" CssClass="ConditionTitle"></asp:Label><br /><br /><label>Room Type: </label> <asp:Label CssClass="option_title" ID="lblTitle" runat="server"></asp:Label></div>
+    
 <asp:HiddenField ID="hd_ConditionName" runat="server" ClientIDMode="Static" />
 <asp:HiddenField ID="hd_ConditionID" runat="server" ClientIDMode="Static" />
 <div id="load_tariff_condition" style=" width:100%">
@@ -1090,7 +1176,7 @@
         </tr>
     </table>
         
-        
+   <div id="progresscheck"></div>     
     </div>
 
 
