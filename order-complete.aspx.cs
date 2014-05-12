@@ -11,15 +11,17 @@ public partial class order_complete : System.Web.UI.Page
     {
         //Case BLL ONLY 
 
+        
         if (!String.IsNullOrEmpty(Request.QueryString["Ref"]))
         {
             int PaymentBankID = 0;
 
-            PaymentBankID = Convert.ToInt32(Request.Form["Ref"]);
+            PaymentBankID = Convert.ToInt32(Request.QueryString["Ref"]);
 
+            
             if (PaymentBankID >= 30000000)
             {
-                Response.Redirect("http://b2b25.booking2htoels.com/order-complete.aspx?Ref=" + Request.QueryString["Ref"]);
+                Response.Redirect("http://b2b25.booking2hotels.com/order-complete.aspx?Ref=" + Request.QueryString["Ref"]);
 
             }
         }

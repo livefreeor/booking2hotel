@@ -14,6 +14,8 @@ using Hotels2thailand.Front;
 using Hotels2thailand;
 using Hotels2thailand.ProductOption;
 using Hotels2thailand.Production;
+using System.Configuration;
+using System.Web.Configuration;
 
 
 /// <summary>
@@ -1196,7 +1198,7 @@ namespace Hotels2thailand.Booking
             //MainBody = MainBody.Replace("<!--##@Balance_Note##-->", "Customer will pay the balance at the hotel upon your check in time.");
 
             string pricetype = string.Empty;
-            if (cProductBookingEngine.ProductID == 3605)
+            if (cProductBookingEngine.ProductID == 3605 || cProductBookingEngine.ProductID == 3692)
                 pricetype = "supplier_price_show";
 
 
@@ -1630,7 +1632,7 @@ namespace Hotels2thailand.Booking
                         //ItemList
                         string KeywordItemList = Utility.GetKeywordReplace(BookingDetail, "<!--##@mailProductItemStart##-->", "<!--##@mailProductItemEnd##-->");
 
-                        if (BookingProductITem.ProductID == 3605 && price_type == "supplier_price_show")
+                        if ((BookingProductITem.ProductID == 3605 || BookingProductITem.ProductID == 3692) && price_type == "supplier_price_show")
                         {
                             BookingDetail = BookingDetail.Replace(KeywordItemList, GetProductItemHOtel(BookingProductITem.BookingProductId, DateTimeNightTotal(BookingProductITem.DateTimeCheckIn, BookingProductITem.DateTimeCheckOut), "supplier_price_show"));
                         }
@@ -2763,7 +2765,34 @@ namespace Hotels2thailand.Booking
             string result = "0";
             decimal Total = cBookingtotalPrice.GetPriceTotalPaidByBookingId(this.BookingId);
             if (!string.IsNullOrEmpty(pricetype) && pricetype == "supplier_price_show")
-                Total = Total * ((this.DateSubmitBooking < new DateTime(2013, 11, 15, 19, 00, 00)) ? (decimal)(0.9) : (decimal)(0.85));
+            {
+
+                ProductBookingEngine bEngine = this.cProductBookingEngine;
+
+                if (bEngine.ProductID == 3605)
+                {
+                    Total = Total * ((this.DateSubmitBooking < new DateTime(2013, 11, 15, 19, 00, 00)) ? (decimal)(0.9) : (decimal)(0.85));
+                    //break;
+                }
+                if (bEngine.ProductID == 3692)
+                {
+                    Total = Total * (decimal)(0.9);
+                    //break;
+                }
+
+                //if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["hotel_supplier_showprice_mail"]))
+                //{
+                //    string ProductCal = ConfigurationManager.AppSettings["hotel_supplier_showprice_mail"].ToString();
+                //    string[] arrProduct = ProductCal.Split(',');
+                //    foreach (string pid in arrProduct)
+                //    {
+                        
+                //    }
+                    
+                //}
+              
+            }
+               
             result = Total.Hotels2Currency();
             //result = cBookingDetailDisplay.GetPriceTotalByBookingId(this.BookingId).Hotels2Currency();
 

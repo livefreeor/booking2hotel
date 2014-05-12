@@ -76,7 +76,8 @@ namespace Hotels2thailand.UI
             {
 
                 string StrMailStaff = string.Empty;
-                if (Request.QueryString["pid"] == "3605")
+                string strProduct_id = Request.QueryString["pid"];
+                if (strProduct_id == "3605" || strProduct_id == "3692")
                 {
                     BookingdetailDisplay cBookingDetail = new BookingdetailDisplay();
                     if (!string.IsNullOrEmpty(staffEmail))
