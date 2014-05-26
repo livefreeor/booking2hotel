@@ -68,18 +68,24 @@ namespace Hotels2thailand.Production
 
 
 
-        public int CountcheckConditionNameDuplicate(int intOptionId ,byte ConditionNameID, short shrSupplierId, byte bytNumAdult, byte bytNumABF)
+        public int CountcheckConditionNameDuplicate(int intOptionId ,byte ConditionNameID, short shrSupplierId, byte bytNumAdult, byte bytNumABF, string conditionId= "")
         {
             StringBuilder query = new StringBuilder();
 
             string qAbf = "cone.breakfast = 0";
             if (bytNumABF > 0)
                 qAbf = "cone.breakfast > 0";
+
+           // int intConditionID = 0;
             
 
             query.Append("SELECT COUNT(cone.condition_id) FROM tbl_product_option_supplier ops , tbl_product_option_condition_extra_net cone");
             query.Append(" WHERE cone.option_id = ops.option_id AND ops.supplier_id = @supplier_id AND cone.status = 1 ");
-            query.Append(" AND cone.condition_name_id = @condition_name_id  AND cone.option_id = @option_id AND cone.num_adult=@num_adult AND " + qAbf);
+            query.Append(" AND cone.condition_name_id = @condition_name_id  AND cone.option_id = @option_id AND cone.num_adult=@num_adult AND " + qAbf );
+
+            if (!String.IsNullOrEmpty(conditionId))
+                query.Append(" AND condition_id <> " + conditionId + "");
+
 
             using (SqlConnection cn = new SqlConnection(this.ConnectionString))
             {

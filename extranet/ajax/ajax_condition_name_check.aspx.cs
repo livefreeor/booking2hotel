@@ -33,6 +33,10 @@ namespace Hotels2thailand.UI
             get { return Request.QueryString["abf"]; }
         }
 
+        public string qConditionID
+        {
+            get { return Request.QueryString["conid"]; }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -43,7 +47,7 @@ namespace Hotels2thailand.UI
                     if (!string.IsNullOrEmpty(this.qOptionId) && !string.IsNullOrEmpty(this.qConditionNameid) && !string.IsNullOrEmpty(this.qAdult) && !string.IsNullOrEmpty(this.qABF))
                     {
                         ProductConditionExtra cConExtra = new ProductConditionExtra();
-                        int CountCon = cConExtra.CountcheckConditionNameDuplicate(int.Parse(this.qOptionId), byte.Parse(this.qConditionNameid), this.CurrentSupplierId, byte.Parse(this.qAdult), byte.Parse(this.qABF));
+                        int CountCon = cConExtra.CountcheckConditionNameDuplicate(int.Parse(this.qOptionId), byte.Parse(this.qConditionNameid), this.CurrentSupplierId, byte.Parse(this.qAdult), byte.Parse(this.qABF), this.qConditionID);
                         Response.Write(CountCon);
                         Response.End();
                     }

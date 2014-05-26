@@ -186,6 +186,7 @@ public partial class ajax_booking_list_body : System.Web.UI.Page
 
                         PriceSales = decimal.Parse(BpItem.PriceSales.Split(';')[0]);
                         PriceSup = decimal.Parse(BpItem.PriceSales.Split(';')[1]);
+
                         result = result + "<td style=\"font-weight:bold;color:#52555d;font-size:11px;\">" + PriceSales.ToString("#,###.00") + "</td>";
                         result = result + "<td><label style=\"font-weight:bold;color:#3f5d9d;font-size:11px;\">" + PriceSup.ToString("#,###.00") + "</label></td>";
                         //result = result + "<td>" + BpItem.CheckIn.Subtract(DateTime.Now).Days + "</td>";

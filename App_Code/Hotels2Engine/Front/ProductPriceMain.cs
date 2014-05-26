@@ -57,10 +57,10 @@ namespace Hotels2thailand.Front
         private bool _isExtranet;
         private byte _category;
         private byte manageID = 1;
-        private bool HasTransfer=false;
+        private bool HasTransfer = false;
         private bool HasExtraOption = false;
         private fnCurrency currency;
-        private double discountPrice =0;
+        private double discountPrice = 0;
         private string refUrl = string.Empty;
         private string refQuery = string.Empty;
         private byte countryRef = 0;
@@ -97,12 +97,12 @@ namespace Hotels2thailand.Front
         {
             set
             {
-                _ipaddress=value;
-                countryRef=Convert.ToByte(IPtoCounrty.GetCountryID(_ipaddress));
+                _ipaddress = value;
+                countryRef = Convert.ToByte(IPtoCounrty.GetCountryID(_ipaddress));
             }
         }
         private bool _memberAuthen = false;
- 
+
         public bool memberAuthen
         {
 
@@ -146,20 +146,20 @@ namespace Hotels2thailand.Front
                 if (reader.Read())
                 {
                     _category = (byte)reader["cat_id"];
-                    _isExtranet = (bool)reader["extranet_active"];    
-                    manageID=(byte)reader["manage_id"];
+                    _isExtranet = (bool)reader["extranet_active"];
+                    manageID = (byte)reader["manage_id"];
                 }
             }
 
             currency = new fnCurrency();
             currency.GetCurrency();
-            
+
         }
 
-       
+
 
         public List<ProductPriceMain> loadAll()
-        {  
+        {
             List<ProductPriceMain> result = new List<ProductPriceMain>();
             ProductPrice objPrice = null;
             FrontProductPriceExtranet objPriceExtranet = null;
@@ -174,7 +174,7 @@ namespace Hotels2thailand.Front
             List<CancellationExtranet> cancellationListExtra = null;
             CancellationExtranet cancelationExtra = null;
             Allotment allotment = new Allotment();
-            
+
             string policyDisplay = string.Empty;
             string policyContentDisplay = string.Empty;
 
@@ -183,7 +183,7 @@ namespace Hotels2thailand.Front
             decimal priceNet = 0;
             decimal priceDisplay = 0;
             IList<OptionDayPrice> iListPricePerday = new List<OptionDayPrice>();
-           
+
 
             int productTemp = 0;
             int promotionID = 0;
@@ -193,21 +193,23 @@ namespace Hotels2thailand.Front
             string productTitleDefault = string.Empty;
             string optionTitleDefault = string.Empty;
             string filePath = string.Empty;
-            string policyContent=string.Empty;
-            
+            string policyContent = string.Empty;
+
 
             //Check product is extranet
-            
 
-            if(!_isExtranet)
+
+            if (!_isExtranet)
             {
                 strCommand = "select * from fnConditionList2(" + _productID + "," + _dateStart.Hotels2DateToSQlString() + "," + _dateEnd.Hotels2DateToSQlString() + "," + _langID + ")";
-                
-            }else{
-                strCommand = "select * from fnConditionExtranetList4(" + _productID + "," + _dateStart.Hotels2DateToSQlString() + "," + _dateEnd.Hotels2DateToSQlString() + ","+countryRef+"," + _langID + ")";
-                
+
+            }
+            else
+            {
+                strCommand = "select * from fnConditionExtranetList4(" + _productID + "," + _dateStart.Hotels2DateToSQlString() + "," + _dateEnd.Hotels2DateToSQlString() + "," + countryRef + "," + _langID + ")";
+
                 objPackage = new FrontOptionPackage(_productID, _dateStart, _dateEnd);
-               
+
             }
 
             //HttpContext.Current.Response.Write(strCommand+"<br>");
@@ -226,7 +228,7 @@ namespace Hotels2thailand.Front
                     {
                         if ((bool)reader["extranet_active"])
                         {
-                            
+
                             objPriceExtranet = new FrontProductPriceExtranet((int)reader["product_id"], _category, _dateStart, _dateEnd);
                             objPriceExtranet.IPAddress = _ipaddress;
                             objPriceExtranet.memberAuthen = _memberAuthen;
@@ -239,7 +241,7 @@ namespace Hotels2thailand.Front
                             policyExtra.LangID = _langID;
                             policyExtra.ManageID = manageID;
                             policyListExtra = policyExtra.GetExtraPolicy((int)reader["product_id"], _langID);
-                           
+
                         }
                         else
                         {
@@ -260,12 +262,12 @@ namespace Hotels2thailand.Front
                         }
                     }
 
-                    
+
 
                     if ((bool)reader["extranet_active"])
                     {
 
-                        
+
                         //HttpContext.Current.Response.Write(_ipaddress+"test");
                         objOptionPrice = objPriceExtranet.CalculateAll((int)reader["condition_id"], (int)reader["option_id"], (int)reader["promotion_id"]);
                         //HttpContext.Current.Response.Write(reader["condition_id"] + "--" + reader["option_id"] + "--" + reader["promotion_id"] + "s<br>");
@@ -284,7 +286,7 @@ namespace Hotels2thailand.Front
 
                         iListPricePerday = objOptionPrice.iListPricePerDay;
 
-                          //iListPricePerDayMain
+                        //iListPricePerDayMain
                         //OptionDayPrice cPricePerday = new OptionDayPrice();
                         //HttpContext.Current.Response.Write(price+"<br/>");
 
@@ -293,13 +295,15 @@ namespace Hotels2thailand.Front
                         if ((byte)reader["breakfast"] > 0)
                         {
                             policyDisplay = "";
-                            if(_langID==1)
+                            if (_langID == 1)
                             {
-                            policyContentDisplay = "<strong>Breakfast Included</strong><br/>";
-                            }else{
-                            policyContentDisplay = "<strong>รวมอาหารเช้า</strong><br/>";
+                                policyContentDisplay = "<strong>Breakfast Included</strong><br/>";
                             }
-                            
+                            else
+                            {
+                                policyContentDisplay = "<strong>รวมอาหารเช้า</strong><br/>";
+                            }
+
                         }
                         else
                         {
@@ -346,8 +350,8 @@ namespace Hotels2thailand.Front
                     }
                     else
                     {
-                    //Contract Rate
-                      
+                        //Contract Rate
+
 
 
                         objOptionPrice = objPrice.CalculateAll((int)reader["condition_id"], (int)reader["option_id"], (int)reader["promotion_id"]);
@@ -370,17 +374,19 @@ namespace Hotels2thailand.Front
                             promotionTitle = "";
                         }
 
-                       
+
                         if ((byte)reader["breakfast"] > 0)
                         {
                             policyDisplay = "";
-                            if(_langID==1)
+                            if (_langID == 1)
                             {
                                 policyContentDisplay = "<strong>Breakfast Included</strong><br/>";
-                            }else{
+                            }
+                            else
+                            {
                                 policyContentDisplay = "<strong>รวมอาหารเช้า</strong><br/>";
                             }
-                            
+
                         }
                         else
                         {
@@ -397,15 +403,17 @@ namespace Hotels2thailand.Front
                         policyContent = policyContentDisplay;
                     }
 
-                    if(_langID==1)
+                    if (_langID == 1)
                     {
                         productTitleDefault = reader["title"].ToString();
                         optionTitleDefault = reader["option_title"].ToString();
                         filePath = reader["file_path"].ToString();
-                    }else{
+                    }
+                    else
+                    {
                         productTitleDefault = reader["second_lang"].ToString();
                         optionTitleDefault = reader["option_second_lang"].ToString();
-                        filePath = reader["file_path"].ToString().Replace(".asp","-th.asp");
+                        filePath = reader["file_path"].ToString().Replace(".asp", "-th.asp");
 
                         if (string.IsNullOrEmpty(productTitleDefault))
                         {
@@ -416,8 +424,8 @@ namespace Hotels2thailand.Front
                             optionTitleDefault = reader["option_title"].ToString();
                         }
                     }
-                    
-                    memberBenefit=objPriceExtranet.GetAllBenefit((int)reader["condition_id"]);
+
+                    memberBenefit = objPriceExtranet.GetAllBenefit((int)reader["condition_id"]);
                     //HttpContext.Current.Response.Write(memberBenefit + "-" + (int)reader["condition_id"] + "-test<br>");
                     result.Add(new ProductPriceMain
                     {
@@ -426,7 +434,7 @@ namespace Hotels2thailand.Front
                         Title = productTitleDefault,
                         OptionID = (int)reader["option_id"],
                         OptionTitle = optionTitleDefault,
-                        OptionCateID=(short)reader["cat_id"],
+                        OptionCateID = (short)reader["cat_id"],
                         ConditionID = (int)reader["condition_id"],
                         IsExtranet = (bool)reader["isextranet"],
                         IsBookNow = (int)reader["is_book_now"],
@@ -436,11 +444,11 @@ namespace Hotels2thailand.Front
                         //PriceRack = (decimal)((double)priceRack / currency.CurrencyPrefix),
                         Price = (decimal)((double)price),
                         PriceRack = (decimal)((double)priceRack),
-                        PriceDisplay=priceDisplay,
+                        PriceDisplay = priceDisplay,
                         NetPrice = priceNet,
                         HasAllotment = allotment.CheckAllotAvaliable((short)reader["supplier_id"], (int)reader["option_id"], 1, _dateStart, _dateEnd),
                         PolicyDisplay = policyDisplay,
-                        PolicyContent=policyContent,
+                        PolicyContent = policyContent,
                         Breakfast = (byte)reader["breakfast"],
                         NumAdult = (byte)reader["num_adult"],
                         NumChild = (byte)reader["num_children"],
@@ -450,10 +458,10 @@ namespace Hotels2thailand.Front
                         RoomImage = reader["room_image"].ToString(),
                         OptionPriority = (byte)reader["option_priority"],
                         ConditionPriority = (byte)reader["condition_priority"],
-                        ProductCode=reader["product_code"].ToString(),
-                        OptionPicture=reader["picture"].ToString(),
-                        IsRoomShow=(bool)reader["isshow"],
-                        MarketID=(byte)reader["market_id"],
+                        ProductCode = reader["product_code"].ToString(),
+                        OptionPicture = reader["picture"].ToString(),
+                        IsRoomShow = (bool)reader["isshow"],
+                        MarketID = (byte)reader["market_id"],
                         MemberBenefit = memberBenefit,
                         iListPricePerDayMain = iListPricePerday
 
@@ -468,7 +476,7 @@ namespace Hotels2thailand.Front
                 objMeal = new FrontOptionMeal(_productID, _dateStart, _dateEnd);
                 objMealList = objMeal.GetMealList();
 
-                
+
                 cancelationExtra = new CancellationExtranet(_productID, _dateStart);
                 cancellationListExtra = cancelationExtra.GetCancellation();
                 policyExtra = new ProductPolicyExtranet(_category);
@@ -477,43 +485,43 @@ namespace Hotels2thailand.Front
 
                 foreach (FrontOptionPackage item in objPackageList)
                 {
-                           if (item.Breakfast > 0)
-                            {
-                                policyDisplay = "";
-                                if (_langID == 1)
-                                {
-                                    policyContentDisplay = "<strong>Breakfast Included</strong><br/>";
-                                }
-                                else
-                                {
-                                    policyContentDisplay = "<strong>รวมอาหารเช้า</strong><br/>";
-                                }
+                    if (item.Breakfast > 0)
+                    {
+                        policyDisplay = "";
+                        if (_langID == 1)
+                        {
+                            policyContentDisplay = "<strong>Breakfast Included</strong><br/>";
+                        }
+                        else
+                        {
+                            policyContentDisplay = "<strong>รวมอาหารเช้า</strong><br/>";
+                        }
 
-                            }
-                            else
-                            {
-                                policyDisplay = "";
-                                policyContentDisplay = "";
-                            }
+                    }
+                    else
+                    {
+                        policyDisplay = "";
+                        policyContentDisplay = "";
+                    }
 
-                            //policyDisplay = policyDisplay + policyExtra.GetConditionPolicyList(policyListExtra, item.ConditionID, "", item.Breakfast);
-                           policyDisplay = policyDisplay + policyExtra.GetConditionPolicyPackage(item.ConditionTitle,item.Breakfast);
-                            policyContentDisplay = policyContentDisplay + policyExtra.GetPolicyContent(policyListExtra, cancellationListExtra, item.ConditionID, 0, "", "", false);
-                            policyContent = policyContentDisplay;
+                    //policyDisplay = policyDisplay + policyExtra.GetConditionPolicyList(policyListExtra, item.ConditionID, "", item.Breakfast);
+                    policyDisplay = policyDisplay + policyExtra.GetConditionPolicyPackage(item.ConditionTitle, item.Breakfast);
+                    policyContentDisplay = policyContentDisplay + policyExtra.GetPolicyContent(policyListExtra, cancellationListExtra, item.ConditionID, 0, "", "", false);
+                    policyContent = policyContentDisplay;
 
-                            policyDisplay = "<a href=\"javascript:void(0)\" class=\"tooltip\">" + policyDisplay;
-                            policyDisplay = policyDisplay + "<span class=\"tooltip_content\">" + policyContentDisplay + "</span>";
-                            policyDisplay = policyDisplay + "</a>";
-                            item.PolicyDisplay = policyDisplay;
-                            item.PolicyContent = policyContent;
+                    policyDisplay = "<a href=\"javascript:void(0)\" class=\"tooltip\">" + policyDisplay;
+                    policyDisplay = policyDisplay + "<span class=\"tooltip_content\">" + policyContentDisplay + "</span>";
+                    policyDisplay = policyDisplay + "</a>";
+                    item.PolicyDisplay = policyDisplay;
+                    item.PolicyContent = policyContent;
                 }
             }
             //foreach (ProductPriceMain item in result)
             //{
             //    HttpContext.Current.Response.Write(item.Price + "<br>");
             //}
-            
-            return result; 
+
+            return result;
         }
 
         public string GetPromotionTitle(int PromotionID, byte langID)
@@ -542,7 +550,7 @@ namespace Hotels2thailand.Front
                 List<string> result = new List<string>();
                 string sqlCommand = "select top 1 pmc_ex.title,pm_ex.iscancellation,pmc_ex.detail";
                 sqlCommand = sqlCommand + " from tbl_promotion_extra_net pm_ex,tbl_promotion_content_extra_net pmc_ex";
-                sqlCommand = sqlCommand + " where pm_ex.promotion_id=pmc_ex.promotion_id and pmc_ex.lang_id="+langID+" and pm_ex.promotion_id=" + PromotionID;
+                sqlCommand = sqlCommand + " where pm_ex.promotion_id=pmc_ex.promotion_id and pmc_ex.lang_id=" + langID + " and pm_ex.promotion_id=" + PromotionID;
                 SqlCommand cmd = new SqlCommand(sqlCommand, cn);
                 cn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -557,7 +565,7 @@ namespace Hotels2thailand.Front
 
         }
 
-        private string RenderDropDownQuantity(string strName,string optionValue,int minNum,int maxNum,int numDefault,int displayType)
+        private string RenderDropDownQuantity(string strName, string optionValue, int minNum, int maxNum, int numDefault, int displayType)
         {
             string result = string.Empty;
             string className = string.Empty;
@@ -585,15 +593,17 @@ namespace Hotels2thailand.Front
                     break;
             }
             //HttpContext.Current.Response.Write(strName+"--"+className+"--"+displayType+"<br>");
-            if (displayType!=0)
+            if (displayType != 0)
             {
                 result = "<select name=\"" + strName + "\" " + className + " >\n";
                 //result = "<select name=\"" + strName + "\" class=\"" + strName + "\">\n";
-            }else{
+            }
+            else
+            {
                 result = "<select name=\"" + strName + "\" class=\"" + strName + "\" id=\"" + strName + "\">\n";
 
             }
-            
+
 
             //if (displayType == 1)
             //{
@@ -602,29 +612,31 @@ namespace Hotels2thailand.Front
             //else {
             //    result = "<select name=\"" + strName + "\" class=\"" + strName + "\">\n";
             //}
-            
-            
 
-            if(displayType!=0)
+
+
+            if (displayType != 0)
             {
                 for (int countNum = minNum; countNum <= maxNum; countNum++)
                 {
                     result = result + "<option value=\"" + optionValue + "_" + countNum + "\">" + countNum + "</option>\n";
                 }
-            }else{
+            }
+            else
+            {
                 for (int countNum = minNum; countNum <= maxNum; countNum++)
                 {
                     result = result + "<option value=\"" + countNum + "\">" + countNum + "</option>\n";
                 }
             }
-            
+
             result = result + "</select>\n";
             return result;
         }
 
         public decimal GetLowestProductPrice(int productID, DateTime dateStart, DateTime dateEnd)
         {
-           
+
             _productID = productID;
             _dateStart = dateStart;
             _dateEnd = dateEnd;
@@ -649,15 +661,15 @@ namespace Hotels2thailand.Front
             currency.GetCurrency();
             this.IPAddress = "110.171.168.232";
             List<ProductPriceMain> productList = this.loadAll();
-            
-            decimal result=0;
+
+            decimal result = 0;
             productList = productList.Where(x => x.Price > 0).ToList();
             switch (_category)
             {
                 case 29:
                     productList = productList.OrderBy(x => x.OptionPriority).ThenBy(x => x.Price).ToList();
                     //return productList[0].Price;
-                    
+
                     break;
                 case 32:
                     productList = productList.OrderBy(x => x.OptionPriority).ThenBy(x => x.ConditionPriority).ThenBy(x => x.Price).ToList();
@@ -673,35 +685,38 @@ namespace Hotels2thailand.Front
                     break;
             }
 
-            
 
-            if(productList.Count>0)
+
+            if (productList.Count > 0)
             {
                 result = productList[0].Price;
             }
-            
+
             return result;
         }
 
         public string RenderConditionList(List<ProductPriceMain> productList)
         {
-            string result="";
+            string result = "";
             result = RenderAnnoucement();
-            switch(_category)
+            switch (_category)
             {
                 case 29:
                     productList = productList.OrderBy(x => x.OptionPriority).ThenBy(x => x.Price).ToList();
                     result = result + RenderHotelList(productList);
-                break;
+                    break;
                 case 32:
                     productList = productList.OrderBy(x => x.OptionPriority).ThenBy(x => x.ConditionPriority).ThenBy(x => x.Price).ToList();
                     result = result + RenderGolfList(productList);
                     break;
-                case 34: case 36:
+                case 34:
+                case 36:
                     productList = productList.OrderBy(x => x.OptionPriority).ThenBy(x => x.ConditionPriority).ThenBy(x => x.Price).ToList();
                     result = result + RenderDayTripList(productList);
                     break;
-                case 38:case 39: case 40:
+                case 38:
+                case 39:
+                case 40:
                     productList = productList.OrderBy(x => x.OptionPriority).ThenBy(x => x.ConditionPriority).ToList();
                     result = result + RenderOtherProductList(productList);
                     break;
@@ -709,7 +724,7 @@ namespace Hotels2thailand.Front
             return result;
         }
 
-        
+
         public string RenderHotelList(List<ProductPriceMain> productList)
         {
             //ProductPriceMain objtest = new ProductPriceMain();
@@ -720,36 +735,37 @@ namespace Hotels2thailand.Front
 
             List<ProductPriceMain> roomList = productList.Where(x => x.Price > 0).ToList();
 
-            
+
             string guaranteeRate = string.Empty;
             string guaranteeContent = string.Empty;
-            
+
             if (_langID == 1)
             {
                 guaranteeContent = "We guarantee the lowest rate. If you find the lower rate than us, please inform us within 24 hrs. We're pleased to pay 2x discount from different  value.";
             }
-            else {
+            else
+            {
                 guaranteeContent = "เราการันตีราคาถูกที่สุด หากพบราคาต่ำกว่านี้โปรดติดต่อเราภายใน 24ชั่วโมง เรายินดีคืนเงินจากส่วนต่างสองเท่า";
             }
-             guaranteeRate=guaranteeRate+"<tr>";
-             guaranteeRate = guaranteeRate + "<td colspan=\"6\" style=\"font-size:14px;line-height:18px;height:100px;background:url(../images/lowest2.gif) no-repeat 10px 10px #FFFFFF; padding-left:120px;\">\n";
-             guaranteeRate=guaranteeRate+"<div style=\"font-size:12px;\" align=\"right\">\n";
-             guaranteeRate=guaranteeRate+"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
-             guaranteeRate=guaranteeRate+"<tr>\n";
-             guaranteeRate=guaranteeRate+"<td valign=\"top\">\n";
-             guaranteeRate=guaranteeRate+"<span style=\"font-family:helvetica; font-size:24px; color:#069; line-height:40px;\">100% Lowest Guarantee</span>\n";
-             guaranteeRate=guaranteeRate+"<p style=\"margin-top:0px\" class=\"fnBlack12\">"+guaranteeContent+"</p>\n";
-             guaranteeRate=guaranteeRate+"</td>\n";
-             guaranteeRate = guaranteeRate + "<td width=\"255\" style=\"text-align:right;\" valign=\"top\"><img src=\"../images/ico_ceo_guarantee.png\" style=\"margin-right:10px\"/>\n";
-             guaranteeRate=guaranteeRate+"<img src=\"../images/sign_ceo.gif\" width=\"136\" height=\"78\" />\n";
-             guaranteeRate=guaranteeRate+"<span  class=\"fnBlack12\">Mr.Tanit Bordisorn<br />\n";
-             guaranteeRate=guaranteeRate+" Chief executive officer</span></td></tr>\n";
-             guaranteeRate=guaranteeRate+"</table>\n";   
-             guaranteeRate=guaranteeRate+"</div>\n";     
-             guaranteeRate=guaranteeRate+"</td>\n";
-             guaranteeRate=guaranteeRate+"<tr>\n";
+            guaranteeRate = guaranteeRate + "<tr>";
+            guaranteeRate = guaranteeRate + "<td colspan=\"6\" style=\"font-size:14px;line-height:18px;height:100px;background:url(../images/lowest2.gif) no-repeat 10px 10px #FFFFFF; padding-left:120px;\">\n";
+            guaranteeRate = guaranteeRate + "<div style=\"font-size:12px;\" align=\"right\">\n";
+            guaranteeRate = guaranteeRate + "<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
+            guaranteeRate = guaranteeRate + "<tr>\n";
+            guaranteeRate = guaranteeRate + "<td valign=\"top\">\n";
+            guaranteeRate = guaranteeRate + "<span style=\"font-family:helvetica; font-size:24px; color:#069; line-height:40px;\">100% Lowest Guarantee</span>\n";
+            guaranteeRate = guaranteeRate + "<p style=\"margin-top:0px\" class=\"fnBlack12\">" + guaranteeContent + "</p>\n";
+            guaranteeRate = guaranteeRate + "</td>\n";
+            guaranteeRate = guaranteeRate + "<td width=\"255\" style=\"text-align:right;\" valign=\"top\"><img src=\"../images/ico_ceo_guarantee.png\" style=\"margin-right:10px\"/>\n";
+            guaranteeRate = guaranteeRate + "<img src=\"../images/sign_ceo.gif\" width=\"136\" height=\"78\" />\n";
+            guaranteeRate = guaranteeRate + "<span  class=\"fnBlack12\">Mr.Tanit Bordisorn<br />\n";
+            guaranteeRate = guaranteeRate + " Chief executive officer</span></td></tr>\n";
+            guaranteeRate = guaranteeRate + "</table>\n";
+            guaranteeRate = guaranteeRate + "</div>\n";
+            guaranteeRate = guaranteeRate + "</td>\n";
+            guaranteeRate = guaranteeRate + "<tr>\n";
 
-                if (roomList.Count > 0)
+            if (roomList.Count > 0)
             {
                 List<FrontMarket> marketList = new List<FrontMarket>();
                 FrontMarket market;
@@ -766,21 +782,23 @@ namespace Hotels2thailand.Front
 
                 conditionGroup = conditionGroup.Substring(0, conditionGroup.Length - 1);
                 market = new FrontMarket();
-                    if(!_isExtranet)
-                    {
-                        marketList = market.getMarketCountry(conditionGroup);
-                    }
-                
+                if (!_isExtranet)
+                {
+                    marketList = market.getMarketCountry(conditionGroup);
+                }
+
 
                 productDisplay = productDisplay + "<div id=\"errorRoom\" class=\"errorMsg\"></div>\n";
                 productDisplay = productDisplay + "<table class=\"tblListResult\" cellpadding=\"0\" cellspacing=\"1\" align=\"center\">\n";
-                    if(_langID==1)
-                    {
-                        productDisplay = productDisplay + "<tr><th>Room Type</th><th>Max</th><th width=\"220\">Condition</th><th width=\"150\">Avg. Rate/Night</th><th width=\"80\">No.Room</th></tr>\n";
-                    }else{
-                        productDisplay = productDisplay + "<tr><th>ชนิดของห้องพัก</th><th>จำนวนผู้เข้าพัก</th><th width=\"220\">เงื่อนไข</th><th width=\"150\">ราคาเฉลี่ยต่อคืน</th><th width=\"80\">จำนวนห้อง</th></tr>\n";
-                    }
-                
+                if (_langID == 1)
+                {
+                    productDisplay = productDisplay + "<tr><th>Room Type</th><th>Max</th><th width=\"220\">Condition</th><th width=\"150\">Avg. Rate/Night</th><th width=\"80\">No.Room</th></tr>\n";
+                }
+                else
+                {
+                    productDisplay = productDisplay + "<tr><th>ชนิดของห้องพัก</th><th>จำนวนผู้เข้าพัก</th><th width=\"220\">เงื่อนไข</th><th width=\"150\">ราคาเฉลี่ยต่อคืน</th><th width=\"80\">จำนวนห้อง</th></tr>\n";
+                }
+
                 int OptionTemp = 0;
                 int ProductTemp = 0;
                 int conditionTemp = 0;
@@ -802,15 +820,15 @@ namespace Hotels2thailand.Front
                 string optionTitle = string.Empty;
                 string marketPolicy = string.Empty;
                 string textAvailable = string.Empty;
-                    if(roomList.Count>0)
+                if (roomList.Count > 0)
+                {
+                    if ((roomList[0].ProductID == 1918 || roomList[0].ProductID == 624) && discountPrice > 0)
                     {
-                        if ((roomList[0].ProductID == 1918 || roomList[0].ProductID == 624) && discountPrice>0)
-                        {
-                            productDisplay = productDisplay + guaranteeRate;
-                        }
-                        
-                   
+                        productDisplay = productDisplay + guaranteeRate;
                     }
+
+
+                }
                 foreach (ProductPriceMain item in roomList)
                 {
                     textAvailable = "";
@@ -843,17 +861,19 @@ namespace Hotels2thailand.Front
                         roomImage = "<a href=\"" + urlRoomDetail + "\"><img src=\"" + roomImage + "\"  class=\"small_room_img\"></a>";
                     }
 
-                    if(item.OptionCateID==38)
+                    if (item.OptionCateID == 38)
                     {
                         if (marketList.Count != 0)
                         {
-                            if(_langID==1)
+                            if (_langID == 1)
                             {
                                 marketPolicy = marketPolicy + "<a href=\"#\" class=\"tooltip\"><div class=\"indicatorRate\">Recheck your country rate</div><span class=\"tooltip_content\">";
-                            }else{
+                            }
+                            else
+                            {
                                 marketPolicy = marketPolicy + "<a href=\"#\" class=\"tooltip\"><div class=\"indicatorRate\">ราคานี้ใช้ได้สำหรับบางประเทศ</div><span class=\"tooltip_content\">";
                             }
-                            
+
                             marketPolicy = marketPolicy + RenderMarketDisplay(marketList, item.MarketID, item.ConditionID);
 
                         }
@@ -865,9 +885,9 @@ namespace Hotels2thailand.Front
                         grandPrice = (item.Price * vatInclude) * qtyProduct;
                         priceSeiling = grandPrice / intNight / qtyProduct;
                         ico_product_type = "";
-                        
 
-                        
+
+
 
                         if (item.IsExtranet)
                         {
@@ -892,17 +912,17 @@ namespace Hotels2thailand.Front
                         if (!string.IsNullOrEmpty(objAllotment.CheckAllotAvaliable_Cutoff(item.SupplierID, item.OptionID, 1, _dateStart, _dateEnd)))
                         {
                             //HttpContext.Current.Response.Write(objAllotment.CheckAllotAvaliable_Cutoff(item.SupplierID, item.OptionID, 1, _dateStart, _dateEnd) + "<br>");
-                            if(_isExtranet)
+                            if (_isExtranet)
                             {
                                 textAvailable = "<br/><span class=\"avai_14\">Available Now!</span>";
                             }
-                            
+
                         }
                         ddQuantity = RenderDropDownQuantity("ddPrice", item.ConditionID + "_" + item.OptionID + "_" + item.PromotionID + "_" + item.NumAdult + "_" + item.NumChild + "_" + item.NumExtra, 0, 20, 0, item.OptionCateID);
-                        
+
                         if (item.OptionID != OptionTemp)
                         {
-                           
+
 
                             if (item.IsExtranet)
                             {
@@ -913,30 +933,34 @@ namespace Hotels2thailand.Front
                                 ico_available = "";
                             }
                             productDisplay = productDisplay.Replace("###rowSpan###", RowSpan.ToString());
-                            if(_langID==1)
+                            if (_langID == 1)
                             {
-                            productDisplay = productDisplay + "<tr><td rowspan=\"###rowSpan###\" valign=\"top\">" + roomImage + optionTitle + "</td><td class=\"align_center\"><a href=\"javascript:void(0)\" class=\"tooltip\">" + adultMax + "<span class=\"tooltip_content\">Standard Occupancy: " + item.NumAdult + "</span></a></td><td>" + item.PolicyDisplay + marketPolicy + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + textAvailable + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
-                            }else{
-                            productDisplay = productDisplay + "<tr><td rowspan=\"###rowSpan###\" valign=\"top\">" + roomImage + optionTitle + "</td><td class=\"align_center\"><a href=\"javascript:void(0)\" class=\"tooltip\">" + adultMax + "<span class=\"tooltip_content\">สามารถอยู่ได้: " + item.NumAdult + " คน</span></a></td><td>" + item.PolicyDisplay + marketPolicy + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + textAvailable + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
+                                productDisplay = productDisplay + "<tr><td rowspan=\"###rowSpan###\" valign=\"top\">" + roomImage + optionTitle + "</td><td class=\"align_center\"><a href=\"javascript:void(0)\" class=\"tooltip\">" + adultMax + "<span class=\"tooltip_content\">Standard Occupancy: " + item.NumAdult + "</span></a></td><td>" + item.PolicyDisplay + marketPolicy + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + textAvailable + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
                             }
-                            
+                            else
+                            {
+                                productDisplay = productDisplay + "<tr><td rowspan=\"###rowSpan###\" valign=\"top\">" + roomImage + optionTitle + "</td><td class=\"align_center\"><a href=\"javascript:void(0)\" class=\"tooltip\">" + adultMax + "<span class=\"tooltip_content\">สามารถอยู่ได้: " + item.NumAdult + " คน</span></a></td><td>" + item.PolicyDisplay + marketPolicy + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + textAvailable + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
+                            }
+
                             RowSpan = 1;
                         }
                         else
                         {
-                            if (item.ConditionID!=conditionTemp)
+                            if (item.ConditionID != conditionTemp)
                             {
-                                if(_langID==1)
+                                if (_langID == 1)
                                 {
-                                productDisplay = productDisplay + "<tr><td class=\"align_center\"><a href=\"javascript:void(0)\" class=\"tooltip\">" + adultMax + "<span class=\"tooltip_content\">Standard Occupancy: " + item.NumAdult + "</span></a></td><td>" + item.PolicyDisplay + marketPolicy + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + textAvailable + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
-                                }else{
-                                productDisplay = productDisplay + "<tr><td class=\"align_center\"><a href=\"javascript:void(0)\" class=\"tooltip\">" + adultMax + "<span class=\"tooltip_content\">สามารถอยู่ได้: " + item.NumAdult + "คน</span></a></td><td>" + item.PolicyDisplay + marketPolicy + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + textAvailable + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
+                                    productDisplay = productDisplay + "<tr><td class=\"align_center\"><a href=\"javascript:void(0)\" class=\"tooltip\">" + adultMax + "<span class=\"tooltip_content\">Standard Occupancy: " + item.NumAdult + "</span></a></td><td>" + item.PolicyDisplay + marketPolicy + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + textAvailable + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
                                 }
-                                
+                                else
+                                {
+                                    productDisplay = productDisplay + "<tr><td class=\"align_center\"><a href=\"javascript:void(0)\" class=\"tooltip\">" + adultMax + "<span class=\"tooltip_content\">สามารถอยู่ได้: " + item.NumAdult + "คน</span></a></td><td>" + item.PolicyDisplay + marketPolicy + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + textAvailable + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
+                                }
+
                                 RowSpan = RowSpan + 1;
                             }
-                            
-                            
+
+
                         }
                         OptionTemp = item.OptionID;
                         conditionTemp = item.ConditionID;
@@ -950,18 +974,20 @@ namespace Hotels2thailand.Front
                 productDisplay = productDisplay + RenderGuestBox();
                 productDisplay = productDisplay + "</table>\n";
                 //productDisplay = productDisplay + "</div>\n";
-                
+
                 FrontPayLater payLater = new FrontPayLater();
                 string payLaterPlan = payLater.GetPayLaterPlanByDate(ProductID, _dateStart);
                 if (string.IsNullOrEmpty(payLaterPlan))
                 {
-                    if(_langID==1)
+                    if (_langID == 1)
                     {
                         productDisplay = productDisplay + "<div class=\"row_rate\"><a href=\"javascript:void(0)\" class=\"tooltip\"><img src=\"/theme_color/blue/images/icon/high-low.jpg\" class=\"lowrates\" title=\"Low Rates Guarantee\" /><span class=\"tooltip_content\">";
                         productDisplay = productDisplay + "<p><strong>Low Rate Guarantee</strong> - If you find a lower rate within 24 hours of booking, then, at a minimum, they will match that rate.</p><br />\n";
                         productDisplay = productDisplay + "<p><strong>High Security Website</strong> - Our payment system is certified by Thai Bank in usage of security version SSL 256 Bit encryption , the most modern technological security system using nowadays websites in the world.</p>\n";
 
-                    }else{
+                    }
+                    else
+                    {
                         productDisplay = productDisplay + "<div class=\"row_rate\"><a href=\"javascript:void(0)\" class=\"tooltip\"><img src=\"/theme_color/blue/images/icon/high-low-th.jpg\" class=\"lowrates\" title=\"Low Rates Guarantee\" /><span class=\"tooltip_content\">";
                         productDisplay = productDisplay + "<p><strong>รับประกันถูกที่สุด</strong> - หากท่านพบว่าราคาที่อื่นถูกกว่า ท่านสามารถเเจ้งกลับทางเราได้ภายใน 24 ชม นับจากที่ท่านจองกับเรา เราจะคืนส่วนต่างให้กับท่านทันที</p><br />\n";
                         productDisplay = productDisplay + "<p><strong>ระบบการชำระเงินออนไลน์ที่มีความปลอดภัยสูง</strong> - เวปไซต์โฮเทลทูเลือกใช้ระบบ SSL 256 Bit ซึ่งถือได้ว่าเป็นระบบเทคโนโลยีที่ทันสมัยที่สุดทางด้านความปลอดภัยบนเวปไซต์ </p>\n";
@@ -982,34 +1008,39 @@ namespace Hotels2thailand.Front
 
 
                 productDisplay = productDisplay + "</span></a></div>\n";
-                    if(_langID==1)
-                    {
-                        productDisplay = productDisplay + "<div class=\"incase\"><p>Hotels2thailand.com is legally allowed to sell tourism products on the internet, authorized from Tourism Authority of Thailand (TAT)</p></div>\n";
-                        productDisplay = productDisplay + "<div class=\"take_time\">It only takes 2 minutes!</div>\n";
-                    }else{
-                        productDisplay = productDisplay + "<div class=\"incase\"><p>เวปไซต์โฮเทลทูไทยแลนด์ได้รับอนุญาติให้เป็นเวปไซต์ผู้ประกอบการท่องเที่ยวโดยถูกต้องตามกฏหมาย</p></div>\n";
-                        productDisplay = productDisplay + "<div class=\"take_time\">ใช้เวลาเพียงแค่ 2 นาทีเท่านั้น!</div>\n";
-                    }
-                
+                if (_langID == 1)
+                {
+                    productDisplay = productDisplay + "<div class=\"incase\"><p>Hotels2thailand.com is legally allowed to sell tourism products on the internet, authorized from Tourism Authority of Thailand (TAT)</p></div>\n";
+                    productDisplay = productDisplay + "<div class=\"take_time\">It only takes 2 minutes!</div>\n";
+                }
+                else
+                {
+                    productDisplay = productDisplay + "<div class=\"incase\"><p>เวปไซต์โฮเทลทูไทยแลนด์ได้รับอนุญาติให้เป็นเวปไซต์ผู้ประกอบการท่องเที่ยวโดยถูกต้องตามกฏหมาย</p></div>\n";
+                    productDisplay = productDisplay + "<div class=\"take_time\">ใช้เวลาเพียงแค่ 2 นาทีเท่านั้น!</div>\n";
+                }
+
                 productDisplay = productDisplay + "<div class=\"booknow\"><a href=\"#\" id=\"btnBooking\"></a>\n";
                 productDisplay = productDisplay + "<br class=\"clear-all\" /><br /><br />\n";
             }
-            else {
+            else
+            {
                 productDisplay = productDisplay + "<div style=\"border: 2px solid rgb(255, 204, 102); margin: 7px; padding: 10px;\">";
                 productDisplay = productDisplay + "<font color=\"red\">";
-                    if(_langID==1)
-                    {
+                if (_langID == 1)
+                {
                     productDisplay = productDisplay + "Sorry. Rate for selected period is not available. Please kindly contact to <a href=\"mailto:reservation@hotels2thailand.com\">reservation@hotels2thailand.com</a>";
-                    }else{
-                        productDisplay = productDisplay + "ไม่พบราคาสำหรับโรงแรมนี้กรุณาติดต่อ<a href=\"mailto:reservation@hotels2thailand.com\">reservation@hotels2thailand.com</a>";
-                    
-                    }
-                
+                }
+                else
+                {
+                    productDisplay = productDisplay + "ไม่พบราคาสำหรับโรงแรมนี้กรุณาติดต่อ<a href=\"mailto:reservation@hotels2thailand.com\">reservation@hotels2thailand.com</a>";
+
+                }
+
                 productDisplay = productDisplay + "</font>";
-                productDisplay = productDisplay + "</div>"; 
+                productDisplay = productDisplay + "</div>";
             }
 
-            
+
             return productDisplay;
         }
 
@@ -1075,7 +1106,7 @@ namespace Hotels2thailand.Front
                         roomImage = "<a href=\"/" + urlRoomDetail + "\"><img src=\"" + roomImage + "\"  class=\"small_room_img\"></a>";
                     }
 
-                    
+
 
                     if (item.OptionCateID != 39 && item.OptionCateID != 40 && item.OptionCateID != 43 && item.OptionCateID != 44)
                     {
@@ -1119,12 +1150,12 @@ namespace Hotels2thailand.Front
                         }
                         else
                         {
-                            if(item.ConditionID!=ConditionTemp)
+                            if (item.ConditionID != ConditionTemp)
                             {
                                 productDisplay = productDisplay + "<tr><td>" + item.PolicyDisplay + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
                                 RowSpan = RowSpan + 1;
                             }
-                            
+
                         }
                         OptionTemp = item.OptionID;
                         ConditionTemp = item.ConditionID;
@@ -1190,13 +1221,15 @@ namespace Hotels2thailand.Front
 
                 productDisplay = productDisplay + "<div id=\"errorRoom\" class=\"errorMsg\"></div>\n";
                 productDisplay = productDisplay + "<table class=\"tblListResult\" cellpadding=\"0\" cellspacing=\"1\" align=\"center\">\n";
-                if(_langID==1)
+                if (_langID == 1)
                 {
-                productDisplay = productDisplay + "<tr><th>Option</th><th width=\"220\">Condition</th><th width=\"150\">Rate/Pax</th><th width=\"80\">Quantity</th></tr>\n";
-                }else{
-                productDisplay = productDisplay + "<tr><th>โปรแกรม</th><th width=\"220\">เงื่อนไข</th><th width=\"150\">ราคาต่อคน</th><th width=\"80\">จำนวน</th></tr>\n";
+                    productDisplay = productDisplay + "<tr><th>Option</th><th width=\"220\">Condition</th><th width=\"150\">Rate/Pax</th><th width=\"80\">Quantity</th></tr>\n";
                 }
-                
+                else
+                {
+                    productDisplay = productDisplay + "<tr><th>โปรแกรม</th><th width=\"220\">เงื่อนไข</th><th width=\"150\">ราคาต่อคน</th><th width=\"80\">จำนวน</th></tr>\n";
+                }
+
                 int OptionTemp = 0;
                 int ProductTemp = 0;
                 int ConditionTemp = 0;
@@ -1291,12 +1324,12 @@ namespace Hotels2thailand.Front
                         }
                         else
                         {
-                            if(item.ConditionID!=ConditionTemp)
+                            if (item.ConditionID != ConditionTemp)
                             {
                                 productDisplay = productDisplay + "<tr><td>" + item.PolicyDisplay + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
                                 RowSpan = RowSpan + 1;
                             }
-                            
+
                         }
                         OptionTemp = item.OptionID;
                         ProductTemp = item.ProductID;
@@ -1353,7 +1386,7 @@ namespace Hotels2thailand.Front
 
         public string RenderDayTripList(List<ProductPriceMain> productList)
         {
-           
+
             FrontSupplementPriceQuantity objSupplement = new FrontSupplementPriceQuantity();
             supplementList = objSupplement.LoadSupplementPriceByProductID(_productID, _dateStart);
             productList = productList.Where(x => x.Price > 0).ToList();
@@ -1364,13 +1397,15 @@ namespace Hotels2thailand.Front
 
                 productDisplay = productDisplay + "<div id=\"errorRoom\" class=\"errorMsg\"></div>\n";
                 productDisplay = productDisplay + "<table class=\"tblListResult\" cellpadding=\"0\" cellspacing=\"1\" align=\"center\">\n";
-                if(_langID==1)
+                if (_langID == 1)
                 {
-                productDisplay = productDisplay + "<tr><th>Option</th><th width=\"220\">Condition</th><th width=\"150\">Rate/Pax</th><th width=\"80\">Quantity</th></tr>\n";
-                }else{
-                productDisplay = productDisplay + "<tr><th>โปรแกรม</th><th width=\"220\">เงื่อนไข</th><th width=\"150\">ราคาต่อคน</th><th width=\"80\">จำนวน</th></tr>\n";
+                    productDisplay = productDisplay + "<tr><th>Option</th><th width=\"220\">Condition</th><th width=\"150\">Rate/Pax</th><th width=\"80\">Quantity</th></tr>\n";
                 }
-                
+                else
+                {
+                    productDisplay = productDisplay + "<tr><th>โปรแกรม</th><th width=\"220\">เงื่อนไข</th><th width=\"150\">ราคาต่อคน</th><th width=\"80\">จำนวน</th></tr>\n";
+                }
+
                 int OptionTemp = 0;
                 int ConditionTemp = 0;
                 int ProductTemp = 0;
@@ -1478,12 +1513,12 @@ namespace Hotels2thailand.Front
                         }
                         else
                         {
-                            if(item.ConditionID!=ConditionTemp)
+                            if (item.ConditionID != ConditionTemp)
                             {
-                                productDisplay = productDisplay + "<tr><td>" + item.PolicyDisplay + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + RenderDaytripSupplement(item.ConditionID, priceDisplay,supplementList) + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
+                                productDisplay = productDisplay + "<tr><td>" + item.PolicyDisplay + "</td><td align=\"center\" class=\"rowEven fn16bGreen\">" + RenderDaytripSupplement(item.ConditionID, priceDisplay, supplementList) + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>\n";
                                 RowSpan = RowSpan + 1;
                             }
-                            
+
                         }
                         OptionTemp = item.OptionID;
                         ConditionTemp = item.ConditionID;
@@ -1547,7 +1582,7 @@ namespace Hotels2thailand.Front
             decimal priceIncludeVat = Price * Convert.ToDecimal(1.177);
             decimal priceDisplay = 0;
             int countTemp = 0;
-            
+
             SupplementList = SupplementList.Where(x => x.ConditionID == ConditionID).ToList();
             int countTotal = SupplementList.Count();
 
@@ -1577,19 +1612,21 @@ namespace Hotels2thailand.Front
                     }
                     countTemp = countTemp + 1;
                     priceDisplay = (int)(priceIncludeVat + item.Supplement) / vatInclude;
-                    if(countTemp!=countTotal)
+                    if (countTemp != countTotal)
                     {
                         supplementDisplay = supplementDisplay + "<p class=\"lh_16 fn16Green\">" + currency.CurrencyCode + " " + priceDisplay.ToString("#,###") + "<span>(" + supplementTitle + ")</span></p>";
-                    }else{
+                    }
+                    else
+                    {
                         supplementDisplay = supplementDisplay + "<p class=\"lh_16 lh_end fn16Green\">" + currency.CurrencyCode + " " + priceDisplay.ToString("#,###") + "<span>(" + supplementTitle + ")</span></p>";
                     }
-                    
+
                     //supplementDisplay = supplementDisplay + "<tr><td class=\"list\">&bull;" + supplementTitle + "</td><td>" + priceDisplay.ToString("#,###") + "</td></tr>\n";
-                    
+
                 }
             }
             //supplementDisplay = supplementDisplay + "</table>\n";
-            if(countTemp==1)
+            if (countTemp == 1)
             {
                 supplementDisplay = "<p class=\"lh_end fn16Green\">" + currency.CurrencyCode + " " + priceDisplay.ToString("#,###") + "</p>";
             }
@@ -1605,14 +1642,16 @@ namespace Hotels2thailand.Front
             string productDisplay = string.Empty;
             productDisplay = productDisplay + "<tr><td colspan=\"5\"><div id=\"errorTransfer\" class=\"errorMsg\"></div></td></tr>";
             //productDisplay = productDisplay + "<table class=\"tblListResult\" cellpadding=\"0\" cellspacing=\"1\" align=\"center\">";
-            if(_langID==1)
+            if (_langID == 1)
             {
-            productDisplay = productDisplay + "<tr><th colspan=\"3\">Extra Option</th><th>Rate</th><th>Quantity</th></tr>";
-            }else{
-                productDisplay = productDisplay + "<tr><th colspan=\"3\">บริการเสริม</th><th>ราคา</th><th>จำนวน</th></tr>";
-            
+                productDisplay = productDisplay + "<tr><th colspan=\"3\">Extra Option</th><th>Rate</th><th>Quantity</th></tr>";
             }
-            
+            else
+            {
+                productDisplay = productDisplay + "<tr><th colspan=\"3\">บริการเสริม</th><th>ราคา</th><th>จำนวน</th></tr>";
+
+            }
+
             int OptionTemp = 0;
             int ProductTemp = 0;
             int RowSpan = 0;
@@ -1629,7 +1668,7 @@ namespace Hotels2thailand.Front
 
             ProductPrice objPrice = null;
             FrontProductPriceExtranet objPriceExtranet = null;
-            if (productList.Count>0)
+            if (productList.Count > 0)
             {
                 if (productList[0].IsExtranet)
                 {
@@ -1649,12 +1688,12 @@ namespace Hotels2thailand.Front
                 }
                 else
                 {
-                    
+
                     objPrice = new ProductPrice(_productID, _category, _dateStart, _dateEnd);
                     objPrice.LoadExtraOptionPrice();
                     foreach (ProductPriceMain item in productList)
                     {
-                        
+
                         if (item.OptionCateID == 39 || item.OptionCateID == 40 || item.OptionCateID == 43 || item.OptionCateID == 44)
                         {
                             //HttpContext.Current.Response.Write(item.OptionCateID+"--"+ item.ConditionID+"----"+item.OptionID + "<br>");
@@ -1691,7 +1730,7 @@ namespace Hotels2thailand.Front
                         if (item.OptionID != OptionTemp)
                         {
                             ddQuantity = RenderDropDownQuantity("ddPriceExtra_" + item.ConditionID + "_" + item.OptionID, item.ConditionID + "_" + item.OptionID + "_" + item.PromotionID + "_" + item.NumAdult + "_" + item.NumChild + "_" + item.NumExtra, 0, 20, 0, item.OptionCateID);
-                            productDisplay = productDisplay + "<tr><td colspan=\"3\">" + item.OptionTitle + "</td><td class=\"rowEven fn16bGreen\">" + currency.CurrencyCode +" " +String.Format("{0:#,0}", priceDisplay) + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>";
+                            productDisplay = productDisplay + "<tr><td colspan=\"3\">" + item.OptionTitle + "</td><td class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>";
                         }
 
                         OptionTemp = item.OptionID;
@@ -1700,28 +1739,28 @@ namespace Hotels2thailand.Front
 
                 }
             }
-            
 
-            
+
+
             productDisplay = productDisplay + RenderProductTransferOutside();
-            productDisplay=productDisplay+RenderGalaDinner();
-            
+            productDisplay = productDisplay + RenderGalaDinner();
+
             //productDisplay = productDisplay + "</table>";
-            
-            if(!HasExtraOption)
+
+            if (!HasExtraOption)
             {
-                
+
                 productDisplay = "";
             }
             return productDisplay;
         }
 
-       
+
 
         public string RenderProductTransferOutside()
         {
             int ProductTransferID = 0;
-            
+
             string sqlCommand = string.Empty;
 
             using (SqlConnection cn = new SqlConnection(this.ConnectionString))
@@ -1755,11 +1794,11 @@ namespace Hotels2thailand.Front
                         ProductTransferID = (int)reader["destination_transfer_id"];
 
                     }
-                }   
+                }
 
             }
 
-            
+
             ProductPriceMain objtest = new ProductPriceMain(ProductTransferID, _dateStart, _dateStart.AddDays(1), _langID);
             List<ProductPriceMain> results = objtest.loadAll();
 
@@ -1809,10 +1848,10 @@ namespace Hotels2thailand.Front
                     {
 
                         ddQuantity = RenderDropDownQuantity("ddPriceExtra_" + item.ConditionID + "_" + item.OptionID, item.ConditionID + "_" + item.OptionID + "_" + item.PromotionID + "_" + item.NumAdult + "_" + item.NumChild + "_" + item.NumExtra, 0, 20, 0, item.OptionCateID);
-                        productDisplay = productDisplay + "<tr><td colspan=\"3\">" + item.OptionTitle + "</td><td class=\"rowEven fn16bGreen\">" + currency.CurrencyCode +" "+String.Format("{0:#,0}", priceDisplay) + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>";
+                        productDisplay = productDisplay + "<tr><td colspan=\"3\">" + item.OptionTitle + "</td><td class=\"rowEven fn16bGreen\">" + currency.CurrencyCode + " " + String.Format("{0:#,0}", priceDisplay) + "</td><td class=\"align_center\">" + ddQuantity + "</td></tr>";
                         RowSpan = 1;
                     }
-                    
+
                     OptionTemp = item.OptionID;
                     ProductTemp = item.ProductID;
                     HasExtraOption = true;
@@ -1829,15 +1868,17 @@ namespace Hotels2thailand.Front
             string galaDisplay = string.Empty;
 
             GalaDinner gala = new GalaDinner(_productID, _dateStart, _dateEnd);
-            List<GalaDinner> galaList=null;
+            List<GalaDinner> galaList = null;
 
-            if(_isExtranet)
+            if (_isExtranet)
             {
-                galaList=gala.GetGalaExtranet();
-            }else{
-                galaList=gala.GetGala();
+                galaList = gala.GetGalaExtranet();
             }
-           
+            else
+            {
+                galaList = gala.GetGala();
+            }
+
 
             if (galaList.Count > 0)
             {
@@ -1858,7 +1899,7 @@ namespace Hotels2thailand.Front
             return galaDisplay;
         }
 
-        public string RenderHiddenField(int ProductID,int SupplierID,byte categoryID,DateTime dateStart,DateTime dateEnd,byte CurrencyID)
+        public string RenderHiddenField(int ProductID, int SupplierID, byte categoryID, DateTime dateStart, DateTime dateEnd, byte CurrencyID)
         {
             string displayHidden = "<input type=\"hidden\" name=\"sid\" value=\"" + SupplierID + "\" />\n";
             displayHidden = displayHidden + "<input type=\"hidden\" id=\"discount\" name=\"discount\" value=\"" + discountPrice + "\" />\n";
@@ -1891,22 +1932,24 @@ namespace Hotels2thailand.Front
             if (_category == 29)
             {
                 displayGuestBox = displayGuestBox + "<tr><td colspan=\"5\">&nbsp;</td></tr>\n";
-                if(_langID==1)
+                if (_langID == 1)
                 {
-                displayGuestBox = displayGuestBox + "<tr><th style=\"text-align:left !important\" align=\"left\" colspan=\"5\">Select No. of Guest</th></tr>\n";
-                displayGuestBox = displayGuestBox + "<tr><td width=\"100\" colspan=\"5\"><label style=\"float:left; display:block;width:100px;\">Adult: </label>" + RenderDropDownQuantity("adult", "", 1, 20, 1, 0) + "</td>\n";
-                displayGuestBox = displayGuestBox + "</td></tr>\n";
-                displayGuestBox = displayGuestBox + "<tr class=\"bg_blue\"><td width=\"100\" colspan=\"5\"><label style=\"float:left; display:block;width:100px;\">Children: </label> " + RenderDropDownQuantity("child", "", 0, 20, 1, 0) + "</td>\n";
-                displayGuestBox = displayGuestBox + "</td></tr>\n";
-                }else{
-                displayGuestBox = displayGuestBox + "<tr><th style=\"text-align:left !important\" align=\"left\" colspan=\"5\">จำนวนผู้เข้าพัก</th></tr>\n";
-                displayGuestBox = displayGuestBox + "<tr><td width=\"100\" colspan=\"5\"><label style=\"float:left; display:block;width:100px;\">ผู้ใหญ่: </label>" + RenderDropDownQuantity("adult", "", 1, 20, 1, 0) + "</td>\n";
-                displayGuestBox = displayGuestBox + "</td></tr>\n";
-                displayGuestBox = displayGuestBox + "<tr class=\"bg_blue\"><td width=\"100\" colspan=\"5\"><label style=\"float:left; display:block;width:100px;\">เด็ก: </label> " + RenderDropDownQuantity("child", "", 0, 20, 1, 0) + "</td>\n";
-                displayGuestBox = displayGuestBox + "</td></tr>\n";
+                    displayGuestBox = displayGuestBox + "<tr><th style=\"text-align:left !important\" align=\"left\" colspan=\"5\">Select No. of Guest</th></tr>\n";
+                    displayGuestBox = displayGuestBox + "<tr><td width=\"100\" colspan=\"5\"><label style=\"float:left; display:block;width:100px;\">Adult: </label>" + RenderDropDownQuantity("adult", "", 1, 20, 1, 0) + "</td>\n";
+                    displayGuestBox = displayGuestBox + "</td></tr>\n";
+                    displayGuestBox = displayGuestBox + "<tr class=\"bg_blue\"><td width=\"100\" colspan=\"5\"><label style=\"float:left; display:block;width:100px;\">Children: </label> " + RenderDropDownQuantity("child", "", 0, 20, 1, 0) + "</td>\n";
+                    displayGuestBox = displayGuestBox + "</td></tr>\n";
                 }
-                
-                
+                else
+                {
+                    displayGuestBox = displayGuestBox + "<tr><th style=\"text-align:left !important\" align=\"left\" colspan=\"5\">จำนวนผู้เข้าพัก</th></tr>\n";
+                    displayGuestBox = displayGuestBox + "<tr><td width=\"100\" colspan=\"5\"><label style=\"float:left; display:block;width:100px;\">ผู้ใหญ่: </label>" + RenderDropDownQuantity("adult", "", 1, 20, 1, 0) + "</td>\n";
+                    displayGuestBox = displayGuestBox + "</td></tr>\n";
+                    displayGuestBox = displayGuestBox + "<tr class=\"bg_blue\"><td width=\"100\" colspan=\"5\"><label style=\"float:left; display:block;width:100px;\">เด็ก: </label> " + RenderDropDownQuantity("child", "", 0, 20, 1, 0) + "</td>\n";
+                    displayGuestBox = displayGuestBox + "</td></tr>\n";
+                }
+
+
             }
             //displayGuestBox = displayGuestBox + "</table>\n";
             return displayGuestBox;
@@ -1914,7 +1957,7 @@ namespace Hotels2thailand.Front
         private string RenderAnnoucement()
         {
             string annouceDisplay = string.Empty;
-           
+
             List<FrontAnnoucement> annoucementList;
 
             FrontAnnoucement annoucement = new FrontAnnoucement(_productID);
@@ -1936,13 +1979,15 @@ namespace Hotels2thailand.Front
 
             if (annoucementList.Count > 0)
             {
-                if(_langID==1)
+                if (_langID == 1)
                 {
-                annouceDisplay = annouceDisplay + "</br><table class=\"annoucement\" style=\"border:1px solid #2e2721;background-color:#f0f8ff;\" width=\"95%\" align=\"center\"><tr><th class=\"roomtype\">Annoucement</th></tr><td valign=\"top\">";
-                }else{
-                annouceDisplay = annouceDisplay + "</br><table class=\"annoucement\" style=\"border:1px solid #2e2721;background-color:#f0f8ff;\" width=\"95%\" align=\"center\"><tr><th class=\"roomtype\">ประกาศ</th></tr><td valign=\"top\">";
+                    annouceDisplay = annouceDisplay + "</br><table class=\"annoucement\" style=\"border:1px solid #2e2721;background-color:#f0f8ff;\" width=\"95%\" align=\"center\"><tr><th class=\"roomtype\">Annoucement</th></tr><td valign=\"top\">";
                 }
-                
+                else
+                {
+                    annouceDisplay = annouceDisplay + "</br><table class=\"annoucement\" style=\"border:1px solid #2e2721;background-color:#f0f8ff;\" width=\"95%\" align=\"center\"><tr><th class=\"roomtype\">ประกาศ</th></tr><td valign=\"top\">";
+                }
+
                 foreach (FrontAnnoucement item in annoucementList)
                 {
                     annouceDisplay = annouceDisplay + item.Detail + "<br/>";
@@ -1989,13 +2034,15 @@ namespace Hotels2thailand.Front
             if (marketList.Count == 0)
             {
                 //world wide
-                if(_langID==1)
+                if (_langID == 1)
                 {
                     countryAccept = "Worldwide";
-                }else{
+                }
+                else
+                {
                     countryAccept = "ทั่วโลก";
                 }
-                
+
             }
             else
             {
@@ -2006,13 +2053,15 @@ namespace Hotels2thailand.Front
                     //countryResult = countryResult + "<span class=\"fb16\">" + marketList[0].Title + "</span><hr noshade=\"noshade\"/>";
                     if (hasAccept)
                     {
-                        if(_langID==1)
+                        if (_langID == 1)
                         {
                             countryAccept = countryAccept + "<strong>This rate accepts for these countries:</strong><br/>";
-                        }else{
+                        }
+                        else
+                        {
                             countryAccept = countryAccept + "<strong>ราคาสำหรับกลุ่มประเทศเหล่านี้:</strong><br/>";
                         }
-                        
+
                         countryAccept = countryAccept + "<table class=\"lst_country_market\">";
                         countryAccept = countryAccept + "<tr>";
                         foreach (FrontMarket item in marketList)
@@ -2040,13 +2089,15 @@ namespace Hotels2thailand.Front
 
 
                     countCol = 0;
-                    if(_langID==1)
+                    if (_langID == 1)
                     {
-                    countryExcept = countryExcept + "<strong>This rate is not used for these countries: </strong><br/>";
-                    }else{
-                    countryExcept = countryExcept + "<strong>ราคานี้ไม่สามารถใช้ได้กับกลุ่มประเทศเหล่านี้ </strong><br/>";
+                        countryExcept = countryExcept + "<strong>This rate is not used for these countries: </strong><br/>";
                     }
-                    
+                    else
+                    {
+                        countryExcept = countryExcept + "<strong>ราคานี้ไม่สามารถใช้ได้กับกลุ่มประเทศเหล่านี้ </strong><br/>";
+                    }
+
                     countryExcept = countryExcept + "<table class=\"lst_country_market\">";
                     countryExcept = countryExcept + "<tr>";
                     foreach (FrontMarket item in marketList)
@@ -2065,13 +2116,15 @@ namespace Hotels2thailand.Front
                     countryExcept = countryExcept + "</tr>";
                     countryExcept = countryExcept + "</table>";
                     countryResult = countryResult + countryExcept;
-                    if(_langID==1)
+                    if (_langID == 1)
                     {
-                    countryResult = countryResult + "<span class=\"except_market_short_list\">For guests from above country exception, please contact <span>reservation@hotels2thailand.com</span> </span>";
-                    }else{
-                    countryResult = countryResult + "<span class=\"except_market_short_list\">โปรดติดต่อ <span>reservation@hotels2thailand.com</span> </span>";
+                        countryResult = countryResult + "<span class=\"except_market_short_list\">For guests from above country exception, please contact <span>reservation@hotels2thailand.com</span> </span>";
                     }
-                    
+                    else
+                    {
+                        countryResult = countryResult + "<span class=\"except_market_short_list\">โปรดติดต่อ <span>reservation@hotels2thailand.com</span> </span>";
+                    }
+
                 }
                 else
                 {
@@ -2100,13 +2153,15 @@ namespace Hotels2thailand.Front
                         countryResult = countryResult + countryAccept;
                     }
 
-                    if(_langID==1)
+                    if (_langID == 1)
                     {
                         countryResult = countryResult + "<br/><span class=\"except_market_short_list\">For guests from above country exception, please contact reservation@hotels2thailand.com </span>";
-                    }else{
+                    }
+                    else
+                    {
                         countryResult = countryResult + "<br/><span class=\"except_market_short_list\">กรุณาติดต่อ reservation@hotels2thailand.com </span>";
                     }
-                    
+
                 }
             }
             //countryResult = "hello";
@@ -2125,8 +2180,8 @@ namespace Hotels2thailand.Front
             //}
             string result = string.Empty;
             string countryTitle = string.Empty;
-            string sqlCommand = "select title from tbl_country where country_id="+refCountryID;
-            using(SqlConnection cn=new SqlConnection(this.ConnectionString))
+            string sqlCommand = "select title from tbl_country where country_id=" + refCountryID;
+            using (SqlConnection cn = new SqlConnection(this.ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand(sqlCommand, cn);
                 cn.Open();
@@ -2160,29 +2215,83 @@ namespace Hotels2thailand.Front
                 result = result + "<ErrorMessage>OK</ErrorMessage>\n";
                 result = result + "</RoomRate>";
             }
-            else {
+            else
+            {
                 result = result + "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
                 result = result + "<RoomRate>\n";
                 result = result + "<ErrorMessage>No Rate</ErrorMessage>\n";
                 result = result + "</RoomRate>\n";
             }
-            
+
             //result = result + RenderXmlCurrency();
             return result;
         }
 
-       
+        public string GenerateXmlforExpressCheckoutMobile(List<ProductPriceMain> productList)
+        {
+            //foreach(ProductPriceMain item in productList)
+            //{
+            //    HttpContext.Current.Response.Write(item.Price+"<br/>");
+            //}
+            string result = string.Empty;
+            string countryTitle = string.Empty;
+            string sqlCommand = "select title from tbl_country where country_id=" + refCountryID;
+            using (SqlConnection cn = new SqlConnection(this.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(sqlCommand, cn);
+                cn.Open();
+                countryTitle = (string)cmd.ExecuteScalar();
+            }
+
+            productList = productList.OrderBy(x => x.OptionPriority).ThenBy(x => x.Price).ToList();
+
+
+            if (productList.Count > 0)
+            {
+                result = result + "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+                result = result + "<RoomRate>\n";
+                result = result + "<SupplierID>" + productList[0].SupplierID + "</SupplierID>\n";
+                result = result + "<Discount>" + discountPrice + "</Discount>\n";
+                result = result + "<CountryID>" + refCountryID + "</CountryID>";
+                result = result + "<Country>" + countryTitle + "</Country>\n";
+                result = result + RenderXmlPackage();
+                result = result + RenderXmlMeal();
+                result = result + RenderXmlHotelListMobile(productList);
+                result = result + RenderXmlCurrency();
+                if (_memberAuthen)
+                {
+                    result = result + "<IsMember>true</IsMember>\n";
+                }
+                else
+                {
+                    result = result + "<IsMember>false</IsMember>\n";
+                }
+                result = result + "<MemberID>" + _memberID + "</MemberID>\n";
+                result = result + "<ErrorMessage>OK</ErrorMessage>\n";
+                result = result + "</RoomRate>";
+            }
+            else
+            {
+                result = result + "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+                result = result + "<RoomRate>\n";
+                result = result + "<ErrorMessage>No Rate</ErrorMessage>\n";
+                result = result + "</RoomRate>\n";
+            }
+
+            //result = result + RenderXmlCurrency();
+            return result;
+        }
 
         private string RenderXmlCurrency()
-        { 
-            string result=string.Empty;
+        {
+            string result = string.Empty;
             result = result + "<Exchange>\n";
-            using(SqlConnection cn=new SqlConnection(this.ConnectionString))
+            using (SqlConnection cn = new SqlConnection(this.ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand("select currency_id,title,prefix,code from tbl_currency where status=1", cn);
                 cn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                while(reader.Read())
+                while (reader.Read())
                 {
                     result = result + "<Currency>\n";
                     result = result + "<CurrencyID>" + reader["currency_id"] + "</CurrencyID>\n";
@@ -2205,7 +2314,7 @@ namespace Hotels2thailand.Front
 
             foreach (FrontOptionPackage item in objPackageList)
             {
-                priceDisplay = (int)(item.Price/vatInclude);
+                priceDisplay = (int)(item.Price / vatInclude);
                 result = result + "<Option id=\"" + item.OptionID + "\">\n";
                 result = result + "<OptionTitle>" + item.OptionTitle + "</OptionTitle>\n";
                 result = result + "<OptionDetail>" + item.OptionDetail + "</OptionDetail>\n";
@@ -2219,7 +2328,7 @@ namespace Hotels2thailand.Front
                 result = result + "<MaxChild>" + item.NumChild + "</MaxChild>\n";
                 result = result + "<Price>" + priceDisplay + "</Price>\n";
                 result = result + "<PriceRack>" + priceDisplay + "</PriceRack>\n";
-                
+
                 result = result + "</Option>\n";
             }
             result = result + "</Packages>\n";
@@ -2237,7 +2346,7 @@ namespace Hotels2thailand.Front
                 priceDisplay = (int)(item.Price / vatInclude);
                 result = result + "<Option id=\"" + item.OptionID + "\">\n";
                 result = result + "<OptionTitle>" + item.OptionTitle + "</OptionTitle>\n";
-                result = result + "<OptionDetail>" + item.OptionDetail.Replace("'","&apos;") +"</OptionDetail>\n";
+                result = result + "<OptionDetail>" + item.OptionDetail.Replace("'", "&apos;") + "</OptionDetail>\n";
                 result = result + "<OptionImage>http://www.booking2hotels.com" + item.OptionImage + "</OptionImage>";
                 result = result + "<ConditionID>" + item.ConditionID + "</ConditionID>\n";
                 result = result + "<ConditionDetail>" + HttpContext.Current.Server.HtmlEncode(item.PolicyDisplay.Replace("Special Offer", "")) + "</ConditionDetail>\n";
@@ -2258,19 +2367,19 @@ namespace Hotels2thailand.Front
         {
             string result = string.Empty;
 
-            
+
 
             foreach (OptionDayPrice item in OptionDayPrice)
             {
                 result = result + "<PricePerday>\n";
-                result = result + "<dm_date>" + item.DateCheck.ToString("yyyy-MM-dd") +"</dm_date>\n";
-                result = result + "<dm_pricebase>"+item.PriceBase+"</dm_pricebase>\n";
-                result = result + "<dm_pricepro>"+item.PricePromotion+"</dm_pricepro>\n";
+                result = result + "<dm_date>" + item.DateCheck.ToString("yyyy-MM-dd") + "</dm_date>\n";
+                result = result + "<dm_pricebase>" + item.PriceBase + "</dm_pricebase>\n";
+                result = result + "<dm_pricepro>" + item.PricePromotion + "</dm_pricepro>\n";
                 result = result + "<dm_priceAbf>" + item.PriceABF + "</dm_priceAbf>\n";
                 result = result + "<dm_isPro>" + item.IsDatePromotion.ToString() + "</dm_isPro>\n";
                 result = result + "</PricePerday>\n";
             }
-            
+
             return result;
         }
         private string RenderXmlHotelList(List<ProductPriceMain> productList)
@@ -2288,22 +2397,22 @@ namespace Hotels2thailand.Front
                 if (item.OptionCateID != 39 && item.OptionCateID != 40 && item.OptionCateID != 43 && item.OptionCateID != 44)
                 {
                     priceDisplay = item.Price / intNight;
-                    
+
                     result = result + "<Option id=\"" + item.OptionID + "\">\n";
                     result = result + "<OptionTitle>" + HttpContext.Current.Server.HtmlEncode(item.OptionTitle) + "</OptionTitle>\n";
-                    result = result + "<OptionImage>http://www.booking2hotels.com"+HttpContext.Current.Server.HtmlEncode(item.RoomImage)+"</OptionImage>";
+                    result = result + "<OptionImage>http://www.booking2hotels.com" + HttpContext.Current.Server.HtmlEncode(item.RoomImage) + "</OptionImage>";
                     result = result + "<OptionCateID>" + item.OptionCateID + "</OptionCateID>\n";
                     result = result + "<ConditionID>" + item.ConditionID + "</ConditionID>\n";
-                    result = result + "<ConditionDetail>" + HttpContext.Current.Server.HtmlEncode(item.PolicyDisplay.Replace("Special Offer","")) + "</ConditionDetail>\n";
+                    result = result + "<ConditionDetail>" + HttpContext.Current.Server.HtmlEncode(item.PolicyDisplay.Replace("Special Offer", "")) + "</ConditionDetail>\n";
                     result = result + "<ConditionValue>" + item.ConditionID + "_" + item.OptionID + "_" + item.PromotionID + "_" + item.NumAdult + "_" + item.NumChild + "_" + item.NumExtra + "</ConditionValue>\n";
                     result = result + "<PolicyContent>" + HttpContext.Current.Server.HtmlEncode(item.PolicyContent) + "</PolicyContent>\n";
                     result = result + "<PromotionTitle>" + item.PromotionTitle + "</PromotionTitle>\n";
-                    result = result + "<MaxAdult>"+item.NumAdult+"</MaxAdult>\n";
+                    result = result + "<MaxAdult>" + item.NumAdult + "</MaxAdult>\n";
                     result = result + "<MaxChild>" + item.NumChild + "</MaxChild>\n";
                     result = result + "<Price>" + priceDisplay + "</Price>\n";
-                    result = result + "<PriceRack>" + ((item.PriceRack / intNight)/vatInclude) + "</PriceRack>\n";
+                    result = result + "<PriceRack>" + ((item.PriceRack / intNight) / vatInclude) + "</PriceRack>\n";
                     result = result + "<PricePerdays>\n" + RenderXmlPricePerday(item.iListPricePerDayMain) + "</PricePerdays>\n";
-                    result = result + "<MemberBenefit>"+HttpContext.Current.Server.HtmlEncode(item.MemberBenefit)+"</MemberBenefit>\n";
+                    result = result + "<MemberBenefit>" + HttpContext.Current.Server.HtmlEncode(item.MemberBenefit) + "</MemberBenefit>\n";
                     //HttpContext.Current.Response.Write(item.SupplierID + "---" + item.OptionID + "---1---" + _dateStart + "---" + _dateEnd+"<br>");
                     if (!string.IsNullOrEmpty(objAllotment.CheckAllotAvaliable_Cutoff(item.SupplierID, item.OptionID, 1, _dateStart, _dateEnd)))
                     {
@@ -2317,7 +2426,8 @@ namespace Hotels2thailand.Front
                         }
 
                     }
-                    else {
+                    else
+                    {
                         result = result + "<RoomAvailable>false</RoomAvailable>\n";
                     }
 
@@ -2331,7 +2441,80 @@ namespace Hotels2thailand.Front
                     }
 
                     result = result + "</Option>\n";
-                    
+
+                }
+
+            }
+            result = result + "</Options>\n";
+            result = result + "<ExtraOption>\n";
+            result = result + RenderXmlExtraOptionList(productList);
+            result = result + "</ExtraOption>\n";
+            result = result + RenderXmlGalaDinner();
+            //result = productList.Count.ToString();
+            return result;
+        }
+        private string RenderXmlHotelListMobile(List<ProductPriceMain> productList)
+        {
+            string result = string.Empty;
+            List<ProductPriceMain> roomList = productList.Where(x => x.Price > 0).ToList();
+            decimal priceDisplay = 0;
+            int intNight = _dateEnd.Subtract(_dateStart).Days;
+            Allotment objAllotment = null;
+            objAllotment = new Allotment(ProductID);
+            result = result + "<Options>\n";
+            foreach (ProductPriceMain item in roomList)
+            {
+
+                if (item.OptionCateID != 39 && item.OptionCateID != 40 && item.OptionCateID != 43 && item.OptionCateID != 44)
+                {
+                    priceDisplay = item.Price / intNight;
+
+                    result = result + "<Option id=\"" + item.OptionID + "\">\n";
+                    result = result + "<OptionTitle>" + HttpContext.Current.Server.HtmlEncode(item.OptionTitle) + "</OptionTitle>\n";
+                    result = result + "<OptionImage>http://www.booking2hotels.com" + HttpContext.Current.Server.HtmlEncode(item.RoomImage) + "</OptionImage>";
+                    result = result + "<OptionCateID>" + item.OptionCateID + "</OptionCateID>\n";
+                    result = result + "<ConditionID>" + item.ConditionID + "</ConditionID>\n";
+                    result = result + "<ConditionDetail>" + HttpContext.Current.Server.HtmlEncode(item.PolicyDisplay.Replace("Special Offer", "")) + "</ConditionDetail>\n";
+                    result = result + "<ConditionValue>" + item.ConditionID + "_" + item.OptionID + "_" + item.PromotionID + "_" + item.NumAdult + "_" + item.NumChild + "_" + item.NumExtra + "</ConditionValue>\n";
+                    result = result + "<PolicyContent>" + HttpContext.Current.Server.HtmlEncode(item.PolicyContent);
+                    result = result + HttpContext.Current.Server.HtmlEncode(RoomDetail(item.OptionID));
+                    result = result + "</PolicyContent>\n";
+                    result = result + "<PromotionTitle>" + item.PromotionTitle + "</PromotionTitle>\n";
+                    result = result + "<MaxAdult>" + item.NumAdult + "</MaxAdult>\n";
+                    result = result + "<MaxChild>" + item.NumChild + "</MaxChild>\n";
+                    result = result + "<Price>" + priceDisplay + "</Price>\n";
+                    result = result + "<PriceRack>" + ((item.PriceRack / intNight) / vatInclude) + "</PriceRack>\n";
+                    result = result + "<PricePerdays>\n" + RenderXmlPricePerday(item.iListPricePerDayMain) + "</PricePerdays>\n";
+                    result = result + "<MemberBenefit>" + HttpContext.Current.Server.HtmlEncode(item.MemberBenefit) + "</MemberBenefit>\n";
+                    //HttpContext.Current.Response.Write(item.SupplierID + "---" + item.OptionID + "---1---" + _dateStart + "---" + _dateEnd+"<br>");
+                    if (!string.IsNullOrEmpty(objAllotment.CheckAllotAvaliable_Cutoff(item.SupplierID, item.OptionID, 1, _dateStart, _dateEnd)))
+                    {
+                        if (_isExtranet)
+                        {
+                            result = result + "<RoomAvailable>true</RoomAvailable>\n";
+                        }
+                        else
+                        {
+                            result = result + "<RoomAvailable>false</RoomAvailable>\n";
+                        }
+
+                    }
+                    else
+                    {
+                        result = result + "<RoomAvailable>false</RoomAvailable>\n";
+                    }
+
+                    if (item.IsRoomShow)
+                    {
+                        result = result + "<ShowRoomDetail>true</ShowRoomDetail>\n";
+                    }
+                    else
+                    {
+                        result = result + "<ShowRoomDetail>false</ShowRoomDetail>\n";
+                    }
+
+                    result = result + "</Option>\n";
+
                 }
 
             }
@@ -2348,14 +2531,14 @@ namespace Hotels2thailand.Front
             string result = string.Empty;
             productList = productList.OrderBy(x => x.OptionPriority).ThenBy(x => x.ConditionPriority).ThenBy(x => x.Price).ToList();
 
-            
+
             int intNight = _dateEnd.Subtract(_dateStart).Days;
 
-            
+
             decimal priceDisplay = 0;
-            
+
             int qtyProduct = 1;
-           
+
             ProductPrice objPrice = null;
             FrontProductPriceExtranet objPriceExtranet = null;
             if (productList.Count > 0)
@@ -2405,16 +2588,16 @@ namespace Hotels2thailand.Front
                         }
 
                         priceDisplay = item.Price / intNight;
-                        
-		                result=result+"<Option id=\""+item.OptionID+"\">\n";
-			            result=result+"<OptionTitle>"+item.OptionTitle+"</OptionTitle>\n";
+
+                        result = result + "<Option id=\"" + item.OptionID + "\">\n";
+                        result = result + "<OptionTitle>" + item.OptionTitle + "</OptionTitle>\n";
                         result = result + "<OptionCateID>" + item.OptionCateID + "</OptionCateID>\n";
-			            result=result+"<ConditionID>"+item.ConditionID+"</ConditionID>\n";
-                        result=result+"<ConditionValue>" + item.ConditionID + "_" + item.OptionID + "_" + item.PromotionID + "_" + item.NumAdult + "_" + item.NumChild + "_" + item.NumExtra + "</ConditionValue>\n";
-			            result=result+"<Price>"+((int)(priceDisplay/(decimal)1.177))+"</Price>\n";
-		                result=result+"</Option>\n";
-	                    
-                           
+                        result = result + "<ConditionID>" + item.ConditionID + "</ConditionID>\n";
+                        result = result + "<ConditionValue>" + item.ConditionID + "_" + item.OptionID + "_" + item.PromotionID + "_" + item.NumAdult + "_" + item.NumChild + "_" + item.NumExtra + "</ConditionValue>\n";
+                        result = result + "<Price>" + ((int)(priceDisplay / (decimal)1.177)) + "</Price>\n";
+                        result = result + "</Option>\n";
+
+
                     }
 
                 }
@@ -2424,7 +2607,7 @@ namespace Hotels2thailand.Front
 
             result = result + RenderXmlProductTransferOutside();
 
-            
+
 
             //productDisplay = productDisplay + "</table>";
 
@@ -2436,7 +2619,51 @@ namespace Hotels2thailand.Front
             return result;
         }
 
+        private string RoomDetail(int optionID)
+        {
+            string roomTitle = string.Empty;
+            double roomSize = 0;
+            using (SqlConnection cn = new SqlConnection(this.ConnectionString))
+            {
+                string strCommand = "select po.title,po.size";
+                strCommand = strCommand + " from tbl_product_option po";
+                strCommand = strCommand + " where po.option_id=" + optionID;
 
+                SqlCommand cmd = new SqlCommand(strCommand, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    roomTitle = reader["title"].ToString();
+                    roomSize = (double)reader["size"];
+                }
+            }
+            FrontOptionFacility fac = new FrontOptionFacility();
+            List<FrontOptionFacility> facList = fac.LoadFacilityByOptionID(optionID, 1);
+            string result = string.Empty;
+            //new
+            result = result + "<br>";
+            result = result + "<strong>Room info</strong>";
+            result = result + "<div id=\"RoomDetailMain\">";
+            result = result + "<div class=\"imageMain\">";
+            if (roomSize != 0)
+            {
+                result = result + "<span class=\"txtLight\">Size: " + roomSize + " sq.m.</span><br />";
+            }
+            result = result + "</div>";
+            result = result + "<div class=\"thumbImagePan\">";
+            result = result + "<span class=\"header3\">Room Facilities</span>";
+            result = result + "<ul class=\"noBullet\">";
+            foreach (FrontOptionFacility item in facList)
+            {
+                result = result + "<li>" + item.Title + "</li>";
+            }
+            result = result + "</ul>";
+            result = result + "</div>";
+            result = result + "<br class=\"clear_all\"/>";
+            result = result + "</div>";
+            return result;
+        }
 
         public string RenderXmlProductTransferOutside()
         {
@@ -2484,12 +2711,12 @@ namespace Hotels2thailand.Front
             List<ProductPriceMain> results = objtest.loadAll();
 
             string result = string.Empty;
-            
+
             int intNight = _dateEnd.Subtract(_dateStart).Days;
 
-            
+
             decimal priceDisplay = 0;
-            
+
             results = results.Where(x => x.Price > 0).ToList();
             results = results.OrderBy(x => x.OptionPriority).ThenBy(x => x.ConditionPriority).ThenBy(x => x.Price).ToList();
             foreach (ProductPriceMain item in results)
@@ -2504,7 +2731,7 @@ namespace Hotels2thailand.Front
                     priceDisplay = item.Price;
 
 
-                    
+
                     result = result + "<Option id=\"" + item.OptionID + "\">\n";
                     result = result + "<OptionTitle>" + item.OptionTitle + "</OptionTitle>\n";
                     result = result + "<OptionCateID>" + item.OptionCateID + "</OptionCateID>\n";
@@ -2512,9 +2739,9 @@ namespace Hotels2thailand.Front
                     result = result + "<ConditionValue>" + item.ConditionID + "_" + item.OptionID + "_" + item.PromotionID + "_" + item.NumAdult + "_" + item.NumChild + "_" + item.NumExtra + "</ConditionValue>\n";
                     result = result + "<Price>" + priceDisplay + "</Price>\n";
                     result = result + "</Option>\n";
-                    
 
-                   
+
+
                     HasExtraOption = true;
                 }
 
@@ -2543,7 +2770,8 @@ namespace Hotels2thailand.Front
             {
                 result = "<GalaDinner>true</GalaDinner>\n";
             }
-            else {
+            else
+            {
                 result = "<GalaDinner>false</GalaDinner>\n";
             }
             return result;

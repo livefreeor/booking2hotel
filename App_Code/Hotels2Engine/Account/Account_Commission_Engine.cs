@@ -222,7 +222,6 @@ namespace Hotels2thailand.Account
                 foreach (Booking_Cal_Com item in ilistitem)
                 {
                     
-
                     PricCom = (item.PriceSales * this.ComVal) / 100;
                     PriceSupplier = item.PriceSales - PricCom;
 

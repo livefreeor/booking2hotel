@@ -1176,7 +1176,7 @@ public partial class book : System.Web.UI.Page
                                 RoomResult = RoomResult + "<span class=\"fnBig fnBlack\">" + GetProductExtraTitle(int.Parse(extraOption[1]), PriceListBaseExtra) + "</span>\n";
                                 RoomResult = RoomResult + "</div>\n";
                                 RoomResult = RoomResult + "<br class=\"clearAll\" />\n";
-                                RoomResult = RoomResult + "</td><td></td><td>" + roomNight + "</td><td>" + extraOption[6] + "</td><td>" + ((int)Utility.PriceExcludeVat(priceReal)).ToString("#,###.##") + " Baht</td></tr>\n";
+                                RoomResult = RoomResult + "</td><td></td><td>" + roomNight + "</td><td>" + extraOption[6] + "</td><td>THB " + ((int)Utility.PriceExcludeVat(priceReal)).ToString("#,###.##") + "</td></tr>\n";
                                 totalPriceDeposit = totalPriceDeposit + productDeposit.GetPriceDeposit(priceReal, byte.Parse(extraOption[6]), roomNight);
                                 //Response.Write(extraItem.OptionCategoryID + "<br>");
                             }
@@ -1198,7 +1198,7 @@ public partial class book : System.Web.UI.Page
                                 RoomResult = RoomResult + "<span class=\"fnBig fnBlack\">" + GetProductExtraTitle(int.Parse(extraOption[1]), PriceListBaseExtra) + "</span>\n";
                                 RoomResult = RoomResult + "</div>\n";
                                 RoomResult = RoomResult + "<br class=\"clearAll\" />\n";
-                                RoomResult = RoomResult + "</td><td></td><td></td><td>" + extraOption[6] + "</td><td>" + ((int)(Utility.ExcludeVat(rateExtraOption) * int.Parse(extraOption[6]))).ToString("#,###.##") + " Baht</td></tr>\n";
+                                RoomResult = RoomResult + "</td><td></td><td></td><td>" + extraOption[6] + "</td><td>THB " + ((int)(Utility.ExcludeVat(rateExtraOption) * int.Parse(extraOption[6]))).ToString("#,###.##") + "</td></tr>\n";
                                 if (IsDepositFull(ProductID))
                                 {
                                     totalPriceDeposit = totalPriceDeposit + rateExtraOption * int.Parse(extraOption[6]);
@@ -1241,7 +1241,7 @@ public partial class book : System.Web.UI.Page
                         RoomResult = RoomResult + "<span class=\"fnBig fnBlack\">" + GetProductTitle(int.Parse(extraOption[1]), PriceListBase) + "</span>\n";
                         RoomResult = RoomResult + "</div>\n";
                         RoomResult = RoomResult + "<br class=\"clearAll\" />\n";
-                        RoomResult = RoomResult + "</td><td></td><td></td><td>" + extraOption[6] + "</td><td>" + ((int)(rateExtraOption * int.Parse(extraOption[6]) * roomNight)).ToString("#,###") + " Baht</td></tr>\n";
+                        RoomResult = RoomResult + "</td><td></td><td></td><td>" + extraOption[6] + "</td><td>THB " + ((int)(rateExtraOption * int.Parse(extraOption[6]) * roomNight)).ToString("#,###") + "</td></tr>\n";
 
                         checkTransfer = true;
                     }
@@ -1805,7 +1805,7 @@ public partial class book : System.Web.UI.Page
                                 formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_1\" value=\"1\" />1 King size bed</span>\n";
                                 formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_1\" value=\"2\" />Twin beds</span><br class=\"clearAll\">\n";
                                 formInfo = formInfo + "</div>\n";
-                                if (ProductID != 3590 && ProductID != 3687)
+                                if (ProductID != 3590 && ProductID != 3687 && ProductID != 3618)
                                 {
                                     formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
@@ -1822,12 +1822,22 @@ public partial class book : System.Web.UI.Page
                                     formInfo = formInfo + "</div>\n";
                                 }
 
-
-                                formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
-                                formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
-                                formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_1\" value=\"1\" />High floor</span>\n";
-                                formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_1\" value=\"2\" />Low floor</span><br class=\"clearAll\">\n";
-                                formInfo = formInfo + "</div>\n";
+                                if (ProductID != 3618)
+                                {
+                                    formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
+                                    formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
+                                    formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_1\" value=\"1\" />High floor</span>\n";
+                                    formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_1\" value=\"2\" />Low floor</span><br class=\"clearAll\">\n";
+                                    formInfo = formInfo + "</div>\n";
+                                }
+                                else
+                                {
+                                    formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
+                                    formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
+                                    formInfo = formInfo + "<span class=\"guest-requirement-col-2\"></span>\n";
+                                    formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
+                                    formInfo = formInfo + "</div>\n";
+                                }
                                 formInfo = formInfo + "<textarea name=\"sp_require_" + itemPackage.ConditionID + "_1\"></textarea>\n";
                                 formInfo = formInfo + "</div>\n";
                                 formInfo = formInfo + "</div>\n";
@@ -1845,7 +1855,7 @@ public partial class book : System.Web.UI.Page
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"1\" />1 King size bed</span>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"2\" />Twin beds</span><br class=\"clearAll\">\n";
                                     formInfo = formInfo + "</div>\n";
-                                    if (ProductID != 3590 && ProductID != 3687)
+                                    if (ProductID != 3590 && ProductID != 3687 && ProductID != 3618)
                                     {
                                         formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
@@ -1861,12 +1871,22 @@ public partial class book : System.Web.UI.Page
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
                                         formInfo = formInfo + "</div>\n";
                                     }
-
-                                    formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"1\" />High floor</span>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"2\" />Low floor</span><br class=\"clearAll\">\n";
-                                    formInfo = formInfo + "</div>\n";
+                                    if (ProductID != 3618)
+                                    {
+                                        formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"1\" />High floor</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"2\" />Low floor</span><br class=\"clearAll\">\n";
+                                        formInfo = formInfo + "</div>\n";
+                                    }
+                                    else
+                                    {
+                                        formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-2\"></span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
+                                        formInfo = formInfo + "</div>\n";
+                                    }
                                     formInfo = formInfo + "<textarea name=\"sp_require_" + itemPackage.ConditionID + "_" + roomCount + "\"></textarea>\n";
                                     formInfo = formInfo + "</div>\n";
                                     formInfo = formInfo + "</div>\n";
@@ -1907,7 +1927,7 @@ public partial class book : System.Web.UI.Page
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_1\" value=\"1\" />1 King size bed</span>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_1\" value=\"2\" />Twin beds</span><br class=\"clearAll\">\n";
                                     formInfo = formInfo + "</div>\n";
-                                    if (ProductID != 3590 && ProductID != 3687)
+                                    if (ProductID != 3590 && ProductID != 3687 && ProductID != 3618)
                                     {
                                         formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + conditionID[productCount] + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
@@ -1923,12 +1943,22 @@ public partial class book : System.Web.UI.Page
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
                                         formInfo = formInfo + "</div>\n";
                                     }
-
-                                    formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"1\" />High floor</span>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"2\" />Low floor</span><br class=\"clearAll\">\n";
-                                    formInfo = formInfo + "</div>\n";
+                                    if (ProductID != 3618)
+                                    {
+                                        formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"1\" />High floor</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"2\" />Low floor</span><br class=\"clearAll\">\n";
+                                        formInfo = formInfo + "</div>\n";
+                                    }
+                                    else
+                                    {
+                                        formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-2\"></span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
+                                        formInfo = formInfo + "</div>\n";
+                                    }
                                     formInfo = formInfo + "<textarea name=\"sp_require_" + conditionID[productCount] + "_1\"></textarea>\n";
                                     formInfo = formInfo + "</div>\n";
                                     formInfo = formInfo + "</div>\n";
@@ -1958,7 +1988,7 @@ public partial class book : System.Web.UI.Page
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_1\" value=\"2\" />เตียงคู่</span><br class=\"clearAll\">\n";
                                     formInfo = formInfo + "</div>\n";
 
-                                    if (ProductID != 3590 && ProductID != 3687)
+                                    if (ProductID != 3590 && ProductID != 3687 && ProductID != 3618)
                                     {
                                         formInfo = formInfo + "<div><label><strong>สูบบุหรี่:</strong></label>\n";
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + conditionID[productCount] + "_1\" value=\"3\" checked=\"checked\" />ไม่ระบุ</span>\n";
@@ -1974,12 +2004,22 @@ public partial class book : System.Web.UI.Page
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
                                         formInfo = formInfo + "</div>\n";
                                     }
-
-                                    formInfo = formInfo + "<div><label><strong>ระดับชั้น:</strong></label>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"3\" checked=\"checked\" />ไม่ระบุ</span>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"1\" />ชั้นสูงๆ</span>\n";
-                                    formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"2\" />ชั้นล่างๆ</span><br class=\"clearAll\">\n";
-                                    formInfo = formInfo + "</div>\n";
+                                    if (ProductID != 3618)
+                                    {
+                                        formInfo = formInfo + "<div><label><strong>ระดับชั้น:</strong></label>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"3\" checked=\"checked\" />ไม่ระบุ</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"1\" />ชั้นสูงๆ</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"2\" />ชั้นล่างๆ</span><br class=\"clearAll\">\n";
+                                        formInfo = formInfo + "</div>\n";
+                                    }
+                                    else
+                                    {
+                                        formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_1\" value=\"3\" checked=\"checked\" />ไม่ระบุ</span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-2\"></span>\n";
+                                        formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
+                                        formInfo = formInfo + "</div>\n";
+                                    }
                                     formInfo = formInfo + "<textarea name=\"sp_require_" + conditionID[productCount] + "_1\"></textarea>\n";
                                     formInfo = formInfo + "</div>\n";
                                     formInfo = formInfo + "</div>\n";
@@ -2016,7 +2056,7 @@ public partial class book : System.Web.UI.Page
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"1\" />1 King size bed</span>\n";
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"2\" />Twin beds</span><br class=\"clearAll\">\n";
                                         formInfo = formInfo + "</div>\n";
-                                        if (ProductID != 3590 && ProductID != 3687)
+                                        if (ProductID != 3590 && ProductID != 3687 && ProductID != 3618)
                                         {
                                             formInfo = formInfo + "<div><label><strong>Smoke:</strong></label>\n";
                                             formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
@@ -2032,11 +2072,22 @@ public partial class book : System.Web.UI.Page
                                             formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
                                             formInfo = formInfo + "</div>\n";
                                         }
-                                        formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
-                                        formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
-                                        formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"1\" />High floor</span>\n";
-                                        formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"2\" />Low floor</span><br class=\"clearAll\">\n";
-                                        formInfo = formInfo + "</div>\n";
+                                        if (ProductID != 3618)
+                                        {
+                                            formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"1\" />High floor</span>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"2\" />Low floor</span><br class=\"clearAll\">\n";
+                                            formInfo = formInfo + "</div>\n";
+                                        }
+                                        else
+                                        {
+                                            formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-2\"></span>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
+                                            formInfo = formInfo + "</div>\n";
+                                        }
                                         formInfo = formInfo + "<textarea name=\"sp_require_" + conditionID[productCount] + "_" + roomCount + "\"></textarea>\n";
                                         formInfo = formInfo + "</div>\n";
                                         formInfo = formInfo + "</div>\n";
@@ -2067,7 +2118,7 @@ public partial class book : System.Web.UI.Page
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"1\" />เตียงใหญ่</span>\n";
                                         formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"bed_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"2\" />เตียงคู่</span><br class=\"clearAll\">\n";
                                         formInfo = formInfo + "</div>\n";
-                                        if (ProductID != 3590 && ProductID != 3687)
+                                        if (ProductID != 3590 && ProductID != 3687 && ProductID != 3618)
                                         {
                                             formInfo = formInfo + "<div><label><strong>สูบบุหรี่ :</strong></label>\n";
                                             formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"smoke_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />ไม่ระบุ</span>\n";
@@ -2083,11 +2134,22 @@ public partial class book : System.Web.UI.Page
                                             formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
                                             formInfo = formInfo + "</div>\n";
                                         }
-                                        formInfo = formInfo + "<div><label><strong>ระดับชั้น:</strong></label>\n";
-                                        formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />ไม่ระบุ</span>\n";
-                                        formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"1\" />ชั้นสูงๆ</span>\n";
-                                        formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"2\" />ชั้นล่างๆ</span><br class=\"clearAll\">\n";
-                                        formInfo = formInfo + "</div>\n";
+                                        if (ProductID != 3618)
+                                        {
+                                            formInfo = formInfo + "<div><label><strong>ระดับชั้น:</strong></label>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />ไม่ระบุ</span>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"1\" />ชั้นสูงๆ</span>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-3\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"2\" />ชั้นล่างๆ</span><br class=\"clearAll\">\n";
+                                            formInfo = formInfo + "</div>\n";
+                                        }
+                                        else
+                                        {
+                                            formInfo = formInfo + "<div><label><strong>floor:</strong></label>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"floor_type_" + conditionID[productCount] + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />ไม่ระบุ</span>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-2\"></span>\n";
+                                            formInfo = formInfo + "<span class=\"guest-requirement-col-3\"></span><br class=\"clearAll\">\n";
+                                            formInfo = formInfo + "</div>\n";
+                                        }
                                         formInfo = formInfo + "<textarea name=\"sp_require_" + conditionID[productCount] + "_" + roomCount + "\"></textarea>\n";
                                         formInfo = formInfo + "</div>\n";
                                         formInfo = formInfo + "</div>\n";

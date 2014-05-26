@@ -437,5 +437,27 @@ namespace Hotels2thailand.Front
             return cancelDisplay;
  
         }
+
+        public string GetPolicyCancellation(List<ProductPolicyExtranet> policyList, List<CancellationExtranet> cancellationList, int ConditionID, int PromotionID, string promotionTitle, string promotionDetail, bool isCancellation)
+        {
+            string result = string.Empty;
+            if (PromotionID != 0)
+            {
+                result = result + "<br><strong class='headerTitle'>Promotion: </strong><span class='headerTitle'>" + promotionTitle + "</span>";
+            }
+
+            byte bytConditionNameId = 0;
+
+            if (isCancellation)
+            {
+                result = result + "<span class='headerTitle'>" + RenderCancellationPromotion(PromotionID) + "</span>";
+            }
+            else
+            {
+                result = result + "<span class='headerTitle'>" + RenderCancellation(ConditionID, cancellationList, bytConditionNameId) + "</span>";
+            }
+            return result;
+        }
+
     }
 }

@@ -2792,7 +2792,7 @@ namespace Hotels2thailand.Booking
                 //}
               
             }
-               
+            
             result = Total.Hotels2Currency();
             //result = cBookingDetailDisplay.GetPriceTotalByBookingId(this.BookingId).Hotels2Currency();
 

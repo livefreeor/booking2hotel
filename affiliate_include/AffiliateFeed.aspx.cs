@@ -215,7 +215,7 @@ public partial class affiliate_include_AffiliateFeed : System.Web.UI.Page
 
     private bool checkHotelExcept(int ProductID)
     {
-        int[] arrProductID = { 3504, 3462, 3463, 3514, 3475, 3512, 3480,3481,3456,3457,3458,3459,3500,3570,3520,3523,3581,3595,3573,3605,3590,3476,3617,3565,3568,3567,3575,3618 };
+        int[] arrProductID = { 3504, 3462, 3463, 3514, 3475, 3512, 3480, 3481, 3456, 3457, 3458, 3459, 3500, 3570, 3520, 3523, 3581, 3595, 3573, 3605, 3590, 3476, 3617, 3565, 3568, 3567, 3575, 3618, 3502, 3693 };
         bool result = false;
 
         for (int countItem = 0; countItem < arrProductID.Length; countItem++)

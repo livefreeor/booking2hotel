@@ -62,6 +62,7 @@
         var connameid = $("#hd_ConditionName").val();
         var Dropadult = $("#drop_adult").val();
         var Abf = $("#drop_breakfast").val();
+        var conid = $("#hd_ConditionID").val();
 
         $("<td><img class=\"img_progress\" src=\"../../images_extra/preloader.gif\" alt=\"Progress\" /></td>").appendTo("#progresscheck").ajaxStart(function () {
             $(this).show();
@@ -69,7 +70,7 @@
             $(this).remove();
         });
 
-        $.get("../ajax/ajax_condition_name_check.aspx?connid=" + connameid + "&oid=" + optionId + "&adu=" + Dropadult + "&abf=" + Abf + GetQuerystringProductAndSupplierForBluehouseManage("append"), function (data) {
+        $.get("../ajax/ajax_condition_name_check.aspx?connid=" + connameid + "&oid=" + optionId + "&adu=" + Dropadult + "&abf=" + Abf + "&conid=" + conid + GetQuerystringProductAndSupplierForBluehouseManage("append"), function (data) {
             //alert(data);
             if (data != "0") {
 
@@ -90,6 +91,7 @@
             var connameid = $("#hd_ConditionName").val();
             var Dropadult = $("#drop_adult").val();
             var Abf = $(this).val();
+            var conid = $("#hd_ConditionID").val();
 
             $("<td><img class=\"img_progress\" src=\"../../images_extra/preloader.gif\" alt=\"Progress\" /></td>").appendTo("#progresscheck").ajaxStart(function () {
                 $(this).show();
@@ -97,7 +99,7 @@
                 $(this).remove();
             });
 
-            $.get("../ajax/ajax_condition_name_check.aspx?connid=" + connameid + "&oid=" + optionId + "&adu=" + Dropadult + "&abf=" + Abf + GetQuerystringProductAndSupplierForBluehouseManage("append"), function (data) {
+            $.get("../ajax/ajax_condition_name_check.aspx?connid=" + connameid + "&oid=" + optionId + "&adu=" + Dropadult + "&abf=" + Abf + "&conid=" + conid + GetQuerystringProductAndSupplierForBluehouseManage("append"), function (data) {
 
                 if (data != "0") {
 
@@ -119,6 +121,7 @@
             var connameid = $("#hd_ConditionName").val();
             var Dropadult = $(this).val();
             var Abf = $("#drop_breakfast").val();
+            var conid = $("#hd_ConditionID").val();
 
             $("<td><img class=\"img_progress\" src=\"../../images_extra/preloader.gif\" alt=\"Progress\" /></td>").appendTo("#progresscheck").ajaxStart(function () {
                 $(this).show();
@@ -126,7 +129,7 @@
                 $(this).remove();
             });
 
-            $.get("../ajax/ajax_condition_name_check.aspx?connid=" + connameid + "&oid=" + optionId + "&adu=" + Dropadult + "&abf=" + Abf + GetQuerystringProductAndSupplierForBluehouseManage("append"), function (data) {
+            $.get("../ajax/ajax_condition_name_check.aspx?connid=" + connameid + "&oid=" + optionId + "&adu=" + Dropadult + "&abf=" + Abf + "&conid=" + conid + GetQuerystringProductAndSupplierForBluehouseManage("append"), function (data) {
 
                 if (data != "0") {
 
