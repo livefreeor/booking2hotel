@@ -106,7 +106,7 @@ public partial class book : System.Web.UI.Page
         {
             pathName = HttpContext.Current.Server.MapPath("/Layout/booking-th.html");
         }
-
+        //asdasdasdasdas
         byte categoryID = byte.Parse(Request.Form["cat_id"]);
         string ConditionSelect = Request.Form["ddPrice"];
         string ExtraSelect = Request.Form["ddPriceExtra"];
