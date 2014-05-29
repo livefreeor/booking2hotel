@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/redmond/jquery-ui-1.8.11.custom.css" media="screen" />
+<script language="javascript" src="../../js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script language="javascript" src="../../js/jquery-ui-1.8.11.custom.min.js" type="text/javascript"></script>
+<script language="javascript" src="../../js/reservationEngine.js" type="text/javascript"></script>
+<link href="../../css/rateInfo.css" type="text/css" rel="stylesheet" />
+<title>Blue House Demo</title>
+<style>
+body{
+	padding:0px;
+	margin:0px auto;
+	font-size:14px;
+	font-family:Verdana, Geneva, sans-serif;
+	background-color:#eef0ec;
+}
+#boxMain{
+	padding:0px;
+	margin:0px auto;
+	width:943px;
+}
+#boxContent{
+	background:url(images/body.jpg) no-repeat top left;
+	width:943px;
+	height:877px;
+	position:relative;
+}
+#boxSearch{
+	position:absolute;
+	width:240px;
+	height:200px;
+	right:60px;
+	top:40px;
+}
+.fontWhite
+{
+	color:#FFFFFF;
+}
+.fontMedium{
+	font-family:helvetica;
+	font-size:32px;
+}
+#boxRate{ background-color:#ffffff; padding:10px;}
+</style>
+</head>
+
+<body>
+<div id="boxMain">
+	<div id="boxHead">
+    <img src="images/head-bg-book-info2.jpg" />
+    </div>
+    <div id="boxRate">
+
+<form id="frmCheckRate" action="">
+Check in <input  name="dateci" id="dateci" size="20" autocomplete="off" value="" readonly="readonly" rel="datepicker"  type="text">
+Check out <input  name="dateco" id="dateco" size="20" autocomplete="off" value="" readonly="readonly"  type="text">
+<input type="hidden" name="rateExchange" id="rateExchange" value="25" />
+<input type="hidden" name="pid" id="pid" value="3449" />
+<input type="button" name="btnCheck" id="btnCheck" value="Check"/>
+</form>
+
+<table id="roomRatePanel" width="100%">
+	<tr>
+    <td valign="top"><div class="b2hRateResult"></div></td>
+    
+    </tr>
+</table>
+
+    </div>
+</div>
+</body>
+</html>

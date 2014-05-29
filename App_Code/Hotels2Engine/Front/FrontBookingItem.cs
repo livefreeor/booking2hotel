@@ -38,7 +38,7 @@ namespace Hotels2thailand.Front
         public byte Breakfast { get; set; }
         public byte NumChildren { get; set; }
         public byte NumAdult { get; set; }
-        public bool? ConditionIsAdult { get; set; }
+        public bool ConditionIsAdult { get; set; }
         public string MemberDetail { get; set; }
 
         public FrontBookingItem()
@@ -88,7 +88,7 @@ namespace Hotels2thailand.Front
                     cmd.Parameters.AddWithValue("@promotion_detail", DBNull.Value);
                 }
 
-                if (!data.ConditionIsAdult.HasValue)
+                if (data.ConditionIsAdult != null)
                 {
                     cmd.Parameters.AddWithValue("@condition_isadult", data.ConditionIsAdult);
                 }

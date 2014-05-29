@@ -48,14 +48,14 @@ namespace Hotels2thailand.Front
 
     public class SVReader:SVConnect
     {
-        //protected SqlDataReader reader;
-        //public SqlDataReader GetDataReader(string sqlCommand)
-        //{
-        //    ConnectionOpen();
-        //    SqlCommand cmd = new SqlCommand(sqlCommand, conn);
-        //    reader = cmd.ExecuteReader();
-        //    return reader;
-        //}
+        protected SqlDataReader reader;
+        public SqlDataReader GetDataReader(string sqlCommand)
+        {
+            ConnectionOpen();
+            SqlCommand cmd = new SqlCommand(sqlCommand, conn);
+            reader = cmd.ExecuteReader();
+            return reader;
+        }
         
     }
     

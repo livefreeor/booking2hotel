@@ -8,6 +8,7 @@ using Hotels2thailand.Front;
 using Hotels2thailand;
 using System.Data.SqlClient;
 using Hotels2thailand.DataAccess;
+using Hotels2thailand;
 using Hotels2thailand.Affiliate;
 using Hotels2thailand.Booking;
 using System.Web.Configuration;

@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
       <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="ScriptManager1" />
     <div>
-    <asp:TextBox runat="server" ID="txtBox2" TextMode="MultiLine" Columns="50" Rows="10"
+    <%--<asp:TextBox runat="server" ID="txtBox2" TextMode="MultiLine" Columns="50" Rows="10"
                     Text="Hello <b>world!</b>" /><br />
      <ajaxToolkit:HtmlEditorExtender ID="htmlEditorExtender2" TargetControlID="txtBox2"
                     runat="server" DisplaySourceTab="True" OnImageUploadComplete="ajaxFileUpload_OnUploadComplete">
@@ -28,7 +28,7 @@
                         <ajaxToolkit:UnLink />
                         <ajaxToolkit:InsertImage />                        
                     </Toolbar>
-                </ajaxToolkit:HtmlEditorExtender>
+                </ajaxToolkit:HtmlEditorExtender>--%>
     </div>
     </form>
 </body>

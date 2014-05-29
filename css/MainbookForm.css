@@ -1,0 +1,396 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body{
+	
+    font: 13px/1.7em 'Open Sans',Verdana ;
+	/*font-family:Verdana, Geneva, sans-serif;*/
+	color:#333333;
+	line-height:16px;
+	padding:0px;
+	margin:0px;
+	line-height:1.5em;
+}
+
+
+
+img{border:0px;}
+p{margin:0px !important; padding:0px !important;}
+.fnSmall{font-size:12px;color:#505050;line-height:16px;}
+
+.fnLarge{font-size:24px;}
+.fnBig{line-height:25px; font-size:18px;}
+.fnBold{font-weight:bold;}
+.fnMedium{font-size:14px;}
+
+.fnGrayLight{color:#818181;}
+.fnOrange{color:#c16800;}
+.fnBlue{color:#003a79;}
+.fnBlueSky{color:#3a74ba;}
+.fnGold{color:#7d5105;}
+.fnRed{color:#e90505;}
+.fnBlack{color:#000000;}
+#productTitle{margin:0px 10px 0px 20px; padding:0px; display:block;}
+#productAddress{margin:0px 10px 10px 0px; display:block;}
+.OptionDetail{float:left;}
+.OptionDetail>span{display:block; text-align:left; }
+.condition_list{display:block;}
+#bookingSummary
+{ 
+    background-color:#ffffff;
+	width:1020px; margin:0 auto;padding:0px;
+	margin-top:20px;
+	-moz-box-shadow: 0 0 10px #c1c1c1;
+	-webkit-box-shadow: 0 0 10px #c1c1c1;
+	box-shadow: 0 0 10px #c1c1c1;
+
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+
+}
+#bookingHeader
+{
+   margin: 0 auto;
+	width:990px; 
+	/*background:url(http://engine.booking2hotels.com/images/bgTop.gif) repeat-x top left;*/ 
+	height:140px; 
+    border-bottom:1px solid #D6D6D6;
+	position:relative
+}
+#bookingHeader>.tel_contact{position:absolute; top:10px; right:10px; text-decoration:none; border:0px; color:#FFFFFF;}
+#bookingHeader>.web_logo{position:absolute; top:50px; left:10px; text-decoration:none; border:0px;}
+#bookingHeader>.web_livechat{position:absolute; top:50px; right:10px; text-decoration:none; border:0px; width:199px; height:65px;}
+#bookingProgress{position:absolute; top:65px; left:280px;width:480px; height:56px;}
+.bookingProgress1{background:url(http://engine.booking2hotels.com/images/booking_progress.gif); background-repeat:no-repeat; background-position:0px 0px;}
+.bookingProgress2{background:url(http://engine.booking2hotels.com/images/booking_progress.gif); background-repeat:no-repeat; background-position:0px -56px;}
+.bookingProgress3{background:url(http://engine.booking2hotels.com/images/booking_progress.gif); background-repeat:no-repeat; background-position:0px -112px;}
+.bookingProgress4{background:url(http://engine.booking2hotels.com/images/booking_progress.gif); background-repeat:no-repeat; background-position:0px -168px;}
+#bookingView{
+    padding:10px;
+	margin-left:10px;
+	width:690px; 
+	float:left; 
+	/*border-top:2px solid #656565;*/
+	/*border-bottom:2px solid #656565;
+	border-left:1px solid #bababa;
+	border-right:1px solid #bababa;*/
+}
+
+#bookingTotal{width:265px; float:left;margin-left:13px; margin-top:15px !important;}
+#bookingFooter{ line-height:18px; margin-top:25px;padding:5px 0px;}
+#bookingCheck{border-top:1px solid #e2e2e2; padding:10px 0px 30px 0px;}
+#bookingSummaryTitle{display:block;  line-height:25px; height:25px}
+#bookingCheckIn{ list-style:none; margin-top:15px; padding:0px; margin-left:0px; }
+
+#bookingCheckIn  li{ list-style:none; margin-right:10px; padding:0px; float:left; width:180px;}
+#bookingCheckIn  li strong{ font-size:14px;  padding-bottom:15px}
+#bookingCheckIn  li.otherProduct{ list-style:none; margin-right:10px; padding:0px; float:left; width:250px;}
+#bookingCheckIn  li.bookingGuest{width:100px; text-align:center}
+/*#bookingList-th th{line-height:10px;background:url(http://engine.booking2hotels.com/images/booking_bar_rate.gif) repeat-x top left; height:37px; font-size:12px; color:#333333; font-weight:normal; line-height:37px; border-bottom:1px solid #e2e2e2;}
+#bookingList-th td{padding:10px; text-align:center; border-bottom:1px solid #e2e2e2;}
+
+#bookingList th{background:url(http://engine.booking2hotels.com/images/booking_bar_rate.gif) repeat-x top left;padding:10px; height:37px; font-size:14px; color:#333333; font-weight:normal; line-height:37px; border-bottom:1px solid #e2e2e2;}
+#bookingList td{padding:10px; text-align:center; border-bottom:1px solid #e2e2e2;}*/
+.bookingListItem img{float:left; margin-right:10px;padding:2px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;}
+
+.bookingOptionTitle{font-size:18px; color:#000000;}
+.bookingOptionPromotion{display:block; padding:0px; margin-top:3px; color:#3a74ba;}
+.bookingOptionCondition{display:block; padding:0px; margin-top:3px; color:#222222}
+.bookingOptionConditionView{  padding-left:0px;display:block; margin-top:0px; color:#3a74ba;}
+.bookingOptionConditionView a{
+     text-decoration:none;
+      font-size:11px;
+}
+.OptionDetail .fnBig{
+    font-size:14px !important;
+    font-weight:bold;
+}
+
+/*#bookingTotal{border-top:2px solid #656565;}*/
+#bookingRoomAvailable{
+    margin-bottom:20px !important;
+	min-height:40px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:65px !important; 
+	background-image:url(http://engine.booking2hotels.com/images/ico_booking_available.gif); 
+	background-repeat:no-repeat; 
+	background-position:0px 10px; 
+	display:block; 
+
+	}
+.bk_booking_total{
+    padding:10px;
+    background-color:#dff0d8;
+}
+#bookingMiniTotal{ width:100%;  padding:5px !important;  }
+#bookingMiniTotal td{  color:#333333 !important;   padding:5px;}
+.bookingTotalPrice{font-size:16px; font-weight:bold; padding-top:10px !important; padding-left:0px !important ;padding-right:0px !important}
+.bookingVatCharge{border-bottom:1px solid #468847;}
+#btnProceed{ margin:0 auto; display: block; text-align:center ; padding:10px 30px 10px 30px !important; font-size:20px !important; }
+.faqs_title{}
+#bookingFrequencyAsk{font-weight:bold;padding:10px; display:block;}
+#bookingFrequencyAsk.faqTitle{font-weight:bold;}
+#bookingFrequencyAskList{margin-top:15px; padding:0px;}
+#bookingFrequencyAskList li{ list-style:none; line-height:18px;}
+#bookingFrequencyAskList li a{list-style:none; color:#7d5105; text-decoration:none;}
+#editBooking{display:block;margin-left:10px; margin-bottom:15px;}
+#tenYearsGuarantee{background:url(http://engine.booking2hotels.com/images/ico_10years.gif) no-repeat top left; padding-left:58px;padding-top:5px;; height:53px; margin-top:15px; line-height:20px;}
+#secureBanner{display:none;}
+#secureBox{background-image:url(http://engine.booking2hotels.com/images/ico_secure_key.gif);background-repeat:no-repeat;background-position:200px 0px; padding-right:35px; padding-top:15px;font-size:18px; font-family:helvetica;}
+#secureBoxTh{padding-top:15px;font-size:18px; font-family:helvetica;}
+#secureBoxTh>span{background-image:url(http://engine.booking2hotels.com/images/ico_secure_key.gif); background-repeat:no-repeat;background-position:0px 0px;padding-left:35px; display:block; }
+/*Information*/
+#bookingDisplay{
+     padding:30px;
+  
+    border:1px solid #f1f1f1 ;
+    background-color:#fdfdfc;
+    -webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+
+#formCustomerBox{
+    padding:30px;
+   display:none;
+    border:1px solid #f1f1f1 ;
+    background-color:#fdfdfc;
+    -webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+
+}
+.formCustomer{
+		width:675px;
+		padding-left:15px;
+		padding-top:15px;
+		padding-bottom:15px;
+		
+		position:relative;
+	}
+#prefix{
+     width:80px !important;
+}
+#req_postal_code{
+    width:130px !important;
+}
+#req_city{
+width:130px !important;
+}
+#req_address_1,#req_address_2{
+    width:500px !important;
+}
+#re_email,#email,#phone{
+    width:200px !important;
+}
+
+.head-title-form{
+    border-bottom:1px solid #e2e2e2;
+    padding:0 0 20px 0;
+     width:618px !important;
+}
+.formCustomer {
+border-bottom :1px solid #e2e2e2;
+width:618px;
+}
+
+	.formCustomer div{width:490px;margin-bottom:8px; line-height:20px; }
+
+
+	.formCustomer #asterisk{display:block; position:absolute; color:#545454;  top:5px; right:55px;  border:1px solid #fbeed5; padding:5px !important; background-color:#fcf8e3;}
+	.formCustomer label{width:120px; display:block;  font-size:14px; font-weight:bold;}
+   .formCustomer select{
+        height: 28px !important;
+line-height: 28px !important;
+    }
+   #bookingHeader>.web_livechat {
+position: absolute  !important;
+top: 30px !important;
+right: 10px !important;
+text-decoration: none !important;
+border: 0px !important;
+width: 255px !important;
+height: 65px !important;
+padding: 5px !important;
+}
+	.formCustomer input,select{
+        padding:4px !important;
+        font-size: 13px !important;
+        height: 18px !important;
+        line-height: 18px !important;
+        margin-bottom:9px !important;
+        width:300px !important;
+     border: 1px solid #cccccc !important;
+        -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+	}
+    .btn-box-payment{
+
+    }
+    .btn-box-payment button{
+        float:left;
+        
+    }
+    #btnPayment{   
+        margin-left:210px;
+                 
+        text-align: center;
+        padding: 10px 20px 10px 20px !important;
+        font-size: 16px !important;
+    }
+	.formCustomer input[type="radio"]{width:20px;}
+	
+	#paymentMethod{background-color:#d9edf7;width:100%;padding-left:15px;padding-top:15px; padding-bottom:15px; margin-bottom:15px; border:1px solid #bce8f1;}
+
+
+	#paymentMethod input[type="submit"]{ float:right; border:0px; cursor:pointer;}
+	
+		.btnConfirm{ display: block; width:210px; height:42px; margin-right:10px;background:url(http://engine.booking2hotels.com/images/btn_confirm.gif) no-repeat top left;}
+	.btnPayment-en{ display: block; width:210px; height:42px; margin-right:100px;background:url(http://engine.booking2hotels.com/images/btn_payment.gif) no-repeat top left;}
+	.btnPayment-th{ display: block; width:210px; height:42px; margin-right:10px;background:url(http://engine.booking2hotels.com/images/btn_payment_th.gif) no-repeat top left;}
+     .requirementCustomer span.fnMedium{
+           margin-bottom:10px;
+           display:block;
+           background-color:#F6F3EE;
+           width:618px;
+           text-indent:5px;
+           color:#6d5226;
+     }
+	.requirementCustomer{position:relative; width:618px !important; border-bottom:1px solid #E2E2E2;}
+	.requirementCustomer textarea{position:absolute;  right:0px; top:25px; width:180px; height:100px;}
+    .requirementCustomer div{
+         margin-left:5px;
+    }
+    
+    .requirementCustomer div label{
+        margin-top:5px;
+        float:left;
+         font-size:12px;
+         display:inline;
+         width:80px;
+    }
+    .requirementCustomer input {
+        width:20px !important;
+    }
+	h3{padding:0px; margin:0px; font-family:helvetica;}
+	hr{color:#d3d3d3}
+	
+/*End Information*/
+#tooltip {
+	color:#333;
+	background:#ffffff;
+	/*opacity: .8;*/
+	border:2px solid #efa303;
+	display:none; /*--Hides by default--*/
+	position:absolute;	z-index:1000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding:5px;
+}
+.tooltip_content{
+color: #fff;
+	background:#faeedc;
+	display:none; /*--Hides by default--*/
+	padding:1px;
+	position:absolute;	z-index:1000;
+}
+#fade2 { 
+display: none;
+  background: #000;
+  position: fixed; left: 0; top: 0;
+  width: 100%; height: 100%;
+  opacity: .30;
+  z-index: 9999;
+}
+#darkman_pop
+{
+	 display: none; /*--hidden by default--*/
+	background: #fff;
+	padding: 0px;
+	
+	float: left;
+	font-size: 1.2em;
+	position:absolute;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	 max-height:500px;
+	 overflow:auto;
+	 padding:2px;
+	-moz-box-shadow: 0 0 10px #888;
+	-webkit-box-shadow: 0 0 10px#888;
+	box-shadow: 0 0 10px #888;
+}
+#content_privacyLink{
+	display:none;
+}
+#content_cancelLink{
+	display:none;
+}
+.guest-requirement-div{width:520px;}
+.guest-requirement-col-1{width:120px;float:left; display:block;}
+.guest-requirement-col-2{width:130px;float:left; display:block;}
+.guest-requirement-col-3{width:100px;float:left; display:block;}
+.guest-requirement{float:left; display:block; width:140px;}
+label.error {
+	display:inline-block;
+	 width:200px;
+	font-size: 12px;
+	color: #aa0000;
+
+	margin-left:5px;
+}
+#cardForm label.error {
+	display:block;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	color: #aa0000;
+	float: none;
+	margin:0px;
+}
+.card_offer{margin-bottom:15px;}
+#thankyouContent{
+	width:720px;
+	margin:20px auto;
+	
+}
+#cardForm input{width:300px;}
+#cardForm td
+{
+	padding:3px 0px;
+}
+div.loading{
+	width:100%;
+	text-align:center;
+	height:72px;
+	position:fixed;
+	z-index:9999;
+	font-size:24px;
+}
+.clearAll{ clear:both;}
+
+.headerPolicy {
+    line-height: 25px;
+    font-size: 18px;
+    padding-bottom: 5px;
+    color: #f05e1b;
+}
+
+.headerTitle {
+    color: #3a74ba;
+}
+
+.detail {
+    color: #3a74ba;
+}
+
+.div-Info 
+{
+    background-color: #d9edf7; 
+    border-color: #bce8f1; 
+    color: #31708f;      
+}

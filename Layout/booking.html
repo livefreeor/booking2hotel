@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--###ProductTitle###--></title>
+
+<!--###cssHotelBook###-->
+<link rel="stylesheet" type="text/css" href="/css/redmond/jquery-ui-1.8.11.custom.css"/>
+<link rel="stylesheet" href="/css/reveal.css" type="text/css" />	
+    <link rel="Stylesheet" href="/css/extranetnew/bootstrap.min.css" type="text/css" />
+     <link rel="Stylesheet" href="/css/extranetnew/style.css" type="text/css" />
+    
+ <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" type="text/css"/>
+    <link href="/css/extranetnew/font-awesome.css" rel="stylesheet"/>
+<script language="javascript" src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.11.custom.min.js"></script> 
+<script language="javascript" src="/js/ht2thUtility.js" type="text/javascript"></script>
+<script language="javascript" src="/js/jquery.validate-2.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/booking.check.js?vs=1"></script>
+<script type="text/javascript" src="/js/jquery.reveal.js"></script>
+<script language="javascript" type="text/javascript" src="/scripts/darkman_utility.js"></script>
+    
+<script language="javascript" type="text/javascript">
+	$(document).ready(function(){
+		tooltip();
+		imgFloat();
+		$("#flight_ci").datepicker({
+		    minDate: 1,
+		    altField: "#Hdflight_ci",
+		    altFormat: 'yy-mm-d'
+        });
+		$("#flight_co").datepicker({
+		    minDate: 1,
+		    altField: "#Hdflight_co",
+		    altFormat: 'yy-mm-d'
+        });
+		
+		$("#btnPayment").click(function(){
+			$(window).unbind('beforeunload');
+		});
+		
+		
+		$("#btnProceed").click(function(){
+			$("#bookingDisplay").fadeOut(100);
+			$("#formCustomerBox").fadeIn(100);
+			$("#secureBanner").fadeIn(100);
+			$("#btnProceed").hide();
+			$("#bookingProgress").removeClass("bookingProgress1").addClass("bookingProgress2");
+			
+			
+		});
+		$("#privacyLink").click(function(){
+				DarkmanPopUp_front(590,$("#content_privacyLink").html());
+			});
+			$("#cancelLink").click(function(){
+				DarkmanPopUp_front(590,$("#content_cancelLink").html());
+			});
+	});
+	
+	function viewBooking()
+	{
+		$("#bookingDisplay").fadeIn(100);
+			$("#formCustomerBox").fadeOut(100);
+			$("#secureBanner").fadeOut(100);
+			$("#btnProceed").show();
+			$("#bookingProgress").removeClass("bookingProgress2").addClass("bookingProgress1");
+	}
+</script>
+
+    <link rel="stylesheet" type="text/css" href="/css/MainbookForm.css" />
+<!--###GoogleAnalytic###-->
+</head>
+
+<body>
+<form id="formBooking" action="booking_process.aspx" method="post">
+    <div id="bookingSummary">
+    <!--###HotelHeaderStart###-->
+    	<div id="bookingHeader">
+        <span class="tel_contact">Question Call 02-9300973</span>
+        	<a href="http://www.hotels2thailand.com" class="web_logo"><img src="/images/booking_logo.gif" /></a>
+          <div class="web_livechat"></div>
+            <div id="bookingProgress" class="bookingProgress1"></div>
+        </div>
+        <!--###HotelHeaderEnd###-->
+        <div id="bookingView">
+        <!--###BookingSummaryStart###-->
+        <div id="bookingDisplay">
+        	<p id="productTitle" class="fnLarge">
+            Prince Palace Hotel Bangkok
+            </p>
+            <span id="productAddress" class="fnGrayLight">Address : 488/800 Bo Bae Tower ,Damrongrak Road , Klong Mahanak ,Pomprab , Bangkok 10100</span>
+            
+            <div id="bookingCheck">
+            	<span id="bookingSummaryTitle" class="fnBig fnOrange">Booking Summary</span>
+                <ul id="bookingCheckIn">
+                    <li><strong>Check in:</strong><br />Wednesday May,28 2012</li>
+                    <li><strong>Check out:</strong><br />Monday May,28 2012</li>
+                    <li class="bookingGuest"><strong>Adult:</strong><br />2</li>
+                    <li class="bookingGuest"><strong>Child:</strong><br />0</li>
+                </ul>
+                <br class="clearAll" />
+            </div>
+            <table cellpadding="0" cellspacing="0" width="100%" id="bookingList">
+                	<tr><th>Option</th><th>Avg./Night</th><th>Night</th><th>Quantity</th><th>Total</th></tr>
+                    <tr><td class="bookingListItem">
+                    <img src="/images/prince_palace_hotel_bangkok_superior_room_overview_small_86_60_1.jpg" />
+                    <p class="OptionDetail">
+                        <span class="fnBig fnBlack">Superior Room</span>
+                        <span class="fnBlueSky">Hot Deal, Get Discount 50%</span>
+                        <span class="fnBlack">Breakfast Included<br />Non refundable & No amendment
+                        </span>
+                        <span class="bookingOptionConditionView">
+                        <a href="#" class="tooltip">
+                        View Condition
+                        <span class="tooltip_content"><strong>Breakfast Included</strong><br/><strong>Check-in</strong><span class="cancellation_content">14:00</span><br><strong>Check-out</strong><span class="cancellation_content">12:00</span><br><strong>Child</strong><span class="cancellation_content">No extra charge for child under 12 years old sharing same room with parents, using existing bedding (Max. 1 Child: Not include Breakfast).</span><br><br/><strong>Cancellation Policy</strong><br/>Non Refundable <br/><br/><strong>Help the children: </strong><br/><span class="cancellation_content">You can help the children. Every booking will be sharing to non-profit children organization in Thailand.</span></span>
+                        </a>
+                        </span>
+                    </p>
+                    <br class="clearAll" />
+                    </td><td>THB 1,699</td><td>1</td><td>1</td><td>THB 1,699</td></tr>
+                    <tr><td class="bookingListItem">
+                    <img src="/images/prince_palace_hotel_bangkok_superior_room_overview_small_86_60_1.jpg" />
+                    <p>
+                        <span class="bookingOptionTitle">Superior Room</span>
+                        <span class="bookingOptionPromotion">Hot Deal, Get Discount 50%</span>
+                        <span class="bookingOptionCondition">Refundable</span>
+                        <span class="bookingOptionConditionView"><a href="#">View Condition</a></span>
+                    </p>
+                    <br class="clearAll" />
+                    </td><td>THB 2,456</td><td>1</td><td>1</td><td>THB 2,456</td></tr>
+                </table>
+                <br />
+                &nbsp;&nbsp;<a href="javascript:void(0)" onclick="history.back()">&lt;&lt; Edit booking detail</a>
+                <br />
+                <br class="clearAll" />
+                </div>
+                <!--###BookingSummaryEnd###-->
+                <!--###BookingInformationStart###-->
+                <div id="formCustomerBox">
+                    <div class="formCustomer">
+                        <div class="head-title-form" ><span class="fnLarge fnGray">Your information</span></div>
+                        
+                        <h3 class="fnBig fnBlue">About you</h3><br />
+                        <div><label>Prefix:</label><span class="fnRed">*</span> <select><option>None</option></select></div>
+                        <div><label>Your full name:</label><input type="text"  name="first_name" id="first_name" class="required" /></div>
+                        <div><label>Email address:</label><input type="text" name="email" id="email" class="required email" /></div>
+                        <div><label>Repeat email:</label><input type="text" name="re_email" id="re_email" class="required" /></div>
+                        <div><label>Phone:</label><input type="text" name="phone" id="phone" class="required"/></div>
+                        <p id="asterisk">Fields marked with a red asterisk ( <span class="fnRed">*</span> ) are required.</p>
+                    </div>
+                     <div class="formCustomer">
+                        <h3 class="fnBig fnBlue">Flight detail:</h3><br />
+                        <div><label>Arrival Flight:</label><input type="text" name="flight_name_in" id="flight_name_in"/></div>
+                        <div><label>Arrival Time:</label><input type="text" name="txtName" style="width:120px;" /> Hour <select id="time_hour_arv" name="time_hour_arv"><option>HH</option></select> Min <select id="time_min_arv" name="time_min_arv"><option></option>MN</select></div>
+                        <div><label>Departure Flight:</label><input type="text" name="flight_name_out" id="flight_name_out"/></div>
+                        <div><label>Departure Time:</label><input type="text" name="txtName" style="width:120px;" /> Hour <select id="time_hour_dep" name="time_hour_dep"><option></option>HH</select> Min <select id="time_min_dep" name="time_min_dep"><option></option>MN</select></div>
+                        <div><label>Remark</label><textarea style="width:300px; height:100px;" name="transfer_detail">Pickup from airport and transfer to Prince Palace Hotel Bangkok</textarea></div>
+                    </div>
+                    	<div class="formCustomer">
+                            <h3 class="fnBig fnBlue">Guest & Information Preference</h3>
+                            <span class="fnGrayLight">(Subject to availability, can not guarantee)</span>
+                            
+                         </div>
+                         <div class="formCustomer">
+                            <div class="requirementCustomer">
+                                <span class="fnMedium"><strong>Superior Room</strong></span><br /><br />
+                                <div>
+                                <label class="guest-requirement-col-0"><strong>Bed type:</strong></label>
+                                <span class="guest-requirement-col-1"><input type="radio" name="" />No preference</span>
+                                <span class="guest-requirement-col-2"><input type="radio" name="" />1 King size bed</span>
+                                <span class="guest-requirement-col-3"><input type="radio" name="" />Twin beds</span><br class="clearAll"></div>
+                                <div><label class="guest-requirement-col-0"><strong>Smoke:</strong></label>
+                                <span class="guest-requirement-col-1"><input type="radio" name="" />No preference</span>
+                                <span class="guest-requirement-col-2"><input type="radio" name="" /> Non-Smoking </span>
+                                <span class="guest-requirement-col-3"><input type="radio" name="" /> Smoking</span><br class="clearAll">
+                                </div>
+                                <div><label class="guest-requirement-col-1"><strong>floor:</strong></label>
+                                <span class="guest-requirement-col-1"><input type="radio" name="" />No preference</span>
+                                <span class="guest-requirement-col-2"><input type="radio" name="" />High floor </span>
+                                 <span class="guest-requirement-col-3"><input type="radio" name="" />Low floor</span><br class="clearAll"></div>
+                                <textarea>Special Requirement</textarea>
+                            </div>
+                        </div>
+                         <div class="formCustomer">
+                            <div class="requirementCustomer">
+                                <span class="fnMedium"><strong>Superior Room</strong></span><br /><br />
+                                <div><label><strong>Bed type:</strong></label><input type="radio" name="" />No preference<input type="radio" name="" />1 King size bed<input type="radio" name="" />Twin beds</div>
+                                <div><label><strong>Smoke:</strong></label><input type="radio" name="" />No preference<input type="radio" name="" />1 King size bed<input type="radio" name="" />Twin beds</div>
+                                <div><label><strong>floor:</strong></label><input type="radio" name="" />No preference<input type="radio" name="" />1 King size bed<input type="radio" name="" />Twin beds</div>
+                                <textarea>Special Requirement</textarea>
+                            </div>
+                        </div>
+                         <div class="formCustomer">
+                            <div class="requirementCustomer">
+                            <span class="fnMedium"><strong>Superior Room</strong></span><br /><br />
+                            <div><label><strong>Bed type:</strong></label><input type="radio" name="" />No preference<input type="radio" name="" />1 King size bed<input type="radio" name="" />Twin beds</div>
+                            <div><label><strong>Smoke:</strong></label><input type="radio" name="" />No preference<input type="radio" name="" />1 King size bed<input type="radio" name="" />Twin beds</div>
+                            <div><label><strong>floor:</strong></label><input type="radio" name="" />No preference<input type="radio" name="" />1 King size bed<input type="radio" name="" />Twin beds</div>
+                            <textarea>Special Requirement</textarea>
+                            </div>
+                    	</div>
+                        <div class="formCustomer">
+                        
+                        <h3 class="fnBig fnBlue">Please fill up your credit card detail to process the booking</h3><br />
+                        <div><label>Lastname:</label><input type="text"  name="card_last_name" id="card_last_name" class="required" /></div>
+                        <div><label>Middlename:</label><input type="text"  name="card_middle_name" id="card_middle_name" class="required" /></div>
+                        <div><label>Firstname:</label><input type="text" name="card_email" id="card_email" class="required email" /></div>
+                        <div><label>Email:</label><input type="text" name="card_re_email" id="card_re_email" class="required" /></div>
+                        <div><label>Country:</label><input type="text" name="card_country" id=card_"card_country" class="required"/></div>
+                        <div><label>Province:</label><input type="text" name="card_province" id="card_province" class="required"/></div>
+                        <div><label>Zip code:</label><input type="text" name="card_zip_code" id="card_zip_code" class="required"/></div>
+                        <div><label>Phone:</label><input type="text" name="card_phone" id="card_phone" class="required"/></div>
+                    </div>
+                        <div id="paymentMethod">
+                            <h3 class="fnBig fnBlue">Payment Method</h3>
+                            <span class="fnSmall fnGray fnBold">Total Amount: 2,200 Thai Baht </span> <span class="fnGold">(Included of Tax and Service Charge)</span>. You are requested to pay the deposit in the amount of 440 Thai Baht to secure your booking. The balance can be paid upon your check in time.<br /><br />
+                            <div class="card_offer"><input type="radio" style="float:left; margin-top:8px;" /><img src="../images/VisaMastercard.jpg" /><img src="images/jcb.jpg" /></div>
+                            <div class="card_offer"><input type="radio" style="float:left; margin-top:8px;" /><img src="../images/VisaMastercard.jpg" /><img src="images/jcb.jpg" /></div>
+                            <br class="clearAll" />
+                            <div><a href="javascript:void(0)" onclick="history.go(0)" style="float:left"><img src="../images/btn_edit_booking.gif" id="editBooking" /></a><input type="submit" id="btnPayment" name="submit" value="" /></div>
+                            <br class="clearAll" />
+                        </div>
+                        <div id="paymentMethod">
+                            <h3 class="fnBig fnBlue">Payment Method</h3>
+                            <span class="fnBig fnGray">Grand Total Price : 4,494 Baht</span> <span class="fnGold">(Included of Tax and Service Charge)</span><br /><br />
+                            <div class="card_offer"><input type="radio" style="float:left; margin-top:8px;" /><img src="../images/VisaMastercard.jpg" /><img src="images/jcb.jpg" /></div>
+                            <div class="card_offer"><input type="radio" style="float:left; margin-top:8px;" /><img src="../images/VisaMastercard.jpg" /><img src="images/jcb.jpg" /></div>
+                            <br class="clearAll" />
+                            <div><a href="javascript:void(0)" onclick="history.go(0)" style="float:left"><img src="../images/btn_edit_booking.gif" id="editBooking" /></a><input type="submit" id="btnPayment" name="submit" value="" /></div>
+                            <br class="clearAll" />
+                        </div>
+    		</div>
+        	<!--###BookingInformationEnd###-->
+        </div>
+        
+        <div id="bookingTotal">
+       	  
+          <!--###totalBookingMiniStart###-->
+          <p id="bookingRoomAvailable">The room is available. You’ll receive voucher confirmation immediately after payment is successful</p>
+          <table id="bookingMiniTotal" cellspacing="0">
+            	<tr><td><strong>Sub total</strong></td><td align="right"><strong>THB 4,567</strong></td></tr>
+                <tr>
+                  <td class="bookingVatCharge"><strong>Vat & Service Charge</strong></td><td class="bookingVatCharge" align="right"><strong>THB 345</strong></td></tr>
+                <tr><td class="bookingTotalPrice">Grand Total</td><td align="right" class="bookingTotalPrice">THB 4,867</td></tr>
+                <tr><td colspan="2">
+                <i class="fnRed">(Included of Tax and Service Charge)</i>
+                <p class="fnSmall">No hidden cost and no surprised charge. You can see the grand total in net rate without additional charge when you check in at hotel or use the service.</p>
+                </td></tr>
+                <tr><td colspan="2"><img src="/images/logo_booking_offer.gif" /><br /><br /></td></tr>
+            </table>
+             <!--###totalBookingMiniEnd###-->
+             <!--###ProceedCheckoutStart###-->
+            <br />
+            <button type="button" id="btnProceed" class="btn btn-warning" >Continue&nbsp;<i class="icon-circle-arrow-right"></i></button>
+          <!--<a href="javascript:void(0)" ><img src="/images/btn_proceed.gif" /></a>-->
+          <!--###ProceedCheckoutEnd###-->
+          <div id="secureBanner">
+            <div id="secureBox">
+            <span class="fnBlue"><strong>100% Secure Payment</strong></span>
+            <p class="fnSmall">Our payment system is certified by Thai Bank in usage of security version SSL 256 Bit encryption , the most modern technological security system using nowadays websites in the world.</p>
+            </div>
+            <br />
+            <img src="/images/banner_secure_card.gif" />
+          </div>
+            	<ul  id="bookingFrequencyAskList">
+                	<li><strong>Frequency Asked Questions?</strong></li>
+                    <li><a href="javascript:void(0)" id="cancelLink">&bull; What is your cancellation policy for hotel reservations?</a></li>
+                </ul>
+                <div id="content_cancelLink">
+                <table cellpadding="5"><tr><td><img src="/images/cancellation_demo.gif" style="float:left; margin-right:10px;" /></td>
+                <td valign="top" style="border-left:2px solid #999;" class="fnSmall">You can click “View Condition” to see cancellation and child policy</td></tr>
+                <tr><td colspan="2" align="center">
+                <br />
+                        <center><input type="button" onclick="DarkmanPopUp_Close_front();" value="Close window" style="width:120px; height:30px;"/></center>
+                </td></tr>
+                </table>
+				</div>
+                <div id="content_privacyLink">
+                	<div style="padding:10px; font-size:12px;">
+                        <h3>Our commitment to your privacy</h3>
+                        <p>We are proud of our commitment to protect your privacy online. Your value truth in us leads to work harder in order to be obtained your confidence so that you can enthusiastically use our services and recommend us to friends and family.</p>
+                        <br />
+                        <h3>Our privacy promise</h3>
+                        <p>All your privacy information will be stored in host on our server. We will never sell, rent, barter or share to any third party personally identify information collected during your use of the site unless we have your prior permission. 
+                        For general statistics information about our sites and visitors such as number of visitors, service purchased, etc may revealed from time to time, but we will never refer your name or address to any third party as the promised. </p>
+                        <br />
+                        <h3>How to contact us</h3>
+                        <p>Should you have any enquiry, comment or feedback towards hotels2thailand.com., please feel free to contact us by sending your enquiry to <a href="mailto:reservation@hotels2thailand.com">reservation@hotels2thailand.com</a></p>
+                        <br />
+                        <center><input type="button" onclick="DarkmanPopUp_Close_front();" value="Close window" style="width:120px; height:30px;"/></center>
+                    </div>
+                </div>
+               
+        </div>
+        <br class="clearAll"/>
+        
+        <div id="bookingFooter">
+        <!--###ProductAddress###-->
+        
+        </div>
+     
+    </div>
+   
+    </form>
+</body>
+</html>

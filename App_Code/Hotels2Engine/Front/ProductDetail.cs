@@ -40,7 +40,7 @@ namespace Hotels2thailand.Front
         public byte NumPic { get; set; }
         public bool IsNewPic { get; set; }
        
-       
+        private byte _categoryID;
 
         public ProductDetail()
         { 

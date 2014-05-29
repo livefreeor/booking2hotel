@@ -39,7 +39,7 @@ namespace Hotels2thailand.Front
         private int ProductTransferID;
         private byte ProductCategoryID;
         private fnCurrency currency;
-        //private bool hasPriceRecord = false;
+        private bool hasPriceRecord = false;
         private int countConditionActive = 0;
         private string refUrl = string.Empty;
         private string refQuery = string.Empty;
@@ -48,7 +48,7 @@ namespace Hotels2thailand.Front
         private decimal priceABFTemp = 0;
         private decimal priceABFTotal = 0;
         private byte langID = 1;
-        //private bool promotionChargeABF = false;
+        private bool promotionChargeABF = false;
 
         public byte LangID
         {
@@ -1187,7 +1187,7 @@ namespace Hotels2thailand.Front
                         if (priceDisplay > 0)
                         {
                             countConditionActive = countConditionActive + 1;
-                            //hasPriceRecord = true;
+                            hasPriceRecord = true;
 
                             if (!string.IsNullOrEmpty(item.OptionPicture))
                             {
@@ -1364,7 +1364,7 @@ namespace Hotels2thailand.Front
                         if (priceDisplay > 0)
                         {
                             countConditionActive = countConditionActive + 1;
-                            //hasPriceRecord = true;
+                            hasPriceRecord = true;
                             roomImage = "/thailand-hotels-pic/" + item.ProductCode + "_" + item.OptionID + "_b_1.jpg";
                             if (!File.Exists(HttpContext.Current.Request.MapPath(roomImage)))
                             {
@@ -1541,7 +1541,7 @@ namespace Hotels2thailand.Front
                         if (priceDisplay > 0)
                         {
                             countConditionActive = countConditionActive + 1;
-                            //hasPriceRecord = true;
+                            hasPriceRecord = true;
                             roomImage = "/thailand-hotels-pic/" + item.ProductCode + "_" + item.OptionID + "_b_1.jpg";
                             if (!File.Exists(HttpContext.Current.Request.MapPath(roomImage)))
                             {
@@ -2423,7 +2423,7 @@ namespace Hotels2thailand.Front
                                                         breakfastCharge = item.BreakfastCharge;
                                                         if (item.BreakfastCharge>0)
                                                         {
-                                                            //promotionChargeABF = true;
+                                                            promotionChargeABF = true;
                                                         }
                                                         
                                                         
@@ -2476,38 +2476,37 @@ namespace Hotels2thailand.Front
         private string RenderAnnoucement()
         {
             string annouceDisplay = string.Empty;
-            //DateTime dateCheck;
+            DateTime dateCheck;
 
-            //List<FrontAnnoucement> annoucementList;
+            List<FrontAnnoucement> annoucementList;
 
             FrontAnnoucement annoucement = new FrontAnnoucement(ProductID);
             HttpContext.Current.Response.Write(langID+"hello");
             annoucement.LangID = langID;
             Utility.SetSessionDate();
+            if (HttpContext.Current.Session["dateStart"] == "''")
+            {
+                annoucementList = annoucement.LoadAnnoucement();
+
+            }
+            else
+            {
+
+                annoucementList = annoucement.LoadAnnoucementByDate(Convert.ToString(HttpContext.Current.Session["dateStart"]), Convert.ToString(HttpContext.Current.Session["dateStart"]));
+                // annoucement.LoadAnnoucementByDate();
+            }
+
             
-            //if (HttpContext.Current.Session["dateStart"] == "''")
-            //{
-            //    annoucementList = annoucement.LoadAnnoucement();
 
-            //}
-            //else
-            //{
-
-            //    annoucementList = annoucement.LoadAnnoucementByDate(Convert.ToString(HttpContext.Current.Session["dateStart"]), Convert.ToString(HttpContext.Current.Session["dateStart"]));
-            //    // annoucement.LoadAnnoucementByDate();
-            //}
-
-            
-
-            //if (annoucementList.Count > 0)
-            //{
-            //    annouceDisplay = annouceDisplay + "</br><table class=\"annoucement\" style=\"border:1px solid #2e2721;background-color:#f0f8ff;\" width=\"95%\" align=\"center\"><tr><th class=\"roomtype\">Announcement</th></tr><td valign=\"top\">";
-            //    foreach (FrontAnnoucement item in annoucementList)
-            //    {
-            //        annouceDisplay = annouceDisplay + item.Detail + "<br/>";
-            //    }
-            //    annouceDisplay = annouceDisplay + "</tr></td></table><br/><br/>";
-            //}
+            if (annoucementList.Count > 0)
+            {
+                annouceDisplay = annouceDisplay + "</br><table class=\"annoucement\" style=\"border:1px solid #2e2721;background-color:#f0f8ff;\" width=\"95%\" align=\"center\"><tr><th class=\"roomtype\">Announcement</th></tr><td valign=\"top\">";
+                foreach (FrontAnnoucement item in annoucementList)
+                {
+                    annouceDisplay = annouceDisplay + item.Detail + "<br/>";
+                }
+                annouceDisplay = annouceDisplay + "</tr></td></table><br/><br/>";
+            }
             return annouceDisplay;
 
         }

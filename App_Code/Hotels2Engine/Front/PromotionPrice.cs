@@ -37,7 +37,7 @@ namespace Hotels2thailand.Front
         public int TotalSet { get; set; }
         public short OptionCategoryID { get; set; }
         public bool IsCancellation { get; set; }
-       // private byte LangID;
+        private byte LangID;
         private DateTime DateStart;
         private DateTime DateEnd;
         private int numNight;
@@ -59,7 +59,7 @@ namespace Hotels2thailand.Front
             DateStart = dateStart;
             DateEnd = dateEnd;
             numNight = dateEnd.Subtract(dateStart).Days;
-            //LangID=1;
+            LangID=1;
             ProductPriceList = productPriceList;
             PromotionPriceList = new List<PromotionPrice>();
             promotionBenefitList = new List<PromotionBenefitDetail>();
@@ -70,7 +70,7 @@ namespace Hotels2thailand.Front
             DateStart = dateStart;
             DateEnd = dateEnd;
             numNight = dateEnd.Subtract(dateStart).Days;
-            //LangID = 1;
+            LangID = 1;
             CountryID = countryID;
             ProductPriceExtranet = extranetPrice;
             PromotionPriceList = new List<PromotionPrice>();

@@ -17,10 +17,10 @@ namespace Hotels2thailand.Front
     {
         
         private string layout;
-        
+        private int productID;
         private ProductDetail detail;
         private short destinationID;
-        
+        private short locationID;
         private byte categoryID;
         private List<ProductDetail> productDetailList;
         private string pathDestination;

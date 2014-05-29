@@ -106,7 +106,7 @@ public partial class book : System.Web.UI.Page
         {
             pathName = HttpContext.Current.Server.MapPath("/Layout/booking-th.html");
         }
-        //asdasdasdasdas
+      
         byte categoryID = byte.Parse(Request.Form["cat_id"]);
         string ConditionSelect = Request.Form["ddPrice"];
         string ExtraSelect = Request.Form["ddPriceExtra"];
@@ -330,12 +330,12 @@ public partial class book : System.Web.UI.Page
                     RoomResult = RoomResult + "</p>\n";
                     RoomResult = RoomResult + "<span id=\"productAddress\" class=\"fnGrayLight\">Address : " + Address + "</span>\n";
                     RoomResult = RoomResult + "<div id=\"bookingCheck\">\n";
-                    RoomResult = RoomResult + "<span id=\"bookingSummaryTitle\" class=\"fnBig fnOrange\">Booking Summary</span>\n";
+                    RoomResult = RoomResult + "<span id=\"bookingSummaryTitle\" class=\"fnBig fnOrange\"><i class=\"icon-bookmark\"></i>&nbsp;Booking Summary</span>\n";
                     RoomResult = RoomResult + "<ul id=\"bookingCheckIn\">\n";
-                    RoomResult = RoomResult + "<li><strong>Check in:</strong><br />" + dateStart.ToString("dddd,MMMM dd, yyyy") + "</li>\n";
-                    RoomResult = RoomResult + "<li><strong>Check out:</strong><br />" + dateEnd.ToString("dddd,MMMM dd, yyyy") + "</li>\n";
-                    RoomResult = RoomResult + "<li class=\"bookingGuest\"><strong>Adult:</strong><br />" + adult + "</li>\n";
-                    RoomResult = RoomResult + "<li class=\"bookingGuest\"><strong>Child:</strong><br />" + child + "</li>\n";
+                    RoomResult = RoomResult + "<li><strong><i class=\"icon-signin\"></i> Check in:</strong><br />" + dateStart.ToString("dddd,MMMM dd, yyyy") + "</li>\n";
+                    RoomResult = RoomResult + "<li><strong><i class=\"icon-signout\"></i> Check out:</strong><br />" + dateEnd.ToString("dddd,MMMM dd, yyyy") + "</li>\n";
+                    RoomResult = RoomResult + "<li class=\"bookingGuest\"><i class=\"icon-user\"></i> <strong>Adult:</strong><br />" + adult + "</li>\n";
+                    RoomResult = RoomResult + "<li class=\"bookingGuest\"><i class=\"icon-user\" style=\"font-size:0.8em\"></i> <strong>Child:</strong><br />" + child + "</li>\n";
                     RoomResult = RoomResult + "</ul>\n";
                     RoomResult = RoomResult + "<br class=\"clearAll\" />\n";
                     RoomResult = RoomResult + "</div>\n";
@@ -669,8 +669,8 @@ public partial class book : System.Web.UI.Page
                 case 29:
                     if (langID == 1)
                     {
-                        RoomResult = RoomResult + "<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" id=\"bookingList\">\n";
-                        RoomResult = RoomResult + "<tr><th>Option</th><th>Avg./Night</th><th>Night</th><th>Qty.</th><th>Total</th></tr>\n";
+                        RoomResult = RoomResult + "<table class=\"table table-striped table-bordered\" id=\"bookingList\">\n";
+                        RoomResult = RoomResult + "<thead><tr><th>Option</th><th>Avg./Night</th><th>Night</th><th>Qty.</th><th>Total</th></tr></thead>\n";
                     }
                     else
                     {
@@ -685,7 +685,7 @@ public partial class book : System.Web.UI.Page
                 default:
                     if (langID == 1)
                     {
-                        RoomResult = RoomResult + "<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" id=\"bookingList\">\n";
+                        RoomResult = RoomResult + "<table class=\"table table-striped table-bordered\" id=\"bookingList\">\n";
                         RoomResult = RoomResult + "<tr><th>Trip</th><th>Price</th><th>&nbsp;</th><th>Quantity</th><th>Total</th></tr>\n";
                         //RoomResult = RoomResult + "<th>Trip</th><th width=\"141\">Quantity</th><th>Price</th><th>Subtotal</th>\n";
                     }
@@ -774,11 +774,11 @@ public partial class book : System.Web.UI.Page
 
                         if (langID == 1)
                         {
-                            policyDisplay = "<a href=\"javascript:void(0)\" data-reveal-id=\"myModal_" + conditionID[conditionCount] + "\">View Conditions";
+                            policyDisplay = "<a href=\"javascript:void(0)\" data-reveal-id=\"myModal_" + conditionID[conditionCount] + "\"><i class=\"icon-question-sign\"></i>View Conditions";
                         }
                         else
                         {
-                            policyDisplay = "<a href=\"javascript:void(0)\" class=\"tooltip\">รายละเอียด";
+                            policyDisplay = "<a href=\"javascript:void(0)\" class=\"tooltip\"><i class=\"icon-question-sign\"></i>รายละเอียด";
                         }
 
 
@@ -885,11 +885,11 @@ public partial class book : System.Web.UI.Page
 
                         if (langID == 1)
                         {
-                            policyDisplay = "<a href=\"javascript:void(0)\"  data-reveal-id=\"myModal_" + conditionID[conditionCount] + "\">View Condition";
+                            policyDisplay = "<a href=\"javascript:void(0)\"  data-reveal-id=\"myModal_" + conditionID[conditionCount] + "\"><i class=\"icon-question-sign\"></i> View Condition";
                         }
                         else
                         {
-                            policyDisplay = "<a href=\"javascript:void(0)\" class=\"tooltip\">รายละเอียด";
+                            policyDisplay = "<a href=\"javascript:void(0)\" class=\"tooltip\"><i class=\"icon-question-sign\"></i> รายละเอียด";
                         }
 
                         policyDisplay = policyDisplay + "</a>\n";
@@ -930,80 +930,87 @@ public partial class book : System.Web.UI.Page
         FrontOptionPackage objPackage = new FrontOptionPackage(ProductID, dateStart, dateEnd);
         //Response.Write(objPackage.GetPackageList().Count());
 
-        switch (categoryID)
+        IList<FrontOptionPackage> iPcakage = objPackage.GetPackageList();
+        if (iPcakage.Count > 0)
         {
-            case 29:
-                if (langID == 1)
-                {
-                    RoomResult = RoomResult + "<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" id=\"bookingList\">\n";
-                    RoomResult = RoomResult + "<tr><th>Option</th><th>Avg./Night</th><th>Night</th><th>Qty.</th><th>Total</th></tr>\n";
-                }
-                else
-                {
-                    RoomResult = RoomResult + "<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" id=\"bookingList-th\">\n";
-                    RoomResult = RoomResult + "<tr><th>ชนิดห้องพัก</th><th> ราคาเฉลี่ยต่อคืน </th><th> จำนวนคืน </th><th> จำนวนห้อง </th><th> ราคารวม </th></tr>\n";
-                    //RoomResult = RoomResult + "<th>ชนิดของห้องพัก</th> <th>จำนวนห้อง</th> <th>จำนวนคืน</th> <th>ราคาเฉลี่ยต่อคืน</th> <th class=\"bold\">ราคารวม</th>\n";
-                    //RoomResult = RoomResult + "<tr><th>ชนิดของห้องพัก</th><th>ราคาเฉลี่ยต่อคืน</th><th>จำนวนคืน</th><th>จำนวนห้อง</th><th>ราคารวม</th></tr>\n";
-                    //RoomResult = RoomResult + "<tr><th>ชนิดของห้องพัก</th><th>ราคาเฉลี่ยต่อคืน</th><th>จำนวนคืน</th><th>จำนวนห้อง</th><th>ราคารวม</th></tr>\n";
-                }
-
-                break;
-            default:
-                if (langID == 1)
-                {
-                    RoomResult = RoomResult + "<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" id=\"bookingList\">\n";
-                    RoomResult = RoomResult + "<tr><th>Trip</th><th>Price</th><th>&nbsp;</th><th>Quantity</th><th>Total</th></tr>\n";
-                    //RoomResult = RoomResult + "<th>Trip</th><th width=\"141\">Quantity</th><th>Price</th><th>Subtotal</th>\n";
-                }
-                else
-                {
-                    RoomResult = RoomResult + "<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" id=\"bookingList-th\">\n";
-                    RoomResult = RoomResult + "<tr><th>โปรแกรม</th><th>ราคา</th><th>&nbsp;</th><th>จำนวน</th><th>ราคารวม</th></tr>\n";
-                    //RoomResult = RoomResult + "<th>Trip</th><th width=\"141\">Quantity</th><th>Price</th><th>Subtotal</th>\n";
-                }
-
-                break;
-        }
-        foreach (FrontOptionPackage itemPackage in objPackage.GetPackageList())
-        {
-
-            if (Request.Form["ddPackage_" + itemPackage.ConditionID + "_" + itemPackage.OptionID] != null)
+            switch (categoryID)
             {
-                packageOption = Request.Form["ddPackage_" + itemPackage.ConditionID + "_" + itemPackage.OptionID].Split('_');
-                //Response.Write("ddPackage_" + itemPackage.ConditionID + "_" + itemPackage.OptionID + "<br>");
-                if (int.Parse(packageOption[6]) != 0)
+                case 29:
+                    if (langID == 1)
+                    {
+                        RoomResult = RoomResult + "<table class=\"table table-striped table-bordered\" id=\"bookingList\">\n";
+                        RoomResult = RoomResult + "<tr><th>Option</th><th>Avg./Night</th><th>Night</th><th>Qty.</th><th>Total</th></tr>\n";
+                    }
+                    else
+                    {
+                        RoomResult = RoomResult + "<table class=\"table table-striped table-bordered\" id=\"bookingList-th\">\n";
+                        RoomResult = RoomResult + "<tr><th>ชนิดห้องพัก</th><th> ราคาเฉลี่ยต่อคืน </th><th> จำนวนคืน </th><th> จำนวนห้อง </th><th> ราคารวม </th></tr>\n";
+                        //RoomResult = RoomResult + "<th>ชนิดของห้องพัก</th> <th>จำนวนห้อง</th> <th>จำนวนคืน</th> <th>ราคาเฉลี่ยต่อคืน</th> <th class=\"bold\">ราคารวม</th>\n";
+                        //RoomResult = RoomResult + "<tr><th>ชนิดของห้องพัก</th><th>ราคาเฉลี่ยต่อคืน</th><th>จำนวนคืน</th><th>จำนวนห้อง</th><th>ราคารวม</th></tr>\n";
+                        //RoomResult = RoomResult + "<tr><th>ชนิดของห้องพัก</th><th>ราคาเฉลี่ยต่อคืน</th><th>จำนวนคืน</th><th>จำนวนห้อง</th><th>ราคารวม</th></tr>\n";
+                    }
+
+                    break;
+                default:
+                    if (langID == 1)
+                    {
+                        RoomResult = RoomResult + "<table class=\"table table-striped table-bordered\" id=\"bookingList\">\n";
+                        RoomResult = RoomResult + "<tr><th>Trip</th><th>Price</th><th>&nbsp;</th><th>Quantity</th><th>Total</th></tr>\n";
+                        //RoomResult = RoomResult + "<th>Trip</th><th width=\"141\">Quantity</th><th>Price</th><th>Subtotal</th>\n";
+                    }
+                    else
+                    {
+                        RoomResult = RoomResult + "<table class=\"table table-striped table-bordered\" id=\"bookingList-th\">\n";
+                        RoomResult = RoomResult + "<tr><th>โปรแกรม</th><th>ราคา</th><th>&nbsp;</th><th>จำนวน</th><th>ราคารวม</th></tr>\n";
+                        //RoomResult = RoomResult + "<th>Trip</th><th width=\"141\">Quantity</th><th>Price</th><th>Subtotal</th>\n";
+                    }
+
+                    break;
+            }
+
+
+            foreach (FrontOptionPackage itemPackage in iPcakage)
+            {
+
+                if (Request.Form["ddPackage_" + itemPackage.ConditionID + "_" + itemPackage.OptionID] != null)
                 {
-                    hasRoomSelect = true;
-                    ratePackage = Utility.PriceExcludeVat(itemPackage.Price);
+                    packageOption = Request.Form["ddPackage_" + itemPackage.ConditionID + "_" + itemPackage.OptionID].Split('_');
+                    //Response.Write("ddPackage_" + itemPackage.ConditionID + "_" + itemPackage.OptionID + "<br>");
+                    if (int.Parse(packageOption[6]) != 0)
+                    {
+                        hasRoomSelect = true;
+                        ratePackage = Utility.PriceExcludeVat(itemPackage.Price);
 
 
-                    selectOption = selectOption + "<input type=\"hidden\" name=\"ddPackage_" + itemPackage.ConditionID + "_" + itemPackage.OptionID + "\" value=\"" + int.Parse(packageOption[6]) + "\">\n";
+                        selectOption = selectOption + "<input type=\"hidden\" name=\"ddPackage_" + itemPackage.ConditionID + "_" + itemPackage.OptionID + "\" value=\"" + int.Parse(packageOption[6]) + "\">\n";
 
 
 
 
-                    //Response.Write(rateExtraOption* int.Parse(extraOption[6]));
-                    priceTotal = priceTotal + itemPackage.Price * int.Parse(packageOption[6]);
-                    priceSummary = priceSummary + itemPackage.Price * int.Parse(packageOption[6]);
-                    //RoomResult = RoomResult + "<tr>\n";
-                    //RoomResult = RoomResult + "<td colspan=\"2\" align=\"left\">" + GetProductExtraTitle(int.Parse(extraOption[1]), PriceListBaseExtra) + "</td>\n";
-                    //RoomResult = RoomResult + "<td>" + extraOption[6] + "</td>\n";
-                    //RoomResult = RoomResult + "<td>-</td>\n";
-                    //RoomResult = RoomResult + "<td>-</td>\n";
-                    //RoomResult = RoomResult + "<td>" + rateExtraOption * int.Parse(extraOption[6]) + " Baht</td>\n";
-                    //RoomResult = RoomResult + "</tr>\n";
+                        //Response.Write(rateExtraOption* int.Parse(extraOption[6]));
+                        priceTotal = priceTotal + itemPackage.Price * int.Parse(packageOption[6]);
+                        priceSummary = priceSummary + itemPackage.Price * int.Parse(packageOption[6]);
+                        //RoomResult = RoomResult + "<tr>\n";
+                        //RoomResult = RoomResult + "<td colspan=\"2\" align=\"left\">" + GetProductExtraTitle(int.Parse(extraOption[1]), PriceListBaseExtra) + "</td>\n";
+                        //RoomResult = RoomResult + "<td>" + extraOption[6] + "</td>\n";
+                        //RoomResult = RoomResult + "<td>-</td>\n";
+                        //RoomResult = RoomResult + "<td>-</td>\n";
+                        //RoomResult = RoomResult + "<td>" + rateExtraOption * int.Parse(extraOption[6]) + " Baht</td>\n";
+                        //RoomResult = RoomResult + "</tr>\n";
 
-                    RoomResult = RoomResult + "<tr><td class=\"bookingListItem\">\n";
-                    RoomResult = RoomResult + "<div class=\"OptionDetail\">\n";
-                    RoomResult = RoomResult + "<span class=\"fnBig fnBlack\">" + itemPackage.OptionTitle + "</span>\n";
-                    RoomResult = RoomResult + "</div>\n";
-                    RoomResult = RoomResult + "<br class=\"clearAll\" />\n";
-                    RoomResult = RoomResult + "</td><td></td><td></td><td>" + packageOption[6] + "</td><td>THB " + ((int)(ratePackage * int.Parse(packageOption[6]))).ToString("#,###.##") + "</td></tr>\n";
-                    totalPriceDeposit = totalPriceDeposit + productDeposit.GetPriceDeposit(itemPackage.Price, int.Parse(packageOption[6]), roomNight);
+                        RoomResult = RoomResult + "<tr><td class=\"bookingListItem\">\n";
+                        RoomResult = RoomResult + "<div class=\"OptionDetail\">\n";
+                        RoomResult = RoomResult + "<span class=\"fnBig fnBlack\">" + itemPackage.OptionTitle + "</span>\n";
+                        RoomResult = RoomResult + "</div>\n";
+                        RoomResult = RoomResult + "<br class=\"clearAll\" />\n";
+                        RoomResult = RoomResult + "</td><td></td><td></td><td>" + packageOption[6] + "</td><td>THB " + ((int)(ratePackage * int.Parse(packageOption[6]))).ToString("#,###.##") + "</td></tr>\n";
+                        totalPriceDeposit = totalPriceDeposit + productDeposit.GetPriceDeposit(itemPackage.Price, int.Parse(packageOption[6]), roomNight);
 
+                    }
                 }
             }
         }
+        
         //
 
         //Calculate Meal
@@ -1385,7 +1392,8 @@ public partial class book : System.Web.UI.Page
         RoomResult = RoomResult + "<br />\n";
         if (langID == 1)
         {
-            RoomResult = RoomResult + "&nbsp;&nbsp;<a href=\"javascript:void(0)\" onclick=\"history.back()\">&lt;&lt; Edit booking detail</a>\n";
+            RoomResult = RoomResult + "<button type=\"button\" class=\"btn\" value=\"\" onclick=\"history.back()\" ><i class=\"icon-circle-arrow-left\"></i>&nbsp;Edit booking detail</button>";
+            //RoomResult = RoomResult + "&nbsp;&nbsp;<a href=\"javascript:void(0)\" onclick=\"history.back()\">&lt;&lt; Edit booking detail</a>\n";
         }
         else
         {
@@ -1456,12 +1464,16 @@ public partial class book : System.Web.UI.Page
             {
                 totalResult = totalResult + "<p id=\"bookingRoomAvailable\"><strong>The room is available.</strong> You’ll receive voucher confirmation immediately after payment is successful</p>\n";
             }
-            totalResult = totalResult + "<table id=\"bookingMiniTotal\" cellspacing=\"0\">\n";
+
+
+            totalResult = totalResult + "<div class=\"bk_booking_total\">";
+            totalResult = totalResult + "<table id=\"bookingMiniTotal\"  cellspacing=\"0\" cellpadding=\"0\" >\n";
             totalResult = totalResult + "<tr><td><strong>Total</strong></td><td align=\"right\"><strong>" + ((int)(Utility.PriceExcludeVat(priceTotal))).ToString("#,###.##") + " Baht</strong></td></tr>\n";
             totalResult = totalResult + "<tr>\n";
             totalResult = totalResult + "<td class=\"bookingVatCharge\"><strong>Vat & Service Charge</strong></td><td class=\"bookingVatCharge\" align=\"right\"><strong>" + ((priceVatInc - totalAbf) - ((int)Utility.PriceExcludeVat(priceTotal))).ToString("#,###.##") + " Baht</strong></td></tr>\n";
             //totalResult = totalResult + "<tr><td class=\"bookingTotalPrice\">Grand Total</td><td align=\"right\" class=\"bookingTotalPrice\">" + ((int)priceVatInc).ToString("#,###") + " Baht" + priceVatIncDisplay + "</td></tr>\n";
-            totalResult = totalResult + "<tr><td colspan=\"2\"><table width=\"100%\" cellspacing=\"0\" cellpadding=\"0\"><tr><td class=\"bookingTotalPrice\">Grand Total</td><td align=\"right\" class=\"bookingTotalPrice\">" + (priceVatInc).ToString("#,###.##") + " Baht</td></tr>\n";
+
+            totalResult = totalResult + "<tr><td colspan=\"2\" style=\"text-align:left\"><table width=\"100%\" cellspacing=\"0\" cellpadding=\"0\"><tr><td class=\"bookingTotalPrice\">Grand Total</td><td align=\"right\" class=\"bookingTotalPrice\">" + (priceVatInc).ToString("#,###.##") + " Baht</td></tr>\n";
             if (!string.IsNullOrEmpty(priceVatIncDisplay))
             {
                 totalResult = totalResult + "<tr><td colspan=\"2\"><span class=\"fnGray\">*Rates in other currencies are approximate." + priceVatIncDisplay + "</span></td></tr>\n";
@@ -1477,7 +1489,7 @@ public partial class book : System.Web.UI.Page
             totalResult = totalResult + "</td></tr>\n";
             if (gatewayID != 5)
             {
-                totalResult = totalResult + "<tr><td colspan=\"2\"><img src=\"/images/logo_booking_offer.gif\" /><br /><br /></td></tr>\n";
+                totalResult = totalResult + "<tr><td colspan=\"2\"><img src=\"/images/logo_booking_offer.png\" /><br /><br /></td></tr>\n";
             }
             else
             {
@@ -1485,6 +1497,7 @@ public partial class book : System.Web.UI.Page
             }
 
             totalResult = totalResult + "</table>\n";
+            totalResult = totalResult + "</div>";
         }
         else
         {
@@ -1492,7 +1505,7 @@ public partial class book : System.Web.UI.Page
             {
                 totalResult = totalResult + "<p id=\"bookingRoomAvailable\"><strong class=\"fnOrange\">ขณะนี้มีห้องว่าง</strong> คุณจะได้รับเอกสารยืนยันการจองทันทีหลังจากชำระเงินเป็นที่เรียบร้อยแล้ว</p><br/>\n";
             }
-            totalResult = totalResult + "<table id=\"bookingMiniTotal\" cellspacing=\"0\">\n";
+            totalResult = totalResult + "<table id=\"bookingMiniTotal\" >\n";
             totalResult = totalResult + "<tr><td><strong>ราคารวม</strong></td><td align=\"right\"><strong>" + ((int)(priceTotal)).ToString("#,###") + " Baht</strong></td></tr>\n";
             totalResult = totalResult + "<tr>\n";
             totalResult = totalResult + "<td class=\"bookingVatCharge\">ภาษีมูลค่าเพิ่มและค่าธรรมเนียมบริการ</td><td class=\"bookingVatCharge\" align=\"right\"><strong>" + ((int)(priceVatInc - totalAbf) - (int)(priceTotal)).ToString("#,###") + " Baht" + priceVatDisplay + "</strong></td></tr>\n";
@@ -1503,7 +1516,7 @@ public partial class book : System.Web.UI.Page
             totalResult = totalResult + "ไม่มีค่าใช้จ่ายแอบแฝง ราคาที่คุณเห็นนี้จะเป็นราคาสุทธิที่ปราศจากค่าใช้จ่ายเพิ่มเติ่ม คุณไม่ต้องจ่ายค่าห้องพักเพิ่มเติมเมื่อคุณเช็คอินหรือเช็คเอ้าท์ที่โรงแรมหรือใช้บริการอื่นกับเรา";
             totalResult = totalResult + "</p>\n";
             totalResult = totalResult + "</td></tr>\n";
-            totalResult = totalResult + "<tr><td colspan=\"2\"><img src=\"/images/logo_booking_offer.gif\" /><br /><br /></td></tr>\n";
+            totalResult = totalResult + "<tr><td colspan=\"2\"><img src=\"/images/logo_booking_offer.png\" /><br /><br /></td></tr>\n";
             totalResult = totalResult + "</table>\n";
         }
 
@@ -1634,7 +1647,7 @@ public partial class book : System.Web.UI.Page
             Keyword = Utility.GetKeywordReplace(layout, "<!--###ProceedCheckoutStart###-->", "<!--###ProceedCheckoutEnd###-->");
             layout = layout.Replace(Keyword, "");
 
-            layout = layout.Replace("<!--###cssHotelBook###-->", "<link href=\"http://www.booking2hotels.com/hotels-template/" + HotelFolder + "/css/bookForm.css\" rel=\"stylesheet\" type=\"text/css\" />");
+            //layout = layout.Replace("<!--###cssHotelBook###-->", "<link href=\"http://www.booking2hotels.com/hotels-template/" + HotelFolder + "/css/bookForm.css\" rel=\"stylesheet\" type=\"text/css\" />");
 
             Response.Write(layout);
             Response.End();
@@ -1655,17 +1668,17 @@ public partial class book : System.Web.UI.Page
 
         if (langID == 1)
         {
-            formInfo = formInfo + "<div id=\"formCustomerBox\">\n";
+            formInfo = formInfo + "<div id=\"formCustomerBox\" >\n";
             formInfo = formInfo + "<div class=\"formCustomer\">\n";
-            formInfo = formInfo + "<span class=\"fnLarge fnGray\">Your information</span>\n";
-            formInfo = formInfo + "<br /><br />\n";
+            formInfo = formInfo + "<div class=\"head-title-form\" ><span class=\"fnLarge fnGray\">Your information</span></div>\n";
+            //formInfo = formInfo + "<br /><br />\n";
         }
         else
         {
-            formInfo = formInfo + "<div id=\"formCustomerBox\">\n";
+            formInfo = formInfo + "<div id=\"formCustomerBox\" >\n";
             formInfo = formInfo + "<div class=\"formCustomer\">\n";
-            formInfo = formInfo + "<span class=\"fnLarge fnGray\">ข้อมูลลูกค้า</span>\n";
-            formInfo = formInfo + "<br /><br />\n";
+            formInfo = formInfo + "<div class=\"head-title-form\" ><span class=\"fnLarge fnGray\">ข้อมูลลูกค้า</span></div>\n";
+           // formInfo = formInfo + "<br /><br />\n";
         }
 
 
@@ -1677,26 +1690,154 @@ public partial class book : System.Web.UI.Page
 
 
             formInfo = formInfo + "<h3 class=\"fnBig fnBlue\">About you</h3><br />\n";
-            formInfo = formInfo + "<div><label>Prefix:<span class=\"fnRed\">*</span></label> <select name=\"prefix\" id=\"prefix\"><option value=\"1\">None</option><option value=\"2\" selected=\"selected\">Mr.</option><option value=\"4\">Miss.</option><option value=\"3\">Mrs.</option></select></div>\n";
+            formInfo = formInfo + "<div><label>Prefix<span class=\"fnRed\">*</span></label> <select name=\"prefix\" id=\"prefix\"><option value=\"1\">None</option><option value=\"2\" selected=\"selected\">Mr.</option><option value=\"4\">Miss.</option><option value=\"3\">Mrs.</option></select></div>\n";
+            
+            
+            string fullname = string.Empty;
+            string strEmail = string.Empty;
+            
             if (IsMember)
             {
                 Customer objCustomer = new Customer(int.Parse(Request.Form["mmid"]));
-                formInfo = formInfo + "<div><label>Full name:<span class=\"fnRed\">*</span></label><input type=\"text\"  name=\"first_name\" id=\"first_name\" class=\"required\" value=\"" + objCustomer.FullName + "\" /></div>\n";
-                formInfo = formInfo + "<div><label>Email address:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"email\" id=\"email\" class=\"required email\" value=\"" + objCustomer.Email + "\"/></div>\n";
-                formInfo = formInfo + "<div><label>Repeat email:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"re_email\" id=\"re_email\" class=\"required\"  value=\"" + objCustomer.Email + "\"/></div>\n";
-                formInfo = formInfo + "<div><label>Phone:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"phone\" id=\"phone\" class=\"required\"/></div>\n";
-                formInfo = formInfo + "<div><label>Country:<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAll()) + "</div>\n";
 
+                fullname = objCustomer.FullName;
+
+                strEmail = objCustomer.Email;
+                //formInfo = formInfo + "<div><label>Full name:<span class=\"fnRed\">*</span></label><input type=\"text\"  name=\"first_name\" id=\"first_name\" class=\"required\" value=\"" + objCustomer.FullName + "\" /></div>\n";
+                //formInfo = formInfo + "<div><label>Email address:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"email\" id=\"email\" class=\"required email\" value=\"" + objCustomer.Email + "\"/></div>\n";
+                //formInfo = formInfo + "<div><label>Repeat email:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"re_email\" id=\"re_email\" class=\"required\"  value=\"" + objCustomer.Email + "\"/></div>\n";
+                //formInfo = formInfo + "<div><label>Phone:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"phone\" id=\"phone\" class=\"required\"/></div>\n";
+                //formInfo = formInfo + "<div><label>Country:<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAll()) + "</div>\n";
+
+            }
+
+            //If GatwayID = 16 Is KrungSri Cyber source
+            if (gatewayID == 15)
+            {
+
+                formInfo = formInfo + "<div id=\"stat_us\" style=\"display:none;\">";
+
+                formInfo = formInfo + "<option value=\"AL\">Alabama</option>";
+                formInfo = formInfo + "<option value=\"AK\">Alaska</option>";
+                formInfo = formInfo + "<option value=\"AZ\">Arizona</option>";
+                formInfo = formInfo + "<option value=\"AR\">Arkansas</option>";
+                formInfo = formInfo + "<option value=\"CA\">California</option>";
+                formInfo = formInfo + "<option value=\"CO\">Colorado</option>";
+                formInfo = formInfo + "<option value=\"CT\">Connecticut</option>";
+                formInfo = formInfo + "<option value=\"DE\">Delaware</option>";
+                formInfo = formInfo + "<option value=\"DC\">District Of Columbia</option>";
+                formInfo = formInfo + "<option value=\"FL\">Florida</option>";
+                formInfo = formInfo + "<option value=\"GA\">Georgia</option>";
+                formInfo = formInfo + "<option value=\"HI\">Hawaii</option>";
+                formInfo = formInfo + "<option value=\"ID\">Idaho</option>";
+                formInfo = formInfo + "<option value=\"IL\">Illinois</option>";
+                formInfo = formInfo + "<option value=\"IN\">Indiana</option>";
+                formInfo = formInfo + "<option value=\"IA\">Iowa</option>";
+                formInfo = formInfo + "<option value=\"KS\">Kansas</option>";
+                formInfo = formInfo + "<option value=\"KY\">Kentucky</option>";
+                formInfo = formInfo + "<option value=\"LA\">Louisiana</option>";
+                formInfo = formInfo + "<option value=\"ME\">Maine</option>";
+                formInfo = formInfo + "<option value=\"MD\">Maryland</option>";
+                formInfo = formInfo + "<option value=\"MA\">Massachusetts</option>";
+                formInfo = formInfo + "<option value=\"MI\">Michigan</option>";
+                formInfo = formInfo + "<option value=\"MN\">Minnesota</option>";
+                formInfo = formInfo + "<option value=\"MS\">Mississippi</option>";
+                formInfo = formInfo + "<option value=\"MO\">Missouri</option>";
+                formInfo = formInfo + "<option value=\"MT\">Montana</option>";
+                formInfo = formInfo + "<option value=\"NE\">Nebraska</option>";
+                formInfo = formInfo + "<option value=\"NV\">Nevada</option>";
+                formInfo = formInfo + "<option value=\"NH\">New Hampshire</option>";
+                formInfo = formInfo + "<option value=\"NJ\">New Jersey</option>";
+                formInfo = formInfo + "<option value=\"NM\">New Mexico</option>";
+                formInfo = formInfo + "<option value=\"NY\">New York</option>";
+                formInfo = formInfo + "<option value=\"NC\">North Carolina</option>";
+                formInfo = formInfo + "<option value=\"ND\">North Dakota</option>";
+                formInfo = formInfo + "<option value=\"OH\">Ohio</option>";
+                formInfo = formInfo + "<option value=\"OK\">Oklahoma</option>";
+                formInfo = formInfo + "<option value=\"OR\">Oregon</option>";
+                formInfo = formInfo + "<option value=\"PA\">Pennsylvania</option>";
+                formInfo = formInfo + "<option value=\"RI\">Rhode Island</option>";
+                formInfo = formInfo + "<option value=\"SC\">South Carolina</option>";
+                formInfo = formInfo + "<option value=\"SD\">South Dakota</option>";
+                formInfo = formInfo + "<option value=\"TN\">Tennessee</option>";
+                formInfo = formInfo + " <option value=\"TX\">Texas</option>";
+                formInfo = formInfo + "<option value=\"UT\">Utah</option>";
+                formInfo = formInfo + "<option value=\"VT\">Vermont</option>";
+                formInfo = formInfo + "<option value=\"VA\">Virginia</option>";
+                formInfo = formInfo + "<option value=\"WA\">Washington</option>";
+                formInfo = formInfo + "<option value=\"WV\">West Virginia</option>";
+                formInfo = formInfo + "<option value=\"WI\">Wisconsin</option>";
+                formInfo = formInfo + "<option value=\"WY\">Wyoming</option>";
+
+                formInfo = formInfo  +"</div>";
+
+
+               formInfo = formInfo + "<div id=\"stat_ca\" style=\"display:none;\" >";
+
+                formInfo = formInfo + "<option value=\"AB\">Alberta</option>";
+                formInfo = formInfo + "<option value=\"BC\">British Columbia</option>";
+                formInfo = formInfo + "<option value=\"MB\">Manitoba</option>";
+                formInfo = formInfo + "<option value=\"NB\">New Brunswick</option>";
+                formInfo = formInfo + "<option value=\"NL\">Newfoundland and Labrador</option>";
+                formInfo = formInfo + "<option value=\"NS\">Nova Scotia</option>";
+                formInfo = formInfo + "<option value=\"ON\">Ontario</option>";
+                formInfo = formInfo + "<option value=\"PE\">Prince Edward Island</option>";
+                formInfo = formInfo + "<option value=\"QC\">Quebec</option>";
+                formInfo = formInfo + "<option value=\"SK\">Saskatchewan</option>";
+                formInfo = formInfo + "<option value=\"NT\">Northwest Territories</option>";
+                formInfo = formInfo + "<option value=\"NU\">Nunavut</option>";
+                formInfo = formInfo + "<option value=\"YT\">Yukon</option>";
+
+                formInfo = formInfo + "</div>";
+
+
+                formInfo = formInfo + "<input type=\"hidden\" id=\"current_gateway\" value=\"" + gatewayID + "\" />";
+                formInfo = formInfo + "<div><label>First name<span class=\"fnRed\">*</span></label><input type=\"text\"  name=\"first_name\" id=\"first_name\" class=\"required\" value=\"" + fullname + "\" /></div>\n";
+                formInfo = formInfo + "<div><label>Last name<span class=\"fnRed\">*</span></label><input type=\"text\"  name=\"last_name\" id=\"last_name\" class=\"required\" value=\"" + fullname + "\" /></div>\n";
+
+                formInfo = formInfo + "<div><label>Email<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"email\" id=\"email\" class=\"required email\" value=\"" + strEmail + "\" /><br/>\n";
+                formInfo = formInfo + "<input type=\"text\" placeholder=\"Repeat email\" name=\"re_email\" id=\"re_email\" class=\"required\" value=\"" + strEmail + "\" /></div>\n";
+
+                formInfo = formInfo + "<div><label>Phone:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"phone\" id=\"phone\" class=\"required\"/></div>\n";
+
+                formInfo = formInfo + "<div><label>Address<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"req_address_1\" id=\"req_address_1\" class=\"required email\" value=\"" + strEmail + "\" />\n";
+                formInfo = formInfo + "<input type=\"text\" name=\"req_address_2\" id=\"req_address_2\" class=\"required\" value=\"" + strEmail + "\" /></div>\n";
+
+               
+                formInfo = formInfo + "<div><label>Country<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAll()) + "</div>\n";
+                formInfo = formInfo + "<div id=\"drop_state\" style=\"display:none;\"><label>State:<span class=\"fnRed\">*</span></label><select name=\"sel_drop_state\"  ><option value=\"02\">Stat</option>";
+
+                formInfo = formInfo + "</select></div>\n";
+
+                //city
+                formInfo = formInfo + "<div><label>City<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"req_city\" id=\"req_city\" class=\"required\" value=\"" + strEmail + "\" /></div>\n";
+
+                formInfo = formInfo + "<div><label>Zip/Postal Code<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"req_postal_code\" id=\"req_postal_code\" class=\"required\"  maxlength=\"10\" /></div>\n";
+
+
+                
             }
             else
             {
-                formInfo = formInfo + "<div><label>Full name:<span class=\"fnRed\">*</span></label><input type=\"text\"  name=\"first_name\" id=\"first_name\" class=\"required\" /></div>\n";
-                formInfo = formInfo + "<div><label>Email address:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"email\" id=\"email\" class=\"required email\" /></div>\n";
-                formInfo = formInfo + "<div><label>Repeat email:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"re_email\" id=\"re_email\" class=\"required\" /></div>\n";
+                formInfo = formInfo + "<div><label>Full name:<span class=\"fnRed\">*</span></label><input type=\"text\"  name=\"first_name\" id=\"first_name\" class=\"required\" value=\"" + fullname + "\" /></div>\n";
+                
+                //formInfo = formInfo + "<div><label>Email address:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"email\" id=\"email\" class=\"required email\" value=\"" + strEmail + "\" /></div>\n";
+                //formInfo = formInfo + "<div><label>Repeat email:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"re_email\" id=\"re_email\" class=\"required\" value=\"" + strEmail + "\" /></div>\n";
+
+                formInfo = formInfo + "<div><label>Email<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"email\" id=\"email\" class=\"required email\" value=\"" + strEmail + "\" /><br/>\n";
+                formInfo = formInfo + "<input type=\"text\" placeholder=\"Repeat email\" name=\"re_email\" id=\"re_email\" class=\"required\" value=\"" + strEmail + "\" /></div>\n";
+
                 formInfo = formInfo + "<div><label>Phone:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"phone\" id=\"phone\" class=\"required\"/></div>\n";
                 formInfo = formInfo + "<div><label>Country:<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAll()) + "</div>\n";
-
             }
+
+                
+
+            
+
+          
+           
+
             formInfo = formInfo + "<br />\n";
             formInfo = formInfo + "<p id=\"asterisk\">Fields marked with a red asterisk ( <span class=\"fnRed\">*</span> ) are required.</p>\n";
             formInfo = formInfo + "</div>\n";
@@ -1799,7 +1940,7 @@ public partial class book : System.Web.UI.Page
                             {
                                 formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                 formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
-                                formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + itemPackage.OptionTitle + "</strong></span><br /><br />\n";
+                                formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + itemPackage.OptionTitle + "</strong></span>\n";
                                 formInfo = formInfo + "<div><label><strong>Bed type:</strong></label>\n";
                                 formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_1\" value=\"3\" checked=\"checked\" />No preference</span>\n";
                                 formInfo = formInfo + "<span class=\"guest-requirement-col-2\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_1\" value=\"1\" />1 King size bed</span>\n";
@@ -1848,7 +1989,7 @@ public partial class book : System.Web.UI.Page
                                 {
                                     formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                     formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
-                                    formInfo = formInfo + "<span class=\"fnMedium\"><strong>Room#" + roomCount + ": " + itemPackage.OptionTitle + "</strong></span><br /><br />\n";
+                                    formInfo = formInfo + "<span class=\"fnMedium\"><strong>Room#" + roomCount + ": " + itemPackage.OptionTitle + "</strong></span>ห\n";
 
                                     formInfo = formInfo + "<div><label><strong>Bed type:</strong></label>\n";
                                     formInfo = formInfo + "<span class=\"guest-requirement-col-1\"><input type=\"radio\" name=\"bed_type_" + itemPackage.ConditionID + "_" + roomCount + "\" value=\"3\" checked=\"checked\" />No preference</span>\n";
@@ -1911,14 +2052,14 @@ public partial class book : System.Web.UI.Page
                                         //optionRequire = optionRequire + "<div class=\"book_room\">Room : " + GetProductTitle(optionID[productCount], OptionTitleList) + "<span>(Subject to availability, can not guarantee)</span></div>\n";
                                         formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                         formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
-                                        formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + GetProductTitle(optionID[productCount], OptionTitleList) + "</strong></span><br /><br />\n";
+                                        formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + GetProductTitle(optionID[productCount], OptionTitleList) + "</strong></span>\n";
                                     }
                                     else
                                     {
                                         //optionRequire = optionRequire + "<div class=\"book_room\">Room : " + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + "<span>(Subject to availability, can not guarantee)</span></div>\n";
                                         formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                         formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
-                                        formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + "</strong></span><br /><br />\n";
+                                        formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + "</strong></span>\n";
                                     }
 
 
@@ -2353,12 +2494,12 @@ public partial class book : System.Web.UI.Page
                     {
                         if (gatewayID == 3 || gatewayID == 13)
                         {
-                            formInfo = formInfo + "<div class=\"card_offer\"><input type=\"radio\" name=\"bank_id\" value=\"" + gatewayID + "\" checked=\"checked\"  style=\"float:left; margin-top:8px;\" /><img src=\"../theme_color/blue/images/layout_mail/VisaMastercard.jpg\" /></div>\n";
+                            formInfo = formInfo + "<div class=\"card_offer\"><input type=\"radio\" name=\"bank_id\" value=\"" + gatewayID + "\" checked=\"checked\"  style=\"float:left; margin-top:8px;\" /> &nbsp;<img src=\"../theme_color/blue/images/layout_mail/VisaMastercard.jpg\" /></div>\n";
 
                         }
                         else
                         {
-                            formInfo = formInfo + "<div class=\"card_offer\"><input type=\"radio\" name=\"bank_id\" value=\"" + gatewayID + "\" checked=\"checked\"  style=\"float:left; margin-top:8px;\" /><img src=\"../theme_color/blue/images/layout_mail/VisaMastercard.jpg\" /><img src=\"../theme_color/blue/images/layout_mail/jcb.jpg\" /></div>\n";
+                            formInfo = formInfo + "<div class=\"card_offer\"><input type=\"radio\" name=\"bank_id\" value=\"" + gatewayID + "\" checked=\"checked\"  style=\"float:left; margin-top:8px;\" /> &nbsp;<img src=\"../theme_color/blue/images/layout_mail/VisaMastercard.jpg\" /><img src=\"../theme_color/blue/images/layout_mail/jcb.jpg\" /></div>\n";
                         }
                     }
                     else
@@ -2452,19 +2593,23 @@ public partial class book : System.Web.UI.Page
             {
                 if (has_allotment || ManageID == 2)
                 {
-                    formInfo = formInfo + "<div class=\"card_offer\"><input type=\"checkbox\" name=\"chkPolicy\" id=\"chkPolicy\" value=\"0\">I have read and agree to the <a href=\"javascript:void(0)\" data-reveal-id=\"policyContractCancelDesc\" >Cancellation Policy and User Agreement</a></div>\n";
-                    formInfo = formInfo + "<div><a href=\"javascript:void(0)\" onclick=\"viewBooking();\" style=\"float:left\"><img src=\"/images/btn_edit_booking.gif\" id=\"editBooking\" /></a><input type=\"submit\" class=\"btnPayment-en\" id=\"btnPayment\" name=\"submit\" value=\"\" /></div>\n";
+                    formInfo = formInfo + "<div class=\"card_offer\"><input type=\"checkbox\" name=\"chkPolicy\" id=\"chkPolicy\" value=\"0\">&nbsp;I have read and agree to the <a href=\"javascript:void(0)\" data-reveal-id=\"policyContractCancelDesc\" >Cancellation Policy and User Agreement</a></div>\n";
+                    //formInfo = formInfo + "<div><a href=\"javascript:void(0)\" onclick=\"viewBooking();\" style=\"float:left\"><img src=\"/images/btn_edit_booking.gif\" id=\"editBooking\" /></a><input type=\"submit\" class=\"btnPayment-en\" id=\"btnPayment\" name=\"submit\" value=\"\" /></div>\n";
+                    formInfo = formInfo + "<div class=\"btn-box-payment\"><button type=\"button\" id=\"editBooking\"  class=\"btn\" onclick=\"viewBooking();\"><i class=\"icon-circle-arrow-left\"></i> Edit booking detail</button><button type=\"submit\" name=\"submit\" class=\"btn btn-warning\"  id=\"btnPayment\"><i class=\"icon-lock\"></i> Proceed to checkout</button></div>\n";
                 }
                 else
                 {
-                    formInfo = formInfo + "<div class=\"card_offer\"><input type=\"checkbox\" name=\"chkPolicy\" id=\"chkPolicy\" value=\"0\">I have read and agree to the <a href=\"javascript:void(0)\" data-reveal-id=\"policyContractCancelDesc\" >Cancellation Policy and User Agreement</a></div>\n";
-                    formInfo = formInfo + "<div><a href=\"javascript:void(0)\" onclick=\"viewBooking();\" style=\"float:left\"><img src=\"/images/btn_edit_booking.gif\" id=\"editBooking\" /></a><input type=\"submit\" class=\"btnConfirm\" id=\"btnPayment\" name=\"submit\" value=\"\" /></div>\n";
+                    formInfo = formInfo + "<div class=\"card_offer\"><input type=\"checkbox\" name=\"chkPolicy\" id=\"chkPolicy\" value=\"0\">&nbsp;I have read and agree to the <a href=\"javascript:void(0)\" data-reveal-id=\"policyContractCancelDesc\" >Cancellation Policy and User Agreement</a></div>\n";
+                    //formInfo = formInfo + "<div class=\"btn-box-payment\"><a href=\"javascript:void(0)\" onclick=\"viewBooking();\" style=\"float:left\"><img src=\"/images/btn_edit_booking.gif\" id=\"editBooking\" /></a><input type=\"submit\" class=\"btnConfirm\" id=\"btnPayment\" name=\"submit\" value=\"\" /></div>\n";
+                    formInfo = formInfo + "<div class=\"btn-box-payment\"><button type=\"button\" id=\"editBooking\"  class=\"btn\" onclick=\"viewBooking();\"><i class=\"icon-circle-arrow-left\"></i> Edit booking detail</button><button type=\"submit\" name=\"submit\" class=\"btn btn-warning\"  id=\"btnPayment\"><i class=\"icon-lock\"></i> Confirm booking</button></div>\n";
                 }
             }
             else
             {
-                formInfo = paymentForm + "<div class=\"card_offer\"><input type=\"checkbox\" name=\"chkPolicy\" id=\"chkPolicy\" value=\"0\">I have read and agree to the <a href=\"javascript:void(0)\" data-reveal-id=\"policyContractCancelDesc\" >Cancellation Policy and User Agreement</a></div>\n";
-                formInfo = formInfo + "<div><a href=\"javascript:void(0)\" onclick=\"viewBooking();\" style=\"float:left\"><img src=\"/images/btn_edit_booking_th.gif\" id=\"editBooking\" /></a><input type=\"submit\" class=\"btnPayment-th\" id=\"btnPayment\" name=\"submit\" value=\"\" /></div>\n";
+                formInfo = paymentForm + "<div class=\"card_offer\"><input type=\"checkbox\" name=\"chkPolicy\" id=\"chkPolicy\" value=\"0\">&nbsp;I have read and agree to the <a href=\"javascript:void(0)\" data-reveal-id=\"policyContractCancelDesc\" >Cancellation Policy and User Agreement</a></div>\n";
+
+                formInfo = formInfo + "<div class=\"btn-box-payment\"><button type=\"button\" id=\"editBooking\"  class=\"btn\" onclick=\"viewBooking();\"><i class=\"icon-circle-arrow-left\"></i> Edit booking detail</button><button type=\"submit\" name=\"submit\" class=\"btn btn-warning\"  id=\"btnPayment\"><i class=\"icon-lock\"></i> Proceed to checkout</button></div>\n";
+                //formInfo = formInfo + "<div class=\"btn-box-payment\"><a href=\"javascript:void(0)\" onclick=\"viewBooking();\" style=\"float:left\"><img src=\"/images/btn_edit_booking_th.gif\" id=\"editBooking\" /></a><input type=\"submit\" class=\"btnPayment-th\" id=\"btnPayment\" name=\"submit\" value=\"\" /></div>\n";
             }
 
             formInfo = formInfo + "<br class=\"clearAll\" />\n";
@@ -2476,7 +2621,7 @@ public partial class book : System.Web.UI.Page
             Keyword = Utility.GetKeywordReplace(layout, "<!--###HotelHeaderStart###-->", "<!--###HotelHeaderEnd###-->");
             layout = layout.Replace(Keyword, HotelHeader);
 
-            layout = layout.Replace("<!--###cssHotelBook###-->", "<link href=\"http://www.booking2hotels.com/hotels-template/" + HotelFolder + "/css/bookForm.css\" rel=\"stylesheet\" type=\"text/css\" />");
+            //layout = layout.Replace("<!--###cssHotelBook###-->", "<link href=\"http://www.booking2hotels.com/hotels-template/" + HotelFolder + "/css/bookForm.css\" rel=\"stylesheet\" type=\"text/css\" />");
 
 
 

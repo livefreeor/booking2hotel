@@ -92,20 +92,20 @@ namespace Hotels2thailand.Front
                 recordMax = "top " + maxRecord;
             }
 
-            //string orderBy = "";
+            string orderBy = "";
 
-            //switch (sortBy)
-            //{
-            //    case 0:
-            //        orderBy = " order by pc.title asc";
-            //        break;
-            //    case 1:
-            //        orderBy = " order by p.point_popular desc";
-            //        break;
-            //    case 2:
-            //        orderBy = " order by p.star desc";
-            //        break;
-            //}
+            switch (sortBy)
+            {
+                case 0:
+                    orderBy = " order by pc.title asc";
+                    break;
+                case 1:
+                    orderBy = " order by p.point_popular desc";
+                    break;
+                case 2:
+                    orderBy = " order by p.star desc";
+                    break;
+            }
             
             string sqlCommand = string.Empty;
             //if (categoryID==29)

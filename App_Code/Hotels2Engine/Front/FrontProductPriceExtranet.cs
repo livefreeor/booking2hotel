@@ -37,14 +37,14 @@ namespace Hotels2thailand.Front
         private int ProductTransferID;
         private byte ProductCategoryID;
         private fnCurrency currency;
-       // private bool hasPriceRecord = false;
+        private bool hasPriceRecord = false;
         private int countConditionActive = 0;
         private string refUrl = string.Empty;
         private string refQuery = string.Empty;
         private byte refCountryID = 0;
         private double discountPrice = -1;
         private double discountPriceHidden = 0;
-         //private bool promotionChargeABF = false;
+        private bool promotionChargeABF = false;
         private decimal priceABFTemp = 0;
         private decimal priceABFTotal = 0;
         private byte _refCountry = 0;
@@ -638,8 +638,7 @@ namespace Hotels2thailand.Front
                 }
 
             }
-
-            result = result + "<div class=\"policy_list\"><strong>Cancellation Policy</strong><br/>" + ConditionTitle +"<br/>" + RenderCancellation(price.ConditionID) + "</div>";
+            result = result + "<div class=\"policy_list\"><strong>Cancellation Policy</strong><br/>" + ConditionTitle +"<br/>" + RenderCancellation(price.ConditionID) + "gg</div>";
             result = result + "<div class=\"policy_list\"><strong>Help the children: </strong>You can help the children. Every booking will be sharing to non-profit children organization in Thailand.</div>";
             return result;
         }
@@ -1249,7 +1248,7 @@ namespace Hotels2thailand.Front
                         if (priceDisplay > 0)
                         {
                             countConditionActive = countConditionActive + 1;
-                            //hasPriceRecord = true;
+                            hasPriceRecord = true;
 
                             if (!string.IsNullOrEmpty(item.OptionPicture))
                             {
@@ -1428,7 +1427,7 @@ namespace Hotels2thailand.Front
                         if (priceDisplay > 0)
                         {
                             countConditionActive = countConditionActive + 1;
-                            //hasPriceRecord = true;
+                            hasPriceRecord = true;
                             roomImage = "/thailand-hotels-pic/" + item.ProductCode + "_" + item.OptionID + "_b_1.jpg";
                             if (!File.Exists(HttpContext.Current.Request.MapPath(roomImage)))
                             {
@@ -1594,7 +1593,7 @@ namespace Hotels2thailand.Front
                         if (priceDisplay > 0)
                         {
                             countConditionActive = countConditionActive + 1;
-                            //hasPriceRecord = true;
+                            hasPriceRecord = true;
                             roomImage = "/thailand-hotels-pic/" + item.ProductCode + "_" + item.OptionID + "_b_1.jpg";
                             if (!File.Exists(HttpContext.Current.Request.MapPath(roomImage)))
                             {
@@ -1893,7 +1892,7 @@ namespace Hotels2thailand.Front
             decimal basePrice = 0;
             decimal dayPrice = 0;
             decimal holidayPrice = 0;
-            //decimal priceOwn = 0;
+            decimal priceOwn = 0;
             decimal priceRack = 0;
             decimal pricePerDay = 0;
             decimal pricePerDayReal = 0;
@@ -2411,7 +2410,7 @@ namespace Hotels2thailand.Front
 
                                                                 //priceABFTotal = priceABFTotal + item.BreakfastCharge;
                                                                 breakfastCharge = item.BreakfastCharge;
-                                                                //promotionChargeABF = true;
+                                                                promotionChargeABF = true;
                                                             }
                                                             break;
                                                         case 2:
@@ -2467,36 +2466,36 @@ namespace Hotels2thailand.Front
         private string RenderAnnoucement()
         {
             string annouceDisplay = string.Empty;
-            //DateTime dateCheck;
+            DateTime dateCheck;
 
-            //List<FrontAnnoucement> annoucementList;
+            List<FrontAnnoucement> annoucementList;
 
             FrontAnnoucement annoucement = new FrontAnnoucement(ProductID);
             annoucement.LangID = _langID;
             Utility.SetSessionDate();
-            //if (HttpContext.Current.Session["dateStart"] == "''")
-            //{
-            //    annoucementList = annoucement.LoadAnnoucement();
+            if (HttpContext.Current.Session["dateStart"] == "''")
+            {
+                annoucementList = annoucement.LoadAnnoucement();
 
-            //}
-            //else
-            //{
+            }
+            else
+            {
 
-            //    annoucementList = annoucement.LoadAnnoucementByDate(Convert.ToString(HttpContext.Current.Session["dateStart"]), Convert.ToString(HttpContext.Current.Session["dateStart"]));
-            //    // annoucement.LoadAnnoucementByDate();
-            //}
+                annoucementList = annoucement.LoadAnnoucementByDate(Convert.ToString(HttpContext.Current.Session["dateStart"]), Convert.ToString(HttpContext.Current.Session["dateStart"]));
+                // annoucement.LoadAnnoucementByDate();
+            }
 
 
 
-            //if (annoucementList.Count > 0)
-            //{
-            //    annouceDisplay = annouceDisplay + "</br><table class=\"annoucement\" style=\"border:1px solid #2e2721;background-color:#f0f8ff;\" width=\"95%\" align=\"center\"><tr><th class=\"roomtype\">Announcement</th></tr><td valign=\"top\">";
-            //    foreach (FrontAnnoucement item in annoucementList)
-            //    {
-            //        annouceDisplay = annouceDisplay + item.Detail + "<br/>";
-            //    }
-            //    annouceDisplay = annouceDisplay + "</tr></td></table><br/><br/>";
-            //}
+            if (annoucementList.Count > 0)
+            {
+                annouceDisplay = annouceDisplay + "</br><table class=\"annoucement\" style=\"border:1px solid #2e2721;background-color:#f0f8ff;\" width=\"95%\" align=\"center\"><tr><th class=\"roomtype\">Announcement</th></tr><td valign=\"top\">";
+                foreach (FrontAnnoucement item in annoucementList)
+                {
+                    annouceDisplay = annouceDisplay + item.Detail + "<br/>";
+                }
+                annouceDisplay = annouceDisplay + "</tr></td></table><br/><br/>";
+            }
             return annouceDisplay;
 
         }

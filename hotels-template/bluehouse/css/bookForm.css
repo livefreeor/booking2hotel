@@ -1,0 +1,214 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-size:12px;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#333333;
+	line-height:16px;
+	padding:0px;
+	margin:0px;
+	line-height:1.5em;
+}
+img{border:0px;}
+p{margin:0px; padding:0px;}
+.fnSmall{font-size:12px;color:#505050;}
+
+.fnLarge{font-size:24px;}
+.fnBig{line-height:25px; font-size:18px;}
+.fnBold{font-weight:bold;}
+.fnMedium{font-size:14px;}
+
+.fnGrayLight{color:#818181;}
+.fnOrange{color:#c16800;}
+.fnBlue{color:#003a79;}
+.fnBlueSky{color:#3a74ba;}
+.fnGold{color:#7d5105;}
+.fnRed{color:#e90505;}
+.fnBlack{color:#000000;}
+#productTitle{margin:10px 10px 15px 20px; padding:0px; display:block;}
+#productAddress{margin:0px 10px 10px 20px; display:block;}
+.OptionDetail{float:left;width:280px;}
+.OptionDetail>span{display:block; text-align:left; }
+.condition_list{display:block;}
+#bookingSummary
+{ 
+	width:990px; margin:0 auto;padding:0px;
+	margin-top:-2px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
+
+}
+#bookingHeader
+{
+	width:990px; 
+	background:url(/hotels-template/bluehouse/images/bg_line_head.gif) repeat-x top left; 
+	height:140px; 
+	position:relative
+}
+#bookingHeader>.tel_contact{position:absolute; top:10px; right:10px; text-decoration:none; border:0px; color:#FFFFFF;}
+#bookingHeader>.web_logo{position:absolute; top:50px; left:10px; text-decoration:none; border:0px;}
+#bookingHeader>.web_livechat{position:absolute; top:30px; right:10px; text-decoration:none; border:0px; width:255px; height:65px; padding:5px;}
+#bookingProgress{position:absolute; top:65px; left:280px;width:480px; height:56px;}
+.bookingProgress1{background:url(../images/booking_progress.gif); background-repeat:no-repeat; background-position:0px 0px;}
+.bookingProgress2{background:url(../images/booking_progress.gif); background-repeat:no-repeat; background-position:0px -56px;}
+.bookingProgress3{background:url(../images/booking_progress.gif); background-repeat:no-repeat; background-position:0px -112px;}
+.bookingProgress4{background:url(../images/booking_progress.gif); background-repeat:no-repeat; background-position:0px -168px;}
+#bookingView{
+	margin-left:10px;
+	width:690px; 
+	float:left; 
+	border-top:2px solid #656565;
+	border-bottom:2px solid #656565;
+	border-left:1px solid #bababa;
+	border-right:1px solid #bababa;
+}
+
+#bookingTotal{width:265px; float:right;margin-right:10px;}
+#bookingFooter{width:990px; text-align:center; line-height:18px; background-color:#f4f4f4;margin-top:25px;padding:30px 0px;}
+#bookingCheck{border-top:1px solid #e2e2e2;border-bottom:1px solid #e2e2e2; padding:10px 0px 15px 20px;}
+#bookingSummaryTitle{display:block; background:url(../images/ico_booking_title.gif) no-repeat top left; padding-left:40px; line-height:25px; height:25px};
+#bookingCheckIn{ list-style:none; margin-top:15px; padding:0px;}
+#bookingCheckIn li{ list-style:none; margin-right:10px; padding:0px; float:left; width:180px;}
+#bookingCheckIn li.otherProduct{ list-style:none; margin-right:10px; padding:0px; float:left; width:250px;}
+#bookingCheckIn li.bookingGuest{width:100px; text-align:center}
+#bookingList-th th{line-height:10px;background:url(../images/booking_bar_rate.gif) repeat-x top left; height:37px; font-size:12px; color:#333333; font-weight:normal; line-height:37px; border-bottom:1px solid #e2e2e2;}
+#bookingList-th td{padding:10px; text-align:center; border-bottom:1px solid #e2e2e2;}
+
+#bookingList th{background:url(../images/booking_bar_rate.gif) repeat-x top left; height:37px; font-size:14px; color:#333333; font-weight:normal; line-height:37px; border-bottom:1px solid #e2e2e2;}
+#bookingList td{padding:10px; text-align:center; border-bottom:1px solid #e2e2e2;}
+.bookingListItem>img{float:left; margin-right:10px;padding:2px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;}
+.bookingListItem>div{margin:0px; padding:0px; display:block; float:left; text-align:left; width:280px;}
+.bookingOptionTitle{font-size:18px; color:#000000;}
+.bookingOptionPromotion{display:block; padding:0px; margin-top:3px; color:#3a74ba;}
+.bookingOptionCondition{display:block; padding:0px; margin-top:3px; color:#222222}
+.bookingOptionConditionView{ background:url(../images/ico_question_mini.gif) no-repeat top left; padding-left:15px;display:block; margin-top:3px; color:#3a74ba;}
+#bookingTotal{border-top:2px solid #656565;}
+#bookingRoomAvailable{
+	min-height:40px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:65px; 
+	background-image:url(/images/ico_booking_available.gif); 
+	background-repeat:no-repeat; 
+	background-position:0px 10px; 
+	display:block; 
+
+	}
+#bookingMiniTotal{ width:100%;border-top:2px solid #aea997;border-bottom:2px solid #aea997; background-color:#f9f2d7;}
+#bookingMiniTotal td{ line-height:18px; color:#222222; padding:5px;}
+.bookingTotalPrice{font-size:16px;font-family:helvetica; font-weight:bold; padding-top:10px !important;}
+.bookingVatCharge{border-bottom:1px solid #f5bd5f;}
+#btnProceed{ margin:0 auto; display: block; text-align:center}
+.faqs_title{}
+#bookingFrequencyAsk{font-weight:bold;padding:10px; display:block;}
+#bookingFrequencyAsk.faqTitle{font-weight:bold;}
+#bookingFrequencyAskList{margin-top:15px; padding:0px;}
+#bookingFrequencyAskList li{ list-style:none; line-height:18px;}
+#bookingFrequencyAskList li a{list-style:none; color:#7d5105; text-decoration:none;}
+#editBooking{display:block;margin-left:10px; margin-bottom:15px;}
+#tenYearsGuarantee{background:url(../images/ico_10years.gif) no-repeat top left; padding-left:58px;padding-top:5px;; height:53px; margin-top:15px; line-height:20px;}
+#secureBanner{display:none;}
+#secureBox{background-image:url(../images/ico_secure_key.gif);background-repeat:no-repeat;background-position:200px 0px; padding-right:35px; padding-top:15px;font-size:18px; font-family:helvetica;}
+#secureBoxTh{padding-top:15px;font-size:18px; font-family:helvetica;}
+#secureBoxTh>span{background-image:url(../images/ico_secure_key.gif); background-repeat:no-repeat;background-position:0px 0px;padding-left:35px; display:block; }
+/*Information*/
+#formCustomerBox{display:none;}
+.formCustomer{
+		width:675px;
+		padding-left:15px;
+		padding-top:15px;
+		padding-bottom:15px;
+		border-bottom:1px solid #d3d3d3;
+		position:relative;
+	}
+	.formCustomer div{width:490px;margin-bottom:8px; line-height:20px}
+	.formCustomer #asterisk{display:block; position:absolute; top:75px; right:55px; width:160px;}
+	.formCustomer label{width:120px; display:block; float:left; font-size:14px;}
+	.formCustomer input{width:300px;}
+	.formCustomer input[type="radio"]{width:20px;}
+	
+	#paymentMethod{background-color:#f9f9f9;width:675px;padding-left:15px;padding-top:15px; margin-bottom:15px;}
+	#paymentMethod input[type="submit"]{ float:right; border:0px; cursor:pointer;}
+	#btnPayment{ }
+	.btnPayment-en{ display: block; width:210px; height:42px; margin-right:10px;background:url(/images/btn_payment.gif) no-repeat top left;}
+	.btnPayment-th{ display: block; width:210px; height:42px; margin-right:10px;background:url(/images/btn_payment_th.gif) no-repeat top left;}
+	.requirementCustomer{position:relative; width:670px !important;}
+	.requirementCustomer textarea{position:absolute; right:10px; top:40px; width:185px; height:70px;}
+	h3{padding:0px; margin:0px; font-family:helvetica;}
+	hr{color:#d3d3d3}
+	
+/*End Information*/
+#tooltip {
+	color:#333;
+	background:#ffffff;
+	/*opacity: .8;*/
+	border:2px solid #efa303;
+	display:none; /*--Hides by default--*/
+	position:absolute;	z-index:1000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding:5px;
+}
+.tooltip_content{
+color: #fff;
+	background:#FFFFFF;
+	display:none; /*--Hides by default--*/
+	padding:1px;
+	position:absolute;	z-index:1000;
+}
+#fade2 { 
+display: none;
+  background: #000;
+  position: fixed; left: 0; top: 0;
+  width: 100%; height: 100%;
+  opacity: .30;
+  z-index: 9999;
+}
+#darkman_pop
+{
+	 display: none; /*--hidden by default--*/
+	background: #fff;
+	padding: 0px;
+	
+	float: left;
+	font-size: 1.2em;
+	position:absolute;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	 max-height:500px;
+	 overflow:auto;
+	 padding:2px;
+	-moz-box-shadow: 0 0 10px #888;
+	-webkit-box-shadow: 0 0 10px#888;
+	box-shadow: 0 0 10px #888;
+}
+#content_privacyLink{
+	display:none;
+}
+#content_cancelLink{
+	display:none;
+}
+.guest-requirement-div{width:520px;}
+.guest-requirement-col-1{width:120px;float:left; display:block;}
+.guest-requirement-col-2{width:130px;float:left; display:block;}
+.guest-requirement-col-3{width:100px;float:left; display:block;}
+.guest-requirement{float:left; display:block; width:140px;}
+label.error {
+	display:block;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	color: #aa0000;
+	float: none;
+	margin-left:120px;
+}
+.card_offer{margin-bottom:15px;}
+#thankyouContent{
+	width:720px;
+	margin:20px auto;
+	
+}
+.clearAll{ clear:both;}

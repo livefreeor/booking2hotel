@@ -1,0 +1,92 @@
+.booking_get{
+      font-size:11px;
+}
+.chk_in{
+     padding:0px;
+     font-size:11px;
+        font-weight:bold;
+        margin:0px !important;
+}
+.chk_out{
+ padding:0px;
+   font-size:11px;
+   font-weight:bold;
+   margin:0px !important;
+}
+.ProcessCheckTitel{
+     display:block;
+     float:right;
+}
+.ProcessCheckTitel>p{
+     float:left;
+     margin-right:10px;
+     font-weight:bold;
+}
+.ProcessCheckTitel>p>span{
+     display:inline-block;
+      border:1px solid #059f78;
+      padding:0px 5px 0px 5px;
+      background-color:#00BA8B;
+      color:#ffffff;
+      font-weight:bold;
+
+}
+
+#booking_status{
+    margin:15px 0px 15px 0px;
+    text-align:center;
+
+}
+#booking_status a{
+    color:#ffffff;
+    font-size:16px;
+    font-weight:bold;
+    display:inline-block;
+    margin-left:10px;
+    width:200px;
+    padding:10px 10px;
+    border-radius: 5px;
+     background-color:#00BA8B;
+     text-decoration:none;
+}
+#booking_status a:hover{
+    color:#ffffff;
+     background-color:#545454;
+}
+
+
+/*Booking Detail*/ 
+
+.req-room-title{
+    font-size:14px;
+    font-weight:bold;
+}
+.payment{
+     margin:5px;
+     padding:5px;
+     text-align:center;
+   
+}
+.grand{
+      background-color: #d9edf7;
+border: 1px solid #bce8f1;
+    color: #3a87ad;
+}
+.paid{
+    background-color: #dff0d8;
+border: 1px solid #d6e9c6;
+color: #468847;
+}
+.balance{
+    background-color: #fcf8e3;
+border: 1px solid #fbeed5;
+color: #c09853;
+}
+.booking-detil-btn-payment{
+    margin-top:2px;
+    font-size:10px !important;
+}
+.contentheadedetail{
+     font-size:11px;
+     font-weight:bold;
+}

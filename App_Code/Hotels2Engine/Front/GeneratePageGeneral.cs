@@ -1290,7 +1290,7 @@ public class GeneratePageGeneral
 
         int colCheck = 0;
 
-        //int productTmp = 0;
+        int productTmp = 0;
         
 
         sqlCommand = "select l.location_id,ln.title,l.destination_id,ln.file_name,dn.title as destination_title";

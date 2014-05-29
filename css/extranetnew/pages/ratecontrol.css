@@ -1,0 +1,205 @@
+﻿
+.stats-box-title {
+text-align: center;
+font-weight: bold;
+}
+.stats-box-all-info {
+text-align: center;
+font-weight: bold;
+font-size: 20px;
+margin-top: 20px;
+
+}
+.stats-box-room-info {
+text-align: center;
+font-weight: bold;
+font-size: 16px;
+margin-top: 20px;
+ color:#00BA8B;
+}
+.day_of_week_show_custom{
+    background-color:#dff0d8; border:1px solid #d6e9c6;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.dayofweek{
+     width:100%;
+}
+.dayofweek>tbody>tr{
+    
+}
+.dayofweek>tbody>tr>td{
+
+     vertical-align:middle;
+     padding:10px;
+}
+.control-group{
+     margin-bottom:0px !important;
+}
+
+
+
+
+
+
+
+.policy_insert_box
+{
+    margin:0px;
+    padding:0px; 
+    height:60px;
+    border-bottom:1px solid #e4e5e9;
+}
+.policy_insert_box div
+{
+    margin:0px 0px 0px 10px;
+    padding:0px;
+    float:left;
+}
+.policy_list_head
+{
+    font-size:12px;
+}
+.policy_list
+{
+    margin:0px;
+    padding:0px;
+    
+  
+}
+
+.policy_list_item
+{
+    margin:0px;
+    padding:2px 0px 2px 0px;
+    color:#333333;
+    font-size:12px;
+    width:100%;
+     
+     line-height:25px;
+     border-bottom:1px solid #e4e5e9;
+}
+.policy_list_item span
+{
+    margin:0px 30px 0px 0px;
+    padding:0px;
+     color:#006eb4;
+     font-weight:bold;
+     width:200px;
+}
+
+/*#period_insert
+{
+    margin:0px;
+    padding:0px; 
+    height:45px;
+    border-bottom:1px solid #e4e5e9;
+}*/
+#rate_load_head{
+    margin-top:18px;
+}
+#period_list
+{
+    margin:20px 0px 0px 0px;
+    padding:0px; 
+   
+}
+.day_list
+{
+     margin:0px;
+     padding:0px;
+}
+.day_list >p
+{
+      margin:0px;
+      padding:0px;
+      float:left;
+      width:50px;
+  
+} 
+.day_list >p>input{
+     margin-bottom:5px
+
+}
+.day_list >p>span
+{
+      margin-top:10px;
+      display:inline;
+   
+    
+} 
+
+
+.day_of_week_show
+{
+     margin:0px 0px 0px 35px;
+     padding:0px;
+}
+.day_of_week_show p
+{
+    margin:0px 0px 0px 1px;
+    padding:5px;
+    float:left;
+   line-height:10px;
+     background-color:#edeff4;
+     color:#bdbdbd;
+}
+.rate_result_list
+{
+    margin:0px;
+    padding:0px;
+}
+.day_show
+{
+     color:#a20c0c;
+     font-weight:bold;
+}
+#load_tariff_save,#condition_manage_save
+{
+
+    text-align:center;
+}
+#load_tariff_save,#condition_manage_save input{
+ 
+}
+#load_tariff_save,#condition_manage_save p{
+    
+}
+#surcharge_amount
+{
+     margin-top:15px;
+    background-color:#F7F7F9;
+    border:1px solid #d6e9c6;
+    
+  
+}
+#dayofweek_surcharge
+{
+    
+     background-color:#fbfbf9;
+   
+}
+#holiday_surcharge
+{
+    margin-top:10px;
+}
+.holiday_surcharge_head 
+{
+     color:#333333;
+     font-size:12px;
+     font-weight:bold;
+     border-bottom:1px solid #cccccc;
+}
+#dv_Rate{
+    width:950px;
+     margin:0px;
+     padding:0px;
+     position:relative;
+
+}
+.dv_block{
+     float:left;
+      margin:0px 0px 0px 20px;
+      padding:0px;
+
+}

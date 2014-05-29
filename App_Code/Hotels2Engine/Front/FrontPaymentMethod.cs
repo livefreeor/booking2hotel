@@ -68,6 +68,22 @@ namespace Hotels2thailand.Front
                 //Kbank
                 if(paymentInfo.ManageID==1)
                 {
+                    //Krung Sri Cyber Source
+                    if (paymentInfo.GatewayID == 15)
+                    {
+
+                        bankForm = bankForm + "<form name=\"CreditForm\" method=\"post\" action=\"https://rt05.kasikornbank.com/pgpayment/payment.aspx\">\n";
+                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"MERCHANT2\" name=\"MERCHANT2\" value=\"" + paymentInfo.MerchantID + "\">\n";
+                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"TERM2\" name=\"TERM2\" value=\"" + paymentInfo.TerminalID + "\">\n";
+                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"AMOUNT2\" name=\"AMOUNT2\" value=\"" + InsertZero(paymentInfo.Amount) + "\">\n";
+                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"URL2\" name=\"URL2\" value=\"" + paymentInfo.ResponseUrl + "\">\n";
+                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"RESPURL\" name=RESPURL value=\"https://www.hotels2thailand.com/bk2thengine/kbank_update.aspx\">\n";
+                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"IPCUST2\" name=\"IPCUST2\" value=\"\">\n";
+                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"DETAIL2\" name=\"DETAIL2\" value=\"" + paymentInfo.WebsiteName + " Order\">\n";
+                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"INVMERCHANT\" name=\"INVMERCHANT\" value=\"" + paymentInfo.PaymentBankID + "\">\n";
+                        //bankForm = bankForm + "<INPUT type=\"hidden\" id=\"SHOPID\" name=\"SHOPID\" value=\"01\">\n";
+                        bankForm = bankForm + "</form>\n";
+                    }
                     if (paymentInfo.GatewayID == 3)
                     {
 

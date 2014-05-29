@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/css/redmond/jquery-ui-1.8.11.custom.css" media="screen" />
+<script language="javascript" src="/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script language="javascript" src="/js/jquery-ui-1.8.11.custom.min.js" type="text/javascript"></script>
+<script language="javascript" src="/js/reservationEngine.js" type="text/javascript"></script>
+
+<link href="/css/rateInfo.css" type="text/css" rel="stylesheet" />
+<title>Blue House Demo</title>
+<style>
+body{
+	padding:0px;
+	margin:0px auto;
+	font-size:14px;
+	font-family:Verdana, Geneva, sans-serif;
+	background-color:#eef0ec;
+}
+#boxMain{
+	padding:0px;
+	margin:0px auto;
+	width:943px;
+}
+#boxContent{
+	background:url(images/body-2.jpg) no-repeat top left;
+	width:943px;
+	height:877px;
+	position:relative;
+}
+#boxSearch{
+	position:absolute;
+	width:180px;
+	height:200px;
+	right:10px;
+	top:20px;
+}
+.fontBlack
+{
+	color:#222222;
+}
+.fontMedium{
+	font-family:helvetica;
+	font-size:32px;
+}
+</style>
+</head>
+
+<body>
+<div id="boxMain">
+	<div id="boxHead">
+    <img src="images/head-bg2.jpg" />
+    </div>
+    <div id="boxContent">
+        <div id="boxSearch">
+        <span class="fontBlack fontMedium">Reservation</span>
+        <form name="frmCheckRate" id="frmCheckRate" method="post" action="book.html">
+        <table style="margin-left:0px;">
+        <tr><td class="fontBlack">Check in </td></tr>
+        <tr><td><input  name="dateci" id="dateci" size="20" autocomplete="off" value="" readonly="readonly" rel="datepicker"  type="text"></td></tr>
+        <tr><td class="fontBlack">Check out </td></tr>
+        <tr><td>
+        <input  name="dateco" id="dateco" size="20" autocomplete="off" value="" readonly="readonly"  type="text">
+        <input type="hidden" name="rateExchange" id="rateExchange" value="25" />
+        <input type="hidden" name="pid" id="pid" value="3449" /><br>
+        <a href="javascript:void(0)" id="btnBook" style="width:150px; height:40px; background-color:#000000; display:block; line-height:40px; text-align:center; color:#FFFFFF; text-decoration:none; float:left; margin-top:10px;">Book now</a>
+        </td></tr>
+ 		</table>      
+        </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

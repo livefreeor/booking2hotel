@@ -55,7 +55,7 @@ namespace Hotels2thailand.Front
                 {
                     case 1:
                         priceDeposit = (decimal)(((double)priceTotal) * this.Deposit / 100);
-                        //priceDeposit = (priceDeposit);
+                        priceDeposit = (priceDeposit);
                         break;
                     case 2:
                         priceDeposit = (priceTotal / quantity / numNight) * this.Deposit;

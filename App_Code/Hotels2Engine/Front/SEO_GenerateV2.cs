@@ -710,21 +710,21 @@ namespace Hotels2thailand.Front
             StringBuilder SeoString = new StringBuilder();
             string strMetaDes = "";
             string strMetaKey = "";
-            //bool bolDesInProduct = false;
+            bool bolDesInProduct = false;
             int intProductLen = strProduct.Length;
             int intDesLen = strDestination.Length;
             int intPromoLen = strPromotion.Length;
 
-            //if (strProduct.IndexOf(strDestination) >= 0)
-            //{
-            //    bolDesInProduct = true;
-            //}
-            //else
-            //{
-            //    bolDesInProduct = false;
-            //    strProduct = strProduct + " " + strDestination;
-            //    intProductLen = strProduct.Length;
-            //}
+            if (strProduct.IndexOf(strDestination) >= 0)
+            {
+                bolDesInProduct = true;
+            }
+            else
+            {
+                bolDesInProduct = false;
+                strProduct = strProduct + " " + strDestination;
+                intProductLen = strProduct.Length;
+            }
 
             switch (langID)
             {

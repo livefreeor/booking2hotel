@@ -43,10 +43,11 @@ public class PaymentInfo:Hotels2BaseClass
         {
             string sqlCommand = string.Empty;
             sqlCommand = sqlCommand + "select top 1 bpay.booking_id,bpay.booking_payment_id,bh.booking_hotel_id,bpb.booking_payment_bank_id,pben.currency_id";
-            sqlCommand = sqlCommand + " ,bpay.amount,pben.gateway_id,pben.merchant_id,pben.teminal_id,pben.url_return,pben.url_update,pben.url_site_redirect,pbe.manage_id,pben.web_site_name,pbe.folder";
+            sqlCommand = sqlCommand + " ,bpay.amount,bpay.gateway_id,pben.merchant_id,pben.teminal_id,pben.url_return,pben.url_update,pben.url_site_redirect,pbe.manage_id,pben.web_site_name,pbe.folder";
             sqlCommand = sqlCommand + " from tbl_booking_product bp,tbl_booking_payment bpay,tbl_booking_payment_bank bpb,tbl_product_booking_engine pben,tbl_booking_hotels bh,tbl_product_booking_engine pbe,tbl_product p";
             sqlCommand = sqlCommand + " where bp.booking_id=bpay.booking_id and bpay.booking_payment_id=bpb.booking_payment_id and bp.product_id=pben.product_id and bh.booking_id=bp.booking_id and pbe.product_id=bp.product_id and p.product_id=pben.product_id and bpb.booking_payment_bank_id=" + PaymentBankID;
-            //HttpContext.Current.Response.Write(sqlCommand+"Hello");
+            //HttpContext.Current.Response.Write(sqlCommand);
+            //HttpContext.Current.Response.End();
                 SqlCommand cmd = new SqlCommand(sqlCommand, cn);
                 cn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

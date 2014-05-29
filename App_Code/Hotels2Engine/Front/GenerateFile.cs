@@ -12,8 +12,8 @@ namespace Hotels2thailand.Front
 {
     public class GenerateFile
     {
-        
-        
+        private int ItemStart;
+        private int ItemEnd;
         public string Path { get; set; }
         public string Filename { get; set; }
         public string Content { get; set; }
@@ -51,7 +51,7 @@ namespace Hotels2thailand.Front
                 StrWer.Close();
                 //HttpContext.Current.Response.Write(path+ "<br>");
             }
-            catch 
+            catch (Exception ex)
             {
                 //HttpContext.Current.Response.Write("<font color=\"red\">Could not create file :" + ex.Message+"</font>");
                 //StrWer.Close();
@@ -81,7 +81,7 @@ namespace Hotels2thailand.Front
                 HttpContext.Current.Response.Write(Path + "/" + Filename+"<br>");
                 return true;
             }
-            catch 
+            catch (Exception ex)
             {
                // HttpContext.Current.Response.Write("<font color=\"red\">Could not create file :" + Path + "/" + Filename+"</font>");
                 //StrWer.Close();
