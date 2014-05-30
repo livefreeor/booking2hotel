@@ -1,8 +1,18 @@
 $(document).ready(function(){
 	
 
-
-
+    $("#formBooking").on('submit', function () {
+        var isvalidate = $("#formBooking").valid();
+        if (isvalidate) {
+            if (!$("#chkPolicy").is(':checked')) {
+                alert("Please accept the cancellation policy and user agreement before proceeding to check out.");
+                return false;
+            }
+            LoadingPanelShow();
+        } else {
+            return false;
+        }
+    });
 
     if ($("#current_gateway").length) {
 
@@ -14,7 +24,8 @@ $(document).ready(function(){
         // canada = 37
         //United States = 222
         $("select[name='country']").change(function () {
-            if ($(this).val() == 37 || $(this).val() == 222) {
+            var countryVal = $(this).val().split(',')[0];
+            if (countryVal == 37 || countryVal == 222) {
 
                 $("#drop_state").show();
                 $("#drop_state").addClass("required valid");
@@ -22,14 +33,14 @@ $(document).ready(function(){
                 console.log($(this).val());
 
 
-                if ($(this).val() == 37) {
+                if (countryVal == 37) {
                     //stat_ca
 
                     $("#drop_state select").html($("#stat_ca").html());
                     //$(".ca").show();
                     //$(".us").hide();
                 }
-                if ($(this).val() == 222) {
+                if (countryVal == 222) {
                     //stat_us
                     $("#drop_state select").html($("#stat_us").html());
                     //$(".ca").hide();

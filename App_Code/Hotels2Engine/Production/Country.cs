@@ -37,7 +37,24 @@ namespace Hotels2thailand.Production
             }
 
         }
+        //optional key with code
+        public Dictionary<string, string> GetCountryAllWithKeyCode()
+        {
+            Dictionary<string, string> dataList = new Dictionary<string, string>();
 
+            using (SqlConnection cn = new SqlConnection(this.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT (CONVERT(varchar(100), country_id)+','+ ISNULL( country_code,'')) AS countryKey,title FROM tbl_country ORDER BY title", cn);
+                cn.Open();
+                IDataReader reader = ExecuteReader(cmd);
+                while (reader.Read())
+                {
+                    dataList.Add(reader["countryKey"].ToString(), reader["title"].ToString());
+                }
+            }
+
+            return dataList;
+        }
         public Dictionary<byte, string> GetCountryAll()
         {
             Dictionary<byte, string> dataList = new Dictionary<byte, string>();

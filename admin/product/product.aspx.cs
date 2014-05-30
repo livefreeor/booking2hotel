@@ -405,6 +405,11 @@ namespace Hotels2thailand.UI
                 txtcontactEmail.Text = cProductEngine.EmailContactMail.Trim();
                 checkmailNotice.Checked = cProductEngine.IsMailNotice;
 
+
+                txtProfileID.Text = cProductEngine.ProfileID;
+                txtAccessCode.Text = cProductEngine.AccessKey;
+                txtSecretCode.Text = cProductEngine.SecretKey;
+
             }
                 
 
@@ -427,7 +432,7 @@ namespace Hotels2thailand.UI
 
                 if (string.IsNullOrEmpty(this.qProductId))
                 {
-                    cProduct.InsertOrUpdateProductEngine(product_id, 1, 1, "", "", "", 1, "", "", "", "", "", "", 1, 1, true, "", true,false,"",29);
+                    cProduct.InsertOrUpdateProductEngine(product_id, 1, 1, "", "", "", 1, "", "", "", "", "", "", 1, 1, true, "", true,false,"",29,"","","");
                     Response.Redirect("product.aspx?pid=" + product_id + this.AppendCurrentQueryString());
                 }
                 else
@@ -441,7 +446,7 @@ namespace Hotels2thailand.UI
             ProductBookingEngine cProduct = new ProductBookingEngine();
             int intProductId = int.Parse(Request.QueryString["pid"]);
             int ret = 0;
-            cProduct.InsertOrUpdateProductEngine(intProductId, byte.Parse(dropBookingType.SelectedValue), byte.Parse(dropGateway.SelectedValue), txtMerchant.Text, txtTeminal.Text, txtfolder.Text, byte.Parse(dropCurrency.SelectedValue), txtUrl.Text, txtUpdate.Text, txtRedirect.Text, "", "", txtWebsiteName.Text, byte.Parse(dropSale.SelectedValue), byte.Parse(dropManage.SelectedValue), bool.Parse(dropVat.SelectedValue), txtcontactEmail.Text, checkmailNotice.Checked, chkIsB2b.Checked, txtB2bMap.Text, byte.Parse(dropB2bCat.SelectedValue));
+            cProduct.InsertOrUpdateProductEngine(intProductId, byte.Parse(dropBookingType.SelectedValue), byte.Parse(dropGateway.SelectedValue), txtMerchant.Text, txtTeminal.Text, txtfolder.Text, byte.Parse(dropCurrency.SelectedValue), txtUrl.Text, txtUpdate.Text, txtRedirect.Text, "", "", txtWebsiteName.Text, byte.Parse(dropSale.SelectedValue), byte.Parse(dropManage.SelectedValue), bool.Parse(dropVat.SelectedValue), txtcontactEmail.Text, checkmailNotice.Checked, chkIsB2b.Checked, txtB2bMap.Text, byte.Parse(dropB2bCat.SelectedValue), txtAccessCode.Text.Trim(),txtSecretCode.Text.Trim(), txtProfileID.Text.Trim());
 
             //Response.Write(chkIsB2b.Checked);
 

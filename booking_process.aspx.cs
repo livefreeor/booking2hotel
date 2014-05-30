@@ -8,10 +8,11 @@ using Hotels2thailand.Front;
 using Hotels2thailand;
 using System.Data.SqlClient;
 using Hotels2thailand.DataAccess;
-using Hotels2thailand;
+
 using Hotels2thailand.Affiliate;
 using Hotels2thailand.Booking;
 using System.Web.Configuration;
+using Newtonsoft.Json;
 
 public partial class booking_process : System.Web.UI.Page
 {
@@ -31,9 +32,15 @@ public partial class booking_process : System.Web.UI.Page
         string phone=Request.Form["phone"];
         string flight_arv_num = Request.Form["flight_name_in"];
         string flight_dep_num = Request.Form["flight_name_out"];
-        
-        
-        byte country = byte.Parse(Request.Form["country"]);
+
+
+        string strCountry = Request.Form["country"];
+
+        string[] arrCountry = strCountry.Split(',');
+        byte country = byte.Parse(arrCountry[0]);
+        string country_code = arrCountry[1];
+
+
         byte refCountry = byte.Parse(Request.Form["refCountry"]);
         string phone_code=Request.Form["phone_code"];
         short supplierID = short.Parse(Request.Form["sid"]);
@@ -1553,10 +1560,14 @@ public partial class booking_process : System.Web.UI.Page
 
                 
                 mailStaffList = mailStaffList.StringLeft(mailStaffList.Count()-1);
+
+
+                //dont uncomment 
+
                 objMail.SendMailBookingRecevied_Notification(mailStaffList);
                 objMail.SendMailBookingRecevied();
 
-
+                 
                 PaymentInfo objPayment= paymentInfo.getPaymentInfo();
 
                 
@@ -1570,7 +1581,33 @@ public partial class booking_process : System.Web.UI.Page
                 else {
                     if (int.Parse(Request.Form["al"]) == 1)
                     {
-                        Response.Write(formPayment.GetPaymentForm(objPayment));
+
+                        string strFormDataForcyberSource = string.Empty;
+                        string keyfield = "first_name,last_name,email,phone,req_address_1,req_address_2,user_ip_address,country,req_city,req_postal_code,sel_drop_state,user_ip_address";
+
+                        IDictionary<string, string> idicForm = new Dictionary<string, string>();
+
+                        if (gatewayID == 15)
+                        {
+                            foreach (var key in Request.Form.AllKeys)
+                            {
+                                foreach (string keyname in keyfield.Split(','))
+                                {
+
+                                    if (key == keyname)
+                                    {
+                                        idicForm.Add(key, Request.Params[key]);
+                                        break;
+                                    }
+                                    
+                                }
+                                //Response.Write("<input type=\"hidden\" id=\"" + key + "\" name=\"" + key + "\" value=\"" + Request.Params[key] + "\"/>\n");
+                               
+                            }
+                        }
+
+
+                        Response.Write(formPayment.GetPaymentForm(objPayment, idicForm));
                     }
                     else {
                         Response.Redirect(objPayment.WebsiteName+"/"+objPayment.FolderName.Trim()+"_thankyou.html");

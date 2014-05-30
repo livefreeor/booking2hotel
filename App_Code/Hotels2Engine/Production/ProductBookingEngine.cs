@@ -54,6 +54,10 @@ namespace Hotels2thailand.Production
 
         public byte B2bCat { get; set; }
 
+        public string  AccessKey { get; set; }
+        public string SecretKey { get; set; }
+        public string ProfileID { get; set; }
+
         public ProductBookingEngine() { }
 
         public IDictionary<byte, string> getdicBookingPaymentType()
@@ -281,7 +285,7 @@ namespace Hotels2thailand.Production
         }
 
 
-        public int InsertOrUpdateProductEngine(int intProductId, byte bytBookingtypeid, byte bytGatewayId, string strMerchatId, string strTerminal, string strFolder, byte bytCurrency, string strUrlreturn, string strUrlupdate, string strUrlSiteRedirect, string strEmail, string strEmailPass, string strSiteName, byte bytSaleId, byte bytManageId, bool bolIsvat, string strEmailContact, bool Ismailnotice, bool Isb2b,string strB2bMap,byte bytB2bCat)
+        public int InsertOrUpdateProductEngine(int intProductId, byte bytBookingtypeid, byte bytGatewayId, string strMerchatId, string strTerminal, string strFolder, byte bytCurrency, string strUrlreturn, string strUrlupdate, string strUrlSiteRedirect, string strEmail, string strEmailPass, string strSiteName, byte bytSaleId, byte bytManageId, bool bolIsvat, string strEmailContact, bool Ismailnotice, bool Isb2b,string strB2bMap,byte bytB2bCat, string steAccessKey, string SecretKey, string ProfileId)
         {
             
                 int ret = 0;
@@ -293,7 +297,7 @@ namespace Hotels2thailand.Production
                 {
                     using (SqlConnection cn = new SqlConnection(this.ConnectionString))
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO tbl_product_booking_engine (product_id,booking_type_id,gateway_id,merchant_id,teminal_id,folder,currency_id,url_return,url_update,url_site_redirect,email_user,email_user_pass,web_site_name,sale_id,manage_id,is_vat,email_contact,is_mail_notice,is_b2b,b2b_map,cat_id) VALUES(@product_id,@booking_type_id,@gateway_id,@merchant_id,@teminal_id,@folder,@currency_id,@url_return,@url_update,@url_site_redirect,@email_user,@email_user_pass,@web_site_name,@sale_id,@manage_id,@is_vat,@email_contact,@is_mail_notice,@is_b2b,@b2b_map,@cat_id)", cn);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO tbl_product_booking_engine (product_id,booking_type_id,gateway_id,merchant_id,teminal_id,folder,currency_id,url_return,url_update,url_site_redirect,email_user,email_user_pass,web_site_name,sale_id,manage_id,is_vat,email_contact,is_mail_notice,is_b2b,b2b_map,cat_id,access_key,secret_key,profile_id) VALUES(@product_id,@booking_type_id,@gateway_id,@merchant_id,@teminal_id,@folder,@currency_id,@url_return,@url_update,@url_site_redirect,@email_user,@email_user_pass,@web_site_name,@sale_id,@manage_id,@is_vat,@email_contact,@is_mail_notice,@is_b2b,@b2b_map,@cat_id,@access_key,@secret_key,@profile_id)", cn);
                         cmd.Parameters.AddWithValue("@product_id", intProductId);
                         cmd.Parameters.AddWithValue("@booking_type_id", bytBookingtypeid);
                         cmd.Parameters.AddWithValue("@gateway_id", bytGatewayId);
@@ -315,6 +319,9 @@ namespace Hotels2thailand.Production
                         cmd.Parameters.AddWithValue("@is_b2b", Isb2b);
                         cmd.Parameters.AddWithValue("@b2b_map", strB2bMap);
                         cmd.Parameters.AddWithValue("@cat_id", bytB2bCat);
+                        cmd.Parameters.AddWithValue("@access_key", steAccessKey);
+                        cmd.Parameters.AddWithValue("@secret_key", SecretKey);
+                        cmd.Parameters.AddWithValue("@profile_id", ProfileId);
                         cn.Open();
                        ret = ExecuteNonQuery(cmd);
                     }
@@ -325,7 +332,7 @@ namespace Hotels2thailand.Production
                     using (SqlConnection cn = new SqlConnection(this.ConnectionString))
                     {
 
-                        SqlCommand cmd = new SqlCommand("UPDATE tbl_product_booking_engine  SET product_id=@product_id,booking_type_id=@booking_type_id,gateway_id=@gateway_id,merchant_id=@merchant_id,teminal_id=@teminal_id,folder=@folder,currency_id=@currency_id,url_return=@url_return,url_update=@url_update,url_site_redirect=@url_site_redirect,email_user=@email_user,email_user_pass=@email_user_pass,web_site_name=@web_site_name,sale_id=@sale_id ,manage_id=@manage_id , is_vat = @is_vat, email_contact=@email_contact, is_mail_notice=@is_mail_notice, is_b2b=@is_b2b ,b2b_map=@b2b_map,cat_id=@cat_id WHERE product_id =@product_id", cn);
+                        SqlCommand cmd = new SqlCommand("UPDATE tbl_product_booking_engine  SET product_id=@product_id,booking_type_id=@booking_type_id,gateway_id=@gateway_id,merchant_id=@merchant_id,teminal_id=@teminal_id,folder=@folder,currency_id=@currency_id,url_return=@url_return,url_update=@url_update,url_site_redirect=@url_site_redirect,email_user=@email_user,email_user_pass=@email_user_pass,web_site_name=@web_site_name,sale_id=@sale_id ,manage_id=@manage_id , is_vat = @is_vat, email_contact=@email_contact, is_mail_notice=@is_mail_notice, is_b2b=@is_b2b ,b2b_map=@b2b_map,cat_id=@cat_id,access_key=@access_key , secret_key=@secret_key, profile_id=@profile_id WHERE product_id =@product_id", cn);
                         cmd.Parameters.AddWithValue("@product_id", intProductId);
                         cmd.Parameters.AddWithValue("@booking_type_id", bytBookingtypeid);
                         cmd.Parameters.AddWithValue("@gateway_id", bytGatewayId);
@@ -347,6 +354,9 @@ namespace Hotels2thailand.Production
                         cmd.Parameters.AddWithValue("@is_b2b", Isb2b);
                         cmd.Parameters.AddWithValue("@b2b_map", strB2bMap);
                         cmd.Parameters.AddWithValue("@cat_id", bytB2bCat);
+                        cmd.Parameters.AddWithValue("@access_key", steAccessKey);
+                        cmd.Parameters.AddWithValue("@secret_key", SecretKey);
+                        cmd.Parameters.AddWithValue("@profile_id", ProfileId);
                         cn.Open();
                         ret = ExecuteNonQuery(cmd);
 

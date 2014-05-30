@@ -104,11 +104,11 @@ public static class DropdownUtility
 
         return ddList;
     }
-    public static string CountryList(string ddName,Dictionary<byte, string> countryList)
+    public static string CountryList(string ddName, Dictionary<string, string> dicountryList)
     {
         string ddList = "<select id=\"" + ddName + "\" name=\"" + ddName + "\" class=\"required\">\n";
         ddList = ddList + "<option value=\"\">Select Country of Passport</option>\n";
-        foreach (KeyValuePair<byte, string> country in countryList)
+        foreach (KeyValuePair<string, string> country in dicountryList)
         {
             ddList = ddList + "<option value=\"" + country.Key + "\">" + country.Value + "</option>\n";
         }

@@ -11,11 +11,12 @@ using Hotels2thailand.Suppliers;
 using Hotels2thailand.Production;
 using Hotels2thailand.Booking;
 using Hotels2thailand.Front;
-using System.Text;
+
 
 
 public partial class admin_account_slip_print : System.Web.UI.Page
 {
+
     public string qProductId { get { return Request.QueryString["pid"]; } }
     public string qPaymentID{ get { return Request.QueryString["pay"]; } }
 

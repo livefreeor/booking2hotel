@@ -53,6 +53,7 @@ this.tooltip = function(){
 	
 };
 
+
 this.imgFloat = function(){	
 	
 	xOffset=10;

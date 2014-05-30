@@ -25,7 +25,7 @@ public partial class test_test : System.Web.UI.Page
             Random myRandom = new Random();
             mycode.Remove(0, mycode.Length);
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 mycode.Append(myChar[myRandom.Next(0, MyLength)]);
             }

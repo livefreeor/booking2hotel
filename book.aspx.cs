@@ -1800,11 +1800,11 @@ public partial class book : System.Web.UI.Page
 
                 formInfo = formInfo + "<div><label>Phone:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"phone\" id=\"phone\" class=\"required\"/></div>\n";
 
-                formInfo = formInfo + "<div><label>Address<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"req_address_1\" id=\"req_address_1\" class=\"required email\" value=\"" + strEmail + "\" />\n";
-                formInfo = formInfo + "<input type=\"text\" name=\"req_address_2\" id=\"req_address_2\" class=\"required\" value=\"" + strEmail + "\" /></div>\n";
+                formInfo = formInfo + "<div><label>Address<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"req_address_1\" id=\"req_address_1\" class=\"required\" value=\"" + strEmail + "\" />\n";
+                formInfo = formInfo + "<input type=\"text\" name=\"req_address_2\" id=\"req_address_2\"  value=\"" + strEmail + "\" /></div>\n";
 
-               
-                formInfo = formInfo + "<div><label>Country<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAll()) + "</div>\n";
+
+                formInfo = formInfo + "<div><label>Country<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAllWithKeyCode()) + "</div>\n";
                 formInfo = formInfo + "<div id=\"drop_state\" style=\"display:none;\"><label>State:<span class=\"fnRed\">*</span></label><select name=\"sel_drop_state\"  ><option value=\"02\">Stat</option>";
 
                 formInfo = formInfo + "</select></div>\n";
@@ -1828,7 +1828,7 @@ public partial class book : System.Web.UI.Page
                 formInfo = formInfo + "<input type=\"text\" placeholder=\"Repeat email\" name=\"re_email\" id=\"re_email\" class=\"required\" value=\"" + strEmail + "\" /></div>\n";
 
                 formInfo = formInfo + "<div><label>Phone:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"phone\" id=\"phone\" class=\"required\"/></div>\n";
-                formInfo = formInfo + "<div><label>Country:<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAll()) + "</div>\n";
+                formInfo = formInfo + "<div><label>Country:<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAllWithKeyCode()) + "</div>\n";
             }
 
                 
@@ -1866,7 +1866,7 @@ public partial class book : System.Web.UI.Page
             formInfo = formInfo + "<div><label>อีเมล:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"email\" id=\"email\" class=\"required email\" /></div>\n";
             formInfo = formInfo + "<div><label>กรอกอีเมลอีกครั้ง:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"re_email\" id=\"re_email\" class=\"required\" /></div>\n";
             formInfo = formInfo + "<div><label>เบอร์โทรติดต่อ:<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"phone\" id=\"phone\" class=\"required\"/></div>\n";
-            formInfo = formInfo + "<div><label>สัญชาติ:<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAll()) + "</div>\n";
+            formInfo = formInfo + "<div><label>สัญชาติ:<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAllWithKeyCode()) + "</div>\n";
             formInfo = formInfo + "<br />\n";
             formInfo = formInfo + "<p id=\"asterisk\">กรุณากรอกข้อมูลให้ครบถ้วนโดยเฉพาะช่องที่มีเครื่องหมาย( <span class=\"fnRed\">*</span> )</p>\n";
             formInfo = formInfo + "</div>\n";
@@ -2412,7 +2412,7 @@ public partial class book : System.Web.UI.Page
         formInfo = formInfo + "<input type=\"hidden\" name=\"date_start\" value=\"" + Request.Form["date_start"] + "\">\n";
         formInfo = formInfo + "<input type=\"hidden\" name=\"date_end\" value=\"" + Request.Form["date_end"] + "\">\n";
         formInfo = formInfo + "<input type=\"hidden\" name=\"refCountry\" value=\"" + Request.Form["refCountry"] + "\">\n";
-
+        formInfo = formInfo + "<input type=\"hidden\" name=\"user_ip_address\" value=\"" + GetUser_IP() + "\">\n";
         //for Agency 
         formInfo = formInfo + "<input type=\"hidden\" name=\"hdAgencyID\" value=\"" + Request.Form["hdAgencyID"] + "\">\n";
 
@@ -2888,7 +2888,19 @@ public partial class book : System.Web.UI.Page
     }
 
 
-
+    protected string GetUser_IP()
+    {
+        string VisitorsIPAddr = string.Empty;
+        if (HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] != null)
+        {
+            VisitorsIPAddr = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].ToString();
+        }
+        else if (HttpContext.Current.Request.UserHostAddress.Length != 0)
+        {
+            VisitorsIPAddr = HttpContext.Current.Request.UserHostAddress;
+        }
+        return  VisitorsIPAddr;
+    }
     public List<string> GetPromotionExtra(int PromotionID, byte langID)
     {
         using (SqlConnection cn = new SqlConnection(connString))

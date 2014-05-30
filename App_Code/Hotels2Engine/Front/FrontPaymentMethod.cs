@@ -28,11 +28,11 @@ namespace Hotels2thailand.Front
             //
         }
 
-        public string GetPaymentForm(PaymentInfo paymentInfo)
+        public string GetPaymentForm(PaymentInfo paymentInfo, IDictionary<string,string> FormVal = null)
         {
             string result = string.Empty;
 
-            result = GetBankForm(paymentInfo);
+            result = GetBankForm(paymentInfo, FormVal);
             return result;
         }
 
@@ -59,8 +59,16 @@ namespace Hotels2thailand.Front
             result = GetBankForm(paymentInfo.getPaymentInfo());
             return result;
         }
-
-        private string GetBankForm(PaymentInfo paymentInfo)
+        public String getUTCDateTime()
+        {
+            DateTime time = DateTime.Now.ToUniversalTime();
+            return time.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        }
+        public String getUUID()
+        {
+            return System.Guid.NewGuid().ToString();
+        }
+        private string GetBankForm(PaymentInfo paymentInfo,IDictionary<string,string> FormVal = null)
         { 
             string bankForm="";
             string bookingBank = "";
@@ -71,17 +79,122 @@ namespace Hotels2thailand.Front
                     //Krung Sri Cyber Source
                     if (paymentInfo.GatewayID == 15)
                     {
+                        string param = "access_key,profile_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency";
 
-                        bankForm = bankForm + "<form name=\"CreditForm\" method=\"post\" action=\"https://rt05.kasikornbank.com/pgpayment/payment.aspx\">\n";
-                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"MERCHANT2\" name=\"MERCHANT2\" value=\"" + paymentInfo.MerchantID + "\">\n";
-                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"TERM2\" name=\"TERM2\" value=\"" + paymentInfo.TerminalID + "\">\n";
-                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"AMOUNT2\" name=\"AMOUNT2\" value=\"" + InsertZero(paymentInfo.Amount) + "\">\n";
-                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"URL2\" name=\"URL2\" value=\"" + paymentInfo.ResponseUrl + "\">\n";
-                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"RESPURL\" name=RESPURL value=\"https://www.hotels2thailand.com/bk2thengine/kbank_update.aspx\">\n";
-                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"IPCUST2\" name=\"IPCUST2\" value=\"\">\n";
-                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"DETAIL2\" name=\"DETAIL2\" value=\"" + paymentInfo.WebsiteName + " Order\">\n";
-                        bankForm = bankForm + "<INPUT type=\"hidden\" id=\"INVMERCHANT\" name=\"INVMERCHANT\" value=\"" + paymentInfo.PaymentBankID + "\">\n";
-                        //bankForm = bankForm + "<INPUT type=\"hidden\" id=\"SHOPID\" name=\"SHOPID\" value=\"01\">\n";
+
+                        string param2 = "bill_to_address_country,bill_to_address_city,bill_to_address_line1,bill_to_address_line2,device_fingerprint_id,bill_to_address_postal_code,bill_to_address_state,bill_to_company_name,bill_to_email,bill_to_forename,bill_to_phone,bill_to_surname,customer_ip_address,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data3,merchant_defined_data4,consumer_id,merchant_defined_data5,merchant_defined_data6,merchant_defined_data7,merchant_defined_data20,ship_to_forename,ship_to_surname,merchant_defined_data8,merchant_defined_data9,merchant_defined_data10,merchant_defined_data11,merchant_defined_data12,merchant_defined_data13,merchant_defined_data14,payment_method,merchant_defined_data15,merchant_defined_data16,merchant_defined_data17,merchant_defined_data18,merchant_defined_data19";
+                        IDictionary<string, string> parameters = new Dictionary<string, string>();
+                        parameters.Add("access_key", paymentInfo.Access_Key);
+                        parameters.Add("profile_id", paymentInfo.ProfileID);
+                        parameters.Add("transaction_uuid", getUUID());
+                        parameters.Add("signed_field_names", param);
+                        parameters.Add("locale", "en");
+                        parameters.Add("signed_date_time", getUTCDateTime());
+                        parameters.Add("transaction_type", "sale");
+                        parameters.Add("reference_number", paymentInfo.PaymentBankID.ToString());
+                        parameters.Add("amount", paymentInfo.Amount.ToString("#.00"));
+                        parameters.Add("currency", "THB");
+                        //parameters.Add("transaction_type", "sale");
+                        parameters.Add("unsigned_field_names", param2);
+
+                        parameters.Add("bill_to_address_country", FormVal["country"].Split(',')[1]);
+                        parameters.Add("bill_to_address_city", FormVal["req_city"]);
+                        parameters.Add("bill_to_address_line1", FormVal["req_address_1"]);
+                        parameters.Add("bill_to_address_line2", FormVal["req_address_2"]);
+                        parameters.Add("device_fingerprint_id", "UGPJZXFWHFOMTQFISIQCFEQ");
+                        parameters.Add("bill_to_address_postal_code", FormVal["req_postal_code"]);
+                        parameters.Add("bill_to_address_state", FormVal["sel_drop_state"]);
+                        parameters.Add("bill_to_company_name", "Booking2Hotel");
+                        parameters.Add("bill_to_email", FormVal["email"]);
+                        parameters.Add("bill_to_forename", FormVal["first_name"]);
+                        parameters.Add("bill_to_phone", FormVal["phone"]);
+                        parameters.Add("bill_to_surname", FormVal["last_name"]);
+                        parameters.Add("customer_ip_address", FormVal["user_ip_address"]);
+                        parameters.Add("merchant_defined_data1", FormVal["first_name"]);
+                        parameters.Add("merchant_defined_data2", FormVal["last_name"]);
+
+                        //send as Default to "Web" (Web/Mobile)
+                       // parameters.Add("override_custom_receipt_page", "Web");
+
+                        //country of passport
+                        parameters.Add("merchant_defined_data3", paymentInfo.CountryTitle);
+                        //Country of residence
+                        parameters.Add("merchant_defined_data4", paymentInfo.CountryTitle);
+
+                        parameters.Add("consumer_id", "0");
+                        //no: of days between booking and the check in days
+                        int intDayDiffBooking = paymentInfo.Date_check_in.Subtract(paymentInfo.BookingSubmit).Days;
+                        parameters.Add("merchant_defined_data5", intDayDiffBooking.ToString());
+                        //Destination Country
+                        parameters.Add("merchant_defined_data6", "Thailand");
+                        //no: Duration of stay in days
+                        int intDurationStay = paymentInfo.Date_check_out.Subtract(paymentInfo.Date_check_in).Days;
+                        parameters.Add("merchant_defined_data7", intDurationStay.ToString());
+
+                        parameters.Add("merchant_defined_data20", FormVal["email"]);
+                        parameters.Add("ship_to_forename", FormVal["first_name"]);
+                        parameters.Add("ship_to_surname", FormVal["last_name"]);
+
+
+                        //Hotel category 3 star/5 star/budget
+                        parameters.Add("merchant_defined_data8", "3");
+                        //Hotel Destination
+                        parameters.Add("merchant_defined_data9", paymentInfo.DestinationTitle);
+                        //Hotel Name
+                        parameters.Add("merchant_defined_data10", paymentInfo.Producttitle);
+
+                        //Language
+                        parameters.Add("merchant_defined_data11", "ENG");
+                        //Login Category /Channel (by call/website)
+                        parameters.Add("merchant_defined_data12", "website");
+                        //no: of hotel rooms
+                        parameters.Add("merchant_defined_data13", "100");
+                        //No: of previous visit
+                        parameters.Add("merchant_defined_data14", "0");
+                        //Saved Payment Method (Credit card, Debit Card, Electronic check debit, Paypal)
+                        parameters.Add("payment_method", "card");
+                        //Profile email address as registered during registeration sign up 
+                        parameters.Add("merchant_defined_data15", FormVal["email"]);
+                        //Profile Password hashed (if available this is the encrypted password that a user might provide)
+                        parameters.Add("merchant_defined_data16", "no");
+                        //Promotion Code
+                        parameters.Add("merchant_defined_data17", "no");
+                        //Service Provider name (Booked hotel name) If available
+                        parameters.Add("merchant_defined_data18", paymentInfo.Producttitle);
+                        //Third-Party booking/Agent Booking (if the credit card holder is not the party in the guest list then "Y" or/else "N"
+                        parameters.Add("merchant_defined_data19", "Y");
+
+                        bankForm = bankForm + "<form name=\"CreditForm\" method=\"post\" action=\"https://testsecureacceptance.cybersource.com/pay\">\n";
+
+
+
+                        foreach (KeyValuePair<string, string> keys in parameters)
+                        {
+                            bankForm = bankForm + "<input type=\"hidden\" id=\"" + keys.Key + "\" name=\"" + keys.Key + "\" value=\"" + keys.Value + "\"/>\n";
+                           
+                        }
+
+                        bankForm = bankForm + "<input type=\"hidden\" id=\"signature\" name=\"signature\" value=\"" + secureacceptance.Security.sign(parameters, paymentInfo.Secret_Key.Trim()) + "\"/>\n";
+                        
+
+
+                        //bankForm = bankForm + "<input type=\"hidden\" id=\"signature\" name=\"signature\" value=\"" + secureacceptance.Security.sign(parameters, paymentInfo.Secret_Key.Trim()) + "\"/>";
+    //<input type="hidden" name="unsigned_field_names" value="bill_to_address_country">
+    //<input type="hidden" name="signed_date_time" value="<% Response.Write(getUTCDateTime()); %>">
+    //<input type="hidden" name="locale" value="en">
+    //<fieldset>
+    //    <legend>Payment Details</legend>
+    //    <div id="paymentDetailsSection" class="section">
+    //        <span>transaction_type:</span><input type="text" name="transaction_type" size="25"><br/>
+    //        <span>reference_number:</span><input type="text" name="reference_number" size="25"><br/>
+    //        <span>amount:</span><input type="text" name="amount" size="25"><br/>
+    //        <span>currency:</span><input type="text" name="currency" size="25"><br/>
+    //    </div> 
+    //</fieldset>
+
+    //  <input type="hidden" name="bill_to_address_country" value="TH">
+
+
                         bankForm = bankForm + "</form>\n";
                     }
                     if (paymentInfo.GatewayID == 3)

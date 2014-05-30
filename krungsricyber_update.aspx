@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="krungsricyber_update.aspx.cs" Inherits="krungsri_update" %>

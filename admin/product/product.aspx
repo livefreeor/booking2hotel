@@ -570,7 +570,14 @@
   <tr><td>Merchant_id: </td>
  <td><asp:TextBox ID="txtMerchant" Width="450" runat="server"></asp:TextBox></td></tr>
   <tr><td>Teminal ID: </td>
+
  <td><asp:TextBox ID="txtTeminal" Width="450" runat="server"></asp:TextBox></td></tr>
+      <tr><td>ProfileID (cyber sourceo only): </td>
+ <td><asp:TextBox ID="txtProfileID" Width="450" runat="server"></asp:TextBox></td></tr>
+     <tr><td>Access_Key (cyber sourceo only): </td>
+ <td><asp:TextBox ID="txtAccessCode" Width="450" runat="server" MaxLength="32" placeholder="must 32 charactor only!"></asp:TextBox></td></tr>
+     <tr><td>Secrect_Key (cyber sourceo only): </td>
+ <td><asp:TextBox ID="txtSecretCode" Width="450" TextMode="MultiLine" Rows="4" MaxLength="256" placeholder="must 32 charactor only!" runat="server"></asp:TextBox></td></tr>
   <tr><td>Url Return: </td>
  <td><asp:TextBox ID="txtUrl" Width="450" runat="server"></asp:TextBox></td></tr>
   <tr><td>Url Update: </td>
