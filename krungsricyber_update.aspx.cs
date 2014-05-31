@@ -80,6 +80,8 @@ public partial class krungsri_update : System.Web.UI.Page
                 //--Allotment Process
                 FrontPaymentMethod objPayment = new FrontPaymentMethod();
                 objPayment.BookingProcess(BookingID);
+
+
             }
 
         }

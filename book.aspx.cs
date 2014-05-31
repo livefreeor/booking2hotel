@@ -204,6 +204,7 @@ public partial class book : System.Web.UI.Page
         string ProductTitle = string.Empty;
         string Address = string.Empty;
         string imagePath = string.Empty;
+        string strMerChainID = string.Empty;
         decimal totalAbf = 0;
         using (SqlConnection cn = new SqlConnection(connString))
         {
@@ -211,10 +212,10 @@ public partial class book : System.Web.UI.Page
             string sqlCommand = "select p.product_code,pc.title,";
             sqlCommand = sqlCommand + " (select top 1 spc.title from tbl_product_content spc where spc.product_id=p.product_id and spc.lang_id=" + langID + ") as second_lang,";
             sqlCommand = sqlCommand + " (select top 1 spc.address from tbl_product_content spc where spc.product_id=p.product_id and spc.lang_id=" + langID + ") as address_second_lang,";
-            sqlCommand = sqlCommand + " pc.address,p.cat_id,";
+            sqlCommand = sqlCommand + " pc.address,p.cat_id,pce.merchant_id,";
             sqlCommand = sqlCommand + " (select top 1 spp.pic_code from tbl_product_pic spp where spp.product_id=p.product_id and spp.cat_id=1 and spp.type_id=6 and spp.status=1) as picture";
-            sqlCommand = sqlCommand + " from tbl_product p,tbl_product_content pc";
-            sqlCommand = sqlCommand + " where p.product_id=pc.product_id and pc.lang_id=1 and p.product_id=" + ProductID;
+            sqlCommand = sqlCommand + " from tbl_product p,tbl_product_content pc, tbl_product_booking_engine pce";
+            sqlCommand = sqlCommand + " where p.product_id=pc.product_id and pc.lang_id=1  AND p.product_id= pce.product_id AND p.product_id=" + ProductID;
             SqlCommand cmd = new SqlCommand(sqlCommand, cn);
             cn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
@@ -247,6 +248,8 @@ public partial class book : System.Web.UI.Page
             {
                 imagePath = "<img src=\"" + reader["picture"] + "\" alt=\"" + reader["title"] + "\">";
             }
+
+            strMerChainID = reader["merchant_id"].ToString();
         }
 
 
@@ -1663,7 +1666,7 @@ public partial class book : System.Web.UI.Page
         Keyword = Utility.GetKeywordReplace(layout, "<!--###totalBookingMiniStart###-->", "<!--###totalBookingMiniEnd###-->");
         layout = layout.Replace(Keyword, totalResult);
 
-        Country country = new Country();
+        Hotels2thailand.Production.Country country = new Hotels2thailand.Production.Country();
         string formInfo = string.Empty;
 
         if (langID == 1)
@@ -1714,7 +1717,22 @@ public partial class book : System.Web.UI.Page
             //If GatwayID = 16 Is KrungSri Cyber source
             if (gatewayID == 15)
             {
+                string strSession = HttpContext.Current.Session.SessionID;
+                string MerChainIDAndSession = strMerChainID + strSession;
+                string orgId = "1snn5n9w";
 
+                string strFigerPrint = "<p style=\"background:url(https://h.online-metrix.net/fp/clear.png?org_id=" + orgId + "&session_id=" + MerChainIDAndSession + "&m=1)\"></p>";
+             
+                strFigerPrint = strFigerPrint + "<img src=\"https://h.online-metrix.net/fp/clear.png?org_id=" + orgId + "&session_id=" + MerChainIDAndSession + "&m=2\"  alt=\"\">";
+            
+                strFigerPrint = strFigerPrint + "<object type=\"application/x-shockwave-flash\" data=\"https://h.online-metrix.net/fp/fp.swf?org_id=" + orgId + "&session_id=" + MerChainIDAndSession + "\" width=\"1\" height=\"1\" id=\"thm_fp\"><param name=\"movie\" value=\"https://h.online-metrix.net/fp/fp.swf?org_id=" + orgId + "&session_id=" + MerChainIDAndSession + "\" /></object>";
+
+                strFigerPrint = strFigerPrint + "<script src=\"https://h.online-metrix.net/fp/check.js?org_id=" + orgId + "&session_id=" + MerChainIDAndSession + "\" type=\"text/javascript\"></script>";
+
+
+                layout = layout.Replace(" <!--###CyberSourceFingerPrint###-->", strFigerPrint);
+
+                formInfo = formInfo + "<input type=\"hidden\" value=\"" + strSession + "\" name=\"Session_current_id\" />";
                 formInfo = formInfo + "<div id=\"stat_us\" style=\"display:none;\">";
 
                 formInfo = formInfo + "<option value=\"AL\">Alabama</option>";
@@ -1803,7 +1821,7 @@ public partial class book : System.Web.UI.Page
                 formInfo = formInfo + "<div><label>Address<span class=\"fnRed\">*</span></label><input type=\"text\" name=\"req_address_1\" id=\"req_address_1\" class=\"required\" value=\"" + strEmail + "\" />\n";
                 formInfo = formInfo + "<input type=\"text\" name=\"req_address_2\" id=\"req_address_2\"  value=\"" + strEmail + "\" /></div>\n";
 
-
+               
                 formInfo = formInfo + "<div><label>Country<span class=\"fnRed\">*</span></label>" + DropdownUtility.CountryList("country", country.GetCountryAllWithKeyCode()) + "</div>\n";
                 formInfo = formInfo + "<div id=\"drop_state\" style=\"display:none;\"><label>State:<span class=\"fnRed\">*</span></label><select name=\"sel_drop_state\"  ><option value=\"02\">Stat</option>";
 

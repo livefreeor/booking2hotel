@@ -5,12 +5,19 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.SessionState;
 
 public partial class test_test : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        HttpSessionState ss = HttpContext.Current.Session;
+    HttpContext.Current.Session["test"] = "test";
+    HttpContext.Current.Response.Write(ss.SessionID + "<br/>");
+   
 
+        Response.Write(Session["test"]);
+        Response.End();
         StringBuilder mycode = new StringBuilder();
             mycode.Remove(0, mycode.Length);
             string txt = "";

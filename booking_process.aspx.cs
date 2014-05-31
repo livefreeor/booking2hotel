@@ -1308,7 +1308,6 @@ public partial class booking_process : System.Web.UI.Page
        
 
        
-
         
         //End Check Gala Dinner
 
@@ -1583,7 +1582,7 @@ public partial class booking_process : System.Web.UI.Page
                     {
 
                         string strFormDataForcyberSource = string.Empty;
-                        string keyfield = "first_name,last_name,email,phone,req_address_1,req_address_2,user_ip_address,country,req_city,req_postal_code,sel_drop_state,user_ip_address";
+                        string keyfield = "first_name,last_name,email,phone,req_address_1,req_address_2,user_ip_address,country,req_city,req_postal_code,sel_drop_state,user_ip_address,Session_current_id";
 
                         IDictionary<string, string> idicForm = new Dictionary<string, string>();
 

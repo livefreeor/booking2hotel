@@ -101,7 +101,7 @@ namespace Hotels2thailand.Front
                         parameters.Add("bill_to_address_city", FormVal["req_city"]);
                         parameters.Add("bill_to_address_line1", FormVal["req_address_1"]);
                         parameters.Add("bill_to_address_line2", FormVal["req_address_2"]);
-                        parameters.Add("device_fingerprint_id", "UGPJZXFWHFOMTQFISIQCFEQ");
+                        parameters.Add("device_fingerprint_id", FormVal["Session_current_id"]);
                         parameters.Add("bill_to_address_postal_code", FormVal["req_postal_code"]);
                         parameters.Add("bill_to_address_state", FormVal["sel_drop_state"]);
                         parameters.Add("bill_to_company_name", "Booking2Hotel");
