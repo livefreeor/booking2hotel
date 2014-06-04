@@ -57,9 +57,9 @@ namespace Hotels2thailand.Production
 
             return dataList;
         }
-        public Dictionary<byte, string> GetCountryAll()
+        public Dictionary<string, string> GetCountryAll()
         {
-            Dictionary<byte, string> dataList = new Dictionary<byte, string>();
+            Dictionary<string, string> dataList = new Dictionary<string, string>();
 
             using (SqlConnection cn = new SqlConnection(this.ConnectionString))
             {
@@ -68,7 +68,7 @@ namespace Hotels2thailand.Production
                 IDataReader reader = ExecuteReader(cmd);
                 while (reader.Read())
                 {
-                    dataList.Add((byte)reader["country_id"], reader["title"].ToString());
+                    dataList.Add(reader["country_id"].ToString(), reader["title"].ToString());
                 }
             }
 

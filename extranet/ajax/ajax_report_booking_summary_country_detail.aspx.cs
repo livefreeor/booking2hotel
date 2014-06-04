@@ -132,7 +132,8 @@ namespace Hotels2thailand.UI
                Country cCountry = new Country();
                 IList<ArrayList> iArrList = new List<ArrayList>();
 
-               foreach (KeyValuePair<byte, string> country in cCountry.GetCountryAll())
+
+                foreach (KeyValuePair<string, string> country in cCountry.GetCountryAll())
                {
                    
                    int intBookingall = 0;
@@ -143,7 +144,7 @@ namespace Hotels2thailand.UI
                    {
                        if (AllbookingResult.Total > 0)
                        {
-                           if (AllbookingResult.CountryId == country.Key && AllbookingResult.Total > 0)
+                           if (AllbookingResult.CountryId.ToString() == country.Key && AllbookingResult.Total > 0)
                            {
                                intBookingall = intBookingall + AllbookingResult.Total;
                            }
@@ -154,7 +155,7 @@ namespace Hotels2thailand.UI
                    {
                        if (BookingCompletedResult.Total > 0)
                        {
-                           if (BookingCompletedResult.CountryId == country.Key && BookingCompletedResult.Total > 0)
+                           if (BookingCompletedResult.CountryId.ToString() == country.Key && BookingCompletedResult.Total > 0)
                            {
                                intBookingCom = intBookingCom + BookingCompletedResult.Total;
                            }
@@ -165,7 +166,7 @@ namespace Hotels2thailand.UI
                    {
                        if (RoomNightBookindateResult.Total > 0)
                        {
-                           if (RoomNightBookindateResult.CountryId == country.Key && RoomNightBookindateResult.Total > 0)
+                           if (RoomNightBookindateResult.CountryId.ToString() == country.Key && RoomNightBookindateResult.Total > 0)
                            {
                                intRoomnightBooking = intRoomnightBooking + RoomNightBookindateResult.Total;
                            }
@@ -176,7 +177,7 @@ namespace Hotels2thailand.UI
                    {
                        if (RoomNightCheckinResult.Total > 0)
                        {
-                           if (RoomNightCheckinResult.CountryId == country.Key && RoomNightCheckinResult.Total > 0)
+                           if (RoomNightCheckinResult.CountryId.ToString() == country.Key && RoomNightCheckinResult.Total > 0)
                            {
                                intRoomnightCheck = intRoomnightCheck + RoomNightCheckinResult.Total;
                            }

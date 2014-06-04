@@ -159,9 +159,9 @@ namespace Hotels2thailand.UI
             result.Append("<select id=\"booking_country\" name=\"booking_country\"  class=\"DropDownStyleCustom\" >");
 
 
-            foreach (KeyValuePair<byte, string> country in cCountry.GetCountryAll())
+            foreach (KeyValuePair<string, string> country in cCountry.GetCountryAll())
             {
-                if (country.Key == cBookingDetail.CountryId)
+                if (country.Key == cBookingDetail.CountryId.ToString())
                     result.Append("<option value=\"" + country.Key + "\" selected=\"selected\">" + country.Value + "</option>");
                 else
                     result.Append("<option value=\"" + country.Key + "\">" + country.Value + "</option>");

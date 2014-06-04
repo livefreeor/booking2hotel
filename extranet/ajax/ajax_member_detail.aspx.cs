@@ -123,9 +123,9 @@ namespace Hotels2thailand.UI
 
             result.Append("<select " + strDisplaynone + " name=\"sel_country\"  class=\"Extra_Drop\">");
             string select = "";
-            foreach(KeyValuePair<byte,string> country in cCountry.GetCountryAll())
+            foreach (KeyValuePair<string, string> country in cCountry.GetCountryAll())
             {
-                if (country.Key == cMember.CountryID)
+                if (country.Key == cMember.CountryID.ToString())
                     select = "selected=\"selected\"";
 
                 result.Append("<option  value=\"" + country.Key + "\" " + select + ">" + country.Value + "</option>");

@@ -2130,14 +2130,14 @@ public partial class book : System.Web.UI.Page
                                         //optionRequire = optionRequire + "<div class=\"book_room\">Room : " + GetProductTitle(optionID[productCount], OptionTitleList) + "<span>(Subject to availability, can not guarantee)</span></div>\n";
                                         formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                         formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
-                                        formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + GetProductTitle(optionID[productCount], OptionTitleList) + "</strong></span><br /><br />\n";
+                                        formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + GetProductTitle(optionID[productCount], OptionTitleList) + "</strong></span>\n";
                                     }
                                     else
                                     {
                                         //optionRequire = optionRequire + "<div class=\"book_room\">Room : " + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + "<span>(Subject to availability, can not guarantee)</span></div>\n";
                                         formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                         formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
-                                        formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + "</strong></span><br /><br />\n";
+                                        formInfo = formInfo + "<span class=\"fnMedium\"><strong>" + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + "</strong></span>\n";
                                     }
 
 
@@ -2198,7 +2198,7 @@ public partial class book : System.Web.UI.Page
                                             //optionRequire = optionRequire + "<div class=\"book_room\">Room : " + GetProductTitle(optionID[productCount], OptionTitleList) + "<span>(Subject to availability, can not guarantee)</span></div>\n";
                                             formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                             formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
-                                            formInfo = formInfo + "<span class=\"fnMedium\"><strong>Room#" + roomCount + ": " + GetProductTitle(optionID[productCount], OptionTitleList) + "</strong></span><br /><br />\n";
+                                            formInfo = formInfo + "<span class=\"fnMedium\"><strong>Room#" + roomCount + ": " + GetProductTitle(optionID[productCount], OptionTitleList) + "</strong></span>\n";
 
                                         }
                                         else
@@ -2206,7 +2206,7 @@ public partial class book : System.Web.UI.Page
                                             //optionRequire = optionRequire + "<div class=\"book_room\">Room : " + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + "<span>(Subject to availability, can not guarantee)</span></div>\n";
                                             formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                             formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
-                                            formInfo = formInfo + "<span class=\"fnMedium\"><strong>Room#" + roomCount + ": " + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + "</strong></span><br /><br />\n";
+                                            formInfo = formInfo + "<span class=\"fnMedium\"><strong>Room#" + roomCount + ": " + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + "</strong></span>\n";
 
                                         }
 
@@ -2260,7 +2260,7 @@ public partial class book : System.Web.UI.Page
                                             //optionRequire = optionRequire + "<div class=\"book_room\">Room : " + GetProductTitle(optionID[productCount], OptionTitleList) + "<span>(Subject to availability, can not guarantee)</span></div>\n";
                                             formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                             formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
-                                            formInfo = formInfo + "<span class=\"fnMedium\"><strong>ห้องพัก :" + GetProductTitle(optionID[productCount], OptionTitleList) + roomCount + "</strong></span><br /><br />\n";
+                                            formInfo = formInfo + "<span class=\"fnMedium\"><strong>ห้องพัก :" + GetProductTitle(optionID[productCount], OptionTitleList) + roomCount + "</strong></span>\n";
 
                                         }
                                         else
@@ -2268,7 +2268,7 @@ public partial class book : System.Web.UI.Page
                                             //optionRequire = optionRequire + "<div class=\"book_room\">Room : " + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + "<span>(Subject to availability, can not guarantee)</span></div>\n";
                                             formInfo = formInfo + "<div class=\"formCustomer\">\n";
                                             formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
-                                            formInfo = formInfo + "<span class=\"fnMedium\"><strong>ห้องพัก :" + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + roomCount + "</strong></span><br /><br />\n";
+                                            formInfo = formInfo + "<span class=\"fnMedium\"><strong>ห้องพัก :" + GetProductExtraTitle(optionID[productCount], OptionTitleListExtra) + roomCount + "</strong></span>\n";
 
                                         }
 

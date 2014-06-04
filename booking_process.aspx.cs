@@ -35,10 +35,22 @@ public partial class booking_process : System.Web.UI.Page
 
 
         string strCountry = Request.Form["country"];
+        byte country = 0;
+        string country_code = string.Empty;
 
         string[] arrCountry = strCountry.Split(',');
-        byte country = byte.Parse(arrCountry[0]);
-        string country_code = arrCountry[1];
+        if(arrCountry.Length > 1){
+            country = byte.Parse(arrCountry[0]);
+             country_code = arrCountry[1];
+        }
+            
+        else{
+             country = byte.Parse(strCountry);
+           
+        }
+           
+
+        
 
 
         byte refCountry = byte.Parse(Request.Form["refCountry"]);

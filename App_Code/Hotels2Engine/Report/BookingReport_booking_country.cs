@@ -208,19 +208,19 @@ namespace Hotels2thailand.Report
         {
         
             Country cCountry = new Country();
-            Dictionary<byte, string> dicCountry = cCountry.GetCountryAll();
+            Dictionary<string, string> dicCountry = cCountry.GetCountryAll();
             IList<object> listREsult = this.GEtCountryRoomNight_CheckInDateByPeriod(intProductId, shrSupplierId, dDateStart, dDateEnd);
 
             //HttpContext.Current.Response.Write(listREsult.Count());
             //HttpContext.Current.Response.End();
             IList<object> iListREsult_final = new List<object>();
-            foreach (KeyValuePair<byte, string> item in dicCountry)
+            foreach (KeyValuePair<string, string> item in dicCountry)
             {
                 int intTotal = 0;
 
                 foreach (BookingReport_booking_country REsult in listREsult)
                 {
-                    if (REsult.CountryId == (int)item.Key)
+                    if (REsult.CountryId == int.Parse(item.Key))
                     {
                         intTotal = intTotal + REsult.Total;
                     }
@@ -228,7 +228,7 @@ namespace Hotels2thailand.Report
                 
                 BookingReport_booking_country cBookingreport = new BookingReport_booking_country
                 {
-                    CountryId = (int)item.Key,
+                    CountryId = int.Parse(item.Key),
                     CountryTitle = item.Value.ToString(),
                     Total = intTotal
 
