@@ -1688,26 +1688,58 @@ public partial class booking_process : System.Web.UI.Page
                     cardData = card.CombindDataCard(cardType, cardNum, cardCvv, cardMonth, cardYear, cardName, bankName, bookingID, bookingHotelID);
 
                 }
-                
                 BookingStaff objStaff = new BookingStaff();
-               // BookingMailEngine objMail = new BookingMailEngine(bookingID);
+                // BookingMailEngine objMail = new BookingMailEngine(bookingID);
 
                 foreach (string staffHotel in objStaff.GetStringEmailSendMail(bookingID))
                 {
                     //Response.Write(staffHotel+"<br/>");
-                    
+
                     mailStaffList = mailStaffList + staffHotel + ";";
                 }
                 mailStaffList = mailStaffList.StringLeft(mailStaffList.Count() - 1);
                 objMail.SendMailBookingRecevied_Notification_offline(mailStaffList, cardData);
-                objMail.SendMailBookingRecevied();
+                
                 //Response.Write(PaymentBankID);
                 //Response.Flush();
+
 
                 PaymentInfo paymentInfo = new PaymentInfo(PaymentBankID);
                 PaymentInfo objPayment = paymentInfo.getPaymentInfo();
 
-                Response.Redirect(objPayment.WebsiteName+"/"+objPayment.FolderName+"_thankyou.html");
+                if (int.Parse(Request.Form["hotel_id"]) == 3504 || int.Parse(Request.Form["hotel_id"]) == 3581 || int.Parse(Request.Form["hotel_id"]) == 3502)
+                {
+                    if (int.Parse(Request.Form["al"]) == 1)
+                    {
+                        // chang to recieve booknow
+                        objMail.SendMailBookingRecevied_Booknow_offline();
+
+                        FrontPaymentMethod objPaymentMethod = new FrontPaymentMethod();
+                       objPaymentMethod.BookingProcess(bookingID, "booknow");
+
+                       Response.Redirect("order-complete.aspx?com=yes&bhid=" + objPayment.BookingHotelID);
+                        //if(objPayment.p)
+                    }
+                    else
+                    {
+                        Response.Redirect("order-complete.aspx?com=no&bhid=" + objPayment.BookingHotelID);
+                        //Response.Redirect(objPayment.WebsiteName + "/" + objPayment.FolderName + "_thankyou.html");
+                    }
+                }
+                else
+                {
+                    
+                    objMail.SendMailBookingRecevied();
+
+                    Response.Redirect(objPayment.WebsiteName + "/" + objPayment.FolderName + "_thankyou.html");
+                }
+
+                
+                
+
+
+
+
                 //string bodyForm = "<form name=\"thankyou\" action=\""+objPayment.WebsiteName+"/"+objPayment.FolderName+"_thankyou.html"+"\" method=\"post\">\n";
                 //bodyForm = bodyForm + "<input type=\"hidden\" name=\"booking_id\" value=\"" + bookingID + "\" />\n";
                 //bodyForm = bodyForm + "</form>\n";

@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+#bookingHeader
+{
+	width:990px; 
+	background:url(/hotels-template/berkeley/images/bg_line_head.jpg) repeat-x top left; 
+	height:140px; 
+	position:relative
+}
+#bookingHeader>.web_logo{position:absolute; top:50px; left:10px; text-decoration:none; border:0px;}
+#bookingHeader>.web_livechat{position:absolute; top:40px; right:10px; text-decoration:none; border:0px; width:255px; height:65px; padding:5px;}

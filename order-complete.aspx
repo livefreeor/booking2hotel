@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
     <title></title>
-    <link href="../css/style-b2b.css" type="text/css" rel="stylesheet" />
-     <link href="../css/bookForm.css" type="text/css" rel="stylesheet" />
+    <link href="/css/style-b2b.css" type="text/css" rel="stylesheet" />
+     <link href="/css/MainbookForm.css" type="text/css" rel="stylesheet" />
     <style>
         a {
             color: #3b59aa;

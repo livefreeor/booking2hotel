@@ -312,6 +312,28 @@ namespace Hotels2thailand.Booking
             }
             return Success;
         }
+        public bool SendMailBookingRecevied_Booknow_offline()
+        {
+            bool Success = false;
+            //string Maildisplay = "Reservation:Hotels2thailand.com";
+            //string subject = "Booking received from hotels2thailand.com (ORDER ID:"+ this.BookingId +")";
+
+            try
+            {
+                string MailBody = getMailBookingRecieved_Allot_Booknow_offline();
+
+                Success = Hotels2MAilSender.SendmailBooking(this.cProductBookingEngine.Email, this.MailNameDisplayDefault, GetEmailBooking(), GetSubject(MailCat.BookingRecevied), "", MailBody);
+
+
+                Success = Hotels2MAilSender.SendmailBooking(this.cProductBookingEngine.Email, this.MailNameDisplayDefault, this.Bcc, GetSubject(MailCat.BookingRecevied), "", MailBody);
+
+            }
+            catch
+            {
+                Success = false;
+            }
+            return Success;
+        }
 
         public bool SendMailBookingRecevied_allot()
         {
@@ -989,8 +1011,189 @@ namespace Hotels2thailand.Booking
             
             return MainBody;
         }
+        public string getMailSendVoucher_Booknow_offline(string pricetype = "")
+        {
+            string MainBody = string.Empty;
+            if (!this.cProductBookingEngine.Is_B2b)
+            {
+                MainBody = getMailThemeNew();
+
+                //Booking IitemList
+                string KeywordItem = Utility.GetKeywordReplace(MainBody, "<!--##@mailItemContentStart##-->", "<!--##@mailItemContentEnd##-->");
+                MainBody = MainBody.Replace(KeywordItem, getProductListFromBookingId(pricetype).Replace("<!--##@BookingNameItem##-->", CusName()));
+
+                //Detail Top
+                string KeywordDetailTop = Utility.GetKeywordReplace(MainBody, "<!--##@WordingHeadContentStart##-->", "<!--##@WordingHeadContentEnd##-->");
+                MainBody = MainBody.Replace(KeywordDetailTop, TextDetailTop(18));
+
+                string strGrandBalance = GrandBalance(pricetype);
+
+                if (strGrandBalance != "0.00")
+                {
+                    //Wording Balance For Cutomer
+                    MainBody = MainBody.Replace("<!--##@Balance_Note##-->", "Please pay the balance at hotel upon your check in.");
+                }
+                //string KeywordTotalResubmit = Utility.GetKeywordReplace(MainBody, "<!--##@GrandTotal_Resubmit_Start##-->", "<!--##@GrandTotal_Resubmit_End##-->");
+                //MainBody = MainBody.Replace(KeywordTotalResubmit, " ");
+
+                //CustomerName 
+                MainBody = MainBody.Replace("<!--##@CusNameContent##-->", CusName());
+
+                //GrandTotal
+                MainBody = MainBody.Replace("<!--##@mailItemTotalContent##-->", GrandTotal(pricetype));
 
 
+                //GrandBalance
+                MainBody = MainBody.Replace("<!--##@mailItemTotalBalanceContent##-->", strGrandBalance);
+
+                //GrandPaid
+                MainBody = MainBody.Replace("<!--##@mailItemTotalPaidContent##-->", GrandPaidTotal(pricetype));
+
+                // //Disable Grandtotal Main
+                string KeywordGrandTotal = Utility.GetKeywordReplace(MainBody, "<!--##@Grandtotal_Start##-->", "<!--##@Grandtotal_End##-->");
+                MainBody = MainBody.Replace(KeywordGrandTotal, " ");
+
+                //Disable BankTransfer 
+                string KeywordBankTransfer = Utility.GetKeywordReplace(MainBody, "<!--##@Banktransfer_start##-->", "<!--##@Banktransfer_End##-->");
+                MainBody = MainBody.Replace(KeywordBankTransfer, " ");
+                //disable Total Paid & requset Payment
+                //string KeywordTotalResubmit = Utility.GetKeywordReplace(MainBody, "<!--##@ContentTotalresubmitStart##-->", "<!--##@ContentTotalresubmitEnd##-->");
+                //MainBody = MainBody.Replace(KeywordTotalResubmit, " ");
+
+                string KeywordreqPay = Utility.GetKeywordReplace(MainBody, "<!--##@ReqPay_Start##-->", "<!--##@ReqPay_End##-->");
+                MainBody = MainBody.Replace(KeywordreqPay, " ");
+
+                //getDetail Voucher
+                MainBody = MainBody.Replace("<!--##@ContentVoucherDetail##-->", TextDetailVoucher());
+
+                Production.ProductPic cProductPic = new Production.ProductPic();
+
+                string Logo = "<img  src=\"" + cProductPic.getProductlogo(this.cClassBookingProduct.ProductID) + "\" style=\"width:150px; height:60px; border:solid 1px #eee5be\" />";
+                //Logo Is Open
+
+                MainBody = MainBody.Replace("<!--##@HotelLogo##-->", Logo);
+                //EmailTracking Is Open
+                //MainBody = MainBody.Replace("<!--##@ContentEmailtracking##-->", imgTrack(14));
+                BookingProductDisplay cBookingPLsit = new BookingProductDisplay();
+                cBookingPLsit = cBookingPLsit.getBookingProductDisplayByBookingProductId(this.cClassBookingProduct.BookingProductId);
+
+                //BookingProductName
+                MainBody = MainBody.Replace("<!--##@HotelName##-->", cBookingPLsit.ProductTitle);
+                //Hotel Phone
+                MainBody = MainBody.Replace("<!--##@HotelAddress##-->", cBookingPLsit.ProductAddress);
+                //HOtel Address
+                MainBody = MainBody.Replace("<!--##@HotelPhone##-->", cBookingPLsit.ProductPhone);
+                //BookingProductName
+                MainBody = MainBody.Replace("<!--##@HotelName_foot##-->", cBookingPLsit.ProductTitle);
+                //ContactUsPhone <!--##@HotelPhoneContact##-->
+                MainBody = MainBody.Replace("<!--##@HotelPhoneContact##-->", cBookingPLsit.ProductPhone);
+
+
+                //Sign Confirm
+                MainBody = MainBody.Replace("<!--##@mailSignConfirm##-->", "<img src=\"http://order.booking2hotels.com/images_extra/confirmation2.gif\" />");
+
+                BookingStaff cBookingStaff = new BookingStaff();
+
+                // Contact Us Email <!--##@EmailContactUs##-->
+                MainBody = MainBody.Replace("<!--##@EmailContactUs##-->", cBookingStaff.GetStringEmail_mailtoForm_showMail(cProductBookingEngine.EmailContactMail));
+            }
+            else
+            {
+                Hotels2thailand.BookingB2b.BookingMailEngineB2b cMailBookingB2B = new BookingB2b.BookingMailEngineB2b(this.BookingId);
+                MainBody = cMailBookingB2B.getMailSendVoucher();
+            }
+
+
+            return MainBody;
+        }
+
+        public string getMailBookingRecieved_Booknow_offline()
+        {
+            bool bolIsB2b = this.cProductBookingEngine.Is_B2b;
+            string MainBody = string.Empty;
+
+            if (!bolIsB2b)
+            {
+
+                MainBody = getMailThemeNew();
+
+                //CustomerName 
+                MainBody = MainBody.Replace("<!--##@CusNameContent##-->", CusName());
+
+                // Detail Top
+                string KeywordDetailTop = Utility.GetKeywordReplace(MainBody, "<!--##@WordingHeadContentStart##-->", "<!--##@WordingHeadContentEnd##-->");
+                MainBody = MainBody.Replace(KeywordDetailTop, TextDetailTop(2));
+
+                //Booking IitemList
+                string KeywordItem = Utility.GetKeywordReplace(MainBody, "<!--##@mailItemContentStart##-->", "<!--##@mailItemContentEnd##-->");
+                MainBody = MainBody.Replace(KeywordItem, getProductListFromBookingId().Replace("<!--##@BookingNameItem##-->", CusName()));
+
+                string KeywordTotalResubmit = Utility.GetKeywordReplace(MainBody, "<!--##@GrandTotal_Resubmit_Start##-->", "<!--##@GrandTotal_Resubmit_End##-->");
+                MainBody = MainBody.Replace(KeywordTotalResubmit, " ");
+
+                string KeywordreqPay = Utility.GetKeywordReplace(MainBody, "<!--##@ReqPay_Start##-->", "<!--##@ReqPay_End##-->");
+                MainBody = MainBody.Replace(KeywordreqPay, " ");
+
+                string KeywordBankTransfer = Utility.GetKeywordReplace(MainBody, "<!--##@Banktransfer_start##-->", "<!--##@Banktransfer_End##-->");
+                MainBody = MainBody.Replace(KeywordBankTransfer, " ");
+
+
+
+
+                //Wording Balance For Cutomer
+                //MainBody = MainBody.Replace("<!--##@Balance_Note##-->", "Please pay the balance at hotel upon your check in.");
+
+                // //Disable Grandtotal Balance Main
+                string KeywordGrandTotalBalance = Utility.GetKeywordReplace(MainBody, "<!--##@Balance_Start##-->", "<!--##@Balance_End##-->");
+                MainBody = MainBody.Replace(KeywordGrandTotalBalance, " ");
+
+                ////GrandTotal
+                MainBody = MainBody.Replace("<!--##@mailItemTotalContent##-->", GrandTotal());
+
+                //EmailTracking Is Open
+                //MainBody = MainBody.Replace("<!--##@ContentEmailtracking##-->", imgTrack(15));
+
+
+                Production.ProductPic cProductPic = new Production.ProductPic();
+
+                string Logo = "<img  src=\"" + cProductPic.getProductlogo(this.cClassBookingProduct.ProductID) + "\" style=\"width:150px; height:60px; border:solid 1px #eee5be\" />";
+                //Logo Is Open
+
+                MainBody = MainBody.Replace("<!--##@HotelLogo##-->", Logo);
+
+
+                BookingProductDisplay cBookingPLsit = new BookingProductDisplay();
+                cBookingPLsit = cBookingPLsit.getBookingProductDisplayByBookingProductId(this.cClassBookingProduct.BookingProductId);
+
+                //BookingProductName
+                MainBody = MainBody.Replace("<!--##@HotelName##-->", cBookingPLsit.ProductTitle);
+                //BookingProductName
+                MainBody = MainBody.Replace("<!--##@HotelName_foot##-->", cBookingPLsit.ProductTitle);
+                //Hotel Phone
+                MainBody = MainBody.Replace("<!--##@HotelAddress##-->", cBookingPLsit.ProductAddress);
+                //HOtel Address
+                MainBody = MainBody.Replace("<!--##@HotelPhone##-->", cBookingPLsit.ProductPhone);
+
+                //ContactUsPhone <!--##@HotelPhoneContact##-->
+                MainBody = MainBody.Replace("<!--##@HotelPhoneContact##-->", cBookingPLsit.ProductPhone);
+
+                BookingStaff cBookingStaff = new BookingStaff();
+                // Contact Us Email <!--##@EmailContactUs##-->
+                MainBody = MainBody.Replace("<!--##@EmailContactUs##-->", cBookingStaff.GetStringEmail_mailtoForm_showMail(cProductBookingEngine.EmailContactMail));
+            }
+            else
+            {
+                Hotels2thailand.BookingB2b.BookingMailEngineB2b cBookingMailB2b = new BookingB2b.BookingMailEngineB2b(this.BookingId);
+                MainBody = cBookingMailB2b.getMailBookingRecieved();
+            }
+
+            return MainBody;
+            //string KeywordContentFoot = Utility.GetKeywordReplace(MainBody, "<!--##@ContentFoot_start##-->", "<!--##@ContentFoot_end##-->");
+            //MainBody = MainBody.Replace(KeywordContentFoot, strGrandTotal.ToString());
+            //getDetail Voucher
+            //MainBody = MainBody.Replace("<!--##@ContentBodyDisplay##-->", TextDetailVoucher());
+
+        }
 
         public string getMailBookingRecieved()
         {
@@ -1079,7 +1282,93 @@ namespace Hotels2thailand.Booking
             //MainBody = MainBody.Replace("<!--##@ContentBodyDisplay##-->", TextDetailVoucher());
             
         }
-         
+
+
+        public string getMailBookingRecieved_Allot_Booknow_offline()
+        {
+
+            string MainBody = string.Empty;
+            if (!this.cProductBookingEngine.Is_B2b)
+            {
+
+
+                MainBody = getMailThemeNew();
+
+                //CustomerName 
+                MainBody = MainBody.Replace("<!--##@CusNameContent##-->", CusName());
+
+                // Detail Top
+                string KeywordDetailTop = Utility.GetKeywordReplace(MainBody, "<!--##@WordingHeadContentStart##-->", "<!--##@WordingHeadContentEnd##-->");
+                MainBody = MainBody.Replace(KeywordDetailTop, TextDetailTop(17));
+
+                //Booking IitemList
+                string KeywordItem = Utility.GetKeywordReplace(MainBody, "<!--##@mailItemContentStart##-->", "<!--##@mailItemContentEnd##-->");
+                MainBody = MainBody.Replace(KeywordItem, getProductListFromBookingId().Replace("<!--##@BookingNameItem##-->", CusName()));
+
+                string KeywordTotalResubmit = Utility.GetKeywordReplace(MainBody, "<!--##@GrandTotal_Resubmit_Start##-->", "<!--##@GrandTotal_Resubmit_End##-->");
+                MainBody = MainBody.Replace(KeywordTotalResubmit, " ");
+
+                string KeywordreqPay = Utility.GetKeywordReplace(MainBody, "<!--##@ReqPay_Start##-->", "<!--##@ReqPay_End##-->");
+                MainBody = MainBody.Replace(KeywordreqPay, " ");
+
+                string KeywordBankTransfer = Utility.GetKeywordReplace(MainBody, "<!--##@Banktransfer_start##-->", "<!--##@Banktransfer_End##-->");
+                MainBody = MainBody.Replace(KeywordBankTransfer, " ");
+
+                //Wording Balance For Cutomer
+                //MainBody = MainBody.Replace("<!--##@Balance_Note##-->", "Please pay the balance at hotel upon your check in.");
+
+                // //Disable Grandtotal Balance Main
+                string KeywordGrandTotalBalance = Utility.GetKeywordReplace(MainBody, "<!--##@Balance_Start##-->", "<!--##@Balance_End##-->");
+                MainBody = MainBody.Replace(KeywordGrandTotalBalance, " ");
+
+                ////GrandTotal
+                MainBody = MainBody.Replace("<!--##@mailItemTotalContent##-->", GrandTotal());
+
+                //EmailTracking Is Open
+                //MainBody = MainBody.Replace("<!--##@ContentEmailtracking##-->", imgTrack(15));
+
+
+                Production.ProductPic cProductPic = new Production.ProductPic();
+
+                string Logo = "<img  src=\"" + cProductPic.getProductlogo(this.cClassBookingProduct.ProductID) + "\" style=\"width:150px; height:60px; border:solid 1px #eee5be\" />";
+                //Logo Is Open
+
+                MainBody = MainBody.Replace("<!--##@HotelLogo##-->", Logo);
+
+
+                BookingProductDisplay cBookingPLsit = new BookingProductDisplay();
+                cBookingPLsit = cBookingPLsit.getBookingProductDisplayByBookingProductId(this.cClassBookingProduct.BookingProductId);
+
+                //BookingProductName
+                MainBody = MainBody.Replace("<!--##@HotelName##-->", cBookingPLsit.ProductTitle);
+                //BookingProductName
+                MainBody = MainBody.Replace("<!--##@HotelName_foot##-->", cBookingPLsit.ProductTitle);
+                //Hotel Phone
+                MainBody = MainBody.Replace("<!--##@HotelAddress##-->", cBookingPLsit.ProductAddress);
+                //HOtel Address
+                MainBody = MainBody.Replace("<!--##@HotelPhone##-->", cBookingPLsit.ProductPhone);
+
+                //ContactUsPhone <!--##@HotelPhoneContact##-->
+                MainBody = MainBody.Replace("<!--##@HotelPhoneContact##-->", cBookingPLsit.ProductPhone);
+
+                BookingStaff cBookingStaff = new BookingStaff();
+                // Contact Us Email <!--##@EmailContactUs##-->
+                MainBody = MainBody.Replace("<!--##@EmailContactUs##-->", cBookingStaff.GetStringEmail_mailtoForm_showMail(cProductBookingEngine.EmailContactMail));
+
+            }
+            else
+            {
+                Hotels2thailand.BookingB2b.BookingMailEngineB2b cBookingMailB2b = new BookingB2b.BookingMailEngineB2b(this.BookingId);
+                MainBody = cBookingMailB2b.getMailBookingRecieved();
+            }
+
+            return MainBody;
+            //string KeywordContentFoot = Utility.GetKeywordReplace(MainBody, "<!--##@ContentFoot_start##-->", "<!--##@ContentFoot_end##-->");
+            //MainBody = MainBody.Replace(KeywordContentFoot, strGrandTotal.ToString());
+            //getDetail Voucher
+            //MainBody = MainBody.Replace("<!--##@ContentBodyDisplay##-->", TextDetailVoucher());
+
+        }
 
         public string getMailBookingRecieved_Allot()
         {
@@ -2734,6 +3023,135 @@ namespace Hotels2thailand.Booking
                     result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\"><a href=\"http://manage.booking2hotels.com/extranet/login.aspx\"/>Click here for login to Booking2hotels.com System </a> ");
                     result.Append(" </td>");
                    result.Append("</tr>");
+                    break;
+
+                // Recieve Mail Allotment Booking Now offline
+                case 17:
+
+                    switch (this.BookingLangId)
+                    {
+                        case 1:
+                            result.Append("<tr>");
+                            result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                            result.Append("Thank you very much for making the reservation with <a href=\"" + this.cProductBookingEngine.WebsiteName + "\"> " + this.GetDomainName + "</a>");
+                            result.Append("</td>");
+                            result.Append("</tr>");
+                            result.Append("<tr><td style=\"height:10px;\" height=\"10\"></td></tr>");
+                            result.Append("<tr>");
+                            result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">We have received your payment at " + this.cClassBookingProduct.ProductTitle + ". Your #Booking ID : " + this.BookingHotelId + " Our staff is checking room availability and will contact you in 12 hours.");
+                            result.Append(" </td>");
+                            result.Append("</tr>");
+                            result.Append("<tr><td style=\"height:10px;\" height=\"10\"></td></tr>");
+                            result.Append("<tr>");
+                            result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                            result.Append("<strong style=\"font-size:14px;\">Reminder:&nbsp;<span style=\"color:#b50c04;text-decoration:underline;\">This letter is NOT a confirmation.  It can not be used for checking in.</span></strong>");
+                            result.Append(" </td>");
+                            result.Append("</tr>");
+
+                            break;
+                        case 2:
+                            result.Append("<tr>");
+                            result.Append("<td  style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                            result.Append("เว็บไซด์(<a href=\"" + this.cProductBookingEngine.WebsiteName + "\"> " + this.GetDomainName + "</a>)");
+                            result.Append(" ขอขอบพระคุณที่ใช้บริการจองกับเรา");
+                            result.Append("</td>");
+                            result.Append("</tr>");
+                            result.Append("<tr><td style=\"height:10px;\" height=\"10\"></td></tr>");
+                            result.Append("<tr>");
+
+                            result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                            switch (this.cClassBookingProduct.ProductCategory)
+                            {
+                                case 29:
+                                    result.Append("เราได้รับข้อมูลการชำระเงินผ่านระบบเป็นที่เรียบร้อยแล้วตามรายละเอียดด้านล่างนี้ และทางเวปไซต์โฮเทลทูฯขอเรียนให้ทราบว่าจดหมายฉบับนี้เป็นเพียงจดหมายยืนยันการชำระเงินของท่านกับเราเท่านั้น<strong> ยังมิใช่เอกสารยืนยันการจองห้องพัก (Hotel Voucher)</strong>");
+                                    result.Append("</td>");
+                                    result.Append("</tr>");
+                                    result.Append("<tr><td style=\"height:10px;\" height=\"10\"></td></tr>");
+                                    result.Append("<tr>");
+                                    result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                                    result.Append("เราจะรีบดำเนินการตรวจสอบสถานะห้องว่างที่คุณจองไว้กับเราโดยเร็วที่สุดและท่านจะได้รับการติดต่อกลับจากเจ้าหน้าที่โฮเทลทูฯภายในเวลา<strong> 12</strong> ชั่วโมงหลังจากทำการจองค่ะ");
+                                    result.Append("</td>");
+                                    result.Append("</tr>");
+                                    break;
+                                case 32:
+                                    result.Append("เราได้รับข้อมูลการจองของท่านพร้อมทั้งการชำระเงินผ่านระบบเป็นที่เรียบร้อยแล้วตามรายละเอียดด้านล่างนี้ และทางเวปไซต์โฮเทลทูฯขอเรียนให้ทราบว่าจดหมายฉบับนี้เป็นเพียงจดหมายยืนยันการชำระเงินของท่านกับเราเท่านั้น <strong> ยังมิใช่เอกสารยืนยันการจองสนามกอล์ฟ (Voucher)</strong> ");
+                                    result.Append("</td>");
+                                    result.Append("</tr>");
+                                    result.Append("<tr><td style=\"height:10px;\" height=\"10\"></td></tr>");
+                                    result.Append("<tr>");
+                                    result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                                    result.Append("เราจะรีบดำเนินการตรวจสอบสถานะการจองสนามกอล์ฟที่คุณจองไว้กับเราโดยเร็วที่สุดและท่านจะได้รับการติดต่อกลับจากเจ้าหน้าที่โฮเทลทูฯภายในเวลา<strong> 12</strong> ชั่วโมงหลังจากทำการจองค่ะ");
+                                    result.Append("</td>");
+                                    result.Append("</tr>");
+                                    break;
+                                case 40:
+                                    result.Append("เราได้รับข้อมูลการจองของท่านพร้อมทั้งการชำระเงินผ่านระบบเป็นที่เรียบร้อยแล้วตามรายละเอียดด้านล่างนี้ และทางเวปไซต์โฮเทลทูฯขอเรียนให้ทราบว่าจดหมายฉบับนี้เป็นเพียงจดหมายยืนยันการชำระเงินของท่านกับเราเท่านั้น <strong> ยังมิใช่เอกสารยืนยันการจองโปรแกรมสปา (Voucher)</strong> ");
+                                    result.Append("</td>");
+                                    result.Append("</tr>");
+                                    result.Append("<tr><td style=\"height:10px;\" height=\"10\"></td></tr>");
+                                    result.Append("<tr>");
+                                    result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                                    result.Append("เราจะรีบดำเนินการตรวจสอบสถานะโปรแกรมสปาที่คุณจองไว้กับเราโดยเร็วที่สุดและท่านจะได้รับการติดต่อกลับจากเจ้าหน้าที่โฮเทลทูฯภายในเวลา<strong> 12</strong> ชั่วโมงหลังจากทำการจองค่ะ");
+                                    result.Append("</td>");
+                                    result.Append("</tr>");
+                                    break;
+                                case 38:
+                                case 36:
+                                case 34:
+                                    result.Append("เราได้รับข้อมูลการจองของท่านพร้อมทั้งการชำระเงินผ่านระบบเป็นที่เรียบร้อยแล้วตามรายละเอียดด้านล่างนี้ และทางเวปไซต์โฮเทลทูฯขอเรียนให้ทราบว่าจดหมายฉบับนี้เป็นเพียงจดหมายยืนยันการชำระเงินของท่านกับเราเท่านั้น <strong> ยังมิใช่เอกสารยืนยันการจองบริการ (Voucher)</strong> ");
+                                    result.Append("</td>");
+                                    result.Append("</tr>");
+                                    result.Append("<tr><td style=\"height:10px;\" height=\"10\"></td></tr>");
+                                    result.Append("<tr>");
+                                    result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                                    result.Append("เราจะรีบดำเนินการตรวจสอบสถานะบริการที่คุณจองไว้กับเราโดยเร็วที่สุดและท่านจะได้รับการติดต่อกลับจากเจ้าหน้าที่โฮเทลทูฯภายในเวลา<strong> 12</strong> ชั่วโมงหลังจากทำการจองค่ะ");
+                                    result.Append("</td>");
+                                    result.Append("</tr>");
+                                    break;
+                            }
+
+                            result.Append("<tr><td style=\"height:10px;\" height=\"10\"></td></tr>");
+                            result.Append("<tr>");
+                            result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                            result.Append("คุณสามารถใช้หมายเลขการจอง <strong> #Booking ID : " + this.BookingHotelId + "</strong> นี้ในการตรวจสอบสถานะบุคกิ้งของคุณกับเราค่ะ");
+                            result.Append("</td>");
+                            result.Append("</tr>");
+                            break;
+                    }
+
+                    break;
+                // Mail Send Voucher & Map & Recept Booknow Offline
+                case 18:
+                    switch (this.BookingLangId)
+                    {
+                        case 1:
+                            result.Append("<tr>");
+                            result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                            result.Append("We would like to thank you for making the reservation. We are pleased to inform you that your booking at " + this.cClassBookingProduct.ProductTitle + " #Booking ID : " + this.BookingHotelId + " is <span style=\"color:#bf0000;font-weight:bold;\">CONFIRMED.</span> </a>");
+
+                            result.Append("</td>");
+                            result.Append("</tr>");
+                            result.Append("<tr><td style=\"height:10px;\" height=\"10\"></td></tr>");
+                            result.Append("<tr>");
+                            result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                            result.Append("You can pay the booking at hotel. Please see your booking detail below.");
+                            result.Append("</td>");
+                            result.Append("</tr>");
+                            break;
+                        case 2:
+
+                            string txtLast = string.Empty;
+
+                            result.Append("<tr>");
+                            result.Append("<td style=\"margin:0px; padding:0px;font-family:Tahoma;\">");
+                            result.Append("เวปไซต์ <a href=\"" + this.cProductBookingEngine.WebsiteName + "\">" + this.GetDomainName + "</a> ขอขอบพระคุณที่ใช้บริการจองกับเรา โปรดปรินท์เอกสารยืนยันนี้และแสดงต่อเจ้าหน้าที่ในวันที่ใช้บริการค่ะ");
+
+                            result.Append("</td>");
+                            result.Append("</tr>");
+
+                            break;
+                    }
+
                     break;
             }
 

@@ -82,7 +82,7 @@ namespace Hotels2thailand.Front
                         string param = "access_key,profile_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency";
 
 
-                        string param2 = "bill_to_address_country,bill_to_address_city,bill_to_address_line1,bill_to_address_line2,device_fingerprint_id,bill_to_address_postal_code,bill_to_address_state,bill_to_company_name,bill_to_email,bill_to_forename,bill_to_phone,bill_to_surname,customer_ip_address,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data3,merchant_defined_data4,consumer_id,merchant_defined_data5,merchant_defined_data6,merchant_defined_data7,merchant_defined_data20,ship_to_forename,ship_to_surname,merchant_defined_data8,merchant_defined_data9,merchant_defined_data10,merchant_defined_data11,merchant_defined_data12,merchant_defined_data13,merchant_defined_data14,payment_method,merchant_defined_data15,merchant_defined_data16,merchant_defined_data17,merchant_defined_data18,merchant_defined_data19";
+                        string param2 = "bill_to_address_country,bill_to_address_city,bill_to_address_line1,bill_to_address_line2,device_fingerprint_id,bill_to_address_postal_code,bill_to_address_state,bill_to_company_name,bill_to_email,bill_to_forename,bill_to_phone,bill_to_surname,customer_ip_address,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data5,merchant_defined_data7,consumer_id,merchant_defined_data11,payment_method";
                         IDictionary<string, string> parameters = new Dictionary<string, string>();
                         parameters.Add("access_key", paymentInfo.Access_Key);
                         parameters.Add("profile_id", paymentInfo.ProfileID);
@@ -119,50 +119,51 @@ namespace Hotels2thailand.Front
                         //country of passport
                         parameters.Add("merchant_defined_data3", paymentInfo.CountryTitle);
                         //Country of residence
-                        parameters.Add("merchant_defined_data4", paymentInfo.CountryTitle);
+                       // parameters.Add("merchant_defined_data4", paymentInfo.CountryTitle);
 
                         parameters.Add("consumer_id", "0");
                         //no: of days between booking and the check in days
                         int intDayDiffBooking = paymentInfo.Date_check_in.Subtract(paymentInfo.BookingSubmit).Days;
                         parameters.Add("merchant_defined_data5", intDayDiffBooking.ToString());
-                        //Destination Country
-                        parameters.Add("merchant_defined_data6", "Thailand");
-                        //no: Duration of stay in days
-                        int intDurationStay = paymentInfo.Date_check_out.Subtract(paymentInfo.Date_check_in).Days;
+                        ////Destination Country
+                        //parameters.Add("merchant_defined_data6", "Thailand");
+                       // no: Duration of stay in days
+                        int intDurationStay = paymentInfo.Date_check_out.Subtract(paymentInfo.Date_check_in).Days;    
                         parameters.Add("merchant_defined_data7", intDurationStay.ToString());
 
-                        parameters.Add("merchant_defined_data20", FormVal["email"]);
-                        parameters.Add("ship_to_forename", FormVal["first_name"]);
-                        parameters.Add("ship_to_surname", FormVal["last_name"]);
+                        //parameters.Add("merchant_defined_data20", FormVal["email"]);
+                        //parameters.Add("ship_to_forename", FormVal["first_name"]);
+                        //parameters.Add("ship_to_surname", FormVal["last_name"]);
 
 
                         //Hotel category 3 star/5 star/budget
-                        parameters.Add("merchant_defined_data8", "3");
-                        //Hotel Destination
-                        parameters.Add("merchant_defined_data9", paymentInfo.DestinationTitle);
-                        //Hotel Name
-                        parameters.Add("merchant_defined_data10", paymentInfo.Producttitle);
+                        //parameters.Add("merchant_defined_data8", "3");
+                        ////Hotel Destination
+                        //parameters.Add("merchant_defined_data9", paymentInfo.DestinationTitle);
+                        ////Hotel Name
+                        //parameters.Add("merchant_defined_data10", paymentInfo.Producttitle);
 
                         //Language
                         parameters.Add("merchant_defined_data11", "ENG");
-                        //Login Category /Channel (by call/website)
-                        parameters.Add("merchant_defined_data12", "website");
-                        //no: of hotel rooms
-                        parameters.Add("merchant_defined_data13", "100");
-                        //No: of previous visit
-                        parameters.Add("merchant_defined_data14", "0");
+
+                        ////Login Category /Channel (by call/website)
+                        //parameters.Add("merchant_defined_data12", "website");
+                        ////no: of hotel rooms
+                        //parameters.Add("merchant_defined_data13", "100");
+                        ////No: of previous visit
+                        //parameters.Add("merchant_defined_data14", "0");
                         //Saved Payment Method (Credit card, Debit Card, Electronic check debit, Paypal)
                         parameters.Add("payment_method", "card");
                         //Profile email address as registered during registeration sign up 
-                        parameters.Add("merchant_defined_data15", FormVal["email"]);
-                        //Profile Password hashed (if available this is the encrypted password that a user might provide)
-                        parameters.Add("merchant_defined_data16", "no");
-                        //Promotion Code
-                        parameters.Add("merchant_defined_data17", "no");
-                        //Service Provider name (Booked hotel name) If available
-                        parameters.Add("merchant_defined_data18", paymentInfo.Producttitle);
-                        //Third-Party booking/Agent Booking (if the credit card holder is not the party in the guest list then "Y" or/else "N"
-                        parameters.Add("merchant_defined_data19", "Y");
+                        //parameters.Add("merchant_defined_data15", FormVal["email"]);
+                        ////Profile Password hashed (if available this is the encrypted password that a user might provide)
+                        //parameters.Add("merchant_defined_data16", "no");
+                        ////Promotion Code
+                        //parameters.Add("merchant_defined_data17", "no");
+                        ////Service Provider name (Booked hotel name) If available
+                        //parameters.Add("merchant_defined_data18", paymentInfo.Producttitle);
+                        ////Third-Party booking/Agent Booking (if the credit card holder is not the party in the guest list then "Y" or/else "N"
+                        //parameters.Add("merchant_defined_data19", "Y");
 
                         bankForm = bankForm + "<form name=\"CreditForm\" method=\"post\" action=\"https://testsecureacceptance.cybersource.com/pay\">\n";
 
@@ -443,7 +444,7 @@ namespace Hotels2thailand.Front
             return strResult;
         }
 
-        public void BookingProcess(int BookingID)
+        public void BookingProcess(int BookingID, string bookingnow = "")
         {
             string sqlCommand = "";
             
@@ -490,9 +491,18 @@ namespace Hotels2thailand.Front
                             }
                             else
                             {
-                                
+
+
+                                if (string.IsNullOrEmpty(bookingnow))
+                                {
+                                    //chang to mail voucher booknow
+                                    mailBody = mailBookingRecieve.getMailSendVoucher();
+                                }else
+                                {
+                                    mailBody = mailBookingRecieve.getMailSendVoucher_Booknow_offline();
+                                }
                                 //#Send Mail Voucher (Normal)
-                                mailBody = mailBookingRecieve.getMailSendVoucher();
+                                
                                 
                                 
                                 //HttpContext.Current.Response.End();

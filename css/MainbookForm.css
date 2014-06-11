@@ -274,7 +274,7 @@ padding: 5px !important;
          display:inline;
          width:80px;
     }
-    .requirementCustomer input {
+    .guest-requirement-col-1 input,.guest-requirement-col-2 input,.guest-requirement-col-3 input {
         width:20px !important;
     }
 	h3{padding:0px; margin:0px; font-family:helvetica;}

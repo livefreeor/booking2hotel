@@ -22,9 +22,11 @@ public partial class order_complete : System.Web.UI.Page
     {
         //Case BLL ONLY 
 
-
+       
         if (!this.Page.IsPostBack)
         {
+            StringBuilder result = new StringBuilder();
+            string strHeaderTxt = "";
             if (!String.IsNullOrEmpty(Request.QueryString["Ref"]))
             {
                 int PaymentBankID = 0;
@@ -95,8 +97,8 @@ public partial class order_complete : System.Web.UI.Page
                         IsConfirm = true;
                 }
 
-                string strHeaderTxt = "";
-                StringBuilder result = new StringBuilder();
+               
+               
                 if (IsConfirm)
                 {
 
@@ -140,6 +142,40 @@ public partial class order_complete : System.Web.UI.Page
                 //cAgent = cAgent.GetAgentProfileByProductID(int.Parse(queryString[0]), intPID);
                 //lbtAgentName.Text = cAgent.agent_name;
 
+
+            }
+
+
+            if(!String.IsNullOrEmpty(Request.QueryString["Com"]))
+            {
+                if (Request.QueryString["Com"] == "yes")
+                {
+
+                    result.Append("<p>");
+
+                    result.Append("Your reservation is confirmed and paid in full. Your order number is #" + Request.QueryString["bhid"] + ". A voucher confirmation will be sent to your email in shortly. In case there is ether some technical error or your inaccurate e-mail please kindly send us a reminder or recheck your email address.");
+                    result.Append("</p>");
+
+                    strHeaderTxt = "thank you: Your reservation is confirmed and paid in full";
+
+                }
+                else
+                {
+
+                    result.Append("<p>Your reservation will be processed and revert to you in shortly.Your order id is");
+                    result.Append("<span style=\"color:#F00; font-weight:bold\">#" + Request.QueryString["bhid"] + ".</span> Under normal circumstances,");
+                    result.Append("<span style=\"color:#093;\">you will hear from us within 24 hours.</span> In case there is ether some technical error or your inaccurate e-mail ");
+                    result.Append(" please kindly send us a reminder or recheck your email address.");
+                    result.Append("</p>");
+
+                    strHeaderTxt = "thank you: Your reservation will be processed";
+                    //this.Page.Header.Title = "HHHH";
+
+                }
+
+                this.Page.Header.Title = strHeaderTxt;
+
+                wording.Text = result.ToString();
 
             }
 

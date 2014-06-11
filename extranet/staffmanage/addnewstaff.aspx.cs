@@ -56,6 +56,7 @@ namespace Hotels2thailand.UI
             short intStaffId = cStaff.InSertNewStaff_Extranet(txtFullName.Text, Username, txtPassword.Text, txtEmails.Text);
             
 
+
             // mapping staff and Product to manage
             foreach (ListItem item in chkListProduct.Items)
             {

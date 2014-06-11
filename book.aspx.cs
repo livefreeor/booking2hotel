@@ -2537,11 +2537,11 @@ public partial class book : System.Web.UI.Page
                     {
                         formInfo = formInfo + "<div class=\"requirementCustomer\">\n";
                         formInfo = formInfo + "<h3 class=\"fnBig fnBlue\">Credit Card Details</h3>\n";
-                        formInfo = formInfo + "<table id=\"cardForm\" cellpadding=\"0\" cellspacing=\"0\">\n";
+                        formInfo = formInfo + "<table id=\"cardForm\" >\n";
                         formInfo = formInfo + "<tr>\n";
                         formInfo = formInfo + "<td class=\"right\">Card Type  &nbsp;</td>\n";
                         formInfo = formInfo + "<td>\n";
-                        formInfo = formInfo + "<select id=\"cardType\" name=\"cardType\" style=\"width:70px;\">\n";
+                        formInfo = formInfo + "<select id=\"cardType\" name=\"cardType\" style=\"width:70px;height:30px !important;\">\n";
                         formInfo = formInfo + "<option value=\"Visa\">Visa</option>\n";
                         formInfo = formInfo + "<option value=\"MasterCard\">Master Card</option>\n";
                         formInfo = formInfo + "<option value=\"JCB\">JCB</option>\n";
@@ -2560,7 +2560,7 @@ public partial class book : System.Web.UI.Page
                         formInfo = formInfo + "<tr>\n";
                         formInfo = formInfo + "<td class=\"right\">Expiry Date (mm/yyyy) <span class=\"fnRed\">*</span></td>\n";
                         formInfo = formInfo + "<td>\n";
-                        formInfo = formInfo + "<select name=\"card_month\" id=\"card_month\" style=\"width:50px;\">\n";
+                        formInfo = formInfo + "<select name=\"card_month\" id=\"card_month\" style=\"width:50px;height:30px !important;\">\n";
                         formInfo = formInfo + "<option value=\"1\">1</option>\n";
                         formInfo = formInfo + "<option value=\"2\">2</option>\n";
                         formInfo = formInfo + "<option value=\"3\">3</option>\n";
@@ -2574,7 +2574,7 @@ public partial class book : System.Web.UI.Page
                         formInfo = formInfo + "<option value=\"11\">11</option>\n";
                         formInfo = formInfo + "<option value=\"12\">12</option>\n";
                         formInfo = formInfo + "</select>\n";
-                        formInfo = formInfo + "<select name=\"card_year\" id=\"card_year\" style=\"width:50px;\">\n";
+                        formInfo = formInfo + "<select name=\"card_year\" id=\"card_year\" style=\"width:50px;height:30px !important;\">\n";
                         formInfo = formInfo + "<option value=\"2011\" selected=\"selected\">2011</option>\n";
                         formInfo = formInfo + "<option value=\"2012\">2012</option>\n";
                         formInfo = formInfo + "<option value=\"2013\">2013</option>\n";

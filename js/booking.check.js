@@ -81,9 +81,9 @@ $(document).ready(function(){
 	//$("#card_month").val(new Date().getMonth()+1);
 
 
-	$(".digitCard").each(function(){
-		$(this).keyup(function(){
-		checkNumber($(this))
-		});
-	});
+	//$(".digitCard").each(function(){
+	//	$(this).keyup(function(){
+	//	checkNumber($(this))
+	//	});
+	//});
 });
