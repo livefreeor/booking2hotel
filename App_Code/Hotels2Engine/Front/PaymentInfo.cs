@@ -40,6 +40,8 @@ public class PaymentInfo:Hotels2BaseClass
     public string DestinationTitle { get; set; }
 
     public string Producttitle { get; set; }
+
+    public string MD5 { get; set; }
     public PaymentInfo()
     {
     }
@@ -54,10 +56,10 @@ public class PaymentInfo:Hotels2BaseClass
         using(SqlConnection cn=new SqlConnection(this.ConnectionString))
         {
             string sqlCommand = string.Empty;
-            sqlCommand = sqlCommand + "select top 1 bpay.booking_id,bpay.booking_payment_id,bh.booking_hotel_id,bpb.booking_payment_bank_id,pben.currency_id";
-            sqlCommand = sqlCommand + " ,bpay.amount,bpay.gateway_id,pben.merchant_id,pben.teminal_id,pben.url_return,pben.url_update,pben.url_site_redirect,pbe.manage_id,pben.web_site_name,pbe.folder,pbe.profile_id,pbe.access_key,pbe.secret_key, con.title as countryTitle, b.date_submit, bp.date_time_check_in, bp.date_time_check_out, des.title AS desTitle, p.title AS ProTitle";
-            sqlCommand = sqlCommand + " from tbl_booking_product bp,tbl_booking_payment bpay,tbl_booking_payment_bank bpb,tbl_product_booking_engine pben,tbl_booking_hotels bh,tbl_product_booking_engine pbe,tbl_product p, tbl_booking b, tbl_country con,tbl_destination des";
-            sqlCommand = sqlCommand + " where bp.booking_id=bpay.booking_id and bpay.booking_payment_id=bpb.booking_payment_id and p.destination_id = des.destination_id AND bp.product_id=pben.product_id AND b.booking_id = bp.booking_id AND b.country_id = con.country_id and bh.booking_id=bp.booking_id and pbe.product_id=bp.product_id and p.product_id=pben.product_id and bpb.booking_payment_bank_id=" + PaymentBankID;
+            sqlCommand = sqlCommand + "select top 1 bpay.booking_id,bpay.booking_payment_id,bh.booking_hotel_id,bpb.booking_payment_bank_id,pbe.currency_id";
+            sqlCommand = sqlCommand + " ,bpay.amount,bpay.gateway_id,pbe.merchant_id,pbe.teminal_id,pbe.url_return,pbe.url_update,pbe.url_site_redirect,pbe.manage_id,pbe.web_site_name,pbe.folder,pbe.profile_id,pbe.access_key,pbe.secret_key, con.title as countryTitle, b.date_submit, bp.date_time_check_in, bp.date_time_check_out, des.title AS desTitle, p.title AS ProTitle,pbe.md5";
+            sqlCommand = sqlCommand + " from tbl_booking_product bp,tbl_booking_payment bpay,tbl_booking_payment_bank bpb,tbl_booking_hotels bh,tbl_product_booking_engine pbe,tbl_product p, tbl_booking b, tbl_country con,tbl_destination des";
+            sqlCommand = sqlCommand + " where bp.booking_id=bpay.booking_id and bpay.booking_payment_id=bpb.booking_payment_id and p.destination_id = des.destination_id  AND b.booking_id = bp.booking_id AND b.country_id = con.country_id and bh.booking_id=bp.booking_id and pbe.product_id=bp.product_id and p.product_id=pbe.product_id and bpb.booking_payment_bank_id=" + PaymentBankID;
             //HttpContext.Current.Response.Write(sqlCommand);
             //HttpContext.Current.Response.End();
                 SqlCommand cmd = new SqlCommand(sqlCommand, cn);
@@ -92,6 +94,7 @@ public class PaymentInfo:Hotels2BaseClass
                         Date_check_out = (DateTime)reader["date_time_check_out"],
                         DestinationTitle = reader["desTitle"].ToString(),
                         Producttitle = reader["ProTitle"].ToString(),
+                        MD5 = reader["md5"].ToString()
                     };
                 }
     

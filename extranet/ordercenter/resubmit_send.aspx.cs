@@ -12,7 +12,7 @@ namespace Hotels2thailand.UI
     public partial class admin_resubmit_send : Hotels2BasePageExtra
     {
         //booking_id
-        public string strBookingId
+        public string qBookingId
         {
             get
             {
@@ -20,7 +20,7 @@ namespace Hotels2thailand.UI
             }
         }
 
-        public string qPaymentID
+        public string qPaymentid
         {
             get
             {
@@ -36,7 +36,7 @@ namespace Hotels2thailand.UI
                 
 
                 BookingdetailDisplay cBookingDetail = new BookingdetailDisplay();
-                if (cBookingDetail.GetBookingDetailListByBookingId(int.Parse(this.strBookingId)).PaymentTypeID == 2)
+                if (cBookingDetail.GetBookingDetailListByBookingId(int.Parse(this.qBookingId)).PaymentTypeID == 2)
                 {
                     panelMailOption.Visible = true;
                     panelMail.Visible = false;
@@ -44,9 +44,9 @@ namespace Hotels2thailand.UI
                 }
                 else
                 {
-                    BookingMailEngine cMailBooking = new BookingMailEngine(int.Parse(this.strBookingId));
+                    BookingMailEngine cMailBooking = new BookingMailEngine(int.Parse(this.qBookingId));
                     txtSubject.Text = cMailBooking.GetSubject(MailCat.Resubmit);
-                    editor.Content = cMailBooking.getMailResubmit(int.Parse(this.qPaymentID));
+                    editor.Content = cMailBooking.getMailResubmit(int.Parse(this.qPaymentid));
                     txtMailTO.Text = cMailBooking.GetEmailBooking();
                     //txtBcc.Text = cMailBooking.Bcc;
 
@@ -63,7 +63,7 @@ namespace Hotels2thailand.UI
         
         public void submit_click(object sender, EventArgs e)
         {
-            int intBookingId = int.Parse(this.strBookingId);
+            int intBookingId = int.Parse(this.qBookingId);
             BookingMailEngine cMailBooking = new BookingMailEngine(intBookingId);
             string ResubmitBody = editor.Content.Replace("http://174.36.32.56", "http://www.hotels2thailand.com");
             ResubmitBody = ResubmitBody.Replace("http://174.36.32.32", "http://www.hotels2thailand.com");
@@ -71,11 +71,10 @@ namespace Hotels2thailand.UI
             string Bcc = cMailBooking.Bcc;
 
             
-
             bool Issent = Hotels2MAilSender.SendmailBooking(cMailBooking.cProductBookingEngine.Email, cMailBooking.MailNameDisplayDefault, txtMailTO.Text, txtSubject.Text, "", ResubmitBody);
             Issent = Hotels2MAilSender.SendmailBooking(cMailBooking.cProductBookingEngine.Email, cMailBooking.MailNameDisplayDefault, Bcc, txtSubject.Text, "", ResubmitBody);
             BookingActivityDisplay cBookingactivity = new BookingActivityDisplay();
-            Issent = (cBookingactivity.InsertAutoActivity(BookingActivityType.resubmit, intBookingId, this.qPaymentID) == 1);
+            Issent = (cBookingactivity.InsertAutoActivity(BookingActivityType.resubmit, intBookingId, this.qPaymentid) == 1);
             //Issent = Hotels2MAilSender.SendmailBooking(BookingMailEngine.MailNameDisplayDefault, txtBcc.Text, txtSubject.Text, "peerapong@hotels2thailand.com", BookingMailEngine.removeEmailTrack(ResubmitBody));
             
             if (Issent)

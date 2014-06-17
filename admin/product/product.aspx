@@ -572,6 +572,11 @@
   <tr><td>Teminal ID: </td>
 
  <td><asp:TextBox ID="txtTeminal" Width="450" runat="server"></asp:TextBox></td></tr>
+
+     <tr><td>MD5 (checksum) kbank ver2: </td>
+
+ <td><asp:TextBox ID="txtmd5" Width="450" runat="server" MaxLength="32" placeholder="must 32 charactor only!"></asp:TextBox></td></tr>
+
       <tr><td>ProfileID (cyber sourceo only): </td>
  <td><asp:TextBox ID="txtProfileID" Width="450" runat="server"></asp:TextBox></td></tr>
      <tr><td>Access_Key (cyber sourceo only): </td>

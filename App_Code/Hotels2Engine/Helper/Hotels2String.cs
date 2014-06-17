@@ -387,7 +387,24 @@ namespace Hotels2thailand
             string data = Encoding.ASCII.GetString(decodeString);
             return data;
         }
+        public static string CreateMD5Hash(this string input)
+        {
+            // Use input string to calculate MD5 hash
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hashBytes = md5.ComputeHash(inputBytes);
 
+            // Convert the byte array to hexadecimal string
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                sb.Append(hashBytes[i].ToString("X2"));
+                // To force the hex string to lower-case letters instead of
+                // upper-case, use he following line instead:
+                // sb.Append(hashBytes[i].ToString("x2")); 
+            }
+            return sb.ToString();
+        }
         //Encode by MD5 (cant Decode)
         public static string Hotels2MD5EncryptedData(this string input)
         {
